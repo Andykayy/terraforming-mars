@@ -108,6 +108,7 @@ export class Player implements IPlayer {
 
   // Terraforming Rating
   private terraformRating: number = 20;
+  public hasIncreasedTerraformRatingThisGeneration: boolean = false;
 
   public get megaCredits(): number {
     return this.stock.megacredits;
@@ -357,7 +358,7 @@ export class Player implements IPlayer {
     }
     const raiseRating = () => {
       this.terraformRating += steps;
-      this.generationData.hasRaisedTR = true;
+      this.hasIncreasedTerraformRatingThisGeneration = true;
 
       if (opts.log === true) {
         this.game.log('${0} gained ${1} TR', (b) => b.player(this).number(steps));
@@ -1919,6 +1920,7 @@ console.log('hasTraded after:', this.hasTraded);
       pickedCorporationCard: this.pickedCorporationCard?.name,
       // Terraforming Rating
       terraformRating: this.terraformRating,
+      hasIncreasedTerraformRatingThisGeneration: this.hasIncreasedTerraformRatingThisGeneration,
       // Resources
       megaCredits: this.megaCredits,
       megaCreditProduction: this.production.megacredits,
@@ -2027,6 +2029,8 @@ console.log('hasTraded after:', this.hasTraded);
     player.colonies.victoryPoints = d.colonyVictoryPoints;
     player.victoryPointsByGeneration = d.victoryPointsByGeneration;
     player.energy = d.energy;
+    // TODO(kberg): remove ?? false by 2023-01-30
+    player.hasIncreasedTerraformRatingThisGeneration = d.hasIncreasedTerraformRatingThisGeneration ?? false;
     player.hasTurmoilScienceTagBonus = d.hasTurmoilScienceTagBonus;
     player.heat = d.heat;
     player.megaCredits = d.megaCredits;

@@ -210,6 +210,7 @@ describe('Player', function() {
       pickedCorporationCard: CardName.THARSIS_REPUBLIC,
       terraformRating: 20,
       corporations: [],
+      hasIncreasedTerraformRatingThisGeneration: false,
       generationData: new GenerationData(),
       megaCredits: 1,
       megaCreditProduction: 2,

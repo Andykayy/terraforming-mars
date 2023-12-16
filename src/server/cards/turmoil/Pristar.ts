@@ -38,7 +38,7 @@ export class Pristar extends CorporationCard {
   }
 
   public onProductionPhase(player: IPlayer) {
-    if (!(player.generationData.hasRaisedTR)) {
+    if (!(player.hasIncreasedTerraformRatingThisGeneration)) {
       player.stock.add(Resource.MEGACREDITS, 6, {log: true, from: this});
       player.addResourceTo(this, 1);
     }
