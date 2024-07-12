@@ -15,6 +15,7 @@ export class PreludesExpansion {
       // then follow up with cleanup.
       inplaceRemove(player.preludeCardsInHand, card);
       inplaceRemove(player.playedCards, card);
+      player.game.preludeDeck.discard(card);
     });
   }
 

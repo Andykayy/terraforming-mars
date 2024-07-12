@@ -3,6 +3,7 @@ import {ModuleManifest} from '../ModuleManifest';
 import {AppliedScience} from './AppliedScience';
 import {AtmosphericEnhancers} from './AtmosphericEnhancers';
 import {BoardOfDirectors} from './BoardOfDirectors';
+import {BoardOfDirectors} from './BoardOfDirectors';
 import {CeresTechMarket} from './CeresTechMarket';
 import {CloudTourism} from './CloudTourism';
 import {ColonialEnvoys } from './ColonialEnvoys';
