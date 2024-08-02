@@ -790,6 +790,13 @@ export class Game implements IGame, Logger {
     this.log('Generation ${0}', (b) => b.forNewGeneration().number(this.generation));
     this.incrementFirstPlayer();
 
+    this.players.forEach((player) => {
+      player.hasIncreasedTerraformRatingThisGeneration = false;
+      if (player.cardIsInEffect(CardName.PRESERVATION_PROGRAM)) {
+        player.preservationProgram = true;
+      }
+    });
+
     if (this.gameOptions.draftVariant) {
       this.gotoDraftPhase();
     } else {

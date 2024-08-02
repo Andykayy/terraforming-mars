@@ -253,6 +253,7 @@ describe('Player', function() {
       turmoilPolicyActionUsed: false,
       politicalAgendasActionUsedCount: 0,
       hasTurmoilScienceTagBonus: false,
+      preservationProgram: false,
       oceanBonus: 86,
       scienceTagCount: 97,
       plantsNeededForGreenery: 5,
