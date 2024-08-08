@@ -1464,7 +1464,7 @@ export class Player implements IPlayer {
     };
 
     // HOOK: Luna Trade Federation
-    if (usable.titanium === false && payment.titanium > 0 && (this.isCorporation(CardName.LUNA_TRADE_FEDERATION) || this.cardIsInEffect(CardName.LASER_MINING))) {
+    if (usable.titanium === false && payment.titanium > 0 && this.canUseTitaniumAsMegacredits) {
       usable.titanium = true;
       multiplier.titanium -= 1;
     }
