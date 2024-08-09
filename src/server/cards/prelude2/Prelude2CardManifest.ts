@@ -50,6 +50,7 @@ import {VenusOrbitalSurvey} from './VenusOrbitalSurvey';
 import {VenusShuttles} from './VenusShuttles';
 import {VenusTradeHub} from './VenusTradeHub';
 import {WGProject} from './WGProject';
+
 import {WorldGovernmentAdvisor} from './WorldGovernmentAdvisor';
 
 export const PRELUDE2_CARD_MANIFEST = new ModuleManifest({

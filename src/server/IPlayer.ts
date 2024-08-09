@@ -290,7 +290,6 @@ export interface IPlayer {
   getUsableOPGCeoCards(): Array<ICeoCard>;
   runProductionPhase(): void;
   finishProductionPhase(): void;
-  worldGovernmentTerraforming(): void;
 
   runResearchPhase(): void;
   getCardCost(card: IProjectCard): number;
