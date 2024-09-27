@@ -13,12 +13,13 @@ export class CyberiaSystems extends RoboticWorkforceBase {
     super({
       type: CardType.AUTOMATED,
       name: CardName.CYBERIA_SYSTEMS,
-      cost: 16,
+      tags: [Tag.BUILDING],
+      cost: 17,
 
       behavior: {production: {steel: 1}},
 
       metadata: {
-        cardNumber: 'X53',
+        cardNumber: '',
         renderData: CardRenderer.builder((b) => {
           b.production((pb) => pb.steel(1));
           b.text('Copy', Size.SMALL, true)
@@ -26,7 +27,7 @@ export class CyberiaSystems extends RoboticWorkforceBase {
             .production((pb) => pb.tag(Tag.BUILDING))
             .br;
         }),
-        description: 'Increase your steel production 1 step. Copy the PRODUCTION BOXES of 2 of your cards with building tags.',
+        description: 'Raise your steel production 1 step. Copy the production boxes of 2 of your other cards with building tags.',
       },
     });
   }

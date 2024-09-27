@@ -1,4 +1,5 @@
 import {DATA_VALUE, FLOATERS_VALUE, MICROBES_VALUE, GRAPHENE_VALUE, SEED_VALUE, CORRUPTION_VALUE} from '../constants';
+
 import {SpendableResource, SPENDABLE_RESOURCES} from './Spendable';
 
 /**
@@ -26,9 +27,10 @@ export const DEFAULT_PAYMENT_VALUES: Record<SpendableResource, number> = {
   titanium: 3,
   heat: 1,
   plants: 3,
+  energy: 2,
 
   microbes: MICROBES_VALUE,
-  floaters: FLOATERS_VALUE,
+  dirigiblesFloaters: FLOATERS_VALUE,
   lunaArchivesScience: 1,
   spireScience: 2,
   seeds: SEED_VALUE,
@@ -36,6 +38,10 @@ export const DEFAULT_PAYMENT_VALUES: Record<SpendableResource, number> = {
   graphene: GRAPHENE_VALUE,
   kuiperAsteroids: 1,
   corruption: CORRUPTION_VALUE,
+  bioengineeringStudiesAnimals: 3,
+  asteroidBeltColonyAsteroids: 5,
+  jovianConstructionYardFloaters: 3,
+  aerialMassDriversFloaters: 4,
 } as const;
 
 export namespace Payment {
@@ -45,8 +51,9 @@ export namespace Payment {
     steel: 0,
     titanium: 0,
     plants: 0,
+    energy: 0,
     microbes: 0,
-    floaters: 0,
+    dirigiblesFloaters: 0,
     lunaArchivesScience: 0,
     spireScience: 0,
     seeds: 0,
@@ -54,12 +61,16 @@ export namespace Payment {
     graphene: 0,
     kuiperAsteroids: 0,
     corruption: 0,
+    bioengineeringStudiesAnimals: 0,
+    asteroidBeltColonyAsteroids: 0,
+    jovianConstructionYardFloaters: 0,
+    aerialMassDriversFloaters: 0,
   } as const;
 
   export function of(payment: Partial<Payment>) : Payment {
     return {
       auroraiData: payment.auroraiData ?? 0,
-      floaters: payment.floaters ?? 0,
+      dirigiblesFloaters: payment.dirigiblesFloaters ?? 0,
       heat: payment.heat ?? 0,
       lunaArchivesScience: payment.lunaArchivesScience ?? 0,
       spireScience: payment.spireScience ?? 0,
@@ -68,10 +79,15 @@ export namespace Payment {
       seeds: payment.seeds ?? 0,
       steel: payment.steel ?? 0,
       titanium: payment.titanium ?? 0,
+      energy: payment.energy ?? 0,
       graphene: payment.graphene ?? 0,
       kuiperAsteroids: payment.kuiperAsteroids ?? 0,
       plants: payment.plants ?? 0,
       corruption: payment.corruption ?? 0,
+      bioengineeringStudiesAnimals: payment.bioengineeringStudiesAnimals ?? 0,
+      asteroidBeltColonyAsteroids: payment.asteroidBeltColonyAsteroids ?? 0,
+      jovianConstructionYardFloaters: payment.jovianConstructionYardFloaters ?? 0,
+      aerialMassDriversFloaters: payment.aerialMassDriversFloaters ?? 0,
     };
   }
 }
@@ -95,4 +111,5 @@ type WaysToPay = Exclude<SpendableResource, 'megaCredits'> | 'lunaTradeFederatio
  * megaCredits is removed because it's always assumed and I think it's possibly special-cased the codebase.
  * Could be smart to remove it, /shrug
  */
+
 export type PaymentOptions = {[k in WaysToPay]: boolean};

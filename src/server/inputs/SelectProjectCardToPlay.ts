@@ -51,18 +51,27 @@ export class SelectProjectCardToPlay extends BasePlayerInput<IProjectCard> {
       type: 'projectCard',
       cards: cardsToModel(player, this.cards, {showCalculatedCost: true, extras: this.extras}),
       microbes: player.getSpendable('microbes'),
-      floaters: player.getSpendable('floaters'),
+      dirigiblesFloaters: player.getSpendable('dirigiblesFloaters'),
       paymentOptions: {
         heat: player.canUseHeatAsMegaCredits,
         lunaTradeFederationTitanium: player.canUseTitaniumAsMegacredits,
         plants: player.canUsePlantsAsMegacredits,
         corruption: player.canUseCorruptionAsMegacredits,
+        energy: player.cardIsInEffect(CardName.ENERGY_LAB),
       },
       lunaArchivesScience: player.getSpendable('lunaArchivesScience'),
       seeds: player.getSpendable('seeds'),
       graphene: player.getSpendable('graphene'),
       kuiperAsteroids: player.getSpendable('kuiperAsteroids'),
       corruption: player.underworldData.corruption,
+      heavyAerospaceTechSteel: player.cardIsInEffect(CardName.HEAVY_AEROSPACE_TECH),
+      ecologicalContractPlants: player.cardIsInEffect(CardName.ECOLOGICAL_CONTRACT),
+      undergroundVenusBaseSteel: player.cardIsInEffect(CardName.UNDERGROUND_VENUS_BASE),
+      energyLabEnergy: player.cardIsInEffect(CardName.ENERGY_LAB),
+      bioengineeringStudiesAnimals: player.getSpendable('bioengineeringStudiesAnimals'),
+      asteroidBeltColonyAsteroids: player.getSpendable('asteroidBeltColonyAsteroids'),
+      jovianConstructionYardFloaters: player.getSpendable('jovianConstructionYardFloaters'),
+      aerialMassDriversFloaters: player.getSpendable('aerialMassDriversFloaters'),
     };
   }
 

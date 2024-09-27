@@ -21,6 +21,7 @@ import {IStandardProjectCard} from './IStandardProjectCard';
 import {Warning} from '../../common/cards/Warning';
 import {Resource} from '../../common/Resource';
 import {Units} from '../../common/Units';
+import {IColony} from '../colonies/IColony';
 
 /*
  * Represents a card which has an action that itself allows a player
@@ -126,6 +127,9 @@ export interface ICard {
   onColonyAdded?(player: IPlayer, cardOwner: IPlayer): void;
   /** Optional callback when `player` adds a colony to Leavitt. */
   onColonyAddedToLeavitt?(player: IPlayer): void;
+
+  onTrade?(cardOwner: IPlayer, activePlayer: IPlayer, colony: IColony): void;
+  onColonyBuilt?(cardOwner: IPlayer, activePlayer: IPlayer, colony: IColony): void;
 
   cost?: number; /** Used with IProjectCard and PreludeCard. */
   type: CardType;

@@ -8,7 +8,6 @@ import {Turmoil} from '../../turmoil/Turmoil';
 import {SelectParty} from '../../inputs/SelectParty';
 import {Resource} from '../../../common/Resource';
 import {Size} from '../../../common/cards/render/Size';
-import {toName} from '../../../common/utils/utils';
 
 export class Petra extends CeoCard {
   constructor() {
@@ -77,7 +76,7 @@ export class Petra extends CeoCard {
     player.stock.add(Resource.MEGACREDITS, count * 3, {log: true});
 
     // Place 3 Neutral delegates
-    const availableParties = turmoil.parties.map(toName);
+    const availableParties = turmoil.parties.map((party) => party.name);
     const title = 'Select where to send a Neutral delegate';
     const previousDominantParty = turmoil.dominantParty.name;
 

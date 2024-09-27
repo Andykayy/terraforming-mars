@@ -5,7 +5,6 @@ import {GameCards} from '../src/server/GameCards';
 import {CardName} from '../src/common/cards/CardName';
 import {CardManifest} from '../src/server/cards/ModuleManifest';
 import {DEFAULT_GAME_OPTIONS, GameOptions} from '../src/server/game/GameOptions';
-import {toName} from '../src/common/utils/utils';
 
 describe('GameCards', function() {
   it('correctly removes projectCardsToRemove', function() {
@@ -14,7 +13,7 @@ describe('GameCards', function() {
       ...DEFAULT_GAME_OPTIONS,
       aresExtension: true,
     };
-    const names = new GameCards(gameOptions).getProjectCards().map(toName);
+    const names = new GameCards(gameOptions).getProjectCards().map((c) => c.name);
     expect(names).to.contain(CardName.SOLAR_FARM);
     expect(names).to.not.contain(CardName.CAPITAL);
   });
@@ -71,7 +70,7 @@ describe('GameCards', function() {
       preludeExtension: true,
       moonExpansion: false,
     };
-    const ceoNames = new GameCards(gameOptions).getCeoCards().map(toName);
+    const ceoNames = new GameCards(gameOptions).getCeoCards().map((c) => c.name);
     expect(ceoNames).to.contain(CardName.FLOYD); // Yes generic CEO
     expect(ceoNames).to.contain(CardName.KAREN); // Yes Prelude
     expect(ceoNames).not.to.contain(CardName.NEIL); // No Moon
@@ -83,7 +82,7 @@ describe('GameCards', function() {
       corporateEra: true,
       bannedCards: [CardName.SOLAR_WIND_POWER],
     };
-    const names = new GameCards(gameOptions).getProjectCards().map(toName);
+    const names = new GameCards(gameOptions).getProjectCards().map((c) => c.name);
     expect(names).to.not.contain(CardName.SOLAR_WIND_POWER);
   });
 
@@ -93,7 +92,7 @@ describe('GameCards', function() {
       corporateEra: true,
       includedCards: [CardName.VENUSIAN_INSECTS],
     };
-    const names = new GameCards(gameOptions).getProjectCards().map(toName);
+    const names = new GameCards(gameOptions).getProjectCards().map((c) => c.name);
     expect(names).to.contain(CardName.VENUSIAN_INSECTS);
   });
 
@@ -103,7 +102,7 @@ describe('GameCards', function() {
       corporateEra: true,
       includedCards: [CardName.VENUSIAN_INSECTS],
     };
-    const names = new GameCards(gameOptions).getStandardProjects().map(toName);
+    const names = new GameCards(gameOptions).getStandardProjects().map((c) => c.name);
     expect(names).to.not.contain(CardName.VENUSIAN_INSECTS);
   });
 
@@ -113,7 +112,7 @@ describe('GameCards', function() {
       corporateEra: true,
       includedCards: [CardName.VENUSIAN_INSECTS],
     };
-    const names = new GameCards(gameOptions).getPreludeCards().map(toName);
+    const names = new GameCards(gameOptions).getPreludeCards().map((c) => c.name);
     expect(names).to.not.contain(CardName.VENUSIAN_INSECTS);
   });
 
@@ -123,7 +122,7 @@ describe('GameCards', function() {
       corporateEra: true,
       includedCards: [CardName.VENUSIAN_INSECTS],
     };
-    const names = new GameCards(gameOptions).getCorporationCards().map(toName);
+    const names = new GameCards(gameOptions).getCorporationCards().map((c) => c.name);
     expect(names).to.not.contain(CardName.VENUSIAN_INSECTS);
   });
 
@@ -133,7 +132,7 @@ describe('GameCards', function() {
       corporateEra: true,
       includedCards: [CardName.POINT_LUNA],
     };
-    const names = new GameCards(gameOptions).getProjectCards().map(toName);
+    const names = new GameCards(gameOptions).getProjectCards().map((c) => c.name);
     expect(names).to.not.contain(CardName.POINT_LUNA);
   });
 
@@ -143,7 +142,7 @@ describe('GameCards', function() {
       corporateEra: true,
       includedCards: [CardName.DONATION],
     };
-    const names = new GameCards(gameOptions).getProjectCards().map(toName);
+    const names = new GameCards(gameOptions).getProjectCards().map((c) => c.name);
     expect(names).to.not.contain(CardName.DONATION);
   });
 
@@ -153,7 +152,7 @@ describe('GameCards', function() {
       corporateEra: true,
       includedCards: [CardName.GREENERY_STANDARD_PROJECT],
     };
-    const names = new GameCards(gameOptions).getProjectCards().map(toName);
+    const names = new GameCards(gameOptions).getProjectCards().map((c) => c.name);
     expect(names).to.not.contain(CardName.GREENERY_STANDARD_PROJECT);
   });
 });

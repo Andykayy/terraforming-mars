@@ -18,7 +18,6 @@ import {message} from '../logs/MessageBuilder';
 import {TradeWithDarksideSmugglersUnion} from '../cards/moon/DarksideSmugglersUnion';
 import {Payment} from '../../common/inputs/Payment';
 import {TradeWithHectateSpeditions} from '../cards/underworld/HecateSpeditions';
-import {ColonyName} from '../../../src/common/colonies/ColonyName';
 
 export class Colonies {
   private player: IPlayer;
@@ -103,32 +102,10 @@ export class Colonies {
     return trade;
   }
 
-  public getPlayableColonies(allowDuplicate: boolean = false, cost: number = 0) {
+  public getPlayableColonies(allowDuplicate: boolean = false) {
     return this.player.game.colonies
-      .filter((colony) => {
-        if (colony.isActive === false) {
-          return false;
-        }
-        if (colony.isFull()) {
-          return false;
-        }
-        if (!allowDuplicate && colony.colonies.includes(this.player.id)) {
-          return false;
-        }
-        if (colony.name === ColonyName.VENUS && !this.player.canAfford({cost: cost, tr: {venus: 1}})) {
-          return false;
-        }
-        if (colony.name === ColonyName.EUROPA && !this.player.canAfford({cost: cost, tr: {oceans: 1}})) {
-          return false;
-        }
-        if (colony.name === ColonyName.LEAVITT) {
-          const pharmacyUnion = this.player.getCorporation(CardName.PHARMACY_UNION);
-          if ((pharmacyUnion?.resourceCount ?? 0) > 0 && !this.player.canAfford({cost: cost, tr: {tr: 1}})) {
-            return false;
-          }
-        }
-        return true;
-      });
+      .filter((colony) => colony.isActive && !colony.isFull())
+      .filter((colony) => allowDuplicate || !colony.colonies.includes(this.player.id));
   }
 
   public calculateVictoryPoints(victoryPointsBreakdown: VictoryPointsBreakdown) {
@@ -216,7 +193,10 @@ export class TradeWithMegacredits implements IColonyTrader {
   private tradeCost;
 
   constructor(private player: IPlayer) {
-    this.tradeCost = MC_TRADE_COST- player.colonies.tradeDiscount;
+    // Fuel Subsidies hook
+    const fuelSubsidies = player.cardIsInEffect(CardName.FUEL_SUBSIDIES) ? 5 : 0;
+
+    this.tradeCost = MC_TRADE_COST- player.colonies.tradeDiscount - fuelSubsidies;
     const adhai = player.getCorporation(CardName.ADHAI_HIGH_ORBIT_CONSTRUCTIONS);
     if (adhai !== undefined) {
       const adhaiDiscount = Math.floor(adhai.resourceCount / 2);

@@ -61,6 +61,7 @@ type SharedProperties = {
   /** Describes where the card's TR comes from. */
   tr?: TRSource,
   victoryPoints?: number | 'special' | IVictoryPoints,
+  optionalEnergyConversion?: boolean,
 }
 
 /* Internal representation of card properties. */

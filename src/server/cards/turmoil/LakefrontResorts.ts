@@ -38,12 +38,12 @@ export class LakefrontResorts extends CorporationCard {
   }
 
   public override bespokePlay(player: IPlayer) {
-    player.oceanBonus = 3;
+    player.oceanBonus += 1;
     return undefined;
   }
 
   public override onDiscard(player: IPlayer) {
-    player.oceanBonus = 2;
+    player.oceanBonus -= 1;
   }
 
   public onTilePlaced(cardOwner: IPlayer, activePlayer: IPlayer, space: Space) {

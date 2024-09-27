@@ -25,6 +25,8 @@ export function isCompatibleWith(cf: CardFactorySpec<any>, gameOptions: GameOpti
   const expansions: Array<GameModule> = asArray(cf.compatibility);
   return expansions.every((expansion) => {
     switch (expansion) {
+    case 'corpera':
+      return gameOptions.corporateEra;
     case 'venus':
       return gameOptions.venusNextExtension;
     case 'colonies':
@@ -47,6 +49,8 @@ export function isCompatibleWith(cf: CardFactorySpec<any>, gameOptions: GameOpti
       return gameOptions.starWarsExpansion;
     case 'underworld':
       return gameOptions.underworldExpansion;
+    case 'promo':
+      return gameOptions.promoCardsOption;
     }
     throw new Error(`Unhandled expansion type ${expansion}`);
   });

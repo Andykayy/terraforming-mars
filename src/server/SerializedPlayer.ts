@@ -5,6 +5,7 @@ import {SerializedCard} from './SerializedCard';
 import {SerializedTimer} from '../common/SerializedTimer';
 import {UnderworldPlayerData} from './underworld/UnderworldData';
 import {AlliedParty} from './turmoil/AlliedParty';
+import {GenerationData} from './player/GenerationData';
 
 interface DeprecatedFields {
 }
@@ -39,7 +40,6 @@ export interface SerializedPlayer extends DeprecatedFields{
     energyProduction: number;
     fleetSize: number;
     handicap: number;
-    hasIncreasedTerraformRatingThisGeneration: boolean;
     hasTurmoilScienceTagBonus: boolean;
     heat: number;
     heatProduction: number;
@@ -59,7 +59,6 @@ export interface SerializedPlayer extends DeprecatedFields{
     playedCards: Array<SerializedCard>;
     politicalAgendasActionUsedCount: number;
     preludeCardsInHand: Array<CardName>;
-    preservationProgram: boolean;
     removedFromPlayCards: Array<CardName>;
     removingPlayers: Array<PlayerId>;
     scienceTagCount: number;
@@ -76,4 +75,5 @@ export interface SerializedPlayer extends DeprecatedFields{
     turmoilPolicyActionUsed: boolean;
     underworldData: UnderworldPlayerData;
     victoryPointsByGeneration: Array<number>;
+    generationData: GenerationData;
 }

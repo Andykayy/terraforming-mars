@@ -21,7 +21,7 @@ export class CraterSurvey extends Card implements IProjectCard {
       },
 
       metadata: {
-        cardNumber: 'U69',
+        cardNumber: 'U71',
         renderData: CardRenderer.builder((b) => {
           b.resource(CardResource.DATA, 2).asterix().identify(4, {digit});
         }),

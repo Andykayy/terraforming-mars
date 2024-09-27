@@ -23,7 +23,7 @@ export class IshtarExpedition extends Card implements IProjectCard {
       },
 
       metadata: {
-        cardNumber: 'P76',
+        cardNumber: '',
         renderData: CardRenderer.builder((b) => {
           b.titanium(3).cards(2, {secondaryTag: Tag.VENUS});
         }),

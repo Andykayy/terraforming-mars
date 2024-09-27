@@ -36,8 +36,7 @@ import {RemoveResourcesFromCard} from '../deferredActions/RemoveResourcesFromCar
 import {isIProjectCard} from '../cards/IProjectCard';
 import {MAXIMUM_HABITAT_RATE, MAXIMUM_LOGISTICS_RATE, MAXIMUM_MINING_RATE, MAX_OCEAN_TILES, MAX_OXYGEN_LEVEL, MAX_TEMPERATURE, MAX_VENUS_SCALE} from '../../common/constants';
 import {CardName} from '../../common/cards/CardName';
-import {asArray, inplaceRemove} from '../../common/utils/utils';
-import {SelectCard} from '../inputs/SelectCard';
+import {asArray} from '../../common/utils/utils';
 
 export class Executor implements BehaviorExecutor {
   public canExecute(behavior: Behavior, player: IPlayer, card: ICard, canAffordOptions?: CanAffordOptions) {
@@ -127,11 +126,6 @@ export class Executor implements BehaviorExecutor {
       if (spend.corruption && player.underworldData.corruption < spend.corruption) {
         return false;
       }
-      if (spend.cards) {
-        if (player.cardsInHand.filter((c) => card !== c).length < spend.cards) {
-          return false;
-        }
-      }
     }
 
     if (behavior.decreaseAnyProduction !== undefined) {
@@ -215,10 +209,8 @@ export class Executor implements BehaviorExecutor {
     // }
 
     if (behavior.turmoil) {
-      const turmoil = Turmoil.getTurmoil(game);
       if (behavior.turmoil.sendDelegates) {
-        const count = ctx.count(behavior.turmoil.sendDelegates.count);
-        if (turmoil.getAvailableDelegateCount(player) < count) {
+        if (Turmoil.getTurmoil(game).getAvailableDelegateCount(player) < behavior.turmoil.sendDelegates.count) {
           return false;
         }
       }
@@ -335,28 +327,6 @@ export class Executor implements BehaviorExecutor {
       }
       if (spend.corruption) {
         UnderworldExpansion.loseCorruption(player, spend.corruption);
-      }
-      if ((spend.cards ?? 0) > 0) {
-        const count: number = spend.cards ?? 0;
-        const cards = player.cardsInHand.filter((c) => card !== c);
-        // TODO(kberg): this does not count preludes or CEOs. Same for canExecute.
-        player.defer(
-          new SelectCard(
-            message('Select ${0} card(s) to discard', (b) => b.number(count)),
-            undefined,
-            cards,
-            {min: count, max: count},
-          ).andThen((cards) => {
-            for (const c of cards) {
-              inplaceRemove(player.cardsInHand, c);
-              player.game.projectDeck.discard(c);
-            }
-            this.execute(remainder, player, card);
-            return undefined;
-          }),
-        );
-        // Exit early as the rest of handled by the deferred action.
-        return;
       }
     }
 
@@ -527,15 +497,22 @@ export class Executor implements BehaviorExecutor {
 
       if (behavior.turmoil.sendDelegates) {
         const sendDelegates = behavior.turmoil.sendDelegates;
-        const count = ctx.count(sendDelegates.count);
-        if (sendDelegates.manyParties) {
-          for (let i = 0; i < count; i++) {
+        if (sendDelegates.party !== undefined) {
+          for (let i = 0; i < sendDelegates.count; i++) {
+            turmoil.sendDelegateToParty(player, sendDelegates.party, player.game);
+          }
+        } else if (sendDelegates.manyParties) {
+          for (let i = 0; i < sendDelegates.count; i++) {
             player.game.defer(new SendDelegateToArea(player, 'Select where to send delegate'));
           }
         } else {
-          player.game.defer(new SendDelegateToArea(player, `Select where to send ${sendDelegates.count} delegates`, {count: count}));
+          player.game.defer(new SendDelegateToArea(player, `Select where to send ${sendDelegates.count} delegates`, {count: sendDelegates.count}));
         }
       }
+    }
+
+    if (behavior.optionalEnergyConversion) {
+      player.optionalEnergyConversion = true;
     }
 
     if (behavior.moon !== undefined) {
@@ -637,6 +614,9 @@ export class Executor implements BehaviorExecutor {
         player.colonies.tradeOffset -= colonies.tradeOffset;
       }
     }
+    if (!player.tableau.some((card) => card.behavior?.optionalEnergyConversion === true)) {
+      player.optionalEnergyConversion = false;
+    }
   }
 
   public toTRSource(behavior: Behavior, ctx: ICounter): TRSource {
@@ -648,8 +628,6 @@ export class Executor implements BehaviorExecutor {
         tr = ctx.count(behavior.tr);
       }
     }
-
-    // TODO(kberg): Use undefined instead of 0.
     const trSource: TRSource = {
       tr: tr,
       temperature: behavior.global?.temperature,

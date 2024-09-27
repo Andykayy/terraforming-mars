@@ -17,7 +17,7 @@ export class CrewTraining extends PreludeCard implements ICloneTagCard {
       },
 
       metadata: {
-        cardNumber: 'PfP06',
+        cardNumber: 'P08',
         renderData: CardRenderer.builder((b) => {
           b.planetaryTrack().text('2')
             .tag(Tag.VENUS).or(Size.SMALL)

@@ -3,12 +3,15 @@ export enum RequirementType {
     TEMPERATURE = 'C',
     OCEANS = 'Ocean',
     TR = 'TR',
+    RAISED_TR = 'Raised TR',
     RESOURCE_TYPES = 'Resource type',
     GREENERIES = 'Greenery',
     CITIES = 'City',
     TAG = 'tag',
     PRODUCTION = 'production',
     REMOVED_PLANTS = 'Removed plants',
+    SUM_TAGS = 'Sum tags',
+    UNIQUE_TAGS = 'Unique Tags',
 
     // Venus/Colonies
     VENUS = 'Venus',

@@ -1,3 +1,4 @@
+import {Tag} from '../../../common/cards/Tag';
 import {CardName} from '../../../common/cards/CardName';
 import {CardRenderer} from '../render/CardRenderer';
 import {PreludeCard} from '../prelude/PreludeCard';
@@ -14,6 +15,7 @@ export class FocusedOrganization extends PreludeCard implements IActionCard {
   constructor() {
     super({
       name: CardName.FOCUSED_ORGANIZATION,
+      tags: [Tag.SPACE],
 
       behavior: {
         drawCard: 1,
@@ -21,9 +23,9 @@ export class FocusedOrganization extends PreludeCard implements IActionCard {
       },
 
       metadata: {
-        cardNumber: 'P50',
+        cardNumber: '',
         renderData: CardRenderer.builder((b) => {
-          b.action('Discard 1 card and spend 1 standard resource to draw 1 card and gain 1 standard resource.', (ab) => {
+          b.action('Discard 1 card and spend 1 standard resource to draw 1 card and gain 1 standard resource', (ab) => {
             ab.cards(1).wild(1).startAction.cards(1).wild(1);
           }).br;
           b.cards(1).wild(1).br;

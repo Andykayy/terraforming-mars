@@ -15,7 +15,7 @@ export class PersonalAgenda extends PreludeCard {
       },
 
       metadata: {
-        cardNumber: 'PfP10',
+        cardNumber: 'P08',
         renderData: CardRenderer.builder((b) => {
           b.production((pb) => pb.megacredits(3)).br;
           // TODO(kberg): allow more than one secondary tag.

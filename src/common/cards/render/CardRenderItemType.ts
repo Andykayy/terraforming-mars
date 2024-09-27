@@ -59,14 +59,19 @@ export enum CardRenderItemType {
   CATHEDRAL = 'cathedral',
   NOMADS = 'nomads',
   CITY_OR_SPECIAL_TILE = 'city-or-special-tile',
-  ONE = 'one',
 
   // CEO Extension:
   ARROW_OPG = 'arrow-opg',
-  REDS = 'reds',
+  ZAN_REDS = 'reds',
   REDS_DEACTIVATED = 'reds-deactivated',
   HAZARD_TILE = 'hazard-tile',
   ADJACENCY_BONUS = 'adjacency-bonus',
+
+  // Star Wars
+  CLONE_TROOPER = 'clone-trooper',
+
+  BUILDING_RESOURCE = 'building-resource',
+  DIPLOMACY = 'diplomacy',
 
   // Underworld
   IDENTIFY = 'identify',
@@ -77,4 +82,11 @@ export enum CardRenderItemType {
   CORRUPTION_SHIELD = 'corruptive-block',
   GEOSCAN_ICON = 'geoscan-icon',
   UNDERGROUND_SHELTERS = 'underground-shelters',
+
+  MARS_FIRST = 'party-mars-first',
+  SCIENTISTS = 'party-scientists',
+  UNITY = 'party-unity',
+  GREENS = 'party-greens',
+  REDS = 'party-reds',
+  KELVINISTS = 'party-kelvinists',
 }

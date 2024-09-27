@@ -483,6 +483,14 @@ export class Turmoil {
       }
     });
 
+    // Committee coalition hook
+    if (player.cardIsInEffect(CardName.COMMITTEE_COALITION)) {
+      let nonDominantPartyLeader = false;
+      this.parties.filter((party) => party !== dominantParty).forEach((party) => {
+        if (party.partyLeader === player) nonDominantPartyLeader = true;
+      });
+      if (nonDominantPartyLeader) influence++;
+    }
     return influence;
   }
 

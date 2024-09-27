@@ -93,13 +93,17 @@ export default Vue.extend({
         'titanium',
         'heat',
         'plants',
+        'energy',
         'microbes',
-        'floaters',
+        'dirigiblesFloaters',
         'lunaArchivesScience',
         'seeds',
         'graphene',
         'megaCredits',
         'corruption',
+        'bioengineeringStudiesAnimals',
+        'asteroidBeltColonyAsteroids',
+        'jovianConstructionYardFloaters',
       ];
     },
   },
@@ -122,8 +126,7 @@ export default Vue.extend({
       reserveUnits: card.reserveUnits ?? Units.EMPTY,
       cards: cards,
       cost: 0,
-      tags: [],
-      payment: {...Payment.EMPTY},
+      tags: [], payment: {...Payment.EMPTY},
       warning: undefined,
       available: Units.of({}),
     };
@@ -214,7 +217,7 @@ export default Vue.extend({
         return toSaveUnits;
       }
 
-      for (const unit of ['seeds', 'microbes', 'floaters', 'lunaArchivesScience', 'graphene', 'corruption'] as const) {
+      for (const unit of ['seeds', 'microbes', 'dirigiblesFloaters', 'lunaArchivesScience', 'graphene', 'corruption', 'bioengineeringStudiesAnimals'] as const) {
         if (megacreditBalance > 0 && this.canUse(unit)) {
           this.payment[unit] = deductUnits(this.getAvailableUnits(unit), this.getResourceRate(unit));
         }
@@ -241,6 +244,10 @@ export default Vue.extend({
       if (megacreditBalance > 0 && this.canUse('plants')) {
         this.payment.plants = deductUnits(this.available.plants, this.getResourceRate('plants'));
       }
+      this.available.energy = Math.max(this.thisPlayer.energy - this.reserveUnits.energy, 0);
+      if (megacreditBalance > 0 && this.canUse('energy')) {
+        this.payment.energy = deductUnits(this.available.energy, this.getResourceRate('energy'));
+      }
 
       // If we are overspending
       if (megacreditBalance < 0) {
@@ -251,10 +258,14 @@ export default Vue.extend({
         for (const key of [
           'steel',
           'plants',
-          'floaters',
+          'energy',
+          'dirigiblesFloaters',
           'microbes',
           'seeds',
           'graphene',
+          'bioengineeringStudiesAnimals',
+          'asteroidBeltColonyAsteroids',
+          'jovianConstructionYardFloaters',
           'lunaArchivesScience',
           'corruption',
           'megaCredits'] as const) {
@@ -276,15 +287,20 @@ export default Vue.extend({
         return this.playerinput.paymentOptions.heat === true;
       case 'steel':
         return this.tags.includes(Tag.BUILDING) ||
-          this.thisPlayer.lastCardPlayed === CardName.LAST_RESORT_INGENUITY;
+          this.thisPlayer.lastCardPlayed === CardName.LAST_RESORT_INGENUITY ||
+          (this.playerinput.heavyAerospaceTechSteel && this.tags.includes(Tag.SPACE)) ||
+          (this.playerinput.undergroundVenusBaseSteel && this.tags.includes(Tag.VENUS))
       case 'titanium':
         return this.canUseTitaniumRegularly() ||
           this.playerinput.paymentOptions.lunaTradeFederationTitanium === true;
       case 'plants':
-        return this.tags.includes(Tag.BUILDING) && this.playerinput.paymentOptions.plants === true;
+        return this.tags.includes(Tag.BUILDING) && this.playerinput.paymentOptions.plants === true ||
+        (this.playerinput.ecologicalContractPlants && this.tags.includes(Tag.PLANT));
+      case 'energy':
+        return this.tags.includes(Tag.POWER) && this.playerinput.energyLabEnergy === true;
       case 'microbes':
         return this.tags.includes(Tag.PLANT);
-      case 'floaters':
+      case 'dirigiblesFloaters':
         return this.tags.includes(Tag.VENUS);
       case 'lunaArchivesScience':
         return this.tags.includes(Tag.MOON);
@@ -296,6 +312,12 @@ export default Vue.extend({
             this.tags.includes(Tag.CITY);
       case 'corruption':
         return this.tags.includes(Tag.EARTH) && this.playerinput.paymentOptions.corruption === true;
+      case 'bioengineeringStudiesAnimals':
+        return this.tags.includes(Tag.ANIMAL);
+      case 'asteroidBeltColonyAsteroids':
+        return this.tags.includes(Tag.SPACE);
+      case 'jovianConstructionYardFloaters':
+        return this.tags.includes(Tag.JOVIAN);
       default:
         throw new Error('Unknown unit ' + unit);
       }

@@ -3,7 +3,7 @@ import {ICard} from '../../../src/server/cards/ICard';
 import {Stefan} from '../../../src/server/cards/ceos/Stefan';
 import {IGame} from '../../../src/server/IGame';
 import {SelectCard} from '../../../src/server/inputs/SelectCard';
-import {forceGenerationEnd, fakeCard, cast, runAllActions} from '../../TestingUtils';
+import {forceGenerationEnd, fakeCard, cast} from '../../TestingUtils';
 import {TestPlayer} from '../../TestPlayer';
 import {testGame} from '../../TestGame';
 
@@ -30,7 +30,7 @@ describe('Stefan', function() {
     const selectCard = cast(card.action(player), SelectCard<ICard>);
     game.deferredActions.runNext();
     selectCard.cb([fake1, fake2]);
-    runAllActions(game);
+    game.deferredActions.runAll(() => {});
     expect(player.cardsInHand).has.length(0);
     expect(player.megaCredits).eq(6);
   });
@@ -44,7 +44,7 @@ describe('Stefan', function() {
     const selectCard = cast(card.action(player), SelectCard<ICard>);
     game.deferredActions.runNext();
     selectCard.cb([fake1]);
-    runAllActions(game);
+    game.deferredActions.runAll(() => {});
     expect(player.cardsInHand).has.length(1);
     expect(player.megaCredits).eq(3);
   });

@@ -136,9 +136,10 @@ export class Stock {
       CrashSiteCleanup.resourceHook(this.player, resource, delta, from);
     }
 
-    // Mons Insurance hook
+    // Mons Insurance & Legal Firm hook
     if (options?.from !== undefined && delta < 0 && (isIPlayer(from) && from.id !== this.player.id)) {
       this.player.resolveInsurance();
+      this.player.legalFirmEffect(from);
     }
   }
 

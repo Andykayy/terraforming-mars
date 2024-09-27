@@ -4,7 +4,6 @@ import {CardRenderer} from '../render/CardRenderer';
 import {PreludeCard} from '../prelude/PreludeCard';
 import {Size} from '../../../common/cards/render/Size';
 import {DrawCeoCardFromDeck} from '../../deferredActions/DrawCeoCardFromDeck';
-import {Phase} from '../../../common/Phase';
 
 export class CoLeadership extends PreludeCard {
   constructor() {
@@ -27,19 +26,9 @@ export class CoLeadership extends PreludeCard {
   }
 
   public override bespokePlay(player: IPlayer) {
-    const game = player.game;
-    game.defer(new DrawCeoCardFromDeck(player, 3)).andThen((card) => {
+    player.game.defer(new DrawCeoCardFromDeck(player, 3)).andThen((card) => {
       if (card !== undefined) {
-        if (game.phase === Phase.ACTION) {
-          if (player.canPlay(card)) {
-            player.playCard(card);
-          } else {
-            game.log('Discarding ${0} because it is not playable', (b) => b.card(card));
-            game.ceoDeck.discard(card);
-          }
-        } else {
-          player.ceoCardsInHand.push(card);
-        }
+        player.ceoCardsInHand.push(card);
       }
     });
     return undefined;

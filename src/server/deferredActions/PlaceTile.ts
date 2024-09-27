@@ -8,12 +8,12 @@ import {Tile} from '../Tile';
 import {AdjacencyBonus} from '../ares/AdjacencyBonus';
 import {Message} from '../../common/logs/Message';
 
-export class PlaceTile extends DeferredAction<Space> {
+export class PlaceTile extends DeferredAction {
   constructor(
     player: IPlayer,
     private options: {
       tile: Tile,
-      on: PlacementType | (() => ReadonlyArray<Space>),
+      on: PlacementType,
       title: string | Message,
       adjacencyBonus?: AdjacencyBonus;
     }) {
@@ -23,10 +23,7 @@ export class PlaceTile extends DeferredAction<Space> {
   public execute() {
     const game = this.player.game;
     const on = this.options.on;
-    const availableSpaces =
-      typeof on === 'string' ?
-        game.board.getAvailableSpacesForType(this.player, on) :
-        on();
+    const availableSpaces = game.board.getAvailableSpacesForType(this.player, on);
     const title = this.options?.title;
 
     return new SelectSpace(title, availableSpaces)
@@ -37,7 +34,6 @@ export class PlaceTile extends DeferredAction<Space> {
         }
         game.addTile(this.player, space, tile);
         space.adjacency = this.options.adjacencyBonus;
-        this.cb(space);
         return undefined;
       });
   }

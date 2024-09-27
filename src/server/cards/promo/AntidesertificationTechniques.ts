@@ -15,7 +15,7 @@ export class AntidesertificationTechniques extends PreludeCard {
       },
 
       metadata: {
-        cardNumber: 'X49',
+        cardNumber: 'P08',
         renderData: CardRenderer.builder((b) => {
           b.megacredits(3).br;
           b.production((pb) => pb.plants(1).steel(1));

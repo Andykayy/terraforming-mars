@@ -26,7 +26,7 @@ export type SelectProjectCardToPlayDataModel = SelectPaymentDataModel & {
   card: CardModel;
   reserveUnits: Units;
   tags: Array<Tag>;
-  available: Omit<Units, 'megacredits' | 'energy'>;
+  available: Omit<Units, 'megacredits'>;
 }
 
 type PaymentWidgetModel = SelectPaymentDataModel & Partial<SelectProjectCardToPlayDataModel> & {
@@ -167,6 +167,7 @@ export const PaymentWidgetMixin = {
       case 'steel':
       case 'titanium':
       case 'plants':
+      case 'energy':
         if (model.hasOwnProperty('available')) {
           amount = model.available?.[unit] ?? -1;
           break;
@@ -176,7 +177,7 @@ export const PaymentWidgetMixin = {
         amount = thisPlayer[unit];
         break;
 
-      case 'floaters':
+      case 'dirigiblesFloaters':
       case 'microbes':
       case 'lunaArchivesScience':
       case 'spireScience':
@@ -185,6 +186,10 @@ export const PaymentWidgetMixin = {
       case 'graphene':
       case 'kuiperAsteroids':
       case 'corruption':
+      case 'bioengineeringStudiesAnimals':
+      case 'asteroidBeltColonyAsteroids':
+      case 'jovianConstructionYardFloaters':
+      case 'aerialMassDriversFloaters':
         // TODO(kberg): remove 'as any'. You can do it.
         amount = (model.playerinput as any)[unit];
         break;
@@ -203,7 +208,7 @@ export const PaymentWidgetMixin = {
       // then amount, below would be -1, so the Math.max makes sure it's zero.
 
       // BTW, this could be managed by some derivative of reserveUnits that took extended resources into account.
-      if (unit === 'floaters' && this.asModel().card?.name === CardName.STRATOSPHERIC_BIRDS) {
+      if (unit === 'dirigiblesFloaters' && this.asModel().card?.name === CardName.STRATOSPHERIC_BIRDS) {
         // Find a card other than Dirigibles with floaters.
         // If there is none, then Dirigibles can't use every one.
         if (!thisPlayer.tableau.some((card) => {
@@ -248,17 +253,22 @@ export const PaymentWidgetMixin = {
         steel: 'Steel',
         titanium: 'Titanium',
         heat: 'Heat',
+        energy: 'Energy',
         seeds: 'Seeds',
         auroraiData: 'Data',
         kuiperAsteroids: 'Asteroids',
         spireScience: 'Science',
         megaCredits: 'M€',
-        floaters: 'Floaters',
+        dirigiblesFloaters: 'Floaters',
         graphene: 'Graphene',
         lunaArchivesScience: 'Science',
         microbes: 'Microbes',
         plants: 'Plants',
         corruption: 'Corruption',
+        bioengineeringStudiesAnimals: 'Animals',
+        asteroidBeltColonyAsteroids: 'Asteroids',
+        jovianConstructionYardFloaters: 'Floaters',
+        aerialMassDriversFloaters: 'Floaters',
       };
     },
   },

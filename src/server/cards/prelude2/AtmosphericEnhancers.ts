@@ -8,6 +8,7 @@ import {TRSource} from '../../../common/cards/TRSource';
 import {digit} from '../Options';
 import {floaterCards} from '../venusNext/floaterCards';
 import {AltSecondaryTag} from '../../../common/cards/render/AltSecondaryTag';
+import {Size} from '../../../common/cards/render/Size';
 
 export class AtmosphericEnhancers extends PreludeCard {
   constructor() {
@@ -26,12 +27,14 @@ export class AtmosphericEnhancers extends PreludeCard {
       },
 
       metadata: {
-        cardNumber: 'P44',
+        cardNumber: '',
         renderData: CardRenderer.builder((b) => {
-          b.temperature(2, {digit}).slash().oxygen(2, {digit}).br.slash().venus(2, {digit}).br;
+          b.temperature(2, {digit}).or(Size.SMALL).oxygen(2, {digit}).br.or(Size.SMALL).venus(2, {digit}).br;
           b.cards(2, {secondaryTag: AltSecondaryTag.FLOATER});
         }),
-        description: 'Raise temperature 2 steps, or raise oxygen 2 steps, or raise Venus 2 steps. Draw 2 cards with floater icons.',
+        description: 'Effect: Raise either the temperature or oxygen or Venus 2 steps. ' +
+        'Reveal cards from the deck until you have revealed 2 cards with a floater icon on it. ' +
+        'Take those 2 cards into hand and discard the rest.',
       },
     });
   }

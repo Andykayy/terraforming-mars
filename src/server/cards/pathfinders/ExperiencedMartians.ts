@@ -15,7 +15,7 @@ export class ExperiencedMartians extends PreludeCard {
       },
 
       metadata: {
-        cardNumber: 'PfP13',
+        cardNumber: 'P08',
         renderData: CardRenderer.builder((b) => {
           b.delegates(1).cards(1, {secondaryTag: Tag.MARS}).cards(1, {secondaryTag: Tag.MARS}).production((pb) => pb.megacredits(2));
         }),

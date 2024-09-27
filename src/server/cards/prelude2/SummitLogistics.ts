@@ -26,7 +26,7 @@ export class SummitLogistics extends Card {
       },
 
       metadata: {
-        cardNumber: 'P85',
+        cardNumber: '',
         renderData: CardRenderer.builder((b) => {
           b.megacredits(1).slash().tag(Tag.JOVIAN).tag(Tag.EARTH).tag(Tag.VENUS).colonies(1);
           b.br;

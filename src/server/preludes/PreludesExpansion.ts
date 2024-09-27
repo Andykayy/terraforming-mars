@@ -3,6 +3,7 @@ import {Resource} from '../../common/Resource';
 import {CardAction, IPlayer} from '../IPlayer';
 import {IPreludeCard} from '../cards/prelude/IPreludeCard';
 import {SelectCard} from '../inputs/SelectCard';
+import {ICorporationCard} from '../cards/corporation/ICorporationCard';
 
 export class PreludesExpansion {
   public static fizzle(player: IPlayer, card: IPreludeCard): void {
@@ -14,18 +15,12 @@ export class PreludesExpansion {
       // then follow up with cleanup.
       inplaceRemove(player.preludeCardsInHand, card);
       inplaceRemove(player.playedCards, card);
-      player.game.preludeDeck.discard(card);
     });
   }
 
-  /**
-   * Return a `SelectCard` that asks a `player` to choose one of the `cards` to play,
-   * and then plays it.
-   */
-  public static selectPreludeToPlay(
+  public static playPrelude(
     player: IPlayer,
     cards: Array<IPreludeCard>,
-    remainders: undefined | 'discard' = undefined,
     cardAction: CardAction = 'add'): SelectCard<IPreludeCard> {
     // This preps the warning attribute in preludes.
     // All preludes can be presented. Unplayable ones just fizzle.
@@ -42,16 +37,13 @@ export class PreludesExpansion {
         if (card.canPlay?.(player) === false) {
           PreludesExpansion.fizzle(player, card);
         } else {
+          if (card.initialAction) {
+            player.pendingInitialActions.push(card as any as ICorporationCard);
+          }
           player.playCard(card, undefined, cardAction);
         }
-        if (remainders === 'discard') {
-          for (const c of cards) {
-            if (c !== card) {
-              player.game.preludeDeck.discard(c);
-            }
-          }
-        }
         return undefined;
-      });
+      },
+      );
   }
 }

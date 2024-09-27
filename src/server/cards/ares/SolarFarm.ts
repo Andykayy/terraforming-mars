@@ -1,6 +1,6 @@
 import {Card} from '../Card';
 import {CardName} from '../../../common/cards/CardName';
-import {PlaceTile} from '../../../server/deferredActions/PlaceTile';
+import {SelectSpace} from '../../inputs/SelectSpace';
 import {CanAffordOptions, IPlayer} from '../../IPlayer';
 import {SpaceBonus} from '../../../common/boards/SpaceBonus';
 import {TileType} from '../../../common/TileType';
@@ -45,15 +45,15 @@ export class SolarFarm extends Card implements IProjectCard {
   }
 
   public override bespokePlay(player: IPlayer) {
-    player.game.defer(
-      new PlaceTile(player, {
-        tile: {tileType: TileType.SOLAR_FARM, card: this.name},
-        on: 'land',
-        title: message('Select space for ${0} tile', (b) => b.card(this)),
-        adjacencyBonus: {bonus: [SpaceBonus.ENERGY, SpaceBonus.ENERGY]},
-      }).andThen(() => {
+    return new SelectSpace(message('Select space for ${0} tile', (b) => b.card(this)), player.game.board.getAvailableSpacesOnLand(player))
+      .andThen((space) => {
+        player.game.addTile(player, space, {
+          tileType: TileType.SOLAR_FARM,
+          card: this.name,
+        });
         player.production.adjust(this.productionBox(player), {log: true});
-      }));
-    return undefined;
+        space.adjacency = {bonus: [SpaceBonus.ENERGY, SpaceBonus.ENERGY]};
+        return undefined;
+      });
   }
 }

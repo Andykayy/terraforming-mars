@@ -41,7 +41,7 @@ describe('EarthEmbassy', () => {
     expect(lunaGovernor.canPlay(player)).is.true;
   });
 
-  it('Does not work for Martian Zoo', () => {
+  it('Works for Martian Zoo', () => {
     const martianZoo = new MartianZoo();
     player.playedCards.push(martianZoo);
 
@@ -55,10 +55,10 @@ describe('EarthEmbassy', () => {
     martianZoo.resourceCount = 0;
     martianZoo.onCardPlayed(player, fake);
 
-    expect(martianZoo.resourceCount).eq(1);
+    expect(martianZoo.resourceCount).eq(3);
   });
 
-  it('Does not work with Point Luna', () => {
+  it('Works with Point Luna', () => {
     const pointLuna = new PointLuna();
     player.corporations.push(pointLuna);
 
@@ -70,7 +70,7 @@ describe('EarthEmbassy', () => {
     player.playedCards = [earthEmbassy];
     pointLuna.onCardPlayed(player, fake);
 
-    expect(player.cardsInHand).is.empty;
+    expect(player.cardsInHand).has.length(1);
   });
 });
 

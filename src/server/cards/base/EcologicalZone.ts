@@ -5,7 +5,7 @@ import {CardType} from '../../../common/cards/CardType';
 import {CanAffordOptions, IPlayer} from '../../IPlayer';
 import {CardResource} from '../../../common/CardResource';
 import {TileType} from '../../../common/TileType';
-import {PlaceTile} from '../../../server/deferredActions/PlaceTile';
+import {SelectSpace} from '../../inputs/SelectSpace';
 import {Space} from '../../boards/Space';
 import {CardName} from '../../../common/cards/CardName';
 import {AdjacencyBonus} from '../../ares/AdjacencyBonus';
@@ -64,13 +64,13 @@ export class EcologicalZone extends Card implements IProjectCard {
       player.addResourceTo(this, {qty: 1, log: true});
     }
 
-    player.game.defer(
-      new PlaceTile(player, {
-        tile: {tileType: TileType.ECOLOGICAL_ZONE, card: this.name},
-        on: () => this.getAvailableSpaces(player),
-        title: 'Select space next to greenery for special tile',
-        adjacencyBonus: this.adjacencyBonus,
-      }));
-    return undefined;
+    return new SelectSpace('Select space next to greenery for special tile', this.getAvailableSpaces(player))
+      .andThen((space) => {
+        player.game.addTile(player, space, {
+          tileType: TileType.ECOLOGICAL_ZONE,
+        });
+        space.adjacency = this.adjacencyBonus;
+        return undefined;
+      });
   }
 }

@@ -4,16 +4,15 @@ import {describeDatabaseSuite} from '../database/databaseSuite';
 import {ITestDatabase, Status} from '../database/ITestDatabase';
 import {IGame} from '../../src/server/IGame';
 import {Game} from '../../src/server/Game';
-import {PostgreSQL, POSTGRESQL_TABLES} from '../../src/server/database/PostgreSQL';
+import {PostgreSQL} from '../../src/server/database/PostgreSQL';
 import {TestPlayer} from '../TestPlayer';
 import {SelectOption} from '../../src/server/inputs/SelectOption';
 import {Phase} from '../../src/common/Phase';
-import {cast, runAllActions} from '../TestingUtils';
+import {runAllActions} from '../TestingUtils';
 import {IPlayer} from '../../src/server/IPlayer';
 import {GameLoader} from '../../src/server/database/GameLoader';
 import {GameId} from '../../src/common/Types';
 import {QueryResult} from 'pg';
-import {SelectInitialCards} from '../../src/server/inputs/SelectInitialCards';
 
 dotenv.config({path: 'tests/integration/.env', debug: true});
 
@@ -48,18 +47,13 @@ class TestPostgreSQL extends PostgreSQL implements ITestDatabase {
     response['size-bytes-database'] = 'any';
     response['size-bytes-participants'] = 'any';
 
-    const extraFields = ['rows-game', 'size-bytes-game', 'rows-completed-game', 'size-bytes-completed-game'];
-    for (const field of extraFields) {
-      expect(response[field], 'For ' + field).is.not.undefined;
-      delete response[field];
-    }
     return response;
   }
 
   public async afterEach() {
-    for (const table of POSTGRESQL_TABLES) {
-      await this.client.query('DROP TABLE IF EXISTS ' + table);
-    }
+    await this.client.query('DROP TABLE games');
+    await this.client.query('DROP TABLE game_results');
+    await this.client.query('DROP TABLE participants');
   }
 
   public getStatistics() {
@@ -110,7 +104,7 @@ describeDatabaseSuite({
     'pool-total-count': 1,
     'pool-idle-count': 1,
     'pool-waiting-count': 0,
-    'rows-game-results': '0',
+    'rows-game_results': '0',
     'rows-games': '0',
     'rows-participants': '0',
     'size-bytes-games': 'any',
@@ -123,12 +117,11 @@ describeDatabaseSuite({
     'size-bytes-participants': 'any',
   },
 
-  otherTests: (dbFactory: () => TestPostgreSQL) => {
+  otherTests: (dbFunction: () => ITestDatabase) => {
     it('saveGame with the same saveID', async () => {
-      const db = dbFactory();
+      const db = dbFunction() as TestPostgreSQL;
       const player = TestPlayer.BLACK.newPlayer();
       const game = Game.newInstance('game-id-1212', [player], player);
-      cast(player.popWaitingFor(), SelectInitialCards);
       await db.lastSaveGamePromise;
 
       await db.saveGame(game);
@@ -158,15 +151,13 @@ describeDatabaseSuite({
 
     // When sqlite does the same thing this can go into the suite.
     it('getGames - returns in order of last saved', async () => {
-      const db = dbFactory();
+      const db = dbFunction() as TestPostgreSQL;
       const player = TestPlayer.BLACK.newPlayer();
       const game1 = Game.newInstance('game-id-1111', [player], player);
       await db.lastSaveGamePromise;
-      const player2 = TestPlayer.RED.newPlayer();
-      const game2 = Game.newInstance('game-id-2222', [player2], player2);
+      const game2 = Game.newInstance('game-id-2222', [player], player);
       await db.lastSaveGamePromise;
-      const player3 = TestPlayer.BLUE.newPlayer();
-      const game3 = Game.newInstance('game-id-3333', [player3], player3);
+      const game3 = Game.newInstance('game-id-3333', [player], player);
       await db.lastSaveGamePromise;
 
       expect(await db.getGameIds()).deep.eq(['game-id-3333', 'game-id-2222', 'game-id-1111']);
@@ -188,11 +179,11 @@ describeDatabaseSuite({
     });
 
     it('test save id count with undo', async () => {
-      const db = dbFactory();
-      const player = TestPlayer.BLACK.newPlayer();
-      const player2 = TestPlayer.RED.newPlayer();
+      // Set up a simple game.
+      const db = dbFunction() as TestPostgreSQL;
+      const player = TestPlayer.BLACK.newPlayer({beginner: true});
+      const player2 = TestPlayer.RED.newPlayer({beginner: true});
       const game = Game.newInstance('gameid', [player, player2], player, {draftVariant: false, undoOption: true});
-
       await db.awaitAllSaves();
 
       expect(await db.getStat('save-count')).eq(1);
@@ -200,7 +191,6 @@ describeDatabaseSuite({
 
       // Move into the action phase by having both players complete their research.
       // This triggers another save.
-      expect(game.phase).eq(Phase.RESEARCH);
       game.playerIsFinishedWithResearchPhase(player);
       game.playerIsFinishedWithResearchPhase(player2);
       expect(game.phase).eq(Phase.ACTION);
@@ -253,25 +243,24 @@ describeDatabaseSuite({
 
       // Notice how save-count was 3 and is now 5. It saved twice.
       expect(await db.getStat('save-count')).eq(5);
-      expect(await db.getSaveIds(game.id)).deep.eq([0, 1, 2, 3, 4]);
-      expect(await db.getStat('save-conflict-undo-count')).eq(0);
+      // If save count is 5, why are only four versions saved?
+      expect(await db.getSaveIds(game.id)).deep.eq([0, 1, 2, 3]);
+      // That's because one of those saves was an update instead of an insert.
+      // Version 3 was saved twice.
+      expect(await db.getStat('save-conflict-undo-count')).eq(1);
 
       // Of all the steps in this test, this is the one which will verify the broken undo
       // is repaired correctly. When it was broken, this was 5.
-      expect(game.lastSaveId).eq(5);
+      expect(game.lastSaveId).eq(4);
     });
 
     it('undo works in multiplayer, other players have passed', async () => {
-      const db = dbFactory();
-      const player = TestPlayer.BLACK.newPlayer();
-      const player2 = TestPlayer.RED.newPlayer();
+      const db = dbFunction() as TestPostgreSQL;
+      const player = TestPlayer.BLACK.newPlayer({beginner: true});
+      const player2 = TestPlayer.RED.newPlayer({beginner: true});
       const game = Game.newInstance('gameid', [player, player2], player2, {draftVariant: false, undoOption: true});
-      // Adding to the GameLoader because this is manually managed by the Game route, which is the real place responsible for
-      // creating new games.
-      GameLoader.getInstance().add(game);
       await db.awaitAllSaves();
 
-      expect(game.phase).eq(Phase.RESEARCH);
       // Move into the action phase by having both players complete their research.
       // This triggers another save.
       game.playerIsFinishedWithResearchPhase(player);
@@ -349,9 +338,8 @@ describeDatabaseSuite({
 
       // Trigger an undo
       // This is embedded in routes/PlayerInput, and should be moved out of there.
-      const restorePoint = game.lastSaveId - 2;
-      const gameLoader = GameLoader.getInstance();
-      const newGame = await gameLoader.restoreGameAt(player.game.id, restorePoint);
+      const lastSaveId = game.lastSaveId - 2;
+      const newGame = await GameLoader.getInstance().restoreGameAt(player.game.id, lastSaveId);
       await db.awaitAllSaves();
       const revisedPlayer = newGame.getPlayerById(player.id);
       expect(revisedPlayer.megaCredits).eq(4);
@@ -359,8 +347,8 @@ describeDatabaseSuite({
     });
 
     it('undo works in solo', async () => {
-      const db = dbFactory();
-      const player = TestPlayer.BLACK.newPlayer();
+      const db = dbFunction() as TestPostgreSQL;
+      const player = TestPlayer.BLACK.newPlayer({beginner: true});
       const game = Game.newInstance('gameid', [player], player, {undoOption: true});
       await db.awaitAllSaves();
 
@@ -369,7 +357,7 @@ describeDatabaseSuite({
       expect(game.phase).eq(Phase.ACTION);
       await db.awaitAllSaves();
 
-      // Player.takeAction sets waitingFor and waitingForCb. This overrides it%
+      // Player.takeAction sets waitingFor and waitingForCb. This overrides it
       // with a custom option (gain one mc), and then mimics the waitingForCb behavior at
       // the end of Player.takeAction
       function takeAction(p: IPlayer) {
@@ -430,74 +418,13 @@ describeDatabaseSuite({
       expect(player.actionsTakenThisRound).eq(5);
 
       // Trigger an undo
-      const newGame = await GameLoader.getInstance().restoreGameAt(player.game.id, 4);
+      // This is embedded in routes/PlayerInput, and should be moved out of there.
+      const lastSaveId = game.lastSaveId - 2;
+      const newGame = await GameLoader.getInstance().restoreGameAt(player.game.id, lastSaveId);
       await db.awaitAllSaves();
       const revisedPlayer = newGame.getPlayerById(player.id);
       expect(revisedPlayer.megaCredits).eq(4);
       expect(revisedPlayer.actionsTakenThisRound).eq(4);
-    });
-
-    it('saveIds 2', async () => {
-      const db = dbFactory();
-
-      const player = TestPlayer.BLACK.newPlayer();
-      const game = Game.newInstance('game-id-1212', [player], player);
-      await db.lastSaveGamePromise;
-      expect(game.lastSaveId).eq(1);
-
-      await db.saveGame(game);
-      await db.saveGame(game);
-      await db.saveGame(game);
-      await db.saveGame(game);
-      await db.saveGame(game);
-
-      expect(await db.getSaveIds(game.id)).has.members([0, 1, 2, 3, 4, 5]);
-
-      await db.saveGame(game);
-      await db.saveGame(game);
-      await db.saveGame(game);
-      await db.saveGame(game);
-      await db.saveGame(game);
-
-      expect(await db.getSaveIds(game.id)).has.members([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
-
-      await db.saveGame(game);
-      await db.saveGame(game);
-      await db.saveGame(game);
-      await db.saveGame(game);
-      await db.saveGame(game);
-
-      expect(await db.getSaveIds(game.id)).has.members([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]);
-
-      await db.saveGame(game);
-      await db.saveGame(game);
-      await db.saveGame(game);
-      await db.saveGame(game);
-
-      expect(await db.getSaveIds(game.id)).has.members([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]);
-
-      await db.saveGame(game);
-
-      expect(await db.getSaveIds(game.id)).has.members([0, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]);
-
-      await db.saveGame(game);
-      await db.saveGame(game);
-      await db.saveGame(game);
-      await db.saveGame(game);
-      await db.saveGame(game);
-
-      expect(await db.getSaveIds(game.id)).has.members([0, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]);
-
-      await db.saveGame(game);
-      await db.saveGame(game);
-      await db.saveGame(game);
-      await db.saveGame(game);
-
-      expect(await db.getSaveIds(game.id)).has.members([0, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29]);
-
-      await db.saveGame(game);
-
-      expect(await db.getSaveIds(game.id)).has.members([0, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]);
     });
   },
 });

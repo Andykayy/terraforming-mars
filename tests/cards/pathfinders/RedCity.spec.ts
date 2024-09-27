@@ -11,7 +11,7 @@ import {TileType} from '../../../src/common/TileType';
 import {MarsBoard} from '../../../src/server/boards/MarsBoard';
 import {Units} from '../../../src/common/Units';
 import {SelectSpace} from '../../../src/server/inputs/SelectSpace';
-import {cast, runAllActions} from '../../TestingUtils';
+import {cast} from '../../TestingUtils';
 
 describe('RedCity', function() {
   let card: RedCity;
@@ -86,13 +86,11 @@ describe('RedCity', function() {
   it('play', function() {
     const redCitySpace = board.getSpaceOrThrow('53');
     player.production.override({energy: 1});
-    cast(card.play(player), undefined);
-    runAllActions(game);
-    const selectSpace = cast(player.popWaitingFor(), SelectSpace);
+    const action = cast(card.play(player), SelectSpace);
     expect(player.production.asUnits()).deep.eq(Units.of({energy: 0, megacredits: 2}));
-    expect(selectSpace.spaces).includes(redCitySpace);
+    expect(action.spaces).includes(redCitySpace);
 
-    selectSpace.cb(redCitySpace);
+    action.cb(redCitySpace);
 
     expect(redCitySpace.tile?.tileType).eq(TileType.RED_CITY);
     expect(redCitySpace.player).eq(player);
@@ -101,9 +99,7 @@ describe('RedCity', function() {
   it('vps', function() {
     const redCitySpace = board.getSpaceOrThrow('53');
     player.production.override({energy: 1});
-    card.play(player);
-    runAllActions(game);
-    cast(player.popWaitingFor(), SelectSpace).cb(redCitySpace);
+    cast(card.play(player), SelectSpace).cb(redCitySpace);
 
     expect(card.getVictoryPoints(player)).eq(4);
 
@@ -123,9 +119,7 @@ describe('RedCity', function() {
   it('cannot place greenery next to red city', function() {
     const redCitySpace = board.getSpaceOrThrow('53');
     player.production.override({energy: 1});
-    card.play(player);
-    runAllActions(game);
-    cast(player.popWaitingFor(), SelectSpace).cb(redCitySpace);
+    cast(card.play(player), SelectSpace).cb(redCitySpace);
     const adjacentSpaces = board.getAdjacentSpaces(redCitySpace);
 
     // Nobody may place a greenery next to Red City.

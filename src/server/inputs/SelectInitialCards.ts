@@ -12,7 +12,6 @@ import {InputResponse, isSelectInitialCardsResponse} from '../../common/inputs/I
 export class SelectInitialCards extends OptionsInput<undefined> {
   constructor(private player: IPlayer, cb: (corporation: ICorporationCard) => undefined) {
     super('initialCards', '', []);
-    const game = player.game;
     let corporation: ICorporationCard;
     this.title = ' ';
     this.buttonLabel = 'Start';
@@ -30,11 +29,11 @@ export class SelectInitialCards extends OptionsInput<undefined> {
     );
 
     // Give each player Merger in this variant
-    if (game.gameOptions.twoCorpsVariant) {
+    if (player.game.gameOptions.twoCorpsVariant) {
       player.dealtPreludeCards.push(new Merger());
     }
 
-    if (game.gameOptions.preludeExtension) {
+    if (player.game.gameOptions.preludeExtension) {
       this.options.push(
         new SelectCard(titles.SELECT_PRELUDE_TITLE, undefined, player.dealtPreludeCards, {min: 2, max: 2})
           .andThen((preludeCards) => {
@@ -46,13 +45,16 @@ export class SelectInitialCards extends OptionsInput<undefined> {
           }));
     }
 
-    if (game.gameOptions.ceoExtension) {
+    if (player.game.gameOptions.ceoExtension) {
       this.options.push(
         new SelectCard(titles.SELECT_CEO_TITLE, undefined, player.dealtCeoCards, {min: 1, max: 1}).andThen((ceoCards) => {
           if (ceoCards.length !== 1) {
             throw new InputError('Only select 1 CEO');
           }
+          // Push chosen card to hand
           player.ceoCardsInHand.push(ceoCards[0]);
+          // Discard unchosen CEOs
+          player.dealtCeoCards.filter((c) => c !== ceoCards[0]).forEach((c) => player.game.ceoDeck.discard(c));
           return undefined;
         }));
     }
@@ -74,7 +76,6 @@ export class SelectInitialCards extends OptionsInput<undefined> {
 
   private completed(corporation: ICorporationCard) {
     const player = this.player;
-    const game = player.game;
     // Check for negative M€
     const cardCost = corporation.cardCost !== undefined ? corporation.cardCost : player.cardCost;
     if (corporation.name !== CardName.BEGINNER_CORPORATION && player.cardsInHand.length * cardCost > corporation.startingMegaCredits) {
@@ -82,30 +83,18 @@ export class SelectInitialCards extends OptionsInput<undefined> {
       player.preludeCardsInHand = [];
       throw new InputError('Too many cards selected');
     }
-
-    for (const card of player.dealtProjectCards) {
+    // discard all unpurchased cards
+    player.dealtProjectCards.forEach((card) => {
       if (player.cardsInHand.includes(card) === false) {
-        game.projectDeck.discard(card);
+        player.game.projectDeck.discard(card);
       }
-    }
+    });
 
-    for (const card of player.dealtCorporationCards) {
+    player.dealtCorporationCards.forEach((card) => {
       if (card.name !== corporation.name) {
-        game.corporationDeck.discard(card);
+        player.game.corporationDeck.discard(card);
       }
-    }
-
-    for (const card of player.dealtPreludeCards) {
-      if (player.preludeCardsInHand.includes(card) === false) {
-        game.preludeDeck.discard(card);
-      }
-    }
-
-    for (const card of player.dealtCeoCards) {
-      if (player.ceoCardsInHand.includes(card) === false) {
-        game.ceoDeck.discard(card);
-      }
-    }
+    });
   }
 
   public toModel(player: IPlayer): SelectInitialCardsModel {

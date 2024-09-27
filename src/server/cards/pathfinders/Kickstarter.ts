@@ -17,7 +17,7 @@ export class Kickstarter extends Card implements IProjectCard, ICloneTagCard {
       cost: 12,
 
       metadata: {
-        cardNumber: 'Pf41',
+        cardNumber: 'PfTBD',
         renderData: CardRenderer.builder((b) => {
           b.planetaryTrack().text('3');
         }),

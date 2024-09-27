@@ -12,7 +12,7 @@ export class GreatAquifer extends PreludeCard {
       },
 
       metadata: {
-        cardNumber: 'P14',
+        cardNumber: 'P13',
         renderData: CardRenderer.builder((b) => {
           b.oceans(2);
         }),

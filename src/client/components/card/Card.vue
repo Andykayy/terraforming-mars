@@ -10,7 +10,7 @@
           <CardTitle :title="card.name" :type="getCardType()"/>
           <CardContent v-if="getCardMetadata() !== undefined" :metadata="getCardMetadata()" :requirements="getCardRequirements()" :isCorporation="isCorporationCard()" :padBottom="hasResourceType" />
       </div>
-      <CardExpansion :expansion="getCardExpansion()" :isCorporation="isCorporationCard()" :isResourceCard="isResourceCard()" :compatibility="getCardCompatibility()" />
+      <CardExpansion :expansion="getCardExpansion()" :isCorporation="isCorporationCard()" :isResourceCard="isResourceCard()" :compatibility="getCardCompatibility()"/>
       <CardResourceCounter v-if="hasResourceType" :amount="getResourceAmount()" :type="resourceType" />
       <CardExtraContent :card="card" />
       <slot/>
@@ -83,7 +83,7 @@ export default Vue.extend({
     };
   },
   methods: {
-    getCardExpansion(): GameModule {
+    getCardExpansion(): string {
       return this.cardInstance.module;
     },
     getCardCompatibility(): Array<GameModule> {

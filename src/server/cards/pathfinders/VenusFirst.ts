@@ -15,7 +15,7 @@ export class VenusFirst extends PreludeCard {
       },
 
       metadata: {
-        cardNumber: 'PfP01',
+        cardNumber: '',
         renderData: CardRenderer.builder((b) => {
           b.venus(2).br.br;
           b.cards(2, {secondaryTag: Tag.VENUS});

@@ -3,6 +3,7 @@ import {Tag} from '../../../common/cards/Tag';
 import {CardType} from '../../../common/cards/CardType';
 import {IPlayer} from '../../IPlayer';
 import {CardName} from '../../../common/cards/CardName';
+import {Resource} from '../../../common/Resource';
 import {CardResource} from '../../../common/CardResource';
 import {AddResourcesToCard} from '../../deferredActions/AddResourcesToCard';
 import {Size} from '../../../common/cards/render/Size';
@@ -18,10 +19,6 @@ export class EcologyResearch extends Card implements IProjectCard {
       type: CardType.AUTOMATED,
       victoryPoints: 1,
 
-      behavior: {
-        production: {plants: {colonies: {colonies: {}}}},
-      },
-
       metadata: {
         description: 'Increase your plant production 1 step for each colony you own. Add 1 animal to ANOTHER card and 2 microbes to ANOTHER card.',
         cardNumber: 'C09',
@@ -34,6 +31,9 @@ export class EcologyResearch extends Card implements IProjectCard {
   }
 
   public override bespokePlay(player: IPlayer) {
+    const coloniesCount = player.getColoniesCount();
+    player.production.add(Resource.PLANTS, coloniesCount, {log: true});
+
     const animalCards = player.getResourceCards(CardResource.ANIMAL);
     if (animalCards.length) {
       player.game.defer(new AddResourcesToCard(player, CardResource.ANIMAL, {count: 1}));

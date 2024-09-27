@@ -30,7 +30,6 @@ import {message} from '../logs/MessageBuilder';
 import {PlaceHazardTile} from '../deferredActions/PlaceHazardTile';
 import {TileType} from '../../../src/common/TileType';
 import {ErodeSpacesDeferred} from '../underworld/ErodeSpacesDeferred';
-import {CardName} from '../../common/cards/CardName';
 
 export enum ShouldIncreaseTrack { YES, NO, ASK }
 export abstract class Colony implements IColony {
@@ -121,6 +120,13 @@ export abstract class Colony implements IColony {
     const maxTrackPosition = Math.min(this.trackPosition + tradeOffset, MAX_COLONY_TRACK_POSITION);
     const steps = maxTrackPosition - this.trackPosition;
 
+
+    for (const p of player.game.getPlayers()) {
+      for (const playedCard of p.tableau) {
+        playedCard.onTrade?.(p, player, this);
+      }
+    }
+
     if (steps === 0 ||
         this.metadata.shouldIncreaseTrack === 'no' ||
         tradeOptions.selfishTrade === true) {
@@ -156,10 +162,6 @@ export abstract class Colony implements IColony {
     if (options.usesTradeFleet !== false) {
       this.visitor = player.id;
       player.colonies.tradesThisGeneration++;
-    }
-
-    if (player.cardIsInEffect(CardName.VENUS_TRADE_HUB)) {
-      player.stock.add(Resource.MEGACREDITS, 3, {log: true});
     }
 
     // !== false because default is true.

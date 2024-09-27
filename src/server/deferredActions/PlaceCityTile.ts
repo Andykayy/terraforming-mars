@@ -4,14 +4,13 @@ import {Space} from '../boards/Space';
 import {DeferredAction} from './DeferredAction';
 import {Priority} from './Priority';
 import {PlacementType} from '../boards/PlacementType';
-import {Message} from '../../common/logs/Message';
 
 export class PlaceCityTile extends DeferredAction<Space | undefined> {
   constructor(
     player: IPlayer,
     private options?: {
       on?: PlacementType,
-      title?: string | Message,
+      title?: string,
       spaces?: ReadonlyArray<Space>,
     }) {
     super(player, Priority.DEFAULT);

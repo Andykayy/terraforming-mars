@@ -52,6 +52,10 @@ export class Production {
     const delta = (amount >= 0) ? amount : Math.max(amount, -(this.units[resource] - adj));
     this.units[resource] += delta;
 
+    if (delta > 0) {
+      this.player.generationData.hasRaisedProduction[resource] = true;
+    }
+
     if (options?.log === true) {
       this.player.logUnitDelta(resource, amount, 'production', options.from, options.stealing);
     }
@@ -61,9 +65,10 @@ export class Production {
       LawSuit.resourceHook(this.player, resource, delta, from);
     }
 
-    // Mons Insurance hook
+    // Mons Insurance & Legal Firm hook
     if (options?.from !== undefined && delta < 0 && (typeof(from) === 'object' && from.id !== this.player.id)) {
       this.player.resolveInsurance();
+      this.player.legalFirmEffect(from);
     }
 
     for (const card of this.player.tableau) {

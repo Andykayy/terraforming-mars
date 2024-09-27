@@ -161,7 +161,12 @@
                             <input type="checkbox" name="ceo" id="underworld-checkbox" v-model="underworldExpansion">
                             <label for="underworld-checkbox" class="expansion-button">
                                 <div class="create-game-expansion-icon expansion-icon-underworld"></div>
-                                <span v-i18n>Underworld</span><span> 🆕</span>&nbsp;<a href="https://github.com/terraforming-mars/terraforming-mars/wiki/Underworld" class="tooltip" target="_blank">&#9432;</a>
+                                <span v-i18n>Underworld (α)</span><span> 🆕</span>&nbsp;<a href="https://github.com/terraforming-mars/terraforming-mars/wiki/Underworld" class="tooltip" target="_blank">&#9432;</a>
+                            </label>
+
+                            <input type="checkbox" name="chemical" id="chemical-checkbox" v-model="chemicalExpansion">
+                            <label for="chemical-checkbox" class="expansion-button">
+                                <span v-i18n>Chemical's Cards 🆕(β)</span>
                             </label>
                         </div>
 
@@ -651,6 +656,7 @@ export default (Vue as WithRefs<Refs>).extend({
 
       preludeToggled: false,
       uploading: false,
+      chemicalExpansion: false,
     };
   },
   components: {
@@ -1063,6 +1069,7 @@ export default (Vue as WithRefs<Refs>).extend({
       const ceoExtension = this.ceoExtension;
       const customCeos = this.customCeos;
       const startingCeos = this.startingCeos;
+      const chemicalExpansion = this.chemicalExpansion;
       let clonedGamedId: undefined | GameId = undefined;
 
       // Check custom colony count
@@ -1236,6 +1243,7 @@ export default (Vue as WithRefs<Refs>).extend({
         startingCeos,
         starWarsExpansion: this.starWarsExpansion,
         underworldExpansion: this.underworldExpansion,
+        chemicalExpansion,
       };
       return JSON.stringify(dataToSend, undefined, 4);
     },

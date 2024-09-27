@@ -1,5 +1,5 @@
 <template>
-  <div class="card-panel" v-if="message !== undefined && show">
+  <div class="card-panel" v-if="message !== undefined">
     <AppButton size="big" type="close" :disableOnServerBusy="false" @click="hideMe" align="right"/>
     <div id="log_panel_card" class="cardbox" v-for="name in cards" :key="name">
       <Card :card="{name, isSelfReplicatingRobotsCard: isSelfReplicatingRobotsCard(name), resources: getResourcesOnCard(name)}"/>
@@ -42,9 +42,6 @@ export default Vue.extend({
     GlobalEvent,
   },
   computed: {
-    show(): boolean {
-      return this.cards.length + this.globalEvents.length + this.colonies.length > 0;
-    },
     cards(): ReadonlyArray<CardName> {
       if (this.message === undefined) {
         return [];

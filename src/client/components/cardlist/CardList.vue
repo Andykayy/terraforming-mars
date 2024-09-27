@@ -200,6 +200,7 @@ const moduleAbbreviations: Record<GameModule, string> = {
   ceo: 'l', // ceo abbreviation is 'l' for leader, since 'c' and 'C' are already taken
   starwars: 'w',
   underworld: 'u',
+  chemical: 'x',
 };
 
 const ALL_MODULES = GAME_MODULES.map((m) => moduleAbbreviations[m]).join('');
@@ -250,6 +251,7 @@ export default (Vue as WithRefs<Refs>).extend({
         pathfinders: true,
         ceo: true,
         starwars: true,
+        chemical: true,
         underworld: true,
       },
       types: {
@@ -410,7 +412,7 @@ export default (Vue as WithRefs<Refs>).extend({
     getAllColonyNames() {
       return OFFICIAL_COLONY_NAMES.concat(COMMUNITY_COLONY_NAMES).concat(PATHFINDERS_COLONY_NAMES);
     },
-    include(name: string, type: 'card' | 'globalEvent' | 'colony' | 'ma') {
+    filter(name: string, type: 'card' | 'globalEvent' | 'colony' | 'ma') {
       const normalized = this.filterText.toLocaleUpperCase();
       if (normalized.length === 0) {
         return true;
@@ -442,7 +444,7 @@ export default (Vue as WithRefs<Refs>).extend({
       return matches;
     },
     showCard(cardName: CardName): boolean {
-      if (!this.include(cardName, 'card')) return false;
+      if (!this.filter(cardName, 'card')) return false;
 
       const card = getCard(cardName);
       if (card === undefined) {
@@ -454,17 +456,17 @@ export default (Vue as WithRefs<Refs>).extend({
       return this.expansions[card.module] === true;
     },
     showGlobalEvent(name: GlobalEventName): boolean {
-      if (!this.include(name, 'globalEvent')) return false;
+      if (!this.filter(name, 'globalEvent')) return false;
       const globalEvent = getGlobalEvent(name);
       return globalEvent !== undefined && this.expansions[globalEvent.module] === true;
     },
     showColony(name: ColonyName): boolean {
-      if (!this.include(name, 'colony')) return false;
+      if (!this.filter(name, 'colony')) return false;
       const colony = getColony(name);
       return colony !== undefined && this.expansions[colony.module ?? 'base'] === true;
     },
     showMA(name: MilestoneName | AwardName): boolean {
-      return this.include(name, 'ma');
+      return this.filter(name, 'ma');
     },
     getLanguageCssClass() {
       const language = getPreferences().lang;

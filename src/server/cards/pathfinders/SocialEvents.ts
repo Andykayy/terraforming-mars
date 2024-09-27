@@ -15,7 +15,7 @@ export class SocialEvents extends Card implements IProjectCard {
       tags: [Tag.EARTH, Tag.MARS],
 
       metadata: {
-        cardNumber: 'PfT10',
+        cardNumber: '...',
         renderData: CardRenderer.builder((b) => {
           b.tr(1).slash().tag(Tag.MARS, 2);
         }),

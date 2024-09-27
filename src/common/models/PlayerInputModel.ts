@@ -44,12 +44,20 @@ export type SelectProjectCardToPlayModel = BaseInputModel & {
   cards: ReadonlyArray<CardModel>;
   paymentOptions: Partial<PaymentOptions>,
   microbes: number;
-  floaters: number;
+  dirigiblesFloaters: number;
   lunaArchivesScience: number;
   seeds: number;
   graphene: number;
   kuiperAsteroids: number;
   corruption: number;
+  bioengineeringStudiesAnimals: number;
+  asteroidBeltColonyAsteroids: number;
+  jovianConstructionYardFloaters: number;
+  aerialMassDriversFloaters: number;
+  heavyAerospaceTechSteel: boolean;
+  ecologicalContractPlants: boolean;
+  undergroundVenusBaseSteel: boolean;
+  energyLabEnergy: boolean;
 }
 
 export type SelectCardModel = BaseInputModel & {

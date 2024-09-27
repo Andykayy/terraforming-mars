@@ -23,7 +23,7 @@ export class BoardBuilder {
   private spaces: Array<Space> = [];
   private unshufflableSpaces: Array<number> = [];
 
-  constructor(private includeVenus: boolean, private includePathfinders: boolean) {
+  constructor(private includeVenus: boolean, private includePathfinders: boolean, private includeChemical: boolean) {
   }
 
   ocean(...bonus: Array<SpaceBonus>): this {
@@ -100,7 +100,14 @@ export class BoardBuilder {
         colonySpace(SpaceName.VENERA_BASE),
       );
     }
-
+    if (this.includeChemical) {
+      this.spaces.push(
+        colonySpace(SpaceName.TOWERS_OF_FREYJA),
+        colonySpace(SpaceName.OVDA_CITY),
+        colonySpace(SpaceName.CAPITAL_OF_VENUS),
+        colonySpace(SpaceName.JUPITER_FLOATING_CITY),
+      );
+    }
     return this.spaces;
   }
 

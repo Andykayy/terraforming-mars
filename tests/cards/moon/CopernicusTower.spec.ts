@@ -1,5 +1,5 @@
 import {expect} from 'chai';
-import {cast, churn} from '../../TestingUtils';
+import {cast, churn, churnAction} from '../../TestingUtils';
 import {TestPlayer} from '../../TestPlayer';
 import {CopernicusTower} from '../../../src/server/cards/moon/CopernicusTower';
 import {OrOptions} from '../../../src/server/inputs/OrOptions';
@@ -27,18 +27,18 @@ describe('CopernicusTower', () => {
 
   it('act', () => {
     card.resourceCount = 0;
-    expect(churn(card.action(player), player)).is.undefined;
+    expect(churnAction(card, player)).is.undefined;
     expect(card.resourceCount).eq(1);
 
     // Now that there's 1 resource, player will be presented with 2 options.
-    let input = cast(churn(card.action(player), player), OrOptions);
+    let input = cast(churnAction(card, player), OrOptions);
 
     // The second option is the same: increase the resource count.
     churn(() => input.options[1].cb(), player);
     expect(card.resourceCount).eq(2);
 
     // The first option decreases resource count by 1 and raise the TR 1 step.
-    input = cast(churn(card.action(player), player), OrOptions);
+    input = cast(churnAction(card, player), OrOptions);
     expect(player.getTerraformRating()).eq(14);
     churn(() => input.options[0].cb(), player);
     expect(card.resourceCount).eq(1);

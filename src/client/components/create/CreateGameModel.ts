@@ -69,4 +69,5 @@ export type CreateGameModel = {
   underworldExpansion: boolean,
   undoOption: boolean;
   venusNext: boolean;
+  chemicalExpansion: boolean,
 }

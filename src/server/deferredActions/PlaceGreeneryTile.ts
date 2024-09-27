@@ -3,9 +3,8 @@ import {SelectSpace} from '../inputs/SelectSpace';
 import {DeferredAction} from './DeferredAction';
 import {Priority} from './Priority';
 import {PlacementType} from '../boards/PlacementType';
-import {Space} from '../boards/Space';
 
-export class PlaceGreeneryTile extends DeferredAction<Space | undefined> {
+export class PlaceGreeneryTile extends DeferredAction {
   constructor(
     player: IPlayer,
     private on: PlacementType = 'greenery',
@@ -16,14 +15,12 @@ export class PlaceGreeneryTile extends DeferredAction<Space | undefined> {
   public execute() {
     const availableSpaces = this.player.game.board.getAvailableSpacesForType(this.player, this.on);
     if (availableSpaces.length === 0) {
-      this.cb(undefined);
       return undefined;
     }
 
     return new SelectSpace(this.getTitle(), availableSpaces)
       .andThen((space) => {
         this.player.game.addGreenery(this.player, space);
-        this.cb(space);
         return undefined;
       });
   }

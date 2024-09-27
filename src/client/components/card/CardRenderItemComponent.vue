@@ -110,9 +110,6 @@ export default Vue.extend({
           classes.push('card-private-security');
         }
         break;
-      case CardRenderItemType.ONE:
-        classes.push(this.cardResource, 'card-resource-one');
-        break;
       case CardRenderItemType.DIVERSE_TAG:
         classes.push('card-resource-tag', 'card-resource-diverse');
         break;
@@ -147,6 +144,24 @@ export default Vue.extend({
         break;
       case CardRenderItemType.INFLUENCE:
         classes.push('card-influence', `card-influence--size-${this.item.size}`);
+        break;
+      case CardRenderItemType.MARS_FIRST:
+        classes.push('card-party', `card-party--mars-first`);
+        break;
+      case CardRenderItemType.SCIENTISTS:
+        classes.push('card-party', `card-party--scientists`);
+        break;
+      case CardRenderItemType.UNITY:
+        classes.push('card-party', `card-party--unity`);
+        break;
+      case CardRenderItemType.GREENS:
+        classes.push('card-party', `card-party--greens`);
+        break;
+      case CardRenderItemType.REDS:
+        classes.push('card-party', `card-party--reds`);
+        break;
+      case CardRenderItemType.KELVINISTS:
+        classes.push('card-party', `card-party--kelvinists`);
         break;
       case CardRenderItemType.NO_TAGS:
         classes.push('card-resource-tag', 'card-no-tags');
@@ -206,7 +221,7 @@ export default Vue.extend({
       case CardRenderItemType.ARROW_OPG:
         classes.push('card-arrow-opg');
         break;
-      case CardRenderItemType.REDS:
+      case CardRenderItemType.ZAN_REDS:
         classes.push('card-reds');
         break;
       case CardRenderItemType.REDS_DEACTIVATED:
@@ -221,6 +236,15 @@ export default Vue.extend({
         } else {
           classes.push('card-hazard-tile');
         }
+        break;
+      case CardRenderItemType.CLONE_TROOPER:
+        classes.push('card-resource', 'card-resource-clone-trooper');
+        break;
+      case CardRenderItemType.BUILDING_RESOURCE:
+        classes.push(this.cardResource, 'card-resource-building-resource');
+        break;
+      case CardRenderItemType.DIPLOMACY:
+        classes.push(this.cardResource, 'card-resource-diplomacy');
         break;
       case CardRenderItemType.MOON_HABITAT_RATE:
         classes.push('card-colony-rate');

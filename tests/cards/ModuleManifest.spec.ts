@@ -10,7 +10,6 @@ import {TitanFloatingLaunchPad} from '../../src/server/cards/colonies/TitanFloat
 import {EarthEmbassy} from '../../src/server/cards/moon/EarthEmbassy';
 import {CardManifest} from '../../src/server/cards/ModuleManifest';
 import {ICard} from '../../src/server/cards/ICard';
-import {toName} from '../TestingUtils';
 
 describe('ModuleManifest', () => {
   const cardManifest: CardManifest<IProjectCard> = {
@@ -44,7 +43,7 @@ describe('ModuleManifest', () => {
 
   it('CardManifest.values', () => {
     const cards = CardManifest.values(cardManifest).map((f) => new f.Factory());
-    expect(cards.map(toName)).to.have.members(
+    expect(cards.map((c) => c.name)).to.have.members(
       [
         CardName.ACQUIRED_COMPANY,
         CardName.BANNED_DELEGATE,

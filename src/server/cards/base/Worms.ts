@@ -19,7 +19,7 @@ export class Worms extends Card implements IProjectCard {
 
       requirements: {oxygen: 4},
       metadata: {
-        cardNumber: '130',
+        cardNumber: '129',
         renderData: CardRenderer.builder((b) => {
           b.production((pb) => pb.plants(1).slash().tag(Tag.MICROBE, 2));
         }),

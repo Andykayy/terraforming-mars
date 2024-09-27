@@ -37,8 +37,8 @@ const cssClass: Record<CardResource, string> = {
   [CardResource.ACTIVIST]: 'card-resource-activist',
   [CardResource.JOURNALISM]: 'card-resource-journalism',
   [CardResource.SUPPLY_CHAIN]: 'card-resource-supply-chain',
-  // TODO(kberg): provide a better resource for director.
-  [CardResource.DIRECTOR]: 'card-resource-clone-trooper',
+  [CardResource.BUILDING_RESOURCE]: 'card-resource-building-resource',
+  [CardResource.DIPLOMACY]: 'card-resource-diplomacy',
 };
 
 export default Vue.extend({

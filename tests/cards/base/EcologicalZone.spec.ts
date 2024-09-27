@@ -6,7 +6,7 @@ import {SelectSpace} from '../../../src/server/inputs/SelectSpace';
 import {Phase} from '../../../src/common/Phase';
 import {TileType} from '../../../src/common/TileType';
 import {TestPlayer} from '../../TestPlayer';
-import {cast, runAllActions} from '../../TestingUtils';
+import {cast} from '../../TestingUtils';
 import {testGame} from '../../TestGame';
 
 describe('EcologicalZone', function() {
@@ -24,19 +24,14 @@ describe('EcologicalZone', function() {
   });
 
   it('Should play', function() {
-    expect(card.canPlay(player)).is.false;
-
     const landSpace = game.board.getAvailableSpacesOnLand(player)[0];
     game.addGreenery(player, landSpace);
-
     expect(card.canPlay(player)).is.true;
 
-    cast(card.play(player), undefined);
-    runAllActions(game);
-    const selectSpace = cast(player.popWaitingFor(), SelectSpace);
+    const action = cast(card.play(player), SelectSpace);
 
-    const adjacentSpace = selectSpace.spaces[0];
-    selectSpace.cb(adjacentSpace);
+    const adjacentSpace = action.spaces[0];
+    action.cb(adjacentSpace);
     expect(adjacentSpace.tile?.tileType).to.eq(TileType.ECOLOGICAL_ZONE);
 
     card.onCardPlayed(player, card);

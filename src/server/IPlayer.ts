@@ -7,7 +7,6 @@ import {SpendableCardResource} from '../common/inputs/Spendable';
 import {ICard, IActionCard} from './cards/ICard';
 import {TRSource} from '../common/cards/TRSource';
 import {IProjectCard} from './cards/IProjectCard';
-import {IPreludeCard} from './cards/prelude/IPreludeCard';
 import {PlayerInput} from './PlayerInput';
 import {Resource} from '../common/Resource';
 import {CardResource} from '../common/CardResource';
@@ -34,6 +33,7 @@ import {Stock} from './player/Stock';
 import {UnderworldPlayerData} from './underworld/UnderworldData';
 import {AlliedParty} from './turmoil/AlliedParty';
 import {IParty} from './turmoil/parties/IParty';
+import {GenerationData} from './player/GenerationData';
 
 export type ResourceSource = IPlayer | GlobalEventName | ICard;
 
@@ -71,9 +71,6 @@ export interface IPlayer {
   // Used only during set-up
   pickedCorporationCard?: ICorporationCard;
 
-  // Terraforming Rating
-  hasIncreasedTerraformRatingThisGeneration: boolean;
-
   // Resources
   megaCredits: number;
   steel: number;
@@ -98,7 +95,7 @@ export interface IPlayer {
 
   // Cards
   dealtCorporationCards: Array<ICorporationCard>;
-  dealtPreludeCards: Array<IPreludeCard>;
+  dealtPreludeCards: Array<IProjectCard>;
   dealtCeoCards: Array<ICeoCard>;
   dealtProjectCards: Array<IProjectCard>;
   cardsInHand: Array<IProjectCard>;
@@ -135,12 +132,6 @@ export interface IPlayer {
   // removedFromPlayCards is a bit of a misname: it's a temporary storage for
   // cards that provide 'next card' discounts. This will clear between turns.
   removedFromPlayCards: Array<IProjectCard>;
-  /**
-   * When true, Preservation Program is in effect, and the player has not triggered a TR gain this generation.
-   *
-   * False when the player does not have Preservation Program, or after the first TR in the action phase.
-   */
-  preservationProgram: boolean;
 
   // The number of actions a player can take this round.
   // It's almost always 2, but certain cards can change this value.
@@ -152,6 +143,11 @@ export interface IPlayer {
   actionsTakenThisGame: number;
   victoryPointsByGeneration: Array<number>;
   totalDelegatesPlaced: number;
+
+  // Supercapacitors Effect
+  optionalEnergyConversion: boolean;
+
+  generationData: GenerationData;
 
   underworldData: UnderworldPlayerData;
   readonly alliedParty?: AlliedParty;
@@ -201,6 +197,12 @@ export interface IPlayer {
   maybeBlockAttack(perpetrator: IPlayer, cb: (proceed: boolean) => PlayerInput | undefined): void;
 
   /**
+   * Return true if this player cannot have their production reduced.
+   *
+   * It can if this player is attacking themselves, or if this player has played Private Security.
+   */
+  productionIsProtected(attacker: IPlayer): boolean;
+  /**
    * In the multiplayer game, after an attack, the attacked player makes a claim
    * for insurance. If Mons Insurance is in the game, the claimant will receive
    * as much as possible from the insurer.
@@ -218,6 +220,11 @@ export interface IPlayer {
    * disappears.
    */
   resolveInsuranceInSoloGame(): void;
+  /**
+   * When the card Legal Firm is in play, anyone who removes resources or production from
+   * the card owner has 3MC stolen from them
+   */
+  legalFirmEffect(attackingPlayer: IPlayer): void;
   /**
    * Returns the number of colonies this player has on all the colony types.
    *
@@ -266,6 +273,7 @@ export interface IPlayer {
   getUsableOPGCeoCards(): Array<ICeoCard>;
   runProductionPhase(): void;
   finishProductionPhase(): void;
+  worldGovernmentTerraforming(): void;
 
   runResearchPhase(): void;
   getCardCost(card: IProjectCard): number;
@@ -309,7 +317,6 @@ export interface IPlayer {
   getOpponents(): ReadonlyArray<IPlayer>;
   /** Add `corp`'s initial action to the deferred action queue, if it has one. */
   deferInitialAction(corp: ICorporationCard): void;
-  /** Return possible mid-game actions like play a card and fund an award, but not play prelude card. */
   getActions(): OrOptions;
   process(input: InputResponse): void;
   getWaitingFor(): PlayerInput | undefined;

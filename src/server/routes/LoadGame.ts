@@ -7,23 +7,12 @@ import {Context} from './IHandler';
 import {LoadGameFormModel} from '../../common/models/LoadGameFormModel';
 import {Request} from '../Request';
 import {Response} from '../Response';
-import {GameId, isGameId, isPlayerId, isSpectatorId} from '../../common/Types';
+import {isGameId} from '../../common/Types';
 
 export class LoadGame extends Handler {
   public static readonly INSTANCE = new LoadGame();
   private constructor() {
     super();
-  }
-
-  private async getGameId(id: string): Promise<GameId | undefined> {
-    if (isGameId(id)) {
-      return id;
-    }
-    if (isPlayerId(id) || isSpectatorId(id)) {
-      console.log(`Finding game for player/spectator ${id}`);
-      return await Database.getInstance().getGameId(id);
-    }
-    return undefined;
   }
 
   public override put(req: Request, res: Response, _ctx: Context): Promise<void> {
@@ -36,8 +25,8 @@ export class LoadGame extends Handler {
         try {
           const gameReq: LoadGameFormModel = JSON.parse(body);
 
-          const gameId = await this.getGameId(gameReq.gameId);
-          if (gameId === undefined) {
+          const gameId = gameReq.gameId;
+          if (!isGameId(gameId)) {
             throw new Error('Invalid game id');
           }
           // This should probably be behind some kind of verification that prevents just

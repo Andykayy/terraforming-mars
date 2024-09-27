@@ -139,6 +139,30 @@ const TILE_CLASSES: Record<TileType, Classes> = {
   [TileType.MARTIAN_NATURE_WONDERS]: {}, // This isn't shown on a card
   [TileType.MARS_NOMADS]: {}, // This isn't shown on a card
   [TileType.REY_SKYWALKER]: {}, // This isn't shown on a card
+  [TileType.OVERGROWTH]: {
+    tile: 'card-tile-overgrowth',
+  },
+  [TileType.IMPERATIVE_SETTLEMENT]: {
+    tile: 'card-tile-imperative-settlement',
+  },
+  [TileType.WETLANDS_CHEMICAL]: {
+    tile: 'card-tile-wetlands-chemical',
+  },
+  [TileType.MASSIVE_SOLAR_FARM]: {
+    tile: 'card-tile-massive-solar-farm',
+  },
+  [TileType.GHG_FACTORY_DISTRICT]: {
+    tile: 'card-tile-ghg-factory-district',
+  },
+  [TileType.MILITARY_BASE]: {
+    tile: 'card-tile-military-base',
+  },
+  [TileType.GREAT_HARBOR]: {
+    tile: 'card-tile-great-harbor',
+  },
+  [TileType.PRIMAL_NATIONAL_PARK]: {
+    tile: 'card-tile-primal-national-park',
+  },
 };
 
 export default Vue.extend({

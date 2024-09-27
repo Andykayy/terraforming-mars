@@ -2,7 +2,7 @@ import {expect} from 'chai';
 import {Ingrid} from '../../../src/server/cards/ceos/Ingrid';
 import {IGame} from '../../../src/server/IGame';
 import {Phase} from '../../../src/common/Phase';
-import {addGreenery, addOcean, addCity, forceGenerationEnd, cast, runAllActions} from '../../TestingUtils';
+import {addGreenery, addOcean, addCity, forceGenerationEnd, cast} from '../../TestingUtils';
 import {SpaceName} from '../../../src/server/SpaceName';
 import {TestPlayer} from '../../TestPlayer';
 import {testGame} from '../../TestGame';
@@ -36,13 +36,12 @@ describe('Ingrid', function() {
     card.action();
 
     const ecozone = new EcologicalZoneAres();
-    cast(ecozone.play(player), undefined);
-    runAllActions(game);
-    const selectSpace = cast(player.popWaitingFor(), SelectSpace);
-    const adjacentSpace = selectSpace.spaces[0];
-    selectSpace.cb(adjacentSpace);
-
+    const action = cast(ecozone.play(player), SelectSpace);
+    const adjacentSpace = action.spaces[0];
+    action.cb(adjacentSpace);
     expect(adjacentSpace.tile && adjacentSpace.tile.tileType).to.eq(TileType.ECOLOGICAL_ZONE);
+
+    game.deferredActions.runNext(); // Draw card from Ingrid
     expect(player.cardsInHand).has.length(1);
   });
 

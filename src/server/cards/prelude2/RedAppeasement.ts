@@ -10,7 +10,7 @@ export class RedAppeasement extends Card {
     super({
       name: CardName.RED_APPEASEMENT,
       type: CardType.EVENT,
-      cost: 0,
+      cost: 1,
       requirements: {party: PartyName.REDS},
 
       behavior: {
@@ -18,7 +18,7 @@ export class RedAppeasement extends Card {
       },
 
       metadata: {
-        cardNumber: 'P80',
+        cardNumber: '',
         renderData: CardRenderer.builder((b) => {
           b.plainText('Requires that Reds are ruling or that you have 2 delegates there, ' +
           'AND THAT NO OTHER PLAYER HAS PASSED.').br;

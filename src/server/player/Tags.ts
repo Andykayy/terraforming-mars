@@ -53,7 +53,7 @@ export class Tags {
    * Excludes Clone tags.
    */
   public countAllTags(): Array<TagCount> {
-    const counts: Array<TagCount> = Tags.COUNTED_TAGS.map((tag) => {
+    const counts = Tags.COUNTED_TAGS.map((tag) => {
       return {tag, count: this.count(tag, 'raw')};
     }).filter((tag) => tag.count > 0);
     counts.push({tag: Tag.EVENT, count: this.player.getPlayedEventsCount()});
@@ -83,6 +83,10 @@ export class Tags {
       if (tag !== Tag.WILD) {
         tagCount += this.rawCount(Tag.WILD, includeEvents);
       }
+      // Public Records hook
+      if (this.player.lastCardPlayed === CardName.PUBLIC_RECORDS) {
+        tagCount += 1;
+      }
     }
 
     // Habitat Marte hook
@@ -107,8 +111,8 @@ export class Tags {
   }
 
   /**
-   * Returns true if `card` has `tag`. This includes Habitat Marte, but not wild tags and
-   * not Earth Embassy.
+   * Returns true if `card` has `tag`. This does not include wild tags, but it includes
+   * Habitat Marte and Earth Embassy exceptions.
    */
   public cardHasTag(card: ICard, target: Tag): boolean {
     for (const tag of card.tags) {
@@ -116,6 +120,11 @@ export class Tags {
       if (tag === Tag.MARS &&
         target === Tag.SCIENCE &&
         this.player.isCorporation(CardName.HABITAT_MARTE)) {
+        return true;
+      }
+      if (tag === Tag.MOON &&
+        target === Tag.EARTH &&
+        this.player.cardIsInEffect(CardName.EARTH_EMBASSY)) {
         return true;
       }
     }
@@ -135,6 +144,9 @@ export class Tags {
         count++;
       } else if (tag === Tag.MARS && target === Tag.SCIENCE &&
         this.player.isCorporation(CardName.HABITAT_MARTE)) {
+        count++;
+      } else if (tag === Tag.MOON && target === Tag.EARTH &&
+        this.player.cardIsInEffect(CardName.EARTH_EMBASSY)) {
         count++;
       }
     }
@@ -157,7 +169,7 @@ export class Tags {
   /**
    * Return the total number of tags associated with these types.
    * Tag substitutions are included, and not counted repeatedly.
-   */
+    */
   public multipleCount(tags: Array<Tag>, mode: MultipleCountMode = 'default'): number {
     const includeEvents = this.player.isCorporation(CardName.ODYSSEY);
 
@@ -172,7 +184,10 @@ export class Tags {
     }
 
     if (mode !== 'award') {
-      tagCount += this.rawCount(Tag.WILD, includeEvents);
+      // Public Records hook
+      if (this.player.lastCardPlayed === CardName.PUBLIC_RECORDS) tagCount += 1;
+
+      tagCount += this.rawCount(Tag.WILD, false);
       // Chimera has 2 wild tags but should only count as one for milestones.
       if (this.player.isCorporation(CardName.CHIMERA) && mode === 'milestone') tagCount--;
     } else {
@@ -231,6 +246,9 @@ export class Tags {
 
     if (mode === 'milestone' && this.player.isCorporation(CardName.CHIMERA)) wildTagCount--;
 
+    // Public Records hook
+    if (this.player.lastCardPlayed === CardName.PUBLIC_RECORDS) wildTagCount++;
+
     // TODO(kberg): it might be more correct to count all the tags
     // in a game regardless of expansion? But if that happens it needs
     // to be done once, during set-up so that this operation doesn't
@@ -253,6 +271,7 @@ export class Tags {
         distinctCount++;
       }
     });
+    if (this.player.lastCardPlayed === CardName.PUBLIC_RECORDS) distinctCount++;
     if (distinctCount + this.count(Tag.WILD) >= tags.length) {
       return true;
     }

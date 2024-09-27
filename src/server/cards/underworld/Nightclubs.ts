@@ -21,7 +21,7 @@ export class Nightclubs extends Card implements IProjectCard {
       },
 
       metadata: {
-        cardNumber: 'U08',
+        cardNumber: 'U07',
         renderData: CardRenderer.builder((b) => {
           b.corruption(1).production((pb) => pb.megacredits(2));
         }),

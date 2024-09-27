@@ -85,6 +85,7 @@ export interface NewGameConfig {
   twoCorpsVariant: boolean;
   customCeos: Array<CardName>;
   startingCeos: number;
-  starWarsExpansion: boolean,
+  starWarsExpansion: boolean;
+  chemicalExpansion: boolean,
   underworldExpansion: boolean,
 }

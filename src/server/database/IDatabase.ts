@@ -19,6 +19,7 @@ export type GameIdLedger = {gameId: GameId, participantIds: Array<ParticipantId>
  * in the game. Why, I have no idea, says kberg.
 */
 export interface IDatabase {
+
     /**
      * Creates any tables needed
      */
@@ -102,6 +103,7 @@ export interface IDatabase {
      *   (Purges all saves between `(0, last save]`.)
      */
     markFinished(gameId: GameId): Promise<void>;
+
 
     /**
      * A maintenance task that purges abandoned solo games older

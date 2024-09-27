@@ -26,7 +26,7 @@ export class NeptunianPowerConsultants extends Card implements IProjectCard {
       victoryPoints: {resourcesHere: {}},
 
       metadata: {
-        cardNumber: 'X61',
+        cardNumber: '',
         renderData: CardRenderer.builder((b) => {
           b.oceans(1, {all, size: Size.SMALL}).asterix()
             .colon()

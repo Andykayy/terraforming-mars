@@ -19,7 +19,7 @@ export class QuantumCommunications extends Card implements IProjectCard {
       victoryPoints: 1,
 
       metadata: {
-        cardNumber: 'C31',
+        cardNumber: '079',
         renderData: CardRenderer.builder((b) => {
           b.production((pb) => {
             pb.megacredits(1).slash().colonies(1, {size: Size.SMALL, all});

@@ -17,7 +17,7 @@ export class LunarPlanningOffice extends PreludeCard implements IProjectCard {
 
       metadata: {
         description: 'Draw 2 cards with a Moon tag. Gain 6 steel.',
-        cardNumber: 'MP4',
+        cardNumber: '',
         renderData: CardRenderer.builder((b) => {
           b.cards(2, {secondaryTag: Tag.MOON}).br.steel(6);
         }),

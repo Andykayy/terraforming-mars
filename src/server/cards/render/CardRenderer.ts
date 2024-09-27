@@ -249,10 +249,6 @@ abstract class Builder<T> {
     return this._appendToRow(new CardRenderItem(CardRenderItemType.WILD, amount, options));
   }
 
-  public one(amount: number, options?: ItemOptions) {
-    return this._appendToRow(new CardRenderItem(CardRenderItemType.ONE, amount, options));
-  }
-
   public diverseTag(amount: number = 1) {
     const item = new CardRenderItem(CardRenderItemType.DIVERSE_TAG, amount);
     return this._appendToRow(item);
@@ -274,13 +270,12 @@ abstract class Builder<T> {
     opts.resource = resource;
     return this._appendToRow(new CardRenderItem(CardRenderItemType.RESOURCE, -1, opts));
   }
-
   public selfReplicatingRobots() {
     return this._appendToRow(new CardRenderItem(CardRenderItemType.SELF_REPLICATING));
   }
 
-  public prelude() {
-    return this._appendToRow(new CardRenderItem(CardRenderItemType.PRELUDE));
+  public prelude(options?: ItemOptions) {
+    return this._appendToRow(new CardRenderItem(CardRenderItemType.PRELUDE, -1, options));
   }
 
   public award() {
@@ -587,8 +582,8 @@ abstract class Builder<T> {
     return this._appendToRow(new CardRenderItem(CardRenderItemType.ARROW_OPG));
   }
   // Reds icons used by Zan
-  public reds(): this {
-    return this._appendToRow(new CardRenderItem(CardRenderItemType.REDS));
+  public zanReds(): this {
+    return this._appendToRow(new CardRenderItem(CardRenderItemType.ZAN_REDS));
   }
   public redsInactive(): this {
     return this._appendToRow(new CardRenderItem(CardRenderItemType.REDS_DEACTIVATED));
@@ -600,6 +595,25 @@ abstract class Builder<T> {
   public adjacencyBonus(): this {
     this._appendToRow(new CardRenderItem(CardRenderItemType.ADJACENCY_BONUS));
     return this;
+  }
+
+  public marsFirst(): this {
+    return this._appendToRow(new CardRenderItem(CardRenderItemType.MARS_FIRST));
+  }
+  public scientists(): this {
+    return this._appendToRow(new CardRenderItem(CardRenderItemType.SCIENTISTS));
+  }
+  public unity(): this {
+    return this._appendToRow(new CardRenderItem(CardRenderItemType.UNITY));
+  }
+  public greens(): this {
+    return this._appendToRow(new CardRenderItem(CardRenderItemType.GREENS));
+  }
+  public reds(): this {
+    return this._appendToRow(new CardRenderItem(CardRenderItemType.REDS));
+  }
+  public kelvinists(): this {
+    return this._appendToRow(new CardRenderItem(CardRenderItemType.KELVINISTS));
   }
 }
 

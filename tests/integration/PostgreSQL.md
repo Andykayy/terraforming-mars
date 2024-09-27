@@ -23,13 +23,12 @@ sudo -u postgres psql -U postgres
 Edit the authoriation rules configuration file
 
 ```
-sudo nano /etc/postgresql/16/main/pg_hba.conf
+sudo nano /etc/postgresql/12/main/pg_hba.conf
 ```
 
 And add this line to the bottom
 
 ```
-# Integration testing for terraforming-mars
 local   all             tfmtest                                 md5
 ```
 
@@ -59,10 +58,4 @@ Now you can run the postgresql test.
 
 ```
 npm run test:integration
-```
-
-or just
-
-```
-npm run test:postgresql
 ```

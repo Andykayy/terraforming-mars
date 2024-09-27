@@ -1,25 +1,24 @@
 import {expect} from 'chai';
-import {addCity, cast, runAllActions} from '../../TestingUtils';
+import {cast, runAllActions} from '../../TestingUtils';
 import {DeimosDownPromo} from '../../../src/server/cards/promo/DeimosDownPromo';
 import {IGame} from '../../../src/server/IGame';
 import {OrOptions} from '../../../src/server/inputs/OrOptions';
 import {SelectSpace} from '../../../src/server/inputs/SelectSpace';
 import {TestPlayer} from '../../TestPlayer';
 import {testGame} from '../../TestGame';
-import {KingdomofTauraro} from '../../../src/server/cards/underworld/KingdomofTauraro';
 
-describe('DeimosDownPromo', () => {
+describe('DeimosDownPromo', function() {
   let card: DeimosDownPromo;
   let player: TestPlayer;
   let player2: TestPlayer;
   let game: IGame;
 
-  beforeEach(() => {
+  beforeEach(function() {
     card = new DeimosDownPromo();
     [game, player, player2] = testGame(2);
   });
 
-  it('Should play without plants', () => {
+  it('Should play without plants', function() {
     expect(card.play(player)).is.undefined;
     runAllActions(game);
     cast(player.popWaitingFor(), SelectSpace);
@@ -29,7 +28,7 @@ describe('DeimosDownPromo', () => {
     expect(input).is.undefined;
   });
 
-  it('Can remove plants', () => {
+  it('Can remove plants', function() {
     player2.plants = 5;
 
     expect(card.play(player)).is.undefined;
@@ -47,7 +46,7 @@ describe('DeimosDownPromo', () => {
     expect(player2.plants).to.eq(0);
   });
 
-  it('Works fine in solo mode', () => {
+  it('Works fine in solo mode', function() {
     const [game, player] = testGame(1);
 
     player.plants = 15;
@@ -58,26 +57,5 @@ describe('DeimosDownPromo', () => {
     expect(player.game.getTemperature()).to.eq(-24);
     expect(player.steel).to.eq(4);
     expect(player.plants).to.eq(15); // not removed
-  });
-
-  it('Compatible with Kingdom of Tauraro', () => {
-    const [game, player] = testGame(2);
-    player.corporations.push(new KingdomofTauraro());
-
-    const space35 = game.board.getSpaceOrThrow('35');
-    const adjacentSpace = game.board.getAdjacentSpaces(space35)[0];
-
-    card.play(player);
-    runAllActions(game);
-    const selectSpace = cast(player.popWaitingFor(), SelectSpace);
-
-    expect(selectSpace.spaces).includes(adjacentSpace);
-
-    addCity(player, '35');
-    card.play(player);
-    runAllActions(game);
-    const selectSpace2 = cast(player.popWaitingFor(), SelectSpace);
-
-    expect(selectSpace2.spaces).does.not.include(adjacentSpace);
   });
 });

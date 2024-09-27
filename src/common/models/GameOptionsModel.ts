@@ -10,6 +10,7 @@ export type GameOptionsModel = {
   bannedCards: Array<CardName>;
   includedCards: Array<CardName>;
   ceoExtension: boolean,
+  chemicalExpansion: boolean,
   coloniesExtension: boolean,
   communityCardsOption: boolean,
   corporateEra: boolean,

@@ -1,26 +1,22 @@
 @import "./variables.less";
 .card-corporation-expansion {
+    flex-direction: column;
+    display: flex;
     position: absolute;
-    top: 38px;
-    right: -11px;
-}
-
-.card-standard-expansion {
-  position: absolute;
-  top: 90px;
-  right: 33px;
+    top: 42px;
+    right: 4px;
 }
 
 .card-container {
     .project-icon-expansion-container {
-        flex-direction: row;
+        flex-direction: column-reverse;
         display: flex;
         bottom: 5px;
         left: 5px;
         position: absolute;
     }
     .resource-card-icon-expansion-container {
-        flex-direction: row;
+        flex-direction: column-reverse;
         display: flex;
         bottom: 38px;
         left: 5px;
@@ -1314,9 +1310,6 @@
             .card-resource-hydroelectric-resource {
                 background-image: url(./assets/resources/hydroelectric-resource.png);
             }
-            .card-resource-one {
-              background-image: url(./assets/resources/one.png);
-            }
             .card-resource-clone-trooper {
                 background-image: url(./assets/resources/clone-trooper.png);
             }
@@ -1365,9 +1358,6 @@
             .card-resource-supply-chain {
               background-image: url(./assets/underworld/card-resource-supply-chain.png);
             }
-            .card-resource-director {
-              background-image: url("./assets/resources/clone-trooper.png");
-            }
 
             .card-neutral-delegate {
               .card-delegate;
@@ -1405,6 +1395,12 @@
               width: 44px;
               background-size: 44px 44px;
               height: 44px;
+            }
+            .card-resource-building-resource {
+                background-image: url(./assets/chemical/Resource_Infrastructure.jpg);
+            }
+            .card-resource-diplomacy {
+                background-image: url(./assets/chemical/Resource_Diplomacy.jpg);
             }
             /* CEO Assets */
             .card-arrow-opg {
@@ -1602,11 +1598,10 @@
                 background-size: 36px !important;
             }
             .card-resource-trade-fleet {
-                background-image: url(./assets/tiles/trade.png);
+                background-image: url(./assets/chemical/Misc_Fleet.png);
                 height: 40px;
-                width: 48px;
-                background-size: 48px;
-                filter: invert(1) drop-shadow(0px 1px 1px rgba(0, 0, 0, 0.5)) drop-shadow(0px 1px 0px rgba(0, 0, 0, 0.5));
+                width: 40px;
+                background-size: 40px;
             }
             .card-resource-colony {
                 background-image: url(./assets/tiles/colony.png);
@@ -1680,7 +1675,13 @@
                     width: 30px;
                     height: 30px;
                     background-size: 34px;
-                    margin-left: 2px;
+                    margin-left: 2px;  
+                }
+                &--overlap:extend(.card-container .card-content-wrapper .card-content .card-resource-tag) {
+                    width: 30px;
+                    height: 30px;
+                    background-size: 34px;
+                    margin-left: -12px;  
                 }
             }
             // TODO(kberg) This set of tags looks like a duplicate of cards.less.
@@ -1728,6 +1729,18 @@
             }
             .card-tag-floater {
                 background-image: url("./assets/resources/floater.png");
+                border-radius: 0px;
+            }
+            .card-tag-heat {
+                background-image: url("./assets/resources/heat.png");
+                border-radius: 0px;
+            }
+            .card-tag-animal-resource {
+                background-image: url("./assets/resources/animal.png");
+                border-radius: 0px;
+            }
+            .card-tag-microbe-resource {
+                background-image: url("./assets/resources/microbe.png");
                 border-radius: 0px;
             }
             .card-tag-wild-resource {

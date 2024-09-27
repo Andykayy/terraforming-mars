@@ -24,7 +24,7 @@ export class HermeticOrderOfMars extends Card implements IProjectCard {
       },
 
       metadata: {
-        cardNumber: 'X56',
+        cardNumber: '',
         renderData: CardRenderer.builder((b) => {
           b.production((pb) => pb.megacredits(2)).nbsp.megacredits(1).slash().emptyTile().asterix();
         }),

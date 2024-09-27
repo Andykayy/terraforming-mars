@@ -57,6 +57,15 @@ export enum TileType {
 
     // Underworld
     MAN_MADE_VOLCANO, // 42
+
+    OVERGROWTH, // 43
+    IMPERATIVE_SETTLEMENT, // 44
+    WETLANDS_CHEMICAL, // 45
+    MASSIVE_SOLAR_FARM, // 46
+    GHG_FACTORY_DISTRICT, // 47
+    MILITARY_BASE, // 48
+    GREAT_HARBOR, // 49
+    PRIMAL_NATIONAL_PARK, // 50
   }
 
 export const tileTypeToString: Record<TileType, string> = {
@@ -104,11 +113,19 @@ export const tileTypeToString: Record<TileType, string> = {
   [TileType.MARS_NOMADS]: CardName.MARS_NOMADS,
   [TileType.REY_SKYWALKER]: CardName.REY_SKYWALKER,
   [TileType.MAN_MADE_VOLCANO]: CardName.MAN_MADE_VOLCANO,
+  [TileType.OVERGROWTH]: CardName.OVERGROWTH,
+  [TileType.IMPERATIVE_SETTLEMENT]: CardName.IMPERATIVE_SETTLEMENT,
+  [TileType.WETLANDS_CHEMICAL]: CardName.WETLANDS_CHEMICAL,
+  [TileType.MASSIVE_SOLAR_FARM]: CardName.MASSIVE_SOLAR_FARM,
+  [TileType.GHG_FACTORY_DISTRICT]: CardName.GHG_FACTORY_DISTRICT,
+  [TileType.MILITARY_BASE]: CardName.MILITARY_BASE,
+  [TileType.GREAT_HARBOR]: CardName.GREAT_HARBOR,
+  [TileType.PRIMAL_NATIONAL_PARK]: CardName.PRIMAL_NATIONAL_PARK,
 } as const;
 
 export const HAZARD_TILES = new Set([TileType.DUST_STORM_MILD, TileType.DUST_STORM_SEVERE, TileType.EROSION_MILD, TileType.EROSION_SEVERE]);
 export const OCEAN_UPGRADE_TILES = new Set([TileType.OCEAN_CITY, TileType.OCEAN_FARM, TileType.OCEAN_SANCTUARY]);
-export const CITY_TILES = new Set([TileType.CITY, TileType.CAPITAL, TileType.OCEAN_CITY, TileType.RED_CITY]);
+export const CITY_TILES = new Set([TileType.CITY, TileType.CAPITAL, TileType.OCEAN_CITY, TileType.RED_CITY, TileType.IMPERATIVE_SETTLEMENT]);
 export const OCEAN_TILES = new Set([TileType.OCEAN, TileType.OCEAN_CITY, TileType.OCEAN_FARM, TileType.OCEAN_SANCTUARY, TileType.WETLANDS]);
 export const BASE_OCEAN_TILES = new Set([TileType.OCEAN, TileType.WETLANDS]);
 export const GREENERY_TILES = new Set([TileType.GREENERY, TileType.WETLANDS]);

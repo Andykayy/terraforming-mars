@@ -8,8 +8,9 @@ import {Behavior} from '../../behavior/Behavior';
 import {IPreludeCard} from './IPreludeCard';
 import {CardResource} from '../../../common/CardResource';
 import {IVictoryPoints} from '../../../common/cards/IVictoryPoints';
-import {CardDiscount, GlobalParameterRequirementBonus} from '../../../common/cards/Types';
+import {GlobalParameterRequirementBonus} from '../../../common/cards/Types';
 import {OneOrArray} from '../../../common/utils/types';
+import {CardDiscount} from '../../../common/cards/Types';
 
 export type StaticPreludeProperties = {
   action?: Behavior;
@@ -38,11 +39,11 @@ export abstract class PreludeCard extends Card implements IPreludeCard {
       name: properties.name,
       tags: properties.tags,
       globalParameterRequirementBonus: properties.globalParameterRequirementBonus,
+      cardDiscount: properties.cardDiscount,
       metadata: properties.metadata,
       resourceType: properties.resourceType,
       tilesBuilt: properties.tilesBuilt,
       victoryPoints: properties.victoryPoints,
-      cardDiscount: properties.cardDiscount,
     };
     if (startingMegaCredits !== undefined) {
       obj.startingMegaCredits = startingMegaCredits;

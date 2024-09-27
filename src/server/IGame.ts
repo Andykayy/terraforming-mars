@@ -33,7 +33,6 @@ import {Tile} from './Tile';
 import {Logger} from './logs/Logger';
 import {GlobalParameter} from '../common/GlobalParameter';
 import {UnderworldData} from './underworld/UnderworldData';
-import {OrOptions} from './inputs/OrOptions';
 
 export interface Score {
   corporation: String;
@@ -112,6 +111,7 @@ export interface IGame extends Logger {
   gotoInitialResearchPhase(): void;
   gotoResearchPhase(): void;
   save(): void;
+  toJSON(): string;
   serialize(): SerializedGame;
   isSoloMode() :boolean;
   // Retrieve a player by it's id
@@ -161,9 +161,6 @@ export interface IGame extends Logger {
    * If nobody can add a greenery, end the game.
    */
   /* for testing */ takeNextFinalGreeneryAction(): void;
-  /* for testing */ worldGovernmentTerraforming(player: IPlayer): void;
-  /* for World Government Advisor */
-  worldGovernmentTerraformingInput(player: IPlayer): OrOptions;
   increaseOxygenLevel(player: IPlayer, increments: -2 | -1 | 1 | 2): void;
   getOxygenLevel(): number;
   increaseVenusScaleLevel(player: IPlayer, increments: -1 | 1 | 2 | 3): number;
@@ -190,7 +187,7 @@ export interface IGame extends Logger {
    *
    * This includes bonuses on the map, from oceans, Ares tiles, Turmoil, Colonies, etc.
    */
-  grantPlacementBonuses(player: IPlayer, space: Space, coveringExistingTile?: boolean): void
+  grantPlacementBonuses(player: IPlayer, space: Space, coveringExistingTile: boolean): void
 
   /**
    * Gives all the bonuses from a space on the map.

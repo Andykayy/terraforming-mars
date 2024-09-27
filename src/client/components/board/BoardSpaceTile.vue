@@ -54,6 +54,14 @@ const tileTypeToCssClass: Record<TileType, string> = {
   [TileType.MARS_NOMADS]: '', // This never actually renders.
   [TileType.REY_SKYWALKER]: 'martian-nature-wonders', // Use Martian Nature Wonders cube CSS.
   [TileType.MAN_MADE_VOLCANO]: 'man-made-volcano',
+  [TileType.OVERGROWTH]: 'overgrowth',
+  [TileType.IMPERATIVE_SETTLEMENT]: 'imperative-settlement',
+  [TileType.WETLANDS_CHEMICAL]: 'wetlands-chemical',
+  [TileType.MASSIVE_SOLAR_FARM]: 'massive-solar-farm',
+  [TileType.GHG_FACTORY_DISTRICT]: 'ghg-factory-district',
+  [TileType.MILITARY_BASE]: 'military-base',
+  [TileType.GREAT_HARBOR]: 'great-harbor',
+  [TileType.PRIMAL_NATIONAL_PARK]: 'primal-national-park',
 };
 
 const tileTypeToCssClassAresOverride = new Map<TileType, string>([
@@ -94,6 +102,14 @@ const descriptions: Record<TileType, string> = {
   [TileType.RED_CITY]: 'Red City: 1 VP per empty adjacent area. No greeneries may be placed next to it.',
   [TileType.MARTIAN_NATURE_WONDERS]: 'Martian Nature Wonders: nothing may be placed here',
   [TileType.REY_SKYWALKER]: 'Rey... Skywalker?: nothing may be placed here',
+  [TileType.OVERGROWTH]: 'Overgrowth: Remove up to 4MC from the owner of an adjacent tile',
+  [TileType.IMPERATIVE_SETTLEMENT]: 'Imperative Settlement',
+  [TileType.WETLANDS_CHEMICAL]: 'Wetlands',
+  [TileType.MASSIVE_SOLAR_FARM]: 'Massive Solar Farm',
+  [TileType.GHG_FACTORY_DISTRICT]: 'GHG Factory District',
+  [TileType.MILITARY_BASE]: 'Military Base',
+  [TileType.GREAT_HARBOR]: 'Great Harbor',
+  [TileType.PRIMAL_NATIONAL_PARK]: 'Primal National Park',
 };
 
 export default Vue.extend({

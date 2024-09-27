@@ -1,5 +1,5 @@
 import {expect} from 'chai';
-import {churn} from '../../TestingUtils';
+import {churnAction} from '../../TestingUtils';
 import {TestPlayer} from '../../TestPlayer';
 import {LunarObservationPost} from '../../../src/server/cards/moon/LunarObservationPost';
 import {testGame} from '../../TestGame';
@@ -37,7 +37,7 @@ describe('LunarObservationPost', () => {
 
     expect(card.resourceCount).eq(0);
 
-    expect(churn(card.action(player), player)).is.undefined;
+    expect(churnAction(card, player)).is.undefined;
 
     expect(card.resourceCount).eq(1);
 
