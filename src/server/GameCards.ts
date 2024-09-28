@@ -106,6 +106,10 @@ export class GameCards {
       // remove it from the deck to avoid possible conflicts (e.g. Valley Trust / New Partner)
       preludes = preludes.filter((c) => c.name !== CardName.MERGER);
     }
+    if (this.gameOptions.pathfindersExpansion) {
+    preludes = preludes.filter((c) => c.name !== CardName.VALUABLE_GASES);
+    preludes = preludes.filter((c) => c.name !== CardName.RESEARCH_GRANT);
+    }
     return preludes;
   }
 
