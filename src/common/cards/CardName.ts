@@ -1007,6 +1007,9 @@ export enum CardName {
   HIRED_RAIDERS_UNDERWORLD = 'Hired Raiders:u',
 
     // Chemical's Cards
+
+    //andy added
+    PUBLIC_SPACELINE_CHEMICAL = 'Public Spaceline',
     SUBCRUST_VAPOR_TRAPPING = 'Subcrust Vapor Trapping',
     CONVOY_FROM_TITAN = 'Convoy From Titan',
     HIGH_SPEED_COMET = 'High Speed Comet',

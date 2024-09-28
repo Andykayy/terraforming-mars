@@ -419,6 +419,10 @@ import {ExoplanetLanding} from './turmoil/ExoplanetLanding';
 import {FirstMaritanMemorial} from './turmoil/FirstMartianMemorial';
 import {TerraformingUnion} from './turmoil/TerraformingUnion';
 import {AcquiredConsultingFirm} from './turmoil/AcquiredConsultingFirm';
+
+//andy added
+import {PublicSpacelineChemical} from './pathfinders/PublicSpaceline';
+
 import {ResearchBase} from './preludes/1_ResearchBase';
 import {HeavyMetalComet} from './preludes/2_HeavyMetalComet';
 import {LegalExperts} from './preludes/3_LegalExperts';
@@ -604,6 +608,9 @@ export const CHEMICAL_CARD_MANIFEST = new ModuleManifest({
     [CardName.HEAT_FIRST_INITIATIVE]: {Factory: HeatFirstInitiative, compatibility: 'turmoil'},
   },
   projectCards: {
+    //Andy added
+    [CardName.PUBLIC_SPACELINE_CHEMICAL]: {Factory: PublicSpacelineChemical, compatibility: 'pathfinders'},
+    
     [CardName.SUBCRUST_VAPOR_TRAPPING]: {Factory: SubcrustVaporTrapping},
     [CardName.CONVOY_FROM_TITAN]: {Factory: ConvoyFromTitan},
     [CardName.HIGH_SPEED_COMET]: {Factory: HighSpeedComet},
