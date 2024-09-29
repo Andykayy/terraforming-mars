@@ -419,14 +419,6 @@ import {ExoplanetLanding} from './turmoil/ExoplanetLanding';
 import {FirstMaritanMemorial} from './turmoil/FirstMartianMemorial';
 import {TerraformingUnion} from './turmoil/TerraformingUnion';
 import {AcquiredConsultingFirm} from './turmoil/AcquiredConsultingFirm';
-
-//andy added
-import {PublicSpacelineChemical} from './pathfinders/PublicSpaceline';
-
-//andy RB
-import {BactoviralResearchRebalance} from './rebalance/BactoviralResearchRB';
-import {AdvancedAlloysRebalance} from './rebalance/AdvancedAlloysRB';
-
 import {ResearchBase} from './preludes/1_ResearchBase';
 import {HeavyMetalComet} from './preludes/2_HeavyMetalComet';
 import {LegalExperts} from './preludes/3_LegalExperts';
@@ -543,6 +535,15 @@ import {JovianWar} from './globalevents/JovianWar';
 import {RefugeeCrisis} from './globalevents/RefugeeCrisis';
 import {EconomicDepression} from './globalevents/EconomicDepression';
 
+//andy added
+import {PublicSpacelineChemical} from './pathfinders/PublicSpaceline';
+
+//andy RB
+import {BactoviralResearchRebalance} from './rebalance/BactoviralResearchRB';
+import {AdvancedAlloysRebalance} from './rebalance/AdvancedAlloysRB';
+import {AerobrakedAmmoniaAsteroidRebalance} from './rebalance/AerobrakedAmmoniaAsteroidRB';
+
+
 
 export const CHEMICAL_CARD_MANIFEST = new ModuleManifest({
   module: 'chemical',
@@ -619,6 +620,7 @@ export const CHEMICAL_CARD_MANIFEST = new ModuleManifest({
     //Andy rebalance
     [CardName.BACTOVIRAL_RESEARCH_RB]: {Factory: BactoviralResearchRebalance, compatibility: 'promo'},
     [CardName.ADVANCED_ALLOYS_RB]: {Factory: AdvancedAlloysRebalance,},
+    [CardName.AEROBRAKED_AMMONIA_ASTEROID]: {Factory: AerobrakedAmmoniaAsteroidRebalance,},
     
     [CardName.SUBCRUST_VAPOR_TRAPPING]: {Factory: SubcrustVaporTrapping},
     [CardName.CONVOY_FROM_TITAN]: {Factory: ConvoyFromTitan},
@@ -1105,5 +1107,6 @@ export const CHEMICAL_CARD_MANIFEST = new ModuleManifest({
   cardsToRemove: [
     CardName.BACTOVIRAL_RESEARCH,
     CardName.ADVANCED_ALLOYS,
+    CardName.AEROBRAKED_AMMONIA_ASTEROID,
   ],
 });
