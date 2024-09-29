@@ -1037,6 +1037,7 @@ export enum CardName {
     INSECTS_RB = "Insects(⚖)",
     JET_STREAM_MICROSCRAPPERS_RB = "Jet Stream Microscrappers(⚖)",
     MARS_UNIVERSITY_RB = "Mars University(⚖)",
+    MASS_CONVERTER_RB = "Mass Converter(⚖)",
 
     SUBCRUST_VAPOR_TRAPPING = 'Subcrust Vapor Trapping',
     CONVOY_FROM_TITAN = 'Convoy From Titan',

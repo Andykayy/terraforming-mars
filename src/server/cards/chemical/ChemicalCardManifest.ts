@@ -564,6 +564,7 @@ import { IndustrialCenterRebalance } from './rebalance/IndustrialCenterAresRB';
 import { InsectsRebalance } from './rebalance/InsectsRB';
 import { JetStreamMicroscrappersRebalance } from './rebalance/JetStreamMicroscrappersRB';
 import { MarsUniversityRebalance } from './rebalance/MarsUniversityRB';
+import { MassConverterRebalance } from './rebalance/MassConverterRB';
 
 
 
@@ -665,6 +666,7 @@ export const CHEMICAL_CARD_MANIFEST = new ModuleManifest({
     [CardName.INSECTS_RB]: {Factory: InsectsRebalance},
     [CardName.JET_STREAM_MICROSCRAPPERS_RB]: {Factory: JetStreamMicroscrappersRebalance, compatibility: 'venus'},
     [CardName.MARS_UNIVERSITY_RB]: {Factory: MarsUniversityRebalance, compatibility: 'corpera'},
+    [CardName.MASS_CONVERTER_RB]: {Factory: MassConverterRebalance, compatibility: 'corpera'},
     
     [CardName.SUBCRUST_VAPOR_TRAPPING]: {Factory: SubcrustVaporTrapping},
     [CardName.CONVOY_FROM_TITAN]: {Factory: ConvoyFromTitan},
@@ -1174,5 +1176,6 @@ export const CHEMICAL_CARD_MANIFEST = new ModuleManifest({
     CardName.INSECTS,
     CardName.JET_STREAM_MICROSCRAPPERS,
     CardName.MARS_UNIVERSITY,
+    CardName.MASS_CONVERTER,
   ],
 });
