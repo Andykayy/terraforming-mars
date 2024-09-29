@@ -552,6 +552,7 @@ import { CorporateStrongholdRebalance } from './rebalance/CorporateStrongholdRB'
 import { CuttingEdgeTechnologyRebalance } from './rebalance/CuttingEdgeTechnologyRB';
 import { EarthCatapultRebalance } from './rebalance/EarthCatapultRB';
 import { EarthOfficeRebalance } from './rebalance/EarthOfficeRB';
+import { EnergyMarketRebalance } from './rebalance/EnergyMarketRB';
 
 
 
@@ -641,6 +642,7 @@ export const CHEMICAL_CARD_MANIFEST = new ModuleManifest({
     [CardName.CUTTING_EDGE_TECHNOLOGY_RB]: {Factory: CuttingEdgeTechnologyRebalance},
     [CardName.EARTH_CATAPULT_RB]: {Factory: EarthCatapultRebalance},
     [CardName.EARTH_OFFICE_RB]: {Factory: EarthOfficeRebalance},
+    [CardName.ENERGY_MARKET_RB]: {Factory: EnergyMarketRebalance},
     
     [CardName.SUBCRUST_VAPOR_TRAPPING]: {Factory: SubcrustVaporTrapping},
     [CardName.CONVOY_FROM_TITAN]: {Factory: ConvoyFromTitan},
@@ -1138,5 +1140,6 @@ export const CHEMICAL_CARD_MANIFEST = new ModuleManifest({
     CardName.CUTTING_EDGE_TECHNOLOGY,
     CardName.EARTH_CATAPULT,
     CardName.EARTH_OFFICE,
+    CardName.ENERGY_MARKET,
   ],
 });
