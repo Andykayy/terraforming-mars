@@ -559,6 +559,7 @@ import { ForcedPrecipitationRebalance } from './rebalance/ForcedPrecipitationRB'
 import { GHGImportFromVenusRebalance } from './rebalance/GHGImportFromVenusRB';
 import { GMOContractRebalance } from './rebalance/GMOContractRB';
 import { HackerRebalance } from './rebalance/HackersRB';
+import { HeatTrappersRebalance } from './rebalance/HeatTrappersRB';
 
 
 
@@ -655,6 +656,7 @@ export const CHEMICAL_CARD_MANIFEST = new ModuleManifest({
     [CardName.GHG_IMPORT_FROM_VENUS_RB]: {Factory: GHGImportFromVenusRebalance, compatibility: 'venus'},
     [CardName.GMO_CONTRACT_RB]: {Factory: GMOContractRebalance, compatibility: 'turmoil'},
     [CardName.HACKERS_RB]: {Factory: HackerRebalance, compatibility: 'corpera'},
+    [CardName.HEAT_TRAPPERS_RB]: {Factory: HeatTrappersRebalance},
     
     [CardName.SUBCRUST_VAPOR_TRAPPING]: {Factory: SubcrustVaporTrapping},
     [CardName.CONVOY_FROM_TITAN]: {Factory: ConvoyFromTitan},
@@ -1159,5 +1161,6 @@ export const CHEMICAL_CARD_MANIFEST = new ModuleManifest({
     CardName.GHG_IMPORT_FROM_VENUS,
     CardName.GMO_CONTRACT,
     CardName.HACKERS,
+    CardName.HEAT_TRAPPERS,
   ],
 });
