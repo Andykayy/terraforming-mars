@@ -346,9 +346,13 @@ export class Game implements IGame, Logger {
         player.dealtCorporationCards.push(...corporationDeck.drawN(game, gameOptions.startingCorporations));
         if (gameOptions.initialDraftVariant === false) {
           player.dealtProjectCards.push(...projectDeck.drawN(game, 10));
-          const standardAlloys = newProjectCard(CardName.OVERSEER_COMMITTEE)
+          const standardAlloys = newProjectCard(CardName.OVERSEER_COMMITTEE)         
           if (standardAlloys) {
-            player.dealtProjectCards.push(standardAlloys);
+            player.dealtProjectCards.push(standardAlloys);            
+          }
+          const rotatorImpactsTest = newProjectCard(CardName.ROTATOR_IMPACTS_RB)
+          if (rotatorImpactsTest) {
+            player.dealtProjectCards.push(rotatorImpactsTest);
           }
         }
         if (gameOptions.preludeExtension) {
