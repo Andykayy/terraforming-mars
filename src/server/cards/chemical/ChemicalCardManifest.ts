@@ -571,7 +571,7 @@ import { OrbitalCleanupRebalance } from './rebalance/OrbitalCleanupRB';
 import { OutdoorSportsRebalance } from './rebalance/OutdoorSportsRB';
 import { ReleaseOfInertGasesRebalance } from './rebalance/ReleaseOfInertGasesRB';
 import { ResearchOutpostRebalance } from './rebalance/ResearchOutpostRB';
-import { RotatorImpactsRebalance } from './rebalance/RotatorImpacts';
+import { RotatorImpactsRebalance } from './rebalance/RotatorImpactsRB';
 
 
 

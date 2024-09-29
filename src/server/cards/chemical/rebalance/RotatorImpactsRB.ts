@@ -78,9 +78,7 @@ export class RotatorImpactsRebalance extends Card implements IActionCard {
     if (this.resourceCount === 0) {
       if (asteroidCards.length === 1) return addAsteroidToSelf();
       return addAsteroidToCard;
-    }
-
-    if (player.titanium === 0) return spendAsteroidResource();
+    }    
 
     const availableActions = [];
 
