@@ -423,6 +423,9 @@ import {AcquiredConsultingFirm} from './turmoil/AcquiredConsultingFirm';
 //andy added
 import {PublicSpacelineChemical} from './pathfinders/PublicSpaceline';
 
+//andy RB
+import {BactoviralResearchRB} from './rebalance/BactoviralResearchRB';
+
 import {ResearchBase} from './preludes/1_ResearchBase';
 import {HeavyMetalComet} from './preludes/2_HeavyMetalComet';
 import {LegalExperts} from './preludes/3_LegalExperts';
@@ -610,6 +613,10 @@ export const CHEMICAL_CARD_MANIFEST = new ModuleManifest({
   projectCards: {
     //Andy added
     [CardName.PUBLIC_SPACELINE_CHEMICAL]: {Factory: PublicSpacelineChemical, compatibility: 'pathfinders'},
+
+    //Andy rebalance
+    [CardName.BACTOVIRAL_RESEARCH_RB]: {Factory: BactoviralResearchRB, compatibility: 'pathfinders'},
+    
     
     [CardName.SUBCRUST_VAPOR_TRAPPING]: {Factory: SubcrustVaporTrapping},
     [CardName.CONVOY_FROM_TITAN]: {Factory: ConvoyFromTitan},

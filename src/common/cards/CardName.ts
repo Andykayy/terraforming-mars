@@ -1010,6 +1010,9 @@ export enum CardName {
 
     //andy added
     PUBLIC_SPACELINE_CHEMICAL = 'Public Spacelines',
+
+    //andy RB
+    BACTOVIRAL_RESEARCH_RB = "Bactoviral Research (⚖)",
     
     SUBCRUST_VAPOR_TRAPPING = 'Subcrust Vapor Trapping',
     CONVOY_FROM_TITAN = 'Convoy From Titan',
