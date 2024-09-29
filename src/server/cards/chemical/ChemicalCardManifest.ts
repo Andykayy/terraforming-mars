@@ -546,6 +546,7 @@ import {AsteroidHollowingRebalance } from './rebalance/AsteroidHollowingRB';
 import { BlackPolarDustRebalance } from './rebalance/BlackPolarDustRB';
 import { BuildingIndustriesRebalance } from './rebalance/BuildingIndustriesRB';
 import { CartelRebalance } from './rebalance/CartelRB';
+import { CloudSeedingRebalance } from './rebalance/CloudSeedingRB';
 
 
 
@@ -629,6 +630,7 @@ export const CHEMICAL_CARD_MANIFEST = new ModuleManifest({
     [CardName.BLACK_POLAR_DUST_RB]: {Factory: BlackPolarDustRebalance},
     [CardName.BUILDING_INDUSTRIES_RB]: {Factory: BuildingIndustriesRebalance},
     [CardName.CARTEL_RB]: {Factory: CartelRebalance},
+    [CardName.CLOUD_SEEDING_RB]: {Factory: CloudSeedingRebalance},
     
     [CardName.SUBCRUST_VAPOR_TRAPPING]: {Factory: SubcrustVaporTrapping},
     [CardName.CONVOY_FROM_TITAN]: {Factory: ConvoyFromTitan},
@@ -1113,9 +1115,13 @@ export const CHEMICAL_CARD_MANIFEST = new ModuleManifest({
   },
   //andy cards to remove
   cardsToRemove: [
-    CardName.BACTOVIRAL_RESEARCH,
-    CardName.ADVANCED_ALLOYS,
+        CardName.ADVANCED_ALLOYS,
     CardName.AEROBRAKED_AMMONIA_ASTEROID,
     CardName.ASTEROID_HOLLOWING,
+    CardName.BACTOVIRAL_RESEARCH,
+    CardName.BLACK_POLAR_DUST,
+    CardName.BUILDING_INDUSTRIES,
+    CardName.CARTEL,
+    CardName.CLOUD_SEEDING,
   ],
 });

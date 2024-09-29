@@ -12,7 +12,7 @@ export class CartelRebalance extends Card implements IProjectCard {
       type: CardType.AUTOMATED,
       name: CardName.CARTEL_RB,
       tags: [Tag.EARTH],
-      cost: 8,
+      cost: 10,
 
       behavior: {
         production: {megacredits: {tag: Tag.EARTH}},
