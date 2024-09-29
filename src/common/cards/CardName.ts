@@ -1040,6 +1040,7 @@ export enum CardName {
     MASS_CONVERTER_RB = "Mass Converter(⚖)",
     MEAT_INDUSTRY_RB = "Meat Industry(⚖)",
     MICRO_MILLS_RB = "Micro-Mills(⚖)",
+    ORBITAL_CLEANUP_RB = "Orbital Cleanup(⚖)",
 
     SUBCRUST_VAPOR_TRAPPING = 'Subcrust Vapor Trapping',
     CONVOY_FROM_TITAN = 'Convoy From Titan',
