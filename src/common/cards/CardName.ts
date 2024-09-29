@@ -1578,5 +1578,7 @@ export enum CardName {
     //andy preludes
     BIOFUELS_RB = "Biofuels(⚖)",
     BIOSPHERE_SUPPORT_RB = "Biosphere Support(⚖)",
+    DOME_FARMING_RB = "Dome Farming(⚖)",
+    EARLY_SETTLEMENT_RB = "Early Settlement(⚖)",
 
 }

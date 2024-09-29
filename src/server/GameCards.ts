@@ -117,7 +117,9 @@ export class GameCards {
     if (this.gameOptions.pathfindersExpansion) {
       preludes = preludes.filter((c) => c.name !== CardName.BIOFUELS);
       preludes = preludes.filter((c) => c.name !== CardName.BIOSPHERE_SUPPORT);
-      preludes = preludes.filter((c) => c.name !== CardName.BIOSPHERE_SUPPORT);
+      preludes = preludes.filter((c) => c.name !== CardName.DOME_FARMING);
+      preludes = preludes.filter((c) => c.name !== CardName.EARLY_SETTLEMENT);
+      preludes = preludes.filter((c) => c.name !== CardName.EARLY_SETTLEMENT);
         }
 
     return preludes;

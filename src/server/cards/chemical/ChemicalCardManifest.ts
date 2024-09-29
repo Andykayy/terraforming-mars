@@ -590,6 +590,8 @@ import { WarpDriveRebalance } from './rebalance/WarpDriveRB';
 import { ZeppelinsRebalance } from './rebalance/ZeppelinsRB';
 import { BiofuelsRebalance } from './rebalance/1_BiofuelsRB';
 import { BiosphereSupportRebalance } from './rebalance/2_BiosphereSupportRB';
+import { DomeFarmingRebalance } from './rebalance/3_DomeFarmingRB';
+import { EarlySettlementRebalance } from './rebalance/4_EarlySettlementRB';
 
 
 
@@ -664,6 +666,8 @@ export const CHEMICAL_CARD_MANIFEST = new ModuleManifest({
     //andy preludes
     [CardName.BIOFUELS_RB]: {Factory: BiofuelsRebalance, compatibility: 'prelude'},
     [CardName.BIOSPHERE_SUPPORT_RB]: {Factory: BiosphereSupportRebalance, compatibility: 'prelude'},
+    [CardName.DOME_FARMING_RB]: {Factory: DomeFarmingRebalance, compatibility: 'prelude'},
+    [CardName.EARLY_SETTLEMENT_RB]: {Factory: EarlySettlementRebalance, compatibility: 'prelude'},
   },
   projectCards: {
     //Andy added
