@@ -1020,6 +1020,7 @@ export enum CardName {
     BUILDING_INDUSTRIES_RB = "Building Industries (⚖)",
     CARTEL_RB = "Cartel (⚖)",
     CLOUD_SEEDING_RB = "Cloud Seeding (⚖)",
+    COMMUNITY_SERVICES_RB = "Community Services (⚖)",
     
     SUBCRUST_VAPOR_TRAPPING = 'Subcrust Vapor Trapping',
     CONVOY_FROM_TITAN = 'Convoy From Titan',
