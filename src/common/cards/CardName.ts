@@ -1035,7 +1035,8 @@ export enum CardName {
     HEAT_TRAPPERS_RB = "Heat Trappers(⚖)",
     INDUSTRIAL_CENTER_RB = "Industrial Center(⚖)",
     INSECTS_RB = "Insects(⚖)",
-     
+    JET_STREAM_MICROSCRAPPERS_RB = "Jet Stream Microscrappers(⚖)",
+
     SUBCRUST_VAPOR_TRAPPING = 'Subcrust Vapor Trapping',
     CONVOY_FROM_TITAN = 'Convoy From Titan',
     HIGH_SPEED_COMET = 'High Speed Comet',
