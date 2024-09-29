@@ -107,7 +107,7 @@ export class GameCards {
       preludes = preludes.filter((c) => c.name !== CardName.MERGER);
     }
 
-    //Removes duplicate preludes from Pathfinders that the manifest doesn't seem to
+    //Andy Removes duplicate preludes from Pathfinders that the manifest doesn't seem to
     if (this.gameOptions.pathfindersExpansion) {
     preludes = preludes.filter((c) => c.name !== CardName.VALUABLE_GASES);
     preludes = preludes.filter((c) => c.name !== CardName.RESEARCH_GRANT);
