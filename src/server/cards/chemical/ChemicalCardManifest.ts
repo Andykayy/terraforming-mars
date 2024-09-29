@@ -584,6 +584,7 @@ import { TopsoilContractRebalance } from './rebalance/TopsoilContractRB';
 import { TropicalResortRebalance } from './rebalance/TropicalResortRB';
 import { TollStationRebalance } from './rebalance/TollStationRB';
 import { UndergroundCityRebalance } from './rebalance/UndergroundCityRB';
+import { UndergroundDetonationsRebalance } from './rebalance/UndergroundDetonationsRB';
 
 
 
@@ -705,6 +706,7 @@ export const CHEMICAL_CARD_MANIFEST = new ModuleManifest({
     [CardName.TOPSOIL_CONTRACT_RB]: {Factory: TopsoilContractRebalance, compatibility: 'promo'},
     [CardName.TROPICAL_RESORT_RB]: {Factory: TropicalResortRebalance, compatibility: 'corpera'},
     [CardName.UNDERGROUND_CITY_RB]: {Factory: UndergroundCityRebalance},
+    [CardName.UNDERGROUND_DETONATIONS_RB]: {Factory: UndergroundDetonationsRebalance},
     
 
     [CardName.SUBCRUST_VAPOR_TRAPPING]: {Factory: SubcrustVaporTrapping},
@@ -1235,5 +1237,6 @@ export const CHEMICAL_CARD_MANIFEST = new ModuleManifest({
     CardName.TOPSOIL_CONTRACT,
     CardName.TROPICAL_RESORT,
     CardName.UNDERGROUND_CITY,
+    CardName.UNDERGROUND_DETONATIONS,
   ],
 });

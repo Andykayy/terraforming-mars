@@ -350,14 +350,10 @@ export class Game implements IGame, Logger {
           if (standardAlloys) {
             player.dealtProjectCards.push(standardAlloys);            
           }
-          const rotatorImpactsTest = newProjectCard(CardName.ROTATOR_IMPACTS_RB)
+          const rotatorImpactsTest = newProjectCard(CardName.UNDERGROUND_DETONATIONS_RB)
           if (rotatorImpactsTest) {
             player.dealtProjectCards.push(rotatorImpactsTest);
-          }
-          const titaniumMineTest = newProjectCard(CardName.TITANIUM_MINE)         
-          if (titaniumMineTest) {
-            player.dealtProjectCards.push(titaniumMineTest);            
-          }
+          }       
         }
         if (gameOptions.preludeExtension) {
           player.dealtPreludeCards.push(...preludeDeck.drawN(game, constants.PRELUDE_CARDS_DEALT_PER_PLAYER));

@@ -1057,6 +1057,7 @@ export enum CardName {
     TROPICAL_RESORT_RB = "Tropical Resort(⚖)",
     TOLL_STATION_RB = "Toll Station(⚖)",
     UNDERGROUND_CITY_RB = "Underground City(⚖)",
+    UNDERGROUND_DETONATIONS_RB = "Underground Detonations(⚖)",
 
     SUBCRUST_VAPOR_TRAPPING = 'Subcrust Vapor Trapping',
     CONVOY_FROM_TITAN = 'Convoy From Titan',
