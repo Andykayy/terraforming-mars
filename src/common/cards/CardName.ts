@@ -1024,6 +1024,7 @@ export enum CardName {
     CORPORATE_STRONGHOLD_RB = "Corporate Stronghold (⚖)",
     CUTTING_EDGE_TECHNOLOGY_RB = "Cutting Edge Technology (⚖)",
     EARTH_CATAPULT_RB = "Earth Catapult (⚖)",
+    EARTH_OFFICE_RB = "Earth Office (⚖)",
     
     SUBCRUST_VAPOR_TRAPPING = 'Subcrust Vapor Trapping',
     CONVOY_FROM_TITAN = 'Convoy From Titan',
