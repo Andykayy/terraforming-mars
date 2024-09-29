@@ -555,6 +555,7 @@ import { EarthOfficeRebalance } from './rebalance/EarthOfficeRB';
 import { EnergyMarketRebalance } from './rebalance/EnergyMarketRB';
 import { ExtractorBalloonsRebalance } from './rebalance/ExtractorBalloonsRB';
 import { EnergySavingRebalance } from './rebalance/EnergySavingRB';
+import { ForcedPrecipitationRebalance } from './rebalance/ForcedPrecipitationRB';
 
 
 
@@ -644,9 +645,10 @@ export const CHEMICAL_CARD_MANIFEST = new ModuleManifest({
     [CardName.CUTTING_EDGE_TECHNOLOGY_RB]: {Factory: CuttingEdgeTechnologyRebalance, compatibility: 'promo'},
     [CardName.EARTH_CATAPULT_RB]: {Factory: EarthCatapultRebalance},
     [CardName.EARTH_OFFICE_RB]: {Factory: EarthOfficeRebalance},
-    [CardName.ENERGY_MARKET_RB]: {Factory: EnergyMarketRebalance, compatibility: 'promo'},
-    [CardName.EXTRACTOR_BALLOONS_RB]: {Factory: ExtractorBalloonsRebalance, compatibility: 'venus'},
+    [CardName.ENERGY_MARKET_RB]: {Factory: EnergyMarketRebalance, compatibility: 'promo'},    
     [CardName.ENERGY_SAVING_RB]: {Factory: EnergySavingRebalance},
+    [CardName.EXTRACTOR_BALLOONS_RB]: {Factory: ExtractorBalloonsRebalance, compatibility: 'venus'},
+    [CardName.FORCED_PRECIPITATION_RB]: {Factory: ForcedPrecipitationRebalance, compatibility: 'venus'},
     
     [CardName.SUBCRUST_VAPOR_TRAPPING]: {Factory: SubcrustVaporTrapping},
     [CardName.CONVOY_FROM_TITAN]: {Factory: ConvoyFromTitan},
@@ -1145,7 +1147,9 @@ export const CHEMICAL_CARD_MANIFEST = new ModuleManifest({
     CardName.EARTH_CATAPULT,
     CardName.EARTH_OFFICE,
     CardName.ENERGY_MARKET,
-    CardName.EXTRACTOR_BALLOONS,
     CardName.ENERGY_SAVING,
+    CardName.EXTRACTOR_BALLOONS,
+    CardName.FORCED_PRECIPITATION,
+
   ],
 });

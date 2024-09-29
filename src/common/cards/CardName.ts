@@ -1028,6 +1028,7 @@ export enum CardName {
     ENERGY_MARKET_RB = "Energy Market (⚖)",
     EXTRACTOR_BALLOONS_RB = "Extractor Balloons (⚖)",
     ENERGY_SAVING_RB = "Energy Saving (⚖)",
+    FORCED_PRECIPITATION_RB = "Forced Precipitation (⚖)",
     
     SUBCRUST_VAPOR_TRAPPING = 'Subcrust Vapor Trapping',
     CONVOY_FROM_TITAN = 'Convoy From Titan',
