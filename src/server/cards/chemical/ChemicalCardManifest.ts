@@ -615,7 +615,7 @@ export const CHEMICAL_CARD_MANIFEST = new ModuleManifest({
     [CardName.PUBLIC_SPACELINE_CHEMICAL]: {Factory: PublicSpacelineChemical, compatibility: 'pathfinders'},
 
     //Andy rebalance
-    [CardName.BACTOVIRAL_RESEARCH_RB]: {Factory: BactoviralResearchRB, compatibility: 'pathfinders'},
+    [CardName.BACTOVIRAL_RESEARCH_RB]: {Factory: BactoviralResearchRB, compatibility: 'promo'},
     
     
     [CardName.SUBCRUST_VAPOR_TRAPPING]: {Factory: SubcrustVaporTrapping},
@@ -1041,6 +1041,7 @@ export const CHEMICAL_CARD_MANIFEST = new ModuleManifest({
     [CardName.FIRST_MARTIAN_MEMORIAL]: {Factory: FirstMaritanMemorial, compatibility: 'turmoil'},
     [CardName.TERRAFORMING_UNION]: {Factory: TerraformingUnion, compatibility: 'turmoil'},
     [CardName.ACQUIRED_CONSULTING_FIRM]: {Factory: AcquiredConsultingFirm, compatibility: 'turmoil'},
+
   },
   globalEvents: {
     [GlobalEventName.LAND_DELEGATION]: {Factory: LandDelegation},
@@ -1098,4 +1099,8 @@ export const CHEMICAL_CARD_MANIFEST = new ModuleManifest({
     [GlobalEventName.REFUGEE_CRISIS]: {Factory: RefugeeCrisis, compatibility: 'colonies'},
     [GlobalEventName.ECONOMIC_DEPRESSION]: {Factory: EconomicDepression, compatibility: 'colonies'},
   },
+  //andy cards to remove
+  cardsToRemove: [
+    CardName.BACTOVIRAL_RESEARCH,
+  ],
 });
