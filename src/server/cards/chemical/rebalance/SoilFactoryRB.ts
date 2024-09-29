@@ -11,7 +11,7 @@ export class SoilFactoryRebalance extends Card implements IProjectCard {
       type: CardType.AUTOMATED,
       name: CardName.SOIL_FACTORY_RB,
       tags: [Tag.BUILDING],
-      cost: 10,
+      cost: 12,
 
       behavior: {
         production: {energy: -1, plants: 2},
