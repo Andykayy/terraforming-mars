@@ -588,6 +588,8 @@ import { UndergroundDetonationsRebalance } from './rebalance/UndergroundDetonati
 import { ViralEnhancersRebalance } from './rebalance/ViralEnhancersRB';
 import { WarpDriveRebalance } from './rebalance/WarpDriveRB';
 import { ZeppelinsRebalance } from './rebalance/ZeppelinsRB';
+import { BiofuelsRebalance } from './rebalance/1_BiofuelsRB';
+import { BiosphereSupportRebalance } from './rebalance/2_BiosphereSupportRB';
 
 
 
@@ -658,6 +660,10 @@ export const CHEMICAL_CARD_MANIFEST = new ModuleManifest({
     [CardName.GREEN_MARS_INITIATIVE]: {Factory: GreenMarsInitiative, compatibility: 'turmoil'},
     [CardName.PRESERVATIONIST_CAMPAIGN]: {Factory: PreservationistCampaign, compatibility: 'turmoil'},
     [CardName.HEAT_FIRST_INITIATIVE]: {Factory: HeatFirstInitiative, compatibility: 'turmoil'},
+
+    //andy preludes
+    [CardName.BIOFUELS_RB]: {Factory: BiofuelsRebalance, compatibility: 'prelude'},
+    [CardName.BIOSPHERE_SUPPORT_RB]: {Factory: BiosphereSupportRebalance, compatibility: 'prelude'},
   },
   projectCards: {
     //Andy added

@@ -112,6 +112,14 @@ export class GameCards {
     preludes = preludes.filter((c) => c.name !== CardName.VALUABLE_GASES);
     preludes = preludes.filter((c) => c.name !== CardName.RESEARCH_GRANT);
     }
+
+    //Andy Removes duplicate preludes from Andy's chemical expansion
+    if (this.gameOptions.pathfindersExpansion) {
+      preludes = preludes.filter((c) => c.name !== CardName.BIOFUELS);
+      preludes = preludes.filter((c) => c.name !== CardName.BIOSPHERE_SUPPORT);
+      preludes = preludes.filter((c) => c.name !== CardName.BIOSPHERE_SUPPORT);
+        }
+
     return preludes;
   }
 

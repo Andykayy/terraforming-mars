@@ -1574,4 +1574,9 @@ export enum CardName {
     MOHOLE_CHEMICAL = 'Mohole:chemical',
     POLAR_INDUSTRIES_CHEMICAL = 'Polar Industries:chemical',
     HUGE_ASTEROID_CHEMICAL = 'Huge Asteroid:chemical',
+
+    //andy preludes
+    BIOFUELS_RB = "Biofuels(⚖)",
+    BIOSPHERE_SUPPORT_RB = "Biosphere Support(⚖)",
+
 }
