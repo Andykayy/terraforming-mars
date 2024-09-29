@@ -1580,5 +1580,7 @@ export enum CardName {
     BIOSPHERE_SUPPORT_RB = "Biosphere Support(⚖)",
     DOME_FARMING_RB = "Dome Farming(⚖)",
     EARLY_SETTLEMENT_RB = "Early Settlement(⚖)",
+    ECCENTRIC_SPONSOR_RB = "Eccentric Sponsor(⚖)",
+    GALILEAN_MINING_RB = "Galilean Mining(⚖)",
 
 }

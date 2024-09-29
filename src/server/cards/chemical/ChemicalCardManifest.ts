@@ -592,6 +592,8 @@ import { BiofuelsRebalance } from './rebalance/1_BiofuelsRB';
 import { BiosphereSupportRebalance } from './rebalance/2_BiosphereSupportRB';
 import { DomeFarmingRebalance } from './rebalance/3_DomeFarmingRB';
 import { EarlySettlementRebalance } from './rebalance/4_EarlySettlementRB';
+import { EccentricSponsorRebalance } from './rebalance/5_EccentricSponsorRB';
+import { GalileanMiningRebalance } from './rebalance/6_GalileanMiningRB';
 
 
 
@@ -668,6 +670,8 @@ export const CHEMICAL_CARD_MANIFEST = new ModuleManifest({
     [CardName.BIOSPHERE_SUPPORT_RB]: {Factory: BiosphereSupportRebalance, compatibility: 'prelude'},
     [CardName.DOME_FARMING_RB]: {Factory: DomeFarmingRebalance, compatibility: 'prelude'},
     [CardName.EARLY_SETTLEMENT_RB]: {Factory: EarlySettlementRebalance, compatibility: 'prelude'},
+    [CardName.ECCENTRIC_SPONSOR_RB]: {Factory: EccentricSponsorRebalance, compatibility: 'prelude'},
+    [CardName.GALILEAN_MINING_RB]: {Factory: GalileanMiningRebalance, compatibility: 'prelude'},
   },
   projectCards: {
     //Andy added
