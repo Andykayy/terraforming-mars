@@ -622,7 +622,7 @@ export const CHEMICAL_CARD_MANIFEST = new ModuleManifest({
     [CardName.BACTOVIRAL_RESEARCH_RB]: {Factory: BactoviralResearchRebalance, compatibility: 'promo'},
     [CardName.ADVANCED_ALLOYS_RB]: {Factory: AdvancedAlloysRebalance,},
     [CardName.AEROBRAKED_AMMONIA_ASTEROID_RB]: {Factory: AerobrakedAmmoniaAsteroidRebalance,},
-    [CardName.ASTEROID_HOLLOWING_RB]: {Factory: AsteroidHollowingRebalance},
+    [CardName.ASTEROID_HOLLOWING_RB]: {Factory: AsteroidHollowingRebalance, compatibility: 'promo'},
     
     [CardName.SUBCRUST_VAPOR_TRAPPING]: {Factory: SubcrustVaporTrapping},
     [CardName.CONVOY_FROM_TITAN]: {Factory: ConvoyFromTitan},
