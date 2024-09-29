@@ -571,6 +571,7 @@ import { OrbitalCleanupRebalance } from './rebalance/OrbitalCleanupRB';
 import { OutdoorSportsRebalance } from './rebalance/OutdoorSportsRB';
 import { ReleaseOfInertGasesRebalance } from './rebalance/ReleaseOfInertGasesRB';
 import { ResearchOutpostRebalance } from './rebalance/ResearchOutpostRB';
+import { RotatorImpactsRebalance } from './rebalance/RotatorImpacts';
 
 
 
@@ -679,6 +680,7 @@ export const CHEMICAL_CARD_MANIFEST = new ModuleManifest({
     [CardName.OUTDOOR_SPORTS_RB]: {Factory: OutdoorSportsRebalance, compatibility: 'promo'},
     [CardName.RELEASE_OF_INERT_GASES_RB]: {Factory: ReleaseOfInertGasesRebalance},
     [CardName.RESEARCH_OUTPOST_RB]: {Factory: ResearchOutpostRebalance},
+    [CardName.ROTATOR_IMPACTS_RB]: {Factory: RotatorImpactsRebalance, compatibility: 'venus'},
 
     [CardName.SUBCRUST_VAPOR_TRAPPING]: {Factory: SubcrustVaporTrapping},
     [CardName.CONVOY_FROM_TITAN]: {Factory: ConvoyFromTitan},
