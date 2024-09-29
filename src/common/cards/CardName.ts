@@ -1047,6 +1047,8 @@ export enum CardName {
     ROTATOR_IMPACTS_RB = "Rotator Impacts(⚖)",
     SKY_DOCKS_RB = "Sky Docks(⚖)",
     SNOW_ALGAE_RB = "Snow Algae(⚖)",
+    SOIL_FACTORY_RB = "Soil Factory(⚖)",
+    SOLAR_POWER_RB = "Solar Power(⚖)",
 
     SUBCRUST_VAPOR_TRAPPING = 'Subcrust Vapor Trapping',
     CONVOY_FROM_TITAN = 'Convoy From Titan',

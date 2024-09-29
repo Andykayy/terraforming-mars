@@ -574,6 +574,8 @@ import { ResearchOutpostRebalance } from './rebalance/ResearchOutpostRB';
 import { RotatorImpactsRebalance } from './rebalance/RotatorImpactsRB';
 import { SkyDocksRebalance } from './rebalance/SkyDocksRB';
 import { SnowAlgaeRebalance } from './rebalance/SnowAlgaeRB';
+import { SoilFactoryRebalance } from './rebalance/SoilFactoryRB';
+import { SolarPowerRebalance } from './rebalance/SolarPowerRB';
 
 
 
@@ -685,6 +687,8 @@ export const CHEMICAL_CARD_MANIFEST = new ModuleManifest({
     [CardName.ROTATOR_IMPACTS_RB]: {Factory: RotatorImpactsRebalance, compatibility: 'venus'},
     [CardName.SKY_DOCKS_RB]: {Factory: SkyDocksRebalance, compatibility: 'colonies'},
     [CardName.SNOW_ALGAE_RB]: {Factory: SnowAlgaeRebalance, compatibility: 'promo'},
+    [CardName.SOIL_FACTORY_RB]: {Factory: SoilFactoryRebalance},
+    [CardName.SOLAR_POWER_RB]: {Factory: SolarPowerRebalance},
 
     [CardName.SUBCRUST_VAPOR_TRAPPING]: {Factory: SubcrustVaporTrapping},
     [CardName.CONVOY_FROM_TITAN]: {Factory: ConvoyFromTitan},
@@ -1204,5 +1208,6 @@ export const CHEMICAL_CARD_MANIFEST = new ModuleManifest({
     CardName.ROTATOR_IMPACTS,
     CardName.SKY_DOCKS,
     CardName.SNOW_ALGAE,
+    CardName.SOIL_FACTORY,
   ],
 });
