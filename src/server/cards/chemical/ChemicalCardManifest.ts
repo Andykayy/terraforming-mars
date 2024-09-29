@@ -424,7 +424,8 @@ import {AcquiredConsultingFirm} from './turmoil/AcquiredConsultingFirm';
 import {PublicSpacelineChemical} from './pathfinders/PublicSpaceline';
 
 //andy RB
-import {BactoviralResearchRB} from './rebalance/BactoviralResearchRB';
+import {BactoviralResearchRebalance} from './rebalance/BactoviralResearchRB';
+import {AdvancedAlloysRebalance} from './rebalance/AdvancedAlloysRB';
 
 import {ResearchBase} from './preludes/1_ResearchBase';
 import {HeavyMetalComet} from './preludes/2_HeavyMetalComet';
@@ -542,6 +543,7 @@ import {JovianWar} from './globalevents/JovianWar';
 import {RefugeeCrisis} from './globalevents/RefugeeCrisis';
 import {EconomicDepression} from './globalevents/EconomicDepression';
 
+
 export const CHEMICAL_CARD_MANIFEST = new ModuleManifest({
   module: 'chemical',
   corporationCards: {
@@ -615,8 +617,8 @@ export const CHEMICAL_CARD_MANIFEST = new ModuleManifest({
     [CardName.PUBLIC_SPACELINE_CHEMICAL]: {Factory: PublicSpacelineChemical, compatibility: 'pathfinders'},
 
     //Andy rebalance
-    [CardName.BACTOVIRAL_RESEARCH_RB]: {Factory: BactoviralResearchRB, compatibility: 'promo'},
-    
+    [CardName.BACTOVIRAL_RESEARCH_RB]: {Factory: BactoviralResearchRebalance, compatibility: 'promo'},
+    [CardName.ADVANCED_ALLOYS_RB]: {Factory: AdvancedAlloysRebalance,},
     
     [CardName.SUBCRUST_VAPOR_TRAPPING]: {Factory: SubcrustVaporTrapping},
     [CardName.CONVOY_FROM_TITAN]: {Factory: ConvoyFromTitan},
@@ -1102,5 +1104,6 @@ export const CHEMICAL_CARD_MANIFEST = new ModuleManifest({
   //andy cards to remove
   cardsToRemove: [
     CardName.BACTOVIRAL_RESEARCH,
+    CardName.ADVANCED_ALLOYS,
   ],
 });

@@ -6,7 +6,7 @@ import {CardRenderer} from '../../render/CardRenderer';
 import {Tag} from '../../../../common/cards/Tag';
 import {CardResource} from '../../../../common/CardResource';
 
-export class BactoviralResearchRB extends Card implements IProjectCard {
+export class BactoviralResearchRebalance extends Card implements IProjectCard {
   constructor() {
     super({
       type: CardType.AUTOMATED,
