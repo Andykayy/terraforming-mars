@@ -548,6 +548,7 @@ import { BuildingIndustriesRebalance } from './rebalance/BuildingIndustriesRB';
 import { CartelRebalance } from './rebalance/CartelRB';
 import { CloudSeedingRebalance } from './rebalance/CloudSeedingRB';
 import { CommunityServicesRebalance } from './rebalance/CommunityServicesRB';
+import { CorporateStrongholdRebalance } from './rebalance/CorporateStrongholdRB';
 
 
 
@@ -633,6 +634,7 @@ export const CHEMICAL_CARD_MANIFEST = new ModuleManifest({
     [CardName.CARTEL_RB]: {Factory: CartelRebalance},
     [CardName.CLOUD_SEEDING_RB]: {Factory: CloudSeedingRebalance},
     [CardName.COMMUNITY_SERVICES_RB]: {Factory: CommunityServicesRebalance},
+    [CardName.CORPORATE_STRONGHOLD_RB]: {Factory: CorporateStrongholdRebalance},
     
     [CardName.SUBCRUST_VAPOR_TRAPPING]: {Factory: SubcrustVaporTrapping},
     [CardName.CONVOY_FROM_TITAN]: {Factory: ConvoyFromTitan},
@@ -1126,5 +1128,6 @@ export const CHEMICAL_CARD_MANIFEST = new ModuleManifest({
     CardName.CARTEL,
     CardName.CLOUD_SEEDING,
     CardName.COMMUNITY_SERVICES,
+    CardName.CORPORATE_STRONGHOLD,
   ],
 });
