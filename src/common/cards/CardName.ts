@@ -1033,6 +1033,7 @@ export enum CardName {
     GMO_CONTRACT_RB = "GMO Contract(⚖)",
     HACKERS_RB = "Hackers(⚖)",
     HEAT_TRAPPERS_RB = "Heat Trappers(⚖)",
+    INDUSTRIAL_CENTER_RB = "Industrial Center(⚖)",
     
     SUBCRUST_VAPOR_TRAPPING = 'Subcrust Vapor Trapping',
     CONVOY_FROM_TITAN = 'Convoy From Titan',
