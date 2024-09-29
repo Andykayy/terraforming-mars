@@ -20,7 +20,7 @@ export class BactoviralResearchRebalance extends Card implements IProjectCard {
       },
 
       metadata: {
-        cardNumber: 'X35',
+        cardNumber: 'X351',
         renderData: CardRenderer.builder((b) => {
           b.cards(1).br.br; // double br is intentional for visual appeal
           b.resource(CardResource.MICROBE).asterix().slash().tag(Tag.MICROBE);

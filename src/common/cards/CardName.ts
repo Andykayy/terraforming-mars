@@ -1015,6 +1015,7 @@ export enum CardName {
     BACTOVIRAL_RESEARCH_RB = "Bactoviral Research (⚖)",
     ADVANCED_ALLOYS_RB = "Advanced Alloys (⚖)",
     AEROBRAKED_AMMONIA_ASTEROID_RB = "Aerobraked Ammonia Asteroid (⚖)",
+    ASTEROID_HOLLOWING_RB = "Asteroid Hollowing (⚖)",
     
     SUBCRUST_VAPOR_TRAPPING = 'Subcrust Vapor Trapping',
     CONVOY_FROM_TITAN = 'Convoy From Titan',

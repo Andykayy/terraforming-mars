@@ -21,7 +21,7 @@ export class AerobrakedAmmoniaAsteroidRebalance extends Card implements IProject
 
       metadata: {
         description: 'Increase your heat production 4 steps and your plant production 1 step. Add 3 microbes to ANOTHER card.',
-        cardNumber: '170',
+        cardNumber: '1701',
         renderData: CardRenderer.builder((b) => {
           b.production((pb) => {
             pb.heat(4).br;
