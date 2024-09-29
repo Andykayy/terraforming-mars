@@ -24,10 +24,10 @@ export class AerobrakedAmmoniaAsteroidRebalance extends Card implements IProject
         cardNumber: '170',
         renderData: CardRenderer.builder((b) => {
           b.production((pb) => {
-            pb.heat(3).br;
+            pb.heat(4).br;
             pb.plants(1);
           }).br;
-          b.resource(CardResource.MICROBE, 2).asterix();
+          b.resource(CardResource.MICROBE, 3).asterix();
         }),
       },
     });
