@@ -1038,6 +1038,8 @@ export enum CardName {
     JET_STREAM_MICROSCRAPPERS_RB = "Jet Stream Microscrappers(⚖)",
     MARS_UNIVERSITY_RB = "Mars University(⚖)",
     MASS_CONVERTER_RB = "Mass Converter(⚖)",
+    MEAT_INDUSTRY_RB = "Meat Industry(⚖)",
+    MICRO_MILLS_RB = "Micro-Mills(⚖)",
 
     SUBCRUST_VAPOR_TRAPPING = 'Subcrust Vapor Trapping',
     CONVOY_FROM_TITAN = 'Convoy From Titan',
