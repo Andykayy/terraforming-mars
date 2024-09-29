@@ -5,15 +5,14 @@ import {IPlayer} from '../../../IPlayer';
 import {CardResource} from '../../../../common/CardResource';
 import {OrOptions} from '../../../inputs/OrOptions';
 import {SelectOption} from '../../../inputs/SelectOption';
-import {MAX_VENUS_SCALE} from '../../../../common/constants';
 import {CardName} from '../../../../common/cards/CardName';
 import {SelectPaymentDeferred} from '../../../deferredActions/SelectPaymentDeferred';
 import {CardRenderer} from '../../render/CardRenderer';
 import {Card} from '../../Card';
 import {max} from '../../Options';
 import {TITLES} from '../../../inputs/titles';
-import {LogHelper} from '../../../LogHelper';
 import {SelectCard} from '../../../inputs/SelectCard';
+import {ICard} from '../../ICard';
 
 
 export class RotatorImpactsRebalance extends Card implements IActionCard {
@@ -42,63 +41,53 @@ export class RotatorImpactsRebalance extends Card implements IActionCard {
   }
 
   public canAct(player: IPlayer): boolean {
-    const venusMaxed = player.game.getVenusScaleLevel() === MAX_VENUS_SCALE;
-    const canSpendResource = this.resourceCount > 0 && !venusMaxed;
-    
-
-    return player.canAfford({cost: 6, titanium: true}) || (canSpendResource && player.canAfford({cost: 0, tr: {venus: 1}}));
+    return player.canAfford({cost: 6, titanium: true}) || (this.resourceCount > 0 && player.canAfford({cost: 0, tr: {venus: 1}}));
   }
 
   public action(player: IPlayer) {
     const asteroidCards = player.getResourceCards(CardResource.ASTEROID);
+    const opts: Array<SelectOption> = [];
 
-    const addAsteroidToSelf = function() {
-      player.game.defer(new SelectPaymentDeferred(player, 6, {canUseTitanium: true}));
-      player.addResourceTo(asteroidCards[0], {log: true});
-      return undefined;
-    };
+    const addResource = new SelectOption('Pay 6 M€ to add 1 asteroid to any card', 'Pay').andThen( () => this.addResource(player, asteroidCards) );
+    const spendResource = new SelectOption('Remove 1 asteroid to raise venus 1 step', 'Remove asteroid').andThen( () => this.spendResource(player) );
 
-    const addAsteroidToCard = new SelectCard(
-      'Select card to add 1 asteroid',
-      'Add asteroid',
-      asteroidCards)
-      .andThen(([card]) => {
-        player.game.defer(new SelectPaymentDeferred(player, 6, {canUseTitanium: true, title: TITLES.payForCardAction(this.name)}));
-        player.addResourceTo(card, {log: true});
-        return undefined;
-      });
-
-    const spendAsteroidResource = () => {
-      this.resourceCount--;
-      LogHelper.logRemoveResource(player, this, 1, 'raise venus 1 step');
-      player.game.increaseVenusScaleLevel(player, 1);
-      return undefined;
-    };
-
-    if (this.resourceCount === 0) {
-      if (asteroidCards.length === 1) return addAsteroidToSelf();
-      return addAsteroidToCard;
-    }    
-
-    const availableActions = [];
-
-    if (player.game.getVenusScaleLevel() === MAX_VENUS_SCALE) {
-      availableActions.push(new SelectOption('Remove an asteroid resource to raise Venus 1 step', 'Remove asteroid').andThen(spendAsteroidResource));
+    if (this.resourceCount > 0) {
+      opts.push(spendResource);
+    } else {
+      return this.addResource(player, asteroidCards);
     }
+
+    if (player.canAfford({cost: 6, titanium: true})) {
+      opts.push(addResource);
+    } else {
+      return this.spendResource(player);
+    }
+
+    return new OrOptions(...opts);
+  }
+
+  private addResource(player: IPlayer, asteroidCards: ICard[]) {
+    player.game.defer(new SelectPaymentDeferred(player, 6, {canUseTitanium: true, title: TITLES.payForCardAction(this.name)}));
 
     if (asteroidCards.length === 1) {
-      availableActions.push(new SelectOption('Spend 6MC (titanium may be used) to gain 1 asteroid resource', 'Spend MC/Titanium').andThen(addAsteroidToSelf));
-    } else {
-      availableActions.push(addAsteroidToCard);
+      player.addResourceTo(this, {log: true});
+      return undefined;
     }
 
-    if (availableActions.length === 1) {
-      const action = availableActions[0];
+    return new SelectCard(
+      'Select card to add 1 asteroid',
+      'Add asteroid',
+      asteroidCards).andThen( ([card]) => {
+      player.addResourceTo(card, {log: true});
+      return undefined;
+    },
+    );
+  }
 
-      if (action instanceof SelectOption) return action.cb(undefined);
-      return availableActions[0]; // SelectCard
-    }
-
-    return new OrOptions(...availableActions);
+  private spendResource(player: IPlayer) {
+    player.removeResourceFrom(this);
+    player.game.increaseVenusScaleLevel(player, 1);
+    player.game.log('${0} removed an asteroid resource to increase Venus 1 step', (b) => b.player(player));
+    return undefined;
   }
 }
