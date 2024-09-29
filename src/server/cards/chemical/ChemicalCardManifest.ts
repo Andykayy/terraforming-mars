@@ -569,6 +569,8 @@ import { MeatIndustryRebalance } from './rebalance/MeatIndustryRB';
 import { MicroMillsRebalance } from './rebalance/MicroMillsRB';
 import { OrbitalCleanupRebalance } from './rebalance/OrbitalCleanupRB';
 import { OutdoorSportsRebalance } from './rebalance/OutdoorSportsRB';
+import { ReleaseOfInertGasesRebalance } from './rebalance/ReleaseOfInertGasesRB';
+import { ResearchOutpostRebalance } from './rebalance/ResearchOutpostRB';
 
 
 
@@ -675,7 +677,9 @@ export const CHEMICAL_CARD_MANIFEST = new ModuleManifest({
     [CardName.MICRO_MILLS_RB]: {Factory: MicroMillsRebalance},
     [CardName.ORBITAL_CLEANUP_RB]: {Factory: OrbitalCleanupRebalance, compatibility: 'promo'},
     [CardName.OUTDOOR_SPORTS_RB]: {Factory: OutdoorSportsRebalance, compatibility: 'promo'},
-    
+    [CardName.RELEASE_OF_INERT_GASES_RB]: {Factory: ReleaseOfInertGasesRebalance},
+    [CardName.RESEARCH_OUTPOST_RB]: {Factory: ResearchOutpostRebalance},
+
     [CardName.SUBCRUST_VAPOR_TRAPPING]: {Factory: SubcrustVaporTrapping},
     [CardName.CONVOY_FROM_TITAN]: {Factory: ConvoyFromTitan},
     [CardName.HIGH_SPEED_COMET]: {Factory: HighSpeedComet},
@@ -1189,5 +1193,7 @@ export const CHEMICAL_CARD_MANIFEST = new ModuleManifest({
     CardName.MICRO_MILLS,
     CardName.ORBITAL_CLEANUP,
     CardName.OUTDOOR_SPORTS,
+    CardName.RELEASE_OF_INERT_GASES,
+    CardName.RESEARCH_OUTPOST,
   ],
 });
