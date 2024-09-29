@@ -20,7 +20,7 @@ export class CorporateStrongholdRebalance extends Card implements IProjectCard {
       victoryPoints: -1,
 
       metadata: {
-        cardNumber: '182',
+        cardNumber: '1821',
         description: 'Decrease your energy production 1 step and increase your M€ production 3 steps. Place a city tile.',
         renderData: CardRenderer.builder((b) => {
           b.production((pb) => {
