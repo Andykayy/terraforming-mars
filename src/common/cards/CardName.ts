@@ -1041,6 +1041,7 @@ export enum CardName {
     MEAT_INDUSTRY_RB = "Meat Industry(⚖)",
     MICRO_MILLS_RB = "Micro-Mills(⚖)",
     ORBITAL_CLEANUP_RB = "Orbital Cleanup(⚖)",
+    OUTDOOR_SPORTS_RB = "Outdoor Sports(⚖)",
 
     SUBCRUST_VAPOR_TRAPPING = 'Subcrust Vapor Trapping',
     CONVOY_FROM_TITAN = 'Convoy From Titan',

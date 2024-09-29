@@ -568,6 +568,7 @@ import { MassConverterRebalance } from './rebalance/MassConverterRB';
 import { MeatIndustryRebalance } from './rebalance/MeatIndustryRB';
 import { MicroMillsRebalance } from './rebalance/MicroMillsRB';
 import { OrbitalCleanupRebalance } from './rebalance/OrbitalCleanupRB';
+import { OutdoorSportsRebalance } from './rebalance/OutdoorSportsRB';
 
 
 
@@ -673,6 +674,7 @@ export const CHEMICAL_CARD_MANIFEST = new ModuleManifest({
     [CardName.MEAT_INDUSTRY_RB]: {Factory: MeatIndustryRebalance, compatibility: 'promo'},
     [CardName.MICRO_MILLS_RB]: {Factory: MicroMillsRebalance},
     [CardName.ORBITAL_CLEANUP_RB]: {Factory: OrbitalCleanupRebalance, compatibility: 'promo'},
+    [CardName.OUTDOOR_SPORTS_RB]: {Factory: OutdoorSportsRebalance, compatibility: 'promo'},
     
     [CardName.SUBCRUST_VAPOR_TRAPPING]: {Factory: SubcrustVaporTrapping},
     [CardName.CONVOY_FROM_TITAN]: {Factory: ConvoyFromTitan},
@@ -1186,5 +1188,6 @@ export const CHEMICAL_CARD_MANIFEST = new ModuleManifest({
     CardName.MEAT_INDUSTRY,
     CardName.MICRO_MILLS,
     CardName.ORBITAL_CLEANUP,
+    CardName.OUTDOOR_SPORTS,
   ],
 });
