@@ -585,6 +585,9 @@ import { TropicalResortRebalance } from './rebalance/TropicalResortRB';
 import { TollStationRebalance } from './rebalance/TollStationRB';
 import { UndergroundCityRebalance } from './rebalance/UndergroundCityRB';
 import { UndergroundDetonationsRebalance } from './rebalance/UndergroundDetonationsRB';
+import { ViralEnhancersRebalance } from './rebalance/ViralEnhancersRB';
+import { WarpDriveRebalance } from './rebalance/WarpDriveRB';
+import { ZeppelinsRebalance } from './rebalance/ZeppelinsRB';
 
 
 
@@ -707,6 +710,9 @@ export const CHEMICAL_CARD_MANIFEST = new ModuleManifest({
     [CardName.TROPICAL_RESORT_RB]: {Factory: TropicalResortRebalance, compatibility: 'corpera'},
     [CardName.UNDERGROUND_CITY_RB]: {Factory: UndergroundCityRebalance},
     [CardName.UNDERGROUND_DETONATIONS_RB]: {Factory: UndergroundDetonationsRebalance},
+    [CardName.VIRAL_ENHANCERS_RB]: {Factory: ViralEnhancersRebalance, compatibility: 'corpera'},
+    [CardName.WARP_DRIVE_RB]: {Factory: WarpDriveRebalance, compatibility: 'colonies'},
+    [CardName.ZEPPELINS_RB]: {Factory: ZeppelinsRebalance},
     
 
     [CardName.SUBCRUST_VAPOR_TRAPPING]: {Factory: SubcrustVaporTrapping},
@@ -1238,5 +1244,8 @@ export const CHEMICAL_CARD_MANIFEST = new ModuleManifest({
     CardName.TROPICAL_RESORT,
     CardName.UNDERGROUND_CITY,
     CardName.UNDERGROUND_DETONATIONS,
+    CardName.VIRAL_ENHANCERS,
+    CardName.WARP_DRIVE,
+    CardName.ZEPPELINS,
   ],
 });
