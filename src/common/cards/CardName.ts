@@ -1053,6 +1053,8 @@ export enum CardName {
     STRATOPOLIS_RB = "Stratopolis(⚖)",
     STRIP_MINE_RB = "Strip Mine(⚖)",
     TITAN_AIRSCRAPPING_RB = "Titan Air-Scrapping(⚖)",
+    TOPSOIL_CONTRACT_RB = "Topsoil Contract(⚖)",
+    TROPICAL_RESORT_RB = "Tropical Resort(⚖)",
 
     SUBCRUST_VAPOR_TRAPPING = 'Subcrust Vapor Trapping',
     CONVOY_FROM_TITAN = 'Convoy From Titan',

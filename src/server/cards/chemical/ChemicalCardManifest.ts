@@ -580,6 +580,8 @@ import { SpinoffDepartmentRebalance } from './rebalance/SpinoffDepartmentRB';
 import { StratopolisRebalance } from './rebalance/StratopolisRB';
 import { StripMineRebalance } from './rebalance/StripMineRB';
 import { TitanAirScrappingRebalance } from './rebalance/TitanAirScrappingRB';
+import { TopsoilContractRebalance } from './rebalance/TopsoilContractRB';
+import { TropicalResortRebalance } from './rebalance/TropicalResortRB';
 
 
 
@@ -697,6 +699,8 @@ export const CHEMICAL_CARD_MANIFEST = new ModuleManifest({
     [CardName.STRATOPOLIS_RB]: {Factory: StratopolisRebalance, compatibility: 'venus'},
     [CardName.STRIP_MINE_RB]: {Factory: StripMineRebalance},
     [CardName.TITAN_AIRSCRAPPING_RB]: {Factory: TitanAirScrappingRebalance, compatibility: 'colonies'},
+    [CardName.TOPSOIL_CONTRACT_RB]: {Factory: TopsoilContractRebalance, compatibility: 'promo'},
+    [CardName.TROPICAL_RESORT_RB]: {Factory: TropicalResortRebalance, compatibility: 'corpera'},
 
     [CardName.SUBCRUST_VAPOR_TRAPPING]: {Factory: SubcrustVaporTrapping},
     [CardName.CONVOY_FROM_TITAN]: {Factory: ConvoyFromTitan},
@@ -1222,5 +1226,7 @@ export const CHEMICAL_CARD_MANIFEST = new ModuleManifest({
     CardName.STRATOPOLIS,
     CardName.STRIP_MINE,
     CardName.TITAN_AIRSCRAPPING,
+    CardName.TOPSOIL_CONTRACT,
+    CardName.TROPICAL_RESORT,
   ],
 });
