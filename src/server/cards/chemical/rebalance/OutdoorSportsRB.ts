@@ -24,7 +24,7 @@ export class OutdoorSportsRebalance extends Card implements IProjectCard {
         cardNumber: 'X381',
         renderData: CardRenderer.builder((b) => {
           b.production((pb) => {
-            pb.megacredits(2);
+            pb.megacredits(3);
           });
         }),
         description: 'Requires any city adjacent to an ocean. Increase your M€ production 3 steps.',
