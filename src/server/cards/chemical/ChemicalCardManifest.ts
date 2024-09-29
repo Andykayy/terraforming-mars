@@ -550,6 +550,7 @@ import { CloudSeedingRebalance } from './rebalance/CloudSeedingRB';
 import { CommunityServicesRebalance } from './rebalance/CommunityServicesRB';
 import { CorporateStrongholdRebalance } from './rebalance/CorporateStrongholdRB';
 import { CuttingEdgeTechnologyRebalance } from './rebalance/CuttingEdgeTechnologyRB';
+import { EarthCatapultRebalance } from './rebalance/EarthCatapultRB';
 
 
 
@@ -637,6 +638,7 @@ export const CHEMICAL_CARD_MANIFEST = new ModuleManifest({
     [CardName.COMMUNITY_SERVICES_RB]: {Factory: CommunityServicesRebalance},
     [CardName.CORPORATE_STRONGHOLD_RB]: {Factory: CorporateStrongholdRebalance},
     [CardName.CUTTING_EDGE_TECHNOLOGY_RB]: {Factory: CuttingEdgeTechnologyRebalance},
+    [CardName.EARTH_CATAPULT_RB]: {Factory: EarthCatapultRebalance},
     
     [CardName.SUBCRUST_VAPOR_TRAPPING]: {Factory: SubcrustVaporTrapping},
     [CardName.CONVOY_FROM_TITAN]: {Factory: ConvoyFromTitan},
@@ -1132,5 +1134,6 @@ export const CHEMICAL_CARD_MANIFEST = new ModuleManifest({
     CardName.COMMUNITY_SERVICES,
     CardName.CORPORATE_STRONGHOLD,
     CardName.CUTTING_EDGE_TECHNOLOGY,
+    CardName.EARTH_CATAPULT,
   ],
 });
