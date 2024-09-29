@@ -1029,7 +1029,8 @@ export enum CardName {
     EXTRACTOR_BALLOONS_RB = "Extractor Balloons(⚖)",
     ENERGY_SAVING_RB = "Energy Saving(⚖)",
     FORCED_PRECIPITATION_RB = "Forced Precipitation(⚖)",
-    GHG_IMPORT_FROM_VENUS_RB = "GHG Import From Venus(⚖)" 
+    GHG_IMPORT_FROM_VENUS_RB = "GHG Import From Venus(⚖)", 
+    GMO_CONTRACT_RB = "GMO Contract(⚖)",
     
     SUBCRUST_VAPOR_TRAPPING = 'Subcrust Vapor Trapping',
     CONVOY_FROM_TITAN = 'Convoy From Titan',

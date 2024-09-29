@@ -557,6 +557,7 @@ import { ExtractorBalloonsRebalance } from './rebalance/ExtractorBalloonsRB';
 import { EnergySavingRebalance } from './rebalance/EnergySavingRB';
 import { ForcedPrecipitationRebalance } from './rebalance/ForcedPrecipitationRB';
 import { GHGImportFromVenusRebalance } from './rebalance/GHGImportFromVenusRB';
+import { GMOContractRebalance } from './rebalance/GMOContractRB';
 
 
 
@@ -651,6 +652,7 @@ export const CHEMICAL_CARD_MANIFEST = new ModuleManifest({
     [CardName.EXTRACTOR_BALLOONS_RB]: {Factory: ExtractorBalloonsRebalance, compatibility: 'venus'},
     [CardName.FORCED_PRECIPITATION_RB]: {Factory: ForcedPrecipitationRebalance, compatibility: 'venus'},
     [CardName.GHG_IMPORT_FROM_VENUS_RB]: {Factory: GHGImportFromVenusRebalance, compatibility: 'venus'},
+    [CardName.GMO_CONTRACT_RB]: {Factory: GMOContractRebalance, compatibility: 'turmoil'},
     
     [CardName.SUBCRUST_VAPOR_TRAPPING]: {Factory: SubcrustVaporTrapping},
     [CardName.CONVOY_FROM_TITAN]: {Factory: ConvoyFromTitan},
@@ -1153,6 +1155,6 @@ export const CHEMICAL_CARD_MANIFEST = new ModuleManifest({
     CardName.EXTRACTOR_BALLOONS,
     CardName.FORCED_PRECIPITATION,
     CardName.GHG_IMPORT_FROM_VENUS,
-    
+    CardName.GMO_CONTRACT,
   ],
 });
