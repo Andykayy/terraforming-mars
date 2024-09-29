@@ -545,6 +545,7 @@ import {AerobrakedAmmoniaAsteroidRebalance} from './rebalance/AerobrakedAmmoniaA
 import {AsteroidHollowingRebalance } from './rebalance/AsteroidHollowingRB';
 import { BlackPolarDustRebalance } from './rebalance/BlackPolarDustRB';
 import { BuildingIndustriesRebalance } from './rebalance/BuildingIndustriesRB';
+import { CartelRebalance } from './rebalance/CartelRB';
 
 
 
@@ -627,6 +628,7 @@ export const CHEMICAL_CARD_MANIFEST = new ModuleManifest({
     [CardName.ASTEROID_HOLLOWING_RB]: {Factory: AsteroidHollowingRebalance, compatibility: 'promo'},
     [CardName.BLACK_POLAR_DUST_RB]: {Factory: BlackPolarDustRebalance},
     [CardName.BUILDING_INDUSTRIES_RB]: {Factory: BuildingIndustriesRebalance},
+    [CardName.CARTEL_RB]: {Factory: CartelRebalance},
     
     [CardName.SUBCRUST_VAPOR_TRAPPING]: {Factory: SubcrustVaporTrapping},
     [CardName.CONVOY_FROM_TITAN]: {Factory: ConvoyFromTitan},

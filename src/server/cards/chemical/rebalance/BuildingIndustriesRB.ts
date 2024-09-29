@@ -18,7 +18,7 @@ export class BuildingIndustriesRebalance extends Card implements IProjectCard {
       },
 
       metadata: {
-        cardNumber: '065',
+        cardNumber: '0651',
         description: 'Decrease your energy production 1 step and increase your steel production 2 steps.',
         renderData: CardRenderer.builder((b) => {
           b.production((pb) => {
