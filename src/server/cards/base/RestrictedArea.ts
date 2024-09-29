@@ -25,7 +25,8 @@ export class RestrictedArea extends ActionCard implements IProjectCard {
       type: CardType.ACTIVE,
       name,
       tags: [Tag.SCIENCE],
-      cost: 11,
+      //Andy updated this. Hacky way to rebalance around Ares.
+      cost: 13,
 
       behavior: {
         tile: {
