@@ -553,6 +553,7 @@ import { CuttingEdgeTechnologyRebalance } from './rebalance/CuttingEdgeTechnolog
 import { EarthCatapultRebalance } from './rebalance/EarthCatapultRB';
 import { EarthOfficeRebalance } from './rebalance/EarthOfficeRB';
 import { EnergyMarketRebalance } from './rebalance/EnergyMarketRB';
+import { ExtractorBalloonsRebalance } from './rebalance/ExtractorBalloonsRB';
 
 
 
@@ -637,12 +638,13 @@ export const CHEMICAL_CARD_MANIFEST = new ModuleManifest({
     [CardName.BUILDING_INDUSTRIES_RB]: {Factory: BuildingIndustriesRebalance},
     [CardName.CARTEL_RB]: {Factory: CartelRebalance},
     [CardName.CLOUD_SEEDING_RB]: {Factory: CloudSeedingRebalance},
-    [CardName.COMMUNITY_SERVICES_RB]: {Factory: CommunityServicesRebalance},
+    [CardName.COMMUNITY_SERVICES_RB]: {Factory: CommunityServicesRebalance,  compatibility: 'colonies'},
     [CardName.CORPORATE_STRONGHOLD_RB]: {Factory: CorporateStrongholdRebalance},
-    [CardName.CUTTING_EDGE_TECHNOLOGY_RB]: {Factory: CuttingEdgeTechnologyRebalance},
+    [CardName.CUTTING_EDGE_TECHNOLOGY_RB]: {Factory: CuttingEdgeTechnologyRebalance, compatibility: 'promo'},
     [CardName.EARTH_CATAPULT_RB]: {Factory: EarthCatapultRebalance},
     [CardName.EARTH_OFFICE_RB]: {Factory: EarthOfficeRebalance},
-    [CardName.ENERGY_MARKET_RB]: {Factory: EnergyMarketRebalance},
+    [CardName.ENERGY_MARKET_RB]: {Factory: EnergyMarketRebalance, compatibility: 'promo'},
+    [CardName.EXTRACTOR_BALLOONS_RB]: {Factory: ExtractorBalloonsRebalance, compatibility: 'venus'},
     
     [CardName.SUBCRUST_VAPOR_TRAPPING]: {Factory: SubcrustVaporTrapping},
     [CardName.CONVOY_FROM_TITAN]: {Factory: ConvoyFromTitan},
@@ -1141,5 +1143,6 @@ export const CHEMICAL_CARD_MANIFEST = new ModuleManifest({
     CardName.EARTH_CATAPULT,
     CardName.EARTH_OFFICE,
     CardName.ENERGY_MARKET,
+    CardName.EXTRACTOR_BALLOONS,
   ],
 });
