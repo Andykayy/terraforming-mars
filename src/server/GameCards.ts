@@ -87,22 +87,35 @@ export class GameCards {
   public getStandardProjects() {
     return this.getCards<IStandardProjectCard>('standardProjects');
   }
+  
   public getCorporationCards(): Array<ICorporationCard> {
+    console.log("Starting getCorporationCards");
     let cards = this.getCards<ICorporationCard>('corporationCards')
       .filter((card) => card.name !== CardName.BEGINNER_CORPORATION);
-
-      //andy test
-      if (this.gameOptions.chemicalExpansion) {
-        const cardsToRemove = [
-          CardName.POINT_LUNA,
-          // Add other corporation card names to remove here
-        ];
-        cards = cards.filter((card) => !cardsToRemove.includes(card.name));
-      }
-      //andy
-      
-    return this.addCustomCards(cards, this.gameOptions.customCorporationsList);
+    
+    console.log("Initial corporation cards:", cards.map(card => card.name));
+    console.log("Chemical Expansion active:", this.gameOptions.chemicalExpansion);
+  
+    const cardsToRemove = this.gameOptions.chemicalExpansion ? [CardName.POINT_LUNA] : [];
+    console.log("Cards to remove:", cardsToRemove);
+  
+    const removeCards = (cardList: Array<ICorporationCard>) => 
+      cardList.filter((card) => !cardsToRemove.includes(card.name));
+  
+    cards = removeCards(cards);
+    console.log("Corporation cards after removal:", cards.map(card => card.name));
+  
+    const customCards = this.addCustomCards(cards, this.gameOptions.customCorporationsList);
+    console.log("Cards after custom additions:", customCards.map(card => card.name));
+  
+    // Apply removal again to ensure Point Luna is not added back
+    const finalCards = removeCards(customCards);
+    console.log("Final corporation cards:", finalCards.map(card => card.name));
+    
+    return finalCards;
   }
+
+
   public getPreludeCards() {
     let preludes = this.getCards<IPreludeCard>('preludeCards');
     // https://github.com/terraforming-mars/terraforming-mars/issues/2833
@@ -164,14 +177,17 @@ export class GameCards {
 
   private addCustomCards<T extends ICard>(cards: Array<T>, customList: Array<CardName> = []): Array<T> {
     for (const cardName of customList) {
+      if (this.gameOptions.chemicalExpansion && cardName === CardName.POINT_LUNA) {
+        console.log("Skipping Point Luna in custom additions due to chemical expansion");
+        continue;
+      }
       const idx = cards.findIndex((c) => c.name === cardName);
       if (idx === -1) {
         const card = newCard(cardName);
         if (card === undefined) {
-          // TODO(kberg): throw an error.
           console.warn(`Unknown card: ${cardName}`);
         } else {
-          cards.push(<T> card);
+          cards.push(<T>card);
         }
       }
     }
