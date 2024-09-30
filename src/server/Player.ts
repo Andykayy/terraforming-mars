@@ -93,6 +93,11 @@ export class Player implements IPlayer {
   public readonly stock: Stock;
   private _alliedParty: AlliedParty | undefined;
 
+  //andy added
+  
+  public hasTraded: boolean = false;
+
+
   // Corporate identity
   public corporations: Array<ICorporationCard> = [];
 
@@ -177,6 +182,7 @@ export class Player implements IPlayer {
   public canUseTitaniumAsMegacredits: boolean = false;
   // Friends in High Places
   public canUseCorruptionAsMegacredits: boolean = false;
+
 
   // This generation / this round
   public actionsTakenThisRound: number = 0;
@@ -632,6 +638,9 @@ export class Player implements IPlayer {
   }
 
   public runProductionPhase(): void {
+    //andy added for one trade
+    this.hasTraded = false;
+    
     this.actionsThisGeneration.clear();
     this.removingPlayers = [];
 
@@ -1686,6 +1695,11 @@ export class Player implements IPlayer {
       this.incrementActionsTaken();
       this.takeAction();
     });
+
+    //andy one trade
+    if (this.actionsTakenThisRound === 0) {
+      this.hasTraded = false;
+    }
   }
 
   // TODO(kberg): perhaps move to Card
@@ -1966,6 +1980,8 @@ export class Player implements IPlayer {
       alliedParty: this._alliedParty,
       draftHand: this.draftHand.map((c) => c.name),
       autoPass: this.autopass,
+      //andy one trade
+      hasTraded: this.hasTraded,
     };
 
     if (this.lastCardPlayed !== undefined) {
@@ -1977,6 +1993,9 @@ export class Player implements IPlayer {
   public static deserialize(d: SerializedPlayer): Player {
     const player = new Player(d.name, d.color, d.beginner, Number(d.handicap), d.id);
 
+    //andy one trade
+    player.hasTraded = d.hasTraded ?? false;
+    
     player.actionsTakenThisGame = d.actionsTakenThisGame;
     player.actionsTakenThisRound = d.actionsTakenThisRound;
     player.canUseHeatAsMegaCredits = d.canUseHeatAsMegaCredits;
