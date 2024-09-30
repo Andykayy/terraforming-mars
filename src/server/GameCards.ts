@@ -87,7 +87,7 @@ export class GameCards {
     return this.getCards<IStandardProjectCard>('standardProjects');
   }
   public getCorporationCards(): Array<ICorporationCard> {
-    const cards = this.getCards<ICorporationCard>('corporationCards')
+    let cards = this.getCards<ICorporationCard>('corporationCards')
       .filter((card) => card.name !== CardName.BEGINNER_CORPORATION);
     return this.addCustomCards(cards, this.gameOptions.customCorporationsList);
   }
