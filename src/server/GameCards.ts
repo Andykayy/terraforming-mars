@@ -194,7 +194,7 @@ export class GameCards {
       if (this.gameOptions.chemicalExpansion) {
         return card.name !== CardName.POINT_LUNA;
       }     
-      return true; 
+      return false; 
     });
   }
 //andy
