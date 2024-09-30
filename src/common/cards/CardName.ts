@@ -1582,5 +1582,7 @@ export enum CardName {
     EARLY_SETTLEMENT_RB = "Early Settlement(⚖)",
     ECCENTRIC_SPONSOR_RB = "Eccentric Sponsor(⚖)",
     GALILEAN_MINING_RB = "Galilean Mining(⚖)",
+    HUGE_ASTEROID_RB = "Huge Asteroid(⚖)",
+    IO_RESEARCH_OUTPOST_RB = "IO Research Outpost(⚖)",
 
 }

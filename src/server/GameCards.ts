@@ -121,7 +121,9 @@ export class GameCards {
       preludes = preludes.filter((c) => c.name !== CardName.EARLY_SETTLEMENT);
       preludes = preludes.filter((c) => c.name !== CardName.ECCENTRIC_SPONSOR);
       preludes = preludes.filter((c) => c.name !== CardName.GALILEAN_MINING);
-      preludes = preludes.filter((c) => c.name !== CardName.GALILEAN_MINING);
+      preludes = preludes.filter((c) => c.name !== CardName.HUGE_ASTEROID);
+      preludes = preludes.filter((c) => c.name !== CardName.IO_RESEARCH_OUTPOST);
+      preludes = preludes.filter((c) => c.name !== CardName.IO_RESEARCH_OUTPOST);
         }
 
     return preludes;

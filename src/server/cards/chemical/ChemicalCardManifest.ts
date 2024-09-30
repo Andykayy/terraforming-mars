@@ -594,6 +594,8 @@ import { DomeFarmingRebalance } from './rebalance/3_DomeFarmingRB';
 import { EarlySettlementRebalance } from './rebalance/4_EarlySettlementRB';
 import { EccentricSponsorRebalance } from './rebalance/5_EccentricSponsorRB';
 import { GalileanMiningRebalance } from './rebalance/6_GalileanMiningRB';
+import { HugeAsteroidRebalance } from './rebalance/7_HugeAsteroidRB';
+import { IoResearchOutpostRebalance } from './rebalance/8_IoResearchOutpostRB';
 
 
 
@@ -672,6 +674,8 @@ export const CHEMICAL_CARD_MANIFEST = new ModuleManifest({
     [CardName.EARLY_SETTLEMENT_RB]: {Factory: EarlySettlementRebalance, compatibility: 'prelude'},
     [CardName.ECCENTRIC_SPONSOR_RB]: {Factory: EccentricSponsorRebalance, compatibility: 'prelude'},
     [CardName.GALILEAN_MINING_RB]: {Factory: GalileanMiningRebalance, compatibility: 'prelude'},
+    [CardName.HUGE_ASTEROID_RB]: {Factory: HugeAsteroidRebalance, compatibility: 'prelude'},
+    [CardName.IO_RESEARCH_OUTPOST_RB]: {Factory: IoResearchOutpostRebalance, compatibility: 'prelude'},
   },
   projectCards: {
     //Andy added
