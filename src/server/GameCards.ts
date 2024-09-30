@@ -88,8 +88,19 @@ export class GameCards {
     return this.getCards<IStandardProjectCard>('standardProjects');
   }
   public getCorporationCards(): Array<ICorporationCard> {
-    const cards = this.getCards<ICorporationCard>('corporationCards')
+    let cards = this.getCards<ICorporationCard>('corporationCards')
       .filter((card) => card.name !== CardName.BEGINNER_CORPORATION);
+
+      //andy test
+      if (this.gameOptions.chemicalExpansion) {
+        const cardsToRemove = [
+          CardName.POINT_LUNA,
+          // Add other corporation card names to remove here
+        ];
+        cards = cards.filter((card) => !cardsToRemove.includes(card.name));
+      }
+      //andy
+      
     return this.addCustomCards(cards, this.gameOptions.customCorporationsList);
   }
   public getPreludeCards() {
@@ -177,11 +188,6 @@ export class GameCards {
 
     cards = this.filterBannedCards(cards);
     cards = this.filterReplacedCards(cards);
-    //andy
-    if (this.gameOptions.chemicalExpansion) {
-      cards = this.filterDuplicateCards(cards);
-    }    
-    //andy
     return cards;
   }
 
@@ -191,12 +197,6 @@ export class GameCards {
       return this.gameOptions.bannedCards.includes(card.name) !== true;
     });
   }
-//andy test
-  private filterDuplicateCards<T extends ICard>(cards: Array<T>): Array<T> {
-    cards = cards.filter((c) => c.name = CardName.POINT_LUNA);
-    return cards;    
-  }
-//andy
   /* Remove cards that are replaced by new versions in other manifests */
   private filterReplacedCards<T extends ICard>(cards: Array<T>): Array<T> {
     return cards.filter((card) => {
