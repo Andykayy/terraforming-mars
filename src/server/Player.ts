@@ -638,8 +638,6 @@ export class Player implements IPlayer {
   }
 
   public runProductionPhase(): void {
-    //andy added for one trade
-    this.hasTraded = false;
     
     this.actionsThisGeneration.clear();
     this.removingPlayers = [];
@@ -1318,12 +1316,8 @@ export class Player implements IPlayer {
       resolveFinalGreeneryDeferredActions();
     } else {
       this.game.playerIsDoneWithGame(this);
-    }
-    
-    //andy one trade
-    if (this.actionsTakenThisRound === 0) {
-      this.hasTraded = false;
-    }
+    }   
+
   }
 
   private getPlayableCeoCards(): Array<IProjectCard> {
@@ -1604,6 +1598,11 @@ export class Player implements IPlayer {
 
     if (this.actionsTakenThisRound === 0 || game.gameOptions.undoOption) game.save();
     // if (saveBeforeTakingAction) game.save();
+
+    //andy one trade
+    if (this.actionsTakenThisRound === 0) {
+      this.hasTraded = false; // Reset hasTraded at the start of each turn
+    }
 
     if (this.autopass) {
       this.passOption().cb();

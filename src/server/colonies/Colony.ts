@@ -117,11 +117,6 @@ export abstract class Colony implements IColony {
     */
   public trade(player: IPlayer, tradeOptions: TradeOptions = {}, bonusTradeOffset = 0): void {
     const game = player.game;
-
-      // Check if chemical expansion is active and if the player has already traded this turn
-  if (game.gameOptions.chemicalExpansion && player.hasTraded) {
-    throw new Error('Cannot trade more than once per turn when rebalance expansion is active');
-  }
     
     const tradeOffset = player.colonies.tradeOffset + bonusTradeOffset;
     const maxTrackPosition = Math.min(this.trackPosition + tradeOffset, MAX_COLONY_TRACK_POSITION);
