@@ -1319,6 +1319,11 @@ export class Player implements IPlayer {
     } else {
       this.game.playerIsDoneWithGame(this);
     }
+    
+    //andy one trade
+    if (this.actionsTakenThisRound === 0) {
+      this.hasTraded = false;
+    }
   }
 
   private getPlayableCeoCards(): Array<IProjectCard> {
@@ -1696,10 +1701,6 @@ export class Player implements IPlayer {
       this.takeAction();
     });
 
-    //andy one trade
-    if (this.actionsTakenThisRound === 0) {
-      this.hasTraded = false;
-    }
   }
 
   // TODO(kberg): perhaps move to Card

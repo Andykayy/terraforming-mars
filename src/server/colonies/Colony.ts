@@ -154,13 +154,22 @@ export abstract class Colony implements IColony {
     player.game.defer(new IncreaseColonyTrack(player, this, steps))
       .andThen(() => this.handleTrade(player, tradeOptions));
 
-      // Set the hasTraded flag if chemical expansion is active
-  if (game.gameOptions.chemicalExpansion) {
-    player.hasTraded = true;
-  }
+      // Set the hasTraded flag if chemical expansion is active - andy one trade
+      if (game.gameOptions.chemicalExpansion) {
+        player.hasTraded = true;
+        game.log('${0} has traded this turn and cannot trade again', (b) => b.player(player));
+      }
   }
 
   private handleTrade(player: IPlayer, options: TradeOptions) {
+   //andy one trade
+   const game = player.game;
+
+   if (game.gameOptions.chemicalExpansion && player.hasTraded) {
+     throw new Error('Cannot trade more than once per turn when rebalance expansion is active');
+   }
+ 
+   
     const resource = Array.isArray(this.metadata.tradeResource) ? this.metadata.tradeResource[this.trackPosition] : this.metadata.tradeResource;
 
     this.giveBonus(player, this.metadata.tradeType, this.metadata.tradeQuantity[this.trackPosition], resource);
@@ -181,6 +190,11 @@ export abstract class Colony implements IColony {
       player.defer(() => {
         this.trackPosition = this.colonies.length;
       }, Priority.DECREASE_COLONY_TRACK_AFTER_TRADE);
+    }
+//andy one trade
+    if (game.gameOptions.chemicalExpansion) {
+      player.hasTraded = true;
+      game.log('${0} has traded this turn and cannot trade again', (b) => b.player(player));
     }
   }
 
