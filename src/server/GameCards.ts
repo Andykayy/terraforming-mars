@@ -123,7 +123,12 @@ export class GameCards {
       preludes = preludes.filter((c) => c.name !== CardName.GALILEAN_MINING);
       preludes = preludes.filter((c) => c.name !== CardName.HUGE_ASTEROID);
       preludes = preludes.filter((c) => c.name !== CardName.IO_RESEARCH_OUTPOST);
-      preludes = preludes.filter((c) => c.name !== CardName.IO_RESEARCH_OUTPOST);
+      preludes = preludes.filter((c) => c.name !== CardName.LOAN);
+      preludes = preludes.filter((c) => c.name !== CardName.MARTIAN_INDUSTRIES);
+      preludes = preludes.filter((c) => c.name !== CardName.METALS_COMPANY);
+      preludes = preludes.filter((c) => c.name !== CardName.MOHOLE);
+      preludes = preludes.filter((c) => c.name !== CardName.MOHOLE_EXCAVATION);
+      preludes = preludes.filter((c) => c.name !== CardName.MOHOLE_EXCAVATION);
         }
 
     return preludes;

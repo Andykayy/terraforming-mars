@@ -596,6 +596,11 @@ import { EccentricSponsorRebalance } from './rebalance/5_EccentricSponsorRB';
 import { GalileanMiningRebalance } from './rebalance/6_GalileanMiningRB';
 import { HugeAsteroidRebalance } from './rebalance/7_HugeAsteroidRB';
 import { IoResearchOutpostRebalance } from './rebalance/8_IoResearchOutpostRB';
+import { LoanRebalance } from './rebalance/9_LoanRB';
+import { MartianIndustriesRebalance } from './rebalance/10_MartianIndustriesRB';
+import { MetalsCompanyRebalance } from './rebalance/11_MetalsCompanyRB';
+import { MoholeRebalance } from './rebalance/12_MoholeRB';
+import { MoholeExcavationRebalance } from './rebalance/13_ MoholeExcavationRB';
 
 
 
@@ -676,6 +681,12 @@ export const CHEMICAL_CARD_MANIFEST = new ModuleManifest({
     [CardName.GALILEAN_MINING_RB]: {Factory: GalileanMiningRebalance, compatibility: 'prelude'},
     [CardName.HUGE_ASTEROID_RB]: {Factory: HugeAsteroidRebalance, compatibility: 'prelude'},
     [CardName.IO_RESEARCH_OUTPOST_RB]: {Factory: IoResearchOutpostRebalance, compatibility: 'prelude'},
+    [CardName.LOAN_RB]: {Factory: LoanRebalance, compatibility: 'prelude'},
+    [CardName.MARTIAN_INDUSTRIES_RB]: {Factory: MartianIndustriesRebalance, compatibility: 'prelude'},
+    [CardName.METALS_COMPANY_RB]: {Factory: MetalsCompanyRebalance, compatibility: 'prelude'},
+    [CardName.MOHOLE_RB]: {Factory: MoholeRebalance, compatibility: 'prelude'},
+    [CardName.MOHOLE_EXCAVATION_RB]: {Factory: MoholeExcavationRebalance, compatibility: 'prelude'},
+    
   },
   projectCards: {
     //Andy added

@@ -1584,5 +1584,10 @@ export enum CardName {
     GALILEAN_MINING_RB = "Galilean Mining(⚖)",
     HUGE_ASTEROID_RB = "Huge Asteroid(⚖)",
     IO_RESEARCH_OUTPOST_RB = "IO Research Outpost(⚖)",
+    LOAN_RB = "Loan(⚖)",
+    MARTIAN_INDUSTRIES_RB = "Martian Industries(⚖)",
+    METALS_COMPANY_RB = "Metals Company(⚖)",
+    MOHOLE_RB = "Mohole(⚖)",
+    MOHOLE_EXCAVATION_RB = "Mohole Excavation(⚖)",
 
 }
