@@ -131,8 +131,8 @@ export class GameCards {
       preludes = preludes.filter((c) => c.name !== CardName.NITROGEN_SHIPMENT);
       preludes = preludes.filter((c) => c.name !== CardName.ORBITAL_CONSTRUCTION_YARD);
       preludes = preludes.filter((c) => c.name !== CardName.POLAR_INDUSTRIES);
-      preludes = preludes.filter((c) => c.name !== CardName.NITROGEN_SHIPMENT);
-      preludes = preludes.filter((c) => c.name !== CardName.NITROGEN_SHIPMENT);
+      preludes = preludes.filter((c) => c.name !== CardName.SELF_SUFFICIENT_SETTLEMENT);
+      preludes = preludes.filter((c) => c.name !== CardName.SMELTING_PLANT);
       preludes = preludes.filter((c) => c.name !== CardName.NITROGEN_SHIPMENT);
       preludes = preludes.filter((c) => c.name !== CardName.NITROGEN_SHIPMENT);
       preludes = preludes.filter((c) => c.name !== CardName.NITROGEN_SHIPMENT);
