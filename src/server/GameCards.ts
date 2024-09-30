@@ -25,6 +25,7 @@ import {STAR_WARS_CARD_MANIFEST} from './cards/starwars/StarwarsCardManifest';
 import {UNDERWORLD_CARD_MANIFEST} from './cards/underworld/UnderworldCardManifest';
 import {CHEMICAL_CARD_MANIFEST} from './cards/chemical/ChemicalCardManifest';
 
+
 /**
  * Returns the cards available to a game based on its `GameOptions`.
  *
@@ -192,7 +193,7 @@ export class GameCards {
   }
 //andy test
   private filterDuplicateCards<T extends ICard>(cards: Array<T>): Array<T> {
-    cards = cards.filter((c) => c.name !== CardName.POINT_LUNA);
+    cards = cards.filter((c) => c.name = CardName.POINT_LUNA);
     return cards;    
   }
 //andy
