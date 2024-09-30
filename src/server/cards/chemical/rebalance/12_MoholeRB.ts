@@ -18,7 +18,7 @@ export class MoholeRebalance extends PreludeCard implements IProjectCard {
       metadata: {
         cardNumber: 'P22',
         renderData: CardRenderer.builder((b) => {
-          b.production((pb) => pb.heat(2).energy(1).br);
+          b.production((pb) => pb.heat(2).energy(1)).br;
           b.heat(5).br;
           b.energy(3);
         }),

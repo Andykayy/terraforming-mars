@@ -601,6 +601,7 @@ import { MartianIndustriesRebalance } from './rebalance/10_MartianIndustriesRB';
 import { MetalsCompanyRebalance } from './rebalance/11_MetalsCompanyRB';
 import { MoholeRebalance } from './rebalance/12_MoholeRB';
 import { MoholeExcavationRebalance } from './rebalance/13_ MoholeExcavationRB';
+import { NitrogenShipmentRebalance } from './rebalance/14_NitrogenShipmentRB';
 
 
 
@@ -686,7 +687,7 @@ export const CHEMICAL_CARD_MANIFEST = new ModuleManifest({
     [CardName.METALS_COMPANY_RB]: {Factory: MetalsCompanyRebalance, compatibility: 'prelude'},
     [CardName.MOHOLE_RB]: {Factory: MoholeRebalance, compatibility: 'prelude'},
     [CardName.MOHOLE_EXCAVATION_RB]: {Factory: MoholeExcavationRebalance, compatibility: 'prelude'},
-    
+    [CardName.NITROGEN_SHIPMENT_RB]: {Factory: NitrogenShipmentRebalance, compatibility: 'prelude'},
   },
   projectCards: {
     //Andy added
