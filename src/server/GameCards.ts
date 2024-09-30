@@ -96,7 +96,7 @@ export class GameCards {
     console.log("Initial corporation cards:", cards.map(card => card.name));
     console.log("Chemical Expansion active:", this.gameOptions.chemicalExpansion);
   
-    const cardsToRemove = this.gameOptions.chemicalExpansion ? [CardName.POINT_LUNA] : [];
+    const cardsToRemove = this.getCardsToRemove();
     console.log("Cards to remove:", cardsToRemove);
   
     const removeCards = (cardList: Array<ICorporationCard>) => 
@@ -108,7 +108,7 @@ export class GameCards {
     const customCards = this.addCustomCards(cards, this.gameOptions.customCorporationsList);
     console.log("Cards after custom additions:", customCards.map(card => card.name));
   
-    // Apply removal again to ensure Point Luna is not added back
+    // Apply removal again to ensure removed cards are not added back
     const finalCards = removeCards(customCards);
     console.log("Final corporation cards:", finalCards.map(card => card.name));
     
@@ -175,10 +175,24 @@ export class GameCards {
     return ceos;
   }
 
+  private getCardsToRemove(): Array<CardName> {
+    if (this.gameOptions.chemicalExpansion) {
+      return [
+        CardName.POINT_LUNA,
+        // Add more CardNames here as needed
+        // For example:
+        // CardName.ANOTHER_CORPORATION,
+        // CardName.YET_ANOTHER_CORPORATION,
+      ];
+    }
+    return [];
+  }
+
   private addCustomCards<T extends ICard>(cards: Array<T>, customList: Array<CardName> = []): Array<T> {
+    const cardsToRemove = this.getCardsToRemove();
     for (const cardName of customList) {
-      if (this.gameOptions.chemicalExpansion && cardName === CardName.POINT_LUNA) {
-        console.log("Skipping Point Luna in custom additions due to chemical expansion");
+      if (cardsToRemove.includes(cardName)) {
+        console.log(`Skipping ${cardName} in custom additions due to removal list`);
         continue;
       }
       const idx = cards.findIndex((c) => c.name === cardName);
