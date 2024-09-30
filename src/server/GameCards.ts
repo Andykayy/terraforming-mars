@@ -193,8 +193,10 @@ export class GameCards {
     return cards.filter((card) => {
       if (this.gameOptions.chemicalExpansion) {
         return card.name = CardName.POINT_LUNA;
-      }     
-      return true; 
+      }
+      else {
+        return false;
+      }        
     });
   }
 //andy
