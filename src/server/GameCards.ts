@@ -87,11 +87,8 @@ export class GameCards {
     return this.getCards<IStandardProjectCard>('standardProjects');
   }
   public getCorporationCards(): Array<ICorporationCard> {
-    let cards = this.getCards<ICorporationCard>('corporationCards')
-      .filter((card) => card.name !== CardName.BEGINNER_CORPORATION);
-      if (this.gameOptions.chemicalExpansion) {
-        cards.filter((card) => card.name !== CardName.POINT_LUNA);
-      }
+    const cards = this.getCards<ICorporationCard>('corporationCards')
+      .filter((card) => card.name !== CardName.BEGINNER_CORPORATION);           
     return this.addCustomCards(cards, this.gameOptions.customCorporationsList);
   }
   public getPreludeCards() {
@@ -179,6 +176,9 @@ export class GameCards {
 
     cards = this.filterBannedCards(cards);
     cards = this.filterReplacedCards(cards);
+    
+    if (this.gameOptions.chemicalExpansion) {
+      cards.filter((c) => c.name !== CardName.POINT_LUNA);
     return cards;
   }
 
