@@ -152,6 +152,9 @@ export interface IPlayer {
   underworldData: UnderworldPlayerData;
   readonly alliedParty?: AlliedParty;
 
+  //Andy test one trade
+  hasTraded: boolean;
+
   tearDown(): void;
   tableau: Array<ICorporationCard | IProjectCard>;
 

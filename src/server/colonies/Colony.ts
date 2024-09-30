@@ -116,6 +116,13 @@ export abstract class Colony implements IColony {
     * @param decreaseTrackAfterTrade when false, the track does not decrease after trading.
     */
   public trade(player: IPlayer, tradeOptions: TradeOptions = {}, bonusTradeOffset = 0): void {
+    const game = player.game;
+
+      // Check if chemical expansion is active and if the player has already traded this turn
+  if (game.gameOptions.chemicalExpansion && player.hasTraded) {
+    throw new Error('Cannot trade more than once per turn when rebalance expansion is active');
+  }
+    
     const tradeOffset = player.colonies.tradeOffset + bonusTradeOffset;
     const maxTrackPosition = Math.min(this.trackPosition + tradeOffset, MAX_COLONY_TRACK_POSITION);
     const steps = maxTrackPosition - this.trackPosition;
@@ -146,6 +153,11 @@ export abstract class Colony implements IColony {
     // Ask the player if they want to increase the track
     player.game.defer(new IncreaseColonyTrack(player, this, steps))
       .andThen(() => this.handleTrade(player, tradeOptions));
+
+      // Set the hasTraded flag if chemical expansion is active
+  if (game.gameOptions.chemicalExpansion) {
+    player.hasTraded = true;
+  }
   }
 
   private handleTrade(player: IPlayer, options: TradeOptions) {

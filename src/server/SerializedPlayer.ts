@@ -76,4 +76,7 @@ export interface SerializedPlayer extends DeprecatedFields{
     underworldData: UnderworldPlayerData;
     victoryPointsByGeneration: Array<number>;
     generationData: GenerationData;
+
+    //andy one trade
+    hasTraded: boolean;
 }
