@@ -1590,5 +1590,7 @@ export enum CardName {
     MOHOLE_RB = "Mohole(⚖)",
     MOHOLE_EXCAVATION_RB = "Mohole Excavation(⚖)",
     NITROGEN_SHIPMENT_RB = "Nitrogen Shipment(⚖)",
+    ORBITAL_CONSTRUCTION_YARD_RB = "Orbital Construction Yard(⚖)",
+    POLAR_INDUSTRIES_RB = "Polar Industries(⚖)",
 
 }
