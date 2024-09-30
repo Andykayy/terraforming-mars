@@ -89,6 +89,9 @@ export class GameCards {
   public getCorporationCards(): Array<ICorporationCard> {
     const cards = this.getCards<ICorporationCard>('corporationCards')
       .filter((card) => card.name !== CardName.BEGINNER_CORPORATION);
+      if (this.gameOptions.chemicalExpansion) {
+      cards.filter((card) => card.name !== CardName.POINT_LUNA);
+      }
     return this.addCustomCards(cards, this.gameOptions.customCorporationsList);
   }
   public getPreludeCards() {
@@ -137,6 +140,8 @@ export class GameCards {
       preludes = preludes.filter((c) => c.name !== CardName.NITROGEN_SHIPMENT);
       preludes = preludes.filter((c) => c.name !== CardName.NITROGEN_SHIPMENT);
       preludes = preludes.filter((c) => c.name !== CardName.NITROGEN_SHIPMENT);
+
+      
         }
 
     return preludes;
