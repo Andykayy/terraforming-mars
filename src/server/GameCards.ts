@@ -192,7 +192,7 @@ export class GameCards {
   private filterDuplicateCards<T extends ICard>(cards: Array<T>): Array<T> {
     return cards.filter((card) => {
       if (this.gameOptions.chemicalExpansion) {
-        return card.name !== CardName.POINT_LUNA;
+        return card.name = CardName.POINT_LUNA;
       }     
       return false; 
     });
