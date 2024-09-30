@@ -177,7 +177,9 @@ export class GameCards {
     cards = this.filterBannedCards(cards);
     cards = this.filterReplacedCards(cards);
     //andy
-    cards = this.filterDuplicateCards(cards);
+    if (this.gameOptions.chemicalExpansion) {
+      cards = this.filterDuplicateCards(cards);
+    }    
     //andy
     return cards;
   }
@@ -190,14 +192,8 @@ export class GameCards {
   }
 //andy test
   private filterDuplicateCards<T extends ICard>(cards: Array<T>): Array<T> {
-    return cards.filter((card) => {
-      if (this.gameOptions.chemicalExpansion) {
-        return card.name = CardName.POINT_LUNA;
-      }
-      else {
-        return false;
-      }        
-    });
+    cards = cards.filter((c) => c.name !== CardName.POINT_LUNA);
+    return cards;    
   }
 //andy
   /* Remove cards that are replaced by new versions in other manifests */
