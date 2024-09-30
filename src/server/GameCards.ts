@@ -176,8 +176,8 @@ export class GameCards {
 
     cards = this.filterBannedCards(cards);
     cards = this.filterReplacedCards(cards);
-    //andy added
-    cards = this.removeDuplicateCorps(cards);
+    //andy
+    cards = this.filterDuplicateCards(cards);
     //andy
     return cards;
   }
@@ -188,7 +188,16 @@ export class GameCards {
       return this.gameOptions.bannedCards.includes(card.name) !== true;
     });
   }
-
+//andy test
+  private filterDuplicateCards<T extends ICard>(cards: Array<T>): Array<T> {
+    return cards.filter((card) => {
+      if (this.gameOptions.chemicalExpansion) {
+        return card.name !== CardName.POINT_LUNA;
+      }     
+      return true; 
+    });
+  }
+//andy
   /* Remove cards that are replaced by new versions in other manifests */
   private filterReplacedCards<T extends ICard>(cards: Array<T>): Array<T> {
     return cards.filter((card) => {
@@ -198,13 +207,4 @@ export class GameCards {
       return true;
     });
   }
-//andy added
-  private removeDuplicateCorps<T extends ICard>(cards: Array<T>): Array<T> {
-   return cards.filter((card) => {
-    if (this.gameOptions.chemicalExpansion) {
-      card.name !== CardName.POINT_LUNA;
-    }     
-    });
-  }
-  //andy
 }
