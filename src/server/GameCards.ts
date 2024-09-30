@@ -89,9 +89,6 @@ export class GameCards {
   public getCorporationCards(): Array<ICorporationCard> {
     const cards = this.getCards<ICorporationCard>('corporationCards')
       .filter((card) => card.name !== CardName.BEGINNER_CORPORATION);
-      if (this.gameOptions.chemicalExpansion) {
-      cards.filter((card) => card.name !== CardName.POINT_LUNA);
-      }
     return this.addCustomCards(cards, this.gameOptions.customCorporationsList);
   }
   public getPreludeCards() {

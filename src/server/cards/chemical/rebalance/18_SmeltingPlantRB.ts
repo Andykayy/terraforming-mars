@@ -19,7 +19,7 @@ export class SmeltingPlantRebalance extends PreludeCard {
         cardNumber: 'P30',
         renderData: CardRenderer.builder((b) => {
           b.oxygen(2).br;
-          b.steel(5).br;
+          b.steel(4).br;
           b.cards(1, {secondaryTag: Tag.BUILDING});
         }),
         description: 'Raise oxygen 2 steps. Gain 5 steel. Draw a building card.',
