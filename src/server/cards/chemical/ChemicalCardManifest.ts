@@ -1287,5 +1287,7 @@ export const CHEMICAL_CARD_MANIFEST = new ModuleManifest({
     CardName.VIRAL_ENHANCERS,
     CardName.WARP_DRIVE,
     CardName.ZEPPELINS,
+
+    CardName.POINT_LUNA,
   ],
 });
