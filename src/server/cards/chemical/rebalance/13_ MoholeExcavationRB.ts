@@ -20,8 +20,9 @@ export class MoholeExcavationRebalance extends PreludeCard implements IProjectCa
         renderData: CardRenderer.builder((b) => {
           b.production((pb) => {
             pb.steel(1).br;
-            pb.heat(2);
-          }).steel(4);
+            pb.heat(2);            
+          })
+          b.steel(4);
         }),
         description: 'Increase your steel production 1 step and heat production 2 steps. Gain 4 steel.',
       },
