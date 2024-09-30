@@ -12,7 +12,7 @@ export class SmeltingPlantRebalance extends PreludeCard {
       behavior: {
         stock: {steel: 4},
         global: {oxygen: 2},
-        drawCard: {count: 2, tag: Tag.BUILDING},
+        drawCard: {count: 1, tag: Tag.BUILDING},
       },
 
       metadata: {
@@ -20,7 +20,7 @@ export class SmeltingPlantRebalance extends PreludeCard {
         renderData: CardRenderer.builder((b) => {
           b.oxygen(2).br;
           b.steel(5).br;
-          b.cards(2, {secondaryTag: Tag.BUILDING});
+          b.cards(1, {secondaryTag: Tag.BUILDING});
         }),
         description: 'Raise oxygen 2 steps. Gain 5 steel. Draw a building card.',
       },
