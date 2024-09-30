@@ -176,9 +176,10 @@ export class GameCards {
 
     cards = this.filterBannedCards(cards);
     cards = this.filterReplacedCards(cards);
-    
+//andy add
     if (this.gameOptions.chemicalExpansion) {
       cards.filter((c) => c.name !== CardName.POINT_LUNA);
+//end andy
     return cards;
   }
 
