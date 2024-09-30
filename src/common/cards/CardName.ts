@@ -1594,5 +1594,6 @@ export enum CardName {
     POLAR_INDUSTRIES_RB = "Polar Industries(⚖)",
     SELF_SUFFICIENT_SETTLEMENT_RB = "Self-Sufficient Settlement(⚖)",
     SMELTING_PLANT_RB = "Smelting Plant(⚖)",
+    SOCIETY_SUPPORT_RB = "Society Support(⚖)",
 
 }

@@ -606,6 +606,7 @@ import { OrbitalConstructionYardRebalance } from './rebalance/15_OrbitalConstruc
 import { PolarIndustriesRebalance } from './rebalance/16_PolarIndustriesRB';
 import { SelfSufficientSettlementRebalance } from './rebalance/17_SelfSufficientSettlementRB';
 import { SmeltingPlantRebalance } from './rebalance/18_SmeltingPlantRB';
+import { SocietySupportRebalance } from './rebalance/19_SocietySupportRB';
 
 
 
@@ -696,6 +697,7 @@ export const CHEMICAL_CARD_MANIFEST = new ModuleManifest({
     [CardName.POLAR_INDUSTRIES_RB]: {Factory: PolarIndustriesRebalance, compatibility:'prelude'},
     [CardName.SELF_SUFFICIENT_SETTLEMENT_RB]: {Factory: SelfSufficientSettlementRebalance, compatibility: 'prelude'},
     [CardName.SMELTING_PLANT_RB]: {Factory: SmeltingPlantRebalance, compatibility: 'prelude'},
+    [CardName.SOCIETY_SUPPORT_RB]: {Factory: SocietySupportRebalance, compatibility: 'prelude'},
   },
   projectCards: {
     //Andy added
