@@ -1,7 +1,7 @@
 import {Tag} from '../../../../common/cards/Tag';
 import {PreludeCard} from '../../prelude/PreludeCard';
 import {CardName} from '../../../../common/cards/CardName';
-import {CardRenderer} from '../../../cards/render/CardRenderer';
+import {CardRenderer} from '../../render/CardRenderer';
 
 export class GalileanMiningRebalance extends PreludeCard {
   constructor() {

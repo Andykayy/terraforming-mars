@@ -588,25 +588,25 @@ import { UndergroundDetonationsRebalance } from './rebalance/UndergroundDetonati
 import { ViralEnhancersRebalance } from './rebalance/ViralEnhancersRB';
 import { WarpDriveRebalance } from './rebalance/WarpDriveRB';
 import { ZeppelinsRebalance } from './rebalance/ZeppelinsRB';
-import { BiofuelsRebalance } from './rebalance/1_BiofuelsRB';
-import { BiosphereSupportRebalance } from './rebalance/2_BiosphereSupportRB';
-import { DomeFarmingRebalance } from './rebalance/3_DomeFarmingRB';
-import { EarlySettlementRebalance } from './rebalance/4_EarlySettlementRB';
-import { EccentricSponsorRebalance } from './rebalance/5_EccentricSponsorRB';
-import { GalileanMiningRebalance } from './rebalance/6_GalileanMiningRB';
-import { HugeAsteroidRebalance } from './rebalance/7_HugeAsteroidRB';
-import { IoResearchOutpostRebalance } from './rebalance/8_IoResearchOutpostRB';
-import { LoanRebalance } from './rebalance/9_LoanRB';
-import { MartianIndustriesRebalance } from './rebalance/10_MartianIndustriesRB';
-import { MetalsCompanyRebalance } from './rebalance/11_MetalsCompanyRB';
-import { MoholeRebalance } from './rebalance/12_MoholeRB';
-import { MoholeExcavationRebalance } from './rebalance/13_ MoholeExcavationRB';
-import { NitrogenShipmentRebalance } from './rebalance/14_NitrogenShipmentRB';
-import { OrbitalConstructionYardRebalance } from './rebalance/15_OrbitalConstructionYardRB';
-import { PolarIndustriesRebalance } from './rebalance/16_PolarIndustriesRB';
-import { SelfSufficientSettlementRebalance } from './rebalance/17_SelfSufficientSettlementRB';
-import { SmeltingPlantRebalance } from './rebalance/18_SmeltingPlantRB';
-import { SocietySupportRebalance } from './rebalance/19_SocietySupportRB';
+import { BiofuelsRebalance } from './rebalance/Prelude_BiofuelsRB';
+import { BiosphereSupportRebalance } from './rebalance/Prelude_BiosphereSupportRB';
+import { DomeFarmingRebalance } from './rebalance/Prelude_DomeFarmingRB';
+import { EarlySettlementRebalance } from './rebalance/Prelude_EarlySettlementRB';
+import { EccentricSponsorRebalance } from './rebalance/Prelude_EccentricSponsorRB';
+import { GalileanMiningRebalance } from './rebalance/Prelude_GalileanMiningRB';
+import { HugeAsteroidRebalance } from './rebalance/Prelude_HugeAsteroidRB';
+import { IoResearchOutpostRebalance } from './rebalance/Prelude_IoResearchOutpostRB';
+import { LoanRebalance } from './rebalance/Prelude_LoanRB';
+import { MartianIndustriesRebalance } from './rebalance/Prelude_MartianIndustriesRB';
+import { MetalsCompanyRebalance } from './rebalance/Prelude_MetalsCompanyRB';
+import { MoholeRebalance } from './rebalance/Prelude_MoholeRB';
+import { MoholeExcavationRebalance } from './rebalance/Prelude_ MoholeExcavationRB';
+import { NitrogenShipmentRebalance } from './rebalance/Prelude_NitrogenShipmentRB';
+import { OrbitalConstructionYardRebalance } from './rebalance/Prelude_OrbitalConstructionYardRB';
+import { PolarIndustriesRebalance } from './rebalance/Prelude_PolarIndustriesRB';
+import { SelfSufficientSettlementRebalance } from './rebalance/Prelude_SelfSufficientSettlementRB';
+import { SmeltingPlantRebalance } from './rebalance/Prelude_SmeltingPlantRB';
+import { SocietySupportRebalance } from './rebalance/Prelude_SocietySupportRB';
 
 
 
