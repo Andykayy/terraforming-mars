@@ -20,7 +20,7 @@ export class MoholeExcavationRebalance extends PreludeCard implements IProjectCa
         renderData: CardRenderer.builder((b) => {
           b.production((pb) => {
             pb.steel(1).br;
-            pb.heat(2);            
+            pb.heat(2).br;            
           })
           b.steel(4);
         }),
