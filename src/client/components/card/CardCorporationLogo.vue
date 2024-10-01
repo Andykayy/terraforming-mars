@@ -235,6 +235,7 @@ const imageLogosWithNames: Map<CardName, string> = new Map([
 
   //andy logos
   [CardName.APHRODITE_RB, 'card-aphrodite-logo'],
+  [CardName.ARKLIGHT_RB, 'card-arklight-logo'],
 ]);
 
 export default Vue.extend({
