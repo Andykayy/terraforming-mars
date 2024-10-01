@@ -588,6 +588,8 @@ import { UndergroundDetonationsRebalance } from './rebalance/UndergroundDetonati
 import { ViralEnhancersRebalance } from './rebalance/ViralEnhancersRB';
 import { WarpDriveRebalance } from './rebalance/WarpDriveRB';
 import { ZeppelinsRebalance } from './rebalance/ZeppelinsRB';
+
+//andy preludes
 import { BiofuelsRebalance } from './rebalance/Prelude_BiofuelsRB';
 import { BiosphereSupportRebalance } from './rebalance/Prelude_BiosphereSupportRB';
 import { DomeFarmingRebalance } from './rebalance/Prelude_DomeFarmingRB';
@@ -607,6 +609,9 @@ import { PolarIndustriesRebalance } from './rebalance/Prelude_PolarIndustriesRB'
 import { SelfSufficientSettlementRebalance } from './rebalance/Prelude_SelfSufficientSettlementRB';
 import { SmeltingPlantRebalance } from './rebalance/Prelude_SmeltingPlantRB';
 import { SocietySupportRebalance } from './rebalance/Prelude_SocietySupportRB';
+import { AphroditeRebalanced } from './rebalance/Corp_AphroditeRB';
+
+
 
 
 
@@ -614,6 +619,8 @@ export const CHEMICAL_CARD_MANIFEST = new ModuleManifest({
   module: 'chemical',
   corporationCards: {
 
+    //andy added
+    [CardName.APHRODITE_RB]: {Factory: AphroditeRebalanced, compatibility: 'venus'},
   },
   preludeCards: {
     [CardName.RESEARCH_BASE]: {Factory: ResearchBase},
