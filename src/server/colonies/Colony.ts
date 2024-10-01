@@ -116,6 +116,11 @@ export abstract class Colony implements IColony {
     * @param decreaseTrackAfterTrade when false, the track does not decrease after trading.
     */
   public trade(player: IPlayer, tradeOptions: TradeOptions = {}, bonusTradeOffset = 0): void {
+
+    console.log('trade method called');
+    console.log('chemicalExpansion:', player.game.gameOptions.chemicalExpansion);
+    console.log('hasTraded before:', player.hasTraded);
+
     const game = player.game;
     
     const tradeOffset = player.colonies.tradeOffset + bonusTradeOffset;
@@ -153,6 +158,7 @@ export abstract class Colony implements IColony {
     if (game.gameOptions.chemicalExpansion) {
       player.hasTraded = true;      
     }
+    console.log('hasTraded after:', player.hasTraded);
   }
 
   private handleTrade(player: IPlayer, options: TradeOptions) {   
