@@ -5,6 +5,7 @@ import {CardResource} from '../../../../common/CardResource';
 import {IProjectCard} from '../../IProjectCard';
 import {CardName} from '../../../../common/cards/CardName';
 import {CardRenderer} from '../../render/CardRenderer';
+import {Resource} from '../../../../common/Resource';
 
 export class ArklightRebalance extends CorporationCard {
   constructor() {
@@ -36,15 +37,14 @@ export class ArklightRebalance extends CorporationCard {
   }
 
   public onCardPlayed(player: IPlayer, card: IProjectCard): void {
-    if (player.isCorporation(CardName.ARKLIGHT)) {
-      player.addResourceTo(this, {qty: card.tags.filter((cardTag) => cardTag === Tag.ANIMAL || cardTag === Tag.PLANT).length, log: true});      
-    }
     const count = player.tags.cardTagCount(card, Tag.ANIMAL || Tag.PLANT);
-    if (count > 0) {
-      player.addResourceTo(this, count);
+      if (player.isCorporation(CardName.ARKLIGHT) && (count > 0)) {      
+      player.addResourceTo(this, {qty: count, log: true}); 
+      player.production.add(Resource.MEGACREDITS, count, {log: true}); 
+    }  
     }
   }
 
 
 
-}
+
