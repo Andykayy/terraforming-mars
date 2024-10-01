@@ -130,7 +130,8 @@ export abstract class Colony implements IColony {
       player.hasTraded = true;
       console.log('Set hasTraded to true');
     }
-
+    console.log('hasTraded after:', player.hasTraded);
+    
     for (const p of player.game.getPlayers()) {
       for (const playedCard of p.tableau) {
         playedCard.onTrade?.(p, player, this);
