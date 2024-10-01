@@ -48,6 +48,13 @@
     <template v-else-if="title === CardName.ARCADIAN_COMMUNITIES">
       <span class="card-arcadian-logo"><span>Arcadian</span><br><span>Communities</span></span>
     </template>
+
+
+    <template v-else-if="title === CardName.ARCADIAN_COMMUNITIES_RB">
+      <span class="card-arcadian-logo"><span>Arcadian</span><br><span>Communities</span></span>
+    </template>
+
+
     <template v-else-if="title === CardName.INCITE">
       <span class="card-incite-logo">Incite</span>
     </template>

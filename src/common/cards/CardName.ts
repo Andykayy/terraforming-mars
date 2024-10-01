@@ -1601,4 +1601,5 @@ export enum CardName {
     APHRODITE_RB = `Aphrodite \n
     
     ⚖)`,
+    ARCADIAN_COMMUNITIES_RB = "Arcadian Communities(⚖)",
 }
