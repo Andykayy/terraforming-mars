@@ -179,6 +179,8 @@ export class GameCards {
     if (this.gameOptions.chemicalExpansion) {
       return [
         CardName.POINT_LUNA,
+        CardName.APHRODITE,
+        CardName.ARCADIAN_COMMUNITIES,
         
         // Add more CardNames here as needed
         // For example:

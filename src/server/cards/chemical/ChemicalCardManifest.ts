@@ -612,6 +612,7 @@ import { SocietySupportRebalance } from './rebalance/Prelude_SocietySupportRB';
 
 //andy corps
 import { AphroditeRebalanced } from './rebalance/Corp_AphroditeRB';
+import { ArcadianCommunitiesRebalanced } from './rebalance/Corp_ArcadianCommunitiesRB';
 
 
 
@@ -623,6 +624,7 @@ export const CHEMICAL_CARD_MANIFEST = new ModuleManifest({
 
     //andy added
     [CardName.APHRODITE_RB]: {Factory: AphroditeRebalanced, compatibility: 'venus'},
+    [CardName.ARCADIAN_COMMUNITIES_RB]: {Factory: ArcadianCommunitiesRebalanced, compatibility: 'promo'},
   },
   preludeCards: {
     [CardName.RESEARCH_BASE]: {Factory: ResearchBase},
