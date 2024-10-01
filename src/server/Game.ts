@@ -1043,7 +1043,7 @@ export class Game implements IGame, Logger {
       player.generationData.hasRaisedGlobalParameter[GlobalParameter.VENUS] = true;
     }
 
-    const aphrodite = this.players.find((p) => p.isCorporation(CardName.APHRODITE));
+    const aphrodite = this.players.find((p) => p.isCorporation(CardName.APHRODITE_RB));
     if (aphrodite !== undefined) {
       aphrodite.megaCredits += steps * 3;
       this.log('${0} gained ${1} M€ from Aphrodite effect', (b) => b.player(aphrodite).number(steps * 3));
