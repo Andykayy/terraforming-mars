@@ -93,6 +93,11 @@ export class Player implements IPlayer {
   public readonly stock: Stock;
   private _alliedParty: AlliedParty | undefined;
 
+  //andy added
+  
+  public hasTraded: boolean = false;
+
+
   // Corporate identity
   public corporations: Array<ICorporationCard> = [];
 
@@ -177,6 +182,7 @@ export class Player implements IPlayer {
   public canUseTitaniumAsMegacredits: boolean = false;
   // Friends in High Places
   public canUseCorruptionAsMegacredits: boolean = false;
+
 
   // This generation / this round
   public actionsTakenThisRound: number = 0;
@@ -632,6 +638,7 @@ export class Player implements IPlayer {
   }
 
   public runProductionPhase(): void {
+    
     this.actionsThisGeneration.clear();
     this.removingPlayers = [];
 
@@ -1309,7 +1316,8 @@ export class Player implements IPlayer {
       resolveFinalGreeneryDeferredActions();
     } else {
       this.game.playerIsDoneWithGame(this);
-    }
+    }   
+
   }
 
   private getPlayableCeoCards(): Array<IProjectCard> {
@@ -1591,6 +1599,11 @@ export class Player implements IPlayer {
     if (this.actionsTakenThisRound === 0 || game.gameOptions.undoOption) game.save();
     // if (saveBeforeTakingAction) game.save();
 
+    //andy one trade
+    if (this.actionsTakenThisRound === 0) {
+      this.hasTraded = false; // Reset hasTraded at the start of each turn
+    }
+
     if (this.autopass) {
       this.passOption().cb();
     }
@@ -1686,6 +1699,7 @@ export class Player implements IPlayer {
       this.incrementActionsTaken();
       this.takeAction();
     });
+
   }
 
   // TODO(kberg): perhaps move to Card
@@ -1966,6 +1980,8 @@ export class Player implements IPlayer {
       alliedParty: this._alliedParty,
       draftHand: this.draftHand.map((c) => c.name),
       autoPass: this.autopass,
+      //andy one trade
+      hasTraded: this.hasTraded,
     };
 
     if (this.lastCardPlayed !== undefined) {
@@ -1977,6 +1993,9 @@ export class Player implements IPlayer {
   public static deserialize(d: SerializedPlayer): Player {
     const player = new Player(d.name, d.color, d.beginner, Number(d.handicap), d.id);
 
+    //andy one trade
+    player.hasTraded = d.hasTraded ?? false;
+    
     player.actionsTakenThisGame = d.actionsTakenThisGame;
     player.actionsTakenThisRound = d.actionsTakenThisRound;
     player.canUseHeatAsMegaCredits = d.canUseHeatAsMegaCredits;

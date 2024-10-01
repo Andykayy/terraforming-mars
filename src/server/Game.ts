@@ -346,14 +346,18 @@ export class Game implements IGame, Logger {
         player.dealtCorporationCards.push(...corporationDeck.drawN(game, gameOptions.startingCorporations));
         if (gameOptions.initialDraftVariant === false) {
           player.dealtProjectCards.push(...projectDeck.drawN(game, 10));
-          const standardAlloys = newProjectCard(CardName.OVERSEER_COMMITTEE)         
+          const standardAlloys = newProjectCard(CardName.HUYGENS_OBSERVATORY)         
           if (standardAlloys) {
             player.dealtProjectCards.push(standardAlloys);            
           }
-          const rotatorImpactsTest = newProjectCard(CardName.UNDERGROUND_DETONATIONS_RB)
-          if (rotatorImpactsTest) {
-            player.dealtProjectCards.push(rotatorImpactsTest);
-          }       
+          const spacePortColonyTest = newProjectCard(CardName.SPACE_PORT_COLONY)
+          if (spacePortColonyTest) {
+            player.dealtProjectCards.push(spacePortColonyTest);
+          }  
+          const spacePortColonyTest1 = newProjectCard(CardName.COORDINATED_RAID)
+          if (spacePortColonyTest1) {
+            player.dealtProjectCards.push(spacePortColonyTest1);
+          }            
         }
         if (gameOptions.preludeExtension) {
           player.dealtPreludeCards.push(...preludeDeck.drawN(game, constants.PRELUDE_CARDS_DEALT_PER_PLAYER));

@@ -42,9 +42,11 @@ export class Colonies {
    * Returns `true` if this player can execute a trade.
    */
   public canTrade() {
+    const game = this.player.game;
     return ColoniesHandler.tradeableColonies(this.player.game).length > 0 &&
       this.getFleetSize() > this.tradesThisGeneration &&
-      this.player.game.tradeEmbargo !== true;
+      game.tradeEmbargo !== true &&
+      !(game.gameOptions.chemicalExpansion && this.player.hasTraded);
   }
 
   public coloniesTradeAction(): AndOptions | undefined {
