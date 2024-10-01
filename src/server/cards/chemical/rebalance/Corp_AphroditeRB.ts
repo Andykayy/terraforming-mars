@@ -14,7 +14,7 @@ export class AphroditeRebalanced extends CorporationCard {
       startingMegaCredits: 50,
 
       behavior: {
-        production: {plants: 2},
+        production: {plants: 1},
       },
 
       metadata: {
