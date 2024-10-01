@@ -127,6 +127,12 @@ export abstract class Colony implements IColony {
     const maxTrackPosition = Math.min(this.trackPosition + tradeOffset, MAX_COLONY_TRACK_POSITION);
     const steps = maxTrackPosition - this.trackPosition;
 
+    // Set the hasTraded flag if chemical expansion is active - andy one trade
+    if (game.gameOptions.chemicalExpansion) {
+      player.hasTraded = true;      
+      }
+    console.log('hasTraded after:', player.hasTraded);
+
 
     for (const p of player.game.getPlayers()) {
       for (const playedCard of p.tableau) {
@@ -154,11 +160,7 @@ export abstract class Colony implements IColony {
     player.game.defer(new IncreaseColonyTrack(player, this, steps))
       .andThen(() => this.handleTrade(player, tradeOptions));
 
-    // Set the hasTraded flag if chemical expansion is active - andy one trade
-    if (game.gameOptions.chemicalExpansion) {
-      player.hasTraded = true;      
-    }
-    console.log('hasTraded after:', player.hasTraded);
+
   }
 
   private handleTrade(player: IPlayer, options: TradeOptions) {   

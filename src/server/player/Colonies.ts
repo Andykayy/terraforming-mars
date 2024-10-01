@@ -48,6 +48,7 @@ export class Colonies {
       game.tradeEmbargo !== true &&
       !(game.gameOptions.chemicalExpansion && this.player.hasTraded);
   
+    console.log('canTrade called');
     console.log('canTrade result:', result);
     console.log('tradeableColonies:', ColoniesHandler.tradeableColonies(game).length);
     console.log('fleetSize:', this.getFleetSize());
