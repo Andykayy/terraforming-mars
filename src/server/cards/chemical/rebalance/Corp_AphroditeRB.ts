@@ -25,7 +25,7 @@ export class AphroditeRebalanced extends CorporationCard {
           b.production((pb) => pb.plants(2)).nbsp.megacredits(50);
           b.corpBox('effect', (ce) => {
             ce.effect('Whenever Venus is terraformed 1 step, you gain 3M€, and the player who raised it (NOT WGT) gains 2M€', (eb) => {
-              eb.venus(1, {all}).startEffect.megacredits(3);
+              eb.venus(1, {all}).startEffect.megacredits(3).asterix().megacredits(2);
             });
           });
         }),
