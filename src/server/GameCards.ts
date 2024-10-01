@@ -181,6 +181,7 @@ export class GameCards {
         CardName.POINT_LUNA,
         CardName.APHRODITE,
         CardName.ARCADIAN_COMMUNITIES,
+        CardName.ARKLIGHT,
         
         // Add more CardNames here as needed
         // For example:
