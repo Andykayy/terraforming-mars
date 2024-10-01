@@ -1589,6 +1589,12 @@ export class Player implements IPlayer {
    */
   // @ts-ignore saveBeforeTakingAction is unused at the moment.
   public takeAction(saveBeforeTakingAction: boolean = true): void {
+
+//andy one trade
+    console.log('takeAction called');
+    console.log('actionsTakenThisRound:', this.actionsTakenThisRound);
+    console.log('hasTraded before:', this.hasTraded);
+
     const game = this.game;
 
     if (game.deferredActions.length > 0) {
@@ -1602,7 +1608,11 @@ export class Player implements IPlayer {
     //andy one trade
     if (this.actionsTakenThisRound === 0) {
       this.hasTraded = false; // Reset hasTraded at the start of each turn
+      console.log('Reset hasTraded to false');
     }
+
+//andy one trade
+console.log('hasTraded after:', this.hasTraded);
 
     if (this.autopass) {
       this.passOption().cb();
