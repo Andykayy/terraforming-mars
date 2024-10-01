@@ -19,6 +19,7 @@ export class ArklightRebalance extends CorporationCard {
 
       behavior: {
        addResources: 1,
+       production: {megacredits: 1}, 
       },
 
       metadata: {
