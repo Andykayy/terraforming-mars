@@ -41,20 +41,37 @@ export class Colonies {
   /**
    * Returns `true` if this player can execute a trade.
    */
-  public canTrade() {
+  public canTrade(): boolean {
     const game = this.player.game;
-    return ColoniesHandler.tradeableColonies(this.player.game).length > 0 &&
+    const result = ColoniesHandler.tradeableColonies(game).length > 0 &&
       this.getFleetSize() > this.tradesThisGeneration &&
       game.tradeEmbargo !== true &&
       !(game.gameOptions.chemicalExpansion && this.player.hasTraded);
+  
+    console.log('canTrade called');
+    console.log('canTrade result:', result);
+    console.log('tradeableColonies:', ColoniesHandler.tradeableColonies(game).length);
+    console.log('fleetSize:', this.getFleetSize());
+    console.log('tradesThisGeneration:', this.tradesThisGeneration);
+    console.log('tradeEmbargo:', game.tradeEmbargo);
+    console.log('chemicalExpansion:', game.gameOptions.chemicalExpansion);
+    console.log('hasTraded:', this.player.hasTraded);
+  
+    return result;
   }
-
+  
   public coloniesTradeAction(): AndOptions | undefined {
     const game = this.player.game;
+
+    console.log('coloniesTradeAction called');
+    console.log('coloniesExtension:', game.gameOptions.coloniesExtension);
+    console.log('canTrade:', this.canTrade());
+
     if (game.gameOptions.coloniesExtension && this.canTrade()) {
       return this.tradeWithColony(ColoniesHandler.tradeableColonies(game));
     }
-    return undefined;
+      console.log('Returning undefined from coloniesTradeAction');
+  return undefined;
   }
 
   private tradeWithColony(openColonies: Array<IColony>): AndOptions | undefined {

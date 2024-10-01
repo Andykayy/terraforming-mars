@@ -116,11 +116,22 @@ export abstract class Colony implements IColony {
     * @param decreaseTrackAfterTrade when false, the track does not decrease after trading.
     */
   public trade(player: IPlayer, tradeOptions: TradeOptions = {}, bonusTradeOffset = 0): void {
+
+    console.log('trade method called');
+    console.log('chemicalExpansion:', player.game.gameOptions.chemicalExpansion);
+    console.log('hasTraded before:', player.hasTraded);
+
     const game = player.game;
     
     const tradeOffset = player.colonies.tradeOffset + bonusTradeOffset;
     const maxTrackPosition = Math.min(this.trackPosition + tradeOffset, MAX_COLONY_TRACK_POSITION);
     const steps = maxTrackPosition - this.trackPosition;
+
+    // Set the hasTraded flag if chemical expansion is active - andy one trade
+    if (game.gameOptions.chemicalExpansion) {
+      player.hasTraded = true;      
+      }
+    console.log('hasTraded after:', player.hasTraded);
 
 
     for (const p of player.game.getPlayers()) {
@@ -149,10 +160,7 @@ export abstract class Colony implements IColony {
     player.game.defer(new IncreaseColonyTrack(player, this, steps))
       .andThen(() => this.handleTrade(player, tradeOptions));
 
-    // Set the hasTraded flag if chemical expansion is active - andy one trade
-    if (game.gameOptions.chemicalExpansion) {
-      player.hasTraded = true;      
-    }
+
   }
 
   private handleTrade(player: IPlayer, options: TradeOptions) {   
