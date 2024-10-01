@@ -1,28 +1,15 @@
-<<<<<<< HEAD
-import {CorporationCard} from '../corporation/CorporationCard';
-import {Tag} from '../../../common/cards/Tag';
-import {CardName} from '../../../common/cards/CardName';
-import {CardRenderer} from '../render/CardRenderer';
-import {all} from '../Options';
-
-export class Aphrodite extends CorporationCard {
-  constructor() {
-    super({
-      name: CardName.APHRODITE,
-=======
 import {CorporationCard} from '../../corporation/CorporationCard';
 import {Tag} from '../../../../common/cards/Tag';
 import {CardName} from '../../../../common/cards/CardName';
 import {CardRenderer} from '../../render/CardRenderer';
 import {all} from '../../Options';
-import {Player} from '../../../Player';
+
 
 
 export class AphroditeRebalanced extends CorporationCard {
   constructor() {
     super({
       name: CardName.APHRODITE_RB,
->>>>>>> one-trade-per-turn
       tags: [Tag.PLANT, Tag.VENUS],
       startingMegaCredits: 50,
 
@@ -45,14 +32,4 @@ export class AphroditeRebalanced extends CorporationCard {
       },
     });
   }
-<<<<<<< HEAD
-=======
-  public static rebalancedAphroditeBonus(venusRaiser: Player, stepsRaised: number = 1): number {
-    const rebalancedAphroditePlayer = venusRaiser.game.getPlayers().find((player) => player.isCorporation(CardName.APHRODITE_RB));
-    if (rebalancedAphroditePlayer === undefined) return 0;
-
-    return (rebalancedAphroditePlayer.id === venusRaiser.id) ? 5 * stepsRaised : 2 * stepsRaised;
-  }
-
->>>>>>> one-trade-per-turn
 }
