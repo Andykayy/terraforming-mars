@@ -1043,11 +1043,18 @@ export class Game implements IGame, Logger {
       player.generationData.hasRaisedGlobalParameter[GlobalParameter.VENUS] = true;
     }
 
-    // Check for Aphrodite corporation
-    const aphrodite = this.players.find((player) => player.isCorporation(CardName.APHRODITE));
+    const aphrodite = this.players.find((p) => p.isCorporation(CardName.APHRODITE));
     if (aphrodite !== undefined) {
-      aphrodite.megaCredits += steps * 2;
+      aphrodite.megaCredits += steps * 3;
+      this.log('${0} gained ${1} M€ from Aphrodite effect', (b) => b.player(aphrodite).number(steps * 3));
     }
+  
+    if (aphrodite !== undefined && this.phase !== Phase.SOLAR) {
+      player.megaCredits += steps * 2;
+      this.log('${0} gained ${1} M€ from raising Venus', (b) => b.player(player).number(steps * 2));
+    }
+    
+
     const venusGHGExports = this.players.find((player) => player.cardIsInEffect(CardName.VENUS_GHG_EXPORTS));
     if (venusGHGExports !== undefined) {
       venusGHGExports.stock.add(Resource.HEAT, steps * 2, {log: true});
