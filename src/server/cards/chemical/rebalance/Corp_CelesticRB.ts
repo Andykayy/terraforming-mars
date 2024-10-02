@@ -27,7 +27,7 @@ export class CelesticRebalance extends CorporationCard implements IActionCard {
           b.megacredits(42).nbsp.cards(2, {secondaryTag: AltSecondaryTag.FLOATER});
           b.corpBox('action', (ce) => {
             ce.action('Add 1 floater to up to 2 DIFFERENT cards. 1 VP per 3 floaters on this card.', (eb) => {
-              eb.empty().startAction.resource(CardResource.FLOATER).asterix();
+              eb.empty().startAction.resource(CardResource.FLOATER).asterix().resource(CardResource.FLOATER).asterix();
             });
             ce.vSpace(); // to offset the description to the top a bit so it can be readable
           });
