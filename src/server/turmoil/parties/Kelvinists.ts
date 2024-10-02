@@ -3,10 +3,9 @@ import {Party} from './Party';
 import {PartyName} from '../../../common/turmoil/PartyName';
 import {Resource} from '../../../common/Resource';
 import {Bonus} from '../Bonus';
-import {IPolicy} from '../Policy';
+import {Policy, IPolicy} from '../Policy';
 import {IPlayer} from '../../IPlayer';
 import {SelectPaymentDeferred} from '../../deferredActions/SelectPaymentDeferred';
-import {MAX_TEMPERATURE} from '../../../common/constants';
 import {CardName} from '../../../common/cards/CardName';
 import {TITLES} from '../../inputs/titles';
 
@@ -75,23 +74,17 @@ class KelvinistsPolicy02 implements IPolicy {
   readonly description = 'When you raise temperature, gain 3 M€ per step raised';
 }
 
-class KelvinistsPolicy03 implements IPolicy {
+class KelvinistsPolicy03 extends Policy {
   readonly id = 'kp03' as const;
-  readonly description = 'Convert 6 heat into temperature (Turmoil Kelvinists)';
-
-  canAct(player: IPlayer) {
-    return player.availableHeat() >= 6 && player.game.getTemperature() < MAX_TEMPERATURE;
+  readonly description = 'Reduce heat required to raise temperature by 2';
+  override onPolicyStartForPlayer(player: IPlayer): void {
+    player.heatDiscount;
+    player.heatDiscount;
   }
 
-  action(player: IPlayer) {
-    const game = player.game;
-    game.log('${0} used Turmoil ${1} action', (b) => b.player(player).partyName(PartyName.KELVINISTS));
-    game.log('${0} spent 6 heat to raise temperature 1 step', (b) => b.player(player));
-
-    return player.spendHeat(6, () => {
-      game.increaseTemperature(player, 1);
-      return undefined;
-    });
+  override onPolicyEndForPlayer(player: IPlayer): void {
+    !player.heatDiscount;
+    !player.heatDiscount;
   }
 }
 
