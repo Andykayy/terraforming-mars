@@ -2,8 +2,9 @@ import {StandardActionCard} from '../../StandardActionCard';
 import {CardName} from '../../../../common/cards/CardName';
 import {CardRenderer} from '../../render/CardRenderer';
 import {IPlayer} from '../../../IPlayer';
-import {HEAT_FOR_TEMPERATURE, MAX_TEMPERATURE} from '../../../../common/constants';
+import {MAX_TEMPERATURE} from '../../../../common/constants';
 import {Units} from '../../../../common/Units';
+
 
 
 export class ConvertHeat extends StandardActionCard {
@@ -27,7 +28,7 @@ export class ConvertHeat extends StandardActionCard {
     }
 
     // Strictly speaking, this conditional is not necessary, because canAfford manages reserveUnits.
-    if (player.availableHeat() < HEAT_FOR_TEMPERATURE) {
+    if (player.availableHeat() < player.heatNeededForTemperature) {
       return false;
     }
 
@@ -39,7 +40,7 @@ export class ConvertHeat extends StandardActionCard {
   }
 
   public action(player: IPlayer) {
-    return player.spendHeat(HEAT_FOR_TEMPERATURE, () => {
+    return player.spendHeat(player.heatNeededForTemperature, () => {
       this.actionUsed(player);
       player.game.increaseTemperature(player, 1);
       return undefined;
