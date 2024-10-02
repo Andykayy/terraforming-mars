@@ -24,6 +24,7 @@ export class ConvertHeat extends StandardActionCard {
   }
 
   public canAct(player: IPlayer): boolean {
+    player.heatNeededForTemperature = player.heatNeededForTemperature - player.heatDiscount;
     if (player.game.getTemperature() === MAX_TEMPERATURE) {
       this.warnings.add('maxtemp');
     }
@@ -40,8 +41,7 @@ export class ConvertHeat extends StandardActionCard {
     });
   }
 
-  public action(player: IPlayer) {
-    player.heatNeededForTemperature = player.heatNeededForTemperature - player.heatDiscount;
+  public action(player: IPlayer) {    
     return new SelectOption(
       message('Spend ${0} heat to raise temperature', (b) => b.number(player.heatNeededForTemperature)),
       'Confirm'
