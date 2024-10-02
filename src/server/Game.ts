@@ -354,7 +354,7 @@ export class Game implements IGame, Logger {
           if (spacePortColonyTest) {
             player.dealtProjectCards.push(spacePortColonyTest);
           }  
-          const spacePortColonyTest1 = newProjectCard(CardName.ECOLOGICAL_RESERVE)
+          const spacePortColonyTest1 = newProjectCard(CardName.ECOLOGY_RESEARCH)
           if (spacePortColonyTest1) {
             player.dealtProjectCards.push(spacePortColonyTest1);
           }            
