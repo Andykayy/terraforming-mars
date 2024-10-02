@@ -129,6 +129,7 @@ export interface IPlayer {
 
   //andy helion
   heatNeededForTemperature: number;
+  heatDiscount: number;
 
   // Lawsuit
   removingPlayers: Array<PlayerId>;
