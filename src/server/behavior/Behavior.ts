@@ -120,6 +120,9 @@ export type Behavior = {
   /** Greeneries cost one plant less. */
   greeneryDiscount?: 1,
 
+  //andy test heat discount
+  heatDiscount?: 1,
+  
   // spendResourcesHere: number,
   // spendResource: {type: CardResource, count: number},
   // tile: {type: TileType, space?: SpaceId, spaceType?: SpaceType};
