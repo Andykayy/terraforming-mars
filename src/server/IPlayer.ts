@@ -126,6 +126,10 @@ export interface IPlayer {
   hasTurmoilScienceTagBonus: boolean;
   // Ecoline
   plantsNeededForGreenery: number;
+
+  //andy helion
+  heatNeededForTemperature: number;
+
   // Lawsuit
   removingPlayers: Array<PlayerId>;
   // For Playwrights corp.
