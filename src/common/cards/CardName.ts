@@ -1603,4 +1603,5 @@ export enum CardName {
     ARKLIGHT_RB = "Arklight(⚖)",
     ASTRODRILL_RB = "Astrodrill(⚖)",
     CELESTIC_RB = "Celestic(⚖)",
+    CHEUNG_SHING_MARS_RB = "Cheung Shing MARS(⚖)",
 }

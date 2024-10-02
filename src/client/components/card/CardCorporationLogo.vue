@@ -52,6 +52,20 @@
 
     <template v-else-if="title === CardName.ARCADIAN_COMMUNITIES_RB">
       <span class="card-arcadian-logo"><span>Arcadian</span><br><span>Communities</span></span>
+    </template>  
+    <template v-else-if="title === CardName.CELESTIC_RB">
+      <div class="card-celestic-logo">
+        <span style="background: linear-gradient(to right, rgb(251,192,137),rgb(251,192,137),rgb(23,185,236));padding-left: 5px;">CEL</span>
+        <span style="background:linear-gradient(to right,rgb(23,185,236),rgb(251,192,137))">ES</span>
+        <span style="background:rgb(251,192,137);padding-right:5px;">TIC</span>
+      </div>
+    </template>
+    <template v-else-if="title === CardName.CHEUNG_SHING_MARS_RB">
+      <div class="card-cheung-shing-logo">
+        <span style="color:red;border:4px solid red;border-radius:50%;padding:3px 5px 3px 5px;font-size:30px;line-height:14px;box-shadow: 3px 3px 3px grey, inset 0 0 3px 3px grey;text-shadow: 3px 3px 3px grey;">㨐</span></div>
+      <div style="display: inline-block; width:140px; font-size:19px; line-height: 22px; vertical-align: middle; margin-bottom: 15px;font-weight:normal;">
+      &nbsp;Cheung Shing <br><div style="margin-left:10px"> ■■MARS■■ </div>
+      </div>
     </template>
 
 

@@ -184,6 +184,7 @@ export class GameCards {
         CardName.ARKLIGHT,
         CardName.ASTRODRILL,
         CardName.CELESTIC,
+        CardName.CHEUNG_SHING_MARS,
         // Add more CardNames here as needed
         // For example:
         // CardName.ANOTHER_CORPORATION,
