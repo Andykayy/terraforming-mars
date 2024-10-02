@@ -127,8 +127,8 @@ export interface IPlayer {
   // Ecoline
   plantsNeededForGreenery: number;
 
-  //Helion - Andy
-  HEAT_FOR_TEMPERATURE: number;
+  //andy helion
+  heatNeededForTemperature: number;
 
   // Lawsuit
   removingPlayers: Array<PlayerId>;
