@@ -13,6 +13,7 @@ export class Helion extends CorporationCard {
 
       behavior: {
         production: {heat: 3},
+        heatDiscount: 1,
       },
 
       metadata: {
