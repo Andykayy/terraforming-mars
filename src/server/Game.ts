@@ -346,7 +346,7 @@ export class Game implements IGame, Logger {
         player.dealtCorporationCards.push(...corporationDeck.drawN(game, gameOptions.startingCorporations));
         if (gameOptions.initialDraftVariant === false) {
           player.dealtProjectCards.push(...projectDeck.drawN(game, 10));
-          const standardAlloys = newProjectCard(CardName.HUYGENS_OBSERVATORY)         
+          const standardAlloys = newProjectCard(CardName.RESEARCH_COORDINATION)         
           if (standardAlloys) {
             player.dealtProjectCards.push(standardAlloys);            
           }
@@ -354,7 +354,7 @@ export class Game implements IGame, Logger {
           if (spacePortColonyTest) {
             player.dealtProjectCards.push(spacePortColonyTest);
           }  
-          const spacePortColonyTest1 = newProjectCard(CardName.ORBITAL_BIODOMES)
+          const spacePortColonyTest1 = newProjectCard(CardName.ECOLOGICAL_RESERVE)
           if (spacePortColonyTest1) {
             player.dealtProjectCards.push(spacePortColonyTest1);
           }            
