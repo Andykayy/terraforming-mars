@@ -97,6 +97,8 @@ export class Player implements IPlayer {
   
   public hasTraded: boolean = false;
 
+  //andy helion
+  public heatDiscount: number = 0;
 
   // Corporate identity
   public corporations: Array<ICorporationCard> = [];
