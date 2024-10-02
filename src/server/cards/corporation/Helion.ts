@@ -12,8 +12,7 @@ export class Helion extends CorporationCard {
       startingMegaCredits: 42,
 
       behavior: {
-        production: {heat: 3},
-        heatDiscount: 1,
+        production: {heat: 3},        
       },
 
       metadata: {
