@@ -1598,10 +1598,9 @@ export enum CardName {
     
 
     //andy corps
-    APHRODITE_RB = `Aphrodite \n
-    
-    ⚖)`,
+    APHRODITE_RB = `Aphrodite(⚖)`,
     ARCADIAN_COMMUNITIES_RB = "Arcadian Communities(⚖)",
     ARKLIGHT_RB = "Arklight(⚖)",
     ASTRODRILL_RB = "Astrodrill(⚖)",
+    CELESTIC_RB = "Celestic(⚖)",
 }
