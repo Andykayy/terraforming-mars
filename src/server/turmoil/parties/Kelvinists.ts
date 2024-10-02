@@ -78,13 +78,11 @@ class KelvinistsPolicy03 extends Policy {
   readonly id = 'kp03' as const;
   readonly description = 'Reduce heat required to raise temperature by 2';
   override onPolicyStartForPlayer(player: IPlayer): void {
-    player.heatDiscount;
-    player.heatDiscount;
+    player.heatDiscount = 2;
   }
 
   override onPolicyEndForPlayer(player: IPlayer): void {
-    !player.heatDiscount;
-    !player.heatDiscount;
+    player.heatDiscount = 0;
   }
 }
 
