@@ -11,7 +11,6 @@ export const MICROBES_VALUE = 2;
 export const OCEAN_BONUS = 2;
 
 // Global parameters
-export const HEAT_FOR_TEMPERATURE = 8;
 export const MAX_OCEAN_TILES = 9;
 export const MAX_TEMPERATURE = 8;
 export const MAX_OXYGEN_LEVEL = 14;

@@ -221,6 +221,9 @@ export class Player implements IPlayer {
   public hasTurmoilScienceTagBonus: boolean = false;
   // Ecoline
   public plantsNeededForGreenery: number = 8;
+
+  //andy Helion
+  public heatNeededForTemperature: number = 8;
   // Lawsuit
   public removingPlayers: Array<PlayerId> = [];
   // For Playwrights corp.
@@ -1758,17 +1761,9 @@ console.log('hasTraded after:', this.hasTraded);
     // Convert Heat
     const convertHeat = new ConvertHeat();
     if (convertHeat.canAct(this)) {
-      const option = new SelectOption('Convert 8 heat into temperature', 'Convert heat').andThen(() => {
-        return convertHeat.action(this);
-      });
-      if (convertHeat.warnings.size > 0) {
-        option.warnings = Array.from(convertHeat.warnings);
-        if (convertHeat.warnings.has('maxtemp')) {
-          option.eligibleForDefault = false;
-        }
-      }
-      action.options.push(option);
+      action.options.push(convertHeat.action(this));   
     }
+      
 
     const turmoilInput = TurmoilHandler.partyAction(this);
     if (turmoilInput !== undefined) {
@@ -1972,6 +1967,7 @@ console.log('hasTraded after:', this.hasTraded);
       scienceTagCount: this.scienceTagCount,
       // Ecoline
       plantsNeededForGreenery: this.plantsNeededForGreenery,
+      heatNeededForTemperature: this.heatNeededForTemperature,
       // Lawsuit
       removingPlayers: this.removingPlayers,
       // Playwrights

@@ -4,6 +4,8 @@ import {CardRenderer} from '../../render/CardRenderer';
 import {IPlayer} from '../../../IPlayer';
 import {MAX_TEMPERATURE} from '../../../../common/constants';
 import {Units} from '../../../../common/Units';
+import {message} from '../../../logs/MessageBuilder';
+import {SelectOption} from '../../../inputs/SelectOption';
 
 
 
@@ -35,15 +37,20 @@ export class ConvertHeat extends StandardActionCard {
     return player.canAfford({
       cost: 0,
       tr: {temperature: 1},
-      reserveUnits: Units.of({heat: 8}),
+      reserveUnits: Units.of({heat: player.heatNeededForTemperature}),
     });
   }
 
   public action(player: IPlayer) {
-    return player.spendHeat(player.heatNeededForTemperature, () => {
-      this.actionUsed(player);
-      player.game.increaseTemperature(player, 1);
-      return undefined;
+    return new SelectOption(
+      message('Spend ${0} heat to raise temperature', (b) => b.number(player.heatNeededForTemperature)),
+      'Confirm'
+    ).andThen(() => {
+      return player.spendHeat(player.heatNeededForTemperature, () => {
+        this.actionUsed(player);
+        player.game.increaseTemperature(player, 1);
+        return undefined;
+      });
     });
   }
 }
