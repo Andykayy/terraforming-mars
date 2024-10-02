@@ -22,7 +22,7 @@ export class CelesticRebalance extends CorporationCard implements IActionCard {
       
       metadata: {
         cardNumber: 'R05',
-        description: 'You start with 42 M€. As your first action, reveal cards from the deck until you have revealed 2 cards with a floater icon on it. Take them into hand and discard the rest.',
+        description: 'Start with 42 M€. First action: reveal cards from the deck until you have revealed 2 with a floater icon on it. Take them into hand and discard the rest.',
         renderData: CardRenderer.builder((b) => {
           b.megacredits(42).nbsp.cards(2, {secondaryTag: AltSecondaryTag.FLOATER});
           b.corpBox('action', (ce) => {
