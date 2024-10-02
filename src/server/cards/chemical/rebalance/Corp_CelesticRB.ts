@@ -10,10 +10,10 @@ import {floaterCards} from '../../venusNext/floaterCards';
 import {SelectCard} from '../../../inputs/SelectCard';
 
 
-export class Celestic extends CorporationCard implements IActionCard {
+export class CelesticRebalance extends CorporationCard implements IActionCard {
   constructor() {
     super({
-      name: CardName.CELESTIC,
+      name: CardName.CELESTIC_RB,
       tags: [Tag.VENUS],
       startingMegaCredits: 42,
       resourceType: CardResource.FLOATER,

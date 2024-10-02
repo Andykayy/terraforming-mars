@@ -615,6 +615,7 @@ import { AphroditeRebalanced } from './rebalance/Corp_AphroditeRB';
 import { ArcadianCommunitiesRebalanced } from './rebalance/Corp_ArcadianCommunitiesRB';
 import { ArklightRebalance } from './rebalance/Corp_ArklightRB';
 import { AstrodrillRebalance } from './rebalance/Corp_AstrodrillRB';
+import { CelesticRebalance } from './rebalance/Corp_CelesticRB';
 
 
 
@@ -629,6 +630,7 @@ export const CHEMICAL_CARD_MANIFEST = new ModuleManifest({
     [CardName.ARCADIAN_COMMUNITIES_RB]: {Factory: ArcadianCommunitiesRebalanced, compatibility: 'promo'},
     [CardName.ARKLIGHT_RB]: {Factory: ArklightRebalance, compatibility: 'colonies'},
     [CardName.ASTRODRILL_RB]: {Factory: AstrodrillRebalance, compatibility: 'promo'},
+    [CardName.CELESTIC_RB]: {Factory: CelesticRebalance, compatibility: 'venus'},
     
   },
   preludeCards: {

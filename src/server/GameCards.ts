@@ -183,7 +183,7 @@ export class GameCards {
         CardName.ARCADIAN_COMMUNITIES,
         CardName.ARKLIGHT,
         CardName.ASTRODRILL,
-        
+        CardName.CELESTIC,
         // Add more CardNames here as needed
         // For example:
         // CardName.ANOTHER_CORPORATION,
