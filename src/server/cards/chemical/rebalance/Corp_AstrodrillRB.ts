@@ -27,7 +27,7 @@ export class AstrodrillRebalance extends CorporationCard implements IActionCard 
 
       metadata: {
         cardNumber: 'R21',
-        description: 'You start with 35 M€ and 3 asteroid resources.',
+        description: 'You start with 40 M€ and 4 asteroid resources.',
         renderData: CardRenderer.builder((b) => {
           b.br;
           b.megacredits(40).nbsp.resource(CardResource.ASTEROID, {amount: 4, digit});
