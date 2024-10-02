@@ -4,26 +4,28 @@ import {IPlayer} from '../../../IPlayer';
 import {CardName} from '../../../../common/cards/CardName';
 import {CardRenderer} from '../../render/CardRenderer';
 
-export class Helion extends CorporationCard {
+export class HelionRebalance extends CorporationCard {
   constructor() {
     super({
-      name: CardName.HELION,
+      name: CardName.HELION_RB,
       tags: [Tag.SPACE],
-      startingMegaCredits: 42,
+      startingMegaCredits: 40,
 
       behavior: {
-        production: {heat: 3},
+        production: {heat: 4},
+        heatDiscount: 1,
       },
 
       metadata: {
         cardNumber: 'R18',
-        description: 'You start with 3 heat production and 42 M€.',
+        description: 'You start with 4 heat production and 40 M€.',
         renderData: CardRenderer.builder((b) => {
           b.br;
-          b.production((pb) => pb.heat(3)).nbsp.megacredits(42);
+          b.production((pb) => pb.heat(4)).nbsp.megacredits(40);
           b.corpBox('effect', (ce) => {
             ce.effect('You may use heat as M€. You may not use M€ as heat.', (eb) => {
               eb.startEffect.text('x').heat(1).equals().megacredits(1, {text: 'x'});
+              ce.effect('Using the RAISE TEMPERATURE action costs 1 less heat.', (eb) => eb.temperature(1).asterix().startEffect.minus().heat(1)).br;              
             });
           });
         }),
