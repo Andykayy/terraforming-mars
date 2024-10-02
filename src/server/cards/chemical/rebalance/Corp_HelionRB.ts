@@ -8,14 +8,17 @@ import {Size} from '../../../../common/cards/render/Size';
 
 
 export class HelionRebalance extends CorporationCard {
+export class HelionRebalance extends CorporationCard {
   constructor() {
     super({
-      name: CardName.HELION_RB,
+      name: CardName.HELION_RB_RB,
       tags: [Tag.SPACE],
       startingMegaCredits: 40,
 
       behavior: {
         production: {heat: 4},
+        production: {heat: 4},
+        heatDiscount: 1,
       },
 
       metadata: {
