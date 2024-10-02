@@ -3,13 +3,10 @@ import {IPlayer} from '../../../IPlayer';
 import {Tag} from '../../../../common/cards/Tag';
 import {IActionCard} from '../../ICard';
 import {Resource} from '../../../../common/Resource';
-import {SelectOption} from '../../../inputs/SelectOption';
-import {OrOptions} from '../../../inputs/OrOptions';
 import {CardName} from '../../../../common/cards/CardName';
 import {CardRenderer} from '../../render/CardRenderer';
 import {Size} from '../../../../common/cards/render/Size';
-import {SelectPaymentDeferred} from '../../../deferredActions/SelectPaymentDeferred';
-import {TITLES} from '../../../inputs/titles';
+
 
 export class FactorumRebalanced extends CorporationCard implements IActionCard {
   constructor() {
