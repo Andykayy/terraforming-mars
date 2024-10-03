@@ -42,7 +42,7 @@ export class PristarRebalance extends CorporationCard {
 
   public onProductionPhase(player: IPlayer) {
     if (this.hasInfluence = true){
-      !player.game.turmoil?.addInfluenceBonus(player);
+      player.game.turmoil?.takeInfluenceBonus(player);
       this.hasInfluence = false;
     }    
     if (!(player.generationData.hasRaisedTR)) {
