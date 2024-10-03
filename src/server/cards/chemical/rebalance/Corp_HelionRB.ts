@@ -26,7 +26,7 @@ export class HelionRebalance extends CorporationCard {
         renderData: CardRenderer.builder((b) => {
           b.br;
           b.production((pb) => pb.heat(4).nbsp).megacredits(40);
-          b.corpBox('action', (ce) => {
+          b.corpBox('effect', (ce) => {
             ce.vSpace(Size.LARGE);
             ce.effect('You may use heat as M€. You may not use M€ as heat.', (eb) => {
               eb.startEffect.text('x').heat(1).equals().megacredits(1, {text: 'x'})
