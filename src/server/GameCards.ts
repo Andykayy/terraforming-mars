@@ -189,6 +189,7 @@ export class GameCards {
         CardName.HELION,
         CardName.INTERPLANETARY_CINEMATICS,
         CardName.INVENTRIX,
+        CardName.MINING_GUILD,
         // Add more CardNames here as needed
         // For example:
         // CardName.ANOTHER_CORPORATION,

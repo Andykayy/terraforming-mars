@@ -1608,5 +1608,6 @@ export enum CardName {
     HELION_RB = "Helion(⚖)",
     INTERPLANETARY_CINEMATICS_RB = "Interplanetary Cinematics(⚖)",
     INVENTRIX_RB = "Inventrix(⚖)",
+    MINING_GUILD_RB = "Mining Guild(⚖)",
 
 }
