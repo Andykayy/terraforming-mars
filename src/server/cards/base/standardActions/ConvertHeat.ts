@@ -8,7 +8,6 @@ import {message} from '../../../logs/MessageBuilder';
 import {SelectOption} from '../../../inputs/SelectOption';
 
 
-
 export class ConvertHeat extends StandardActionCard {
   constructor() {
     super({
