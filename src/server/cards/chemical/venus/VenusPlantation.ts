@@ -27,6 +27,7 @@ export class VenusPlantation extends Card implements IProjectCard {
       metadata: {
         cardNumber: 'x308',
         renderData: CardRenderer.builder((b) => {
+          b.cards(2, {secondaryTag: Tag.VENUS});
           b.resource(CardResource.MICROBE, {secondaryTag: Tag.VENUS}).or().resource(CardResource.ANIMAL, {secondaryTag: Tag.VENUS}).br;
         }),
         description: 'Requires Venus 24%. Draw 2 cards with Venus tags. Add 1 microbe or 1 animal to a Venus card.',
