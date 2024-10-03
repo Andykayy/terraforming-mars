@@ -25,7 +25,7 @@ export class PristarRebalance extends CorporationCard {
           b.megacredits(53).nbsp.nbsp.minus().tr(2, {size: Size.SMALL});
           b.corpBox('effect', (ce) => {
             ce.effect('During production phase, if you did not get TR so far this generation, add one preservation resource here and gain 6 M€.', (eb) => {
-              eb.tr(1, {size: Size.SMALL, cancelled: true}).startEffect.resource(CardResource.PRESERVATION).megacredits(6);
+              eb.tr(1, {size: Size.SMALL, cancelled: true}).startEffect.resource(CardResource.PRESERVATION).megacredits(6).influence;
             });
           });
         }),
@@ -42,13 +42,13 @@ export class PristarRebalance extends CorporationCard {
 
   public onProductionPhase(player: IPlayer) {
     if (this.hasInfluence = true){
-      !player.game.turmoil?.addInfluenceBonus;
+      !player.game.turmoil?.addInfluenceBonus(player);
       this.hasInfluence = false;
     }    
     if (!(player.generationData.hasRaisedTR)) {
       player.stock.add(Resource.MEGACREDITS, 6, {log: true, from: this});
       player.addResourceTo(this, 1);
-      player.game.turmoil?.addInfluenceBonus;
+      player.game.turmoil?.addInfluenceBonus(player);
       this.hasInfluence = true;
     }
     return undefined;
