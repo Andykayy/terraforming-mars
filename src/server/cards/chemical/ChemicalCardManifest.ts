@@ -619,6 +619,7 @@ import { CelesticRebalance } from './rebalance/Corp_CelesticRB';
 import { CheungShingMARSRebalance } from './rebalance/Corp_CheungShingMARSRB';
 import { FactorumRebalanced } from './rebalance/Corp_FactorumRB';
 import { HelionRebalance } from './rebalance/Corp_HelionRB';
+import { InterplanetaryCinematicsRebalance } from './rebalance/Corp_InterplanetaryCinematicsRB';
 
 
 
@@ -637,6 +638,7 @@ export const CHEMICAL_CARD_MANIFEST = new ModuleManifest({
     [CardName.CHEUNG_SHING_MARS_RB]: {Factory: CheungShingMARSRebalance, compatibility: 'prelude'},
     [CardName.FACTORUM_RB]: {Factory: FactorumRebalanced, compatibility: 'promo'},
     [CardName.HELION_RB]: {Factory: HelionRebalance},
+    [CardName.INTERPLANETARY_CINEMATICS_RB]: {Factory: InterplanetaryCinematicsRebalance},
     
   },
   preludeCards: {
