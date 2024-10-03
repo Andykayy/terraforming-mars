@@ -1609,5 +1609,6 @@ export enum CardName {
     INTERPLANETARY_CINEMATICS_RB = "Interplanetary Cinematics(⚖)",
     INVENTRIX_RB = "Inventrix(⚖)",
     MINING_GUILD_RB = "Mining Guild(⚖)",
+    MORNING_STAR_INC_RB = "Morning Star(⚖)",
 
 }
