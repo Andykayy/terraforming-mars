@@ -60,14 +60,15 @@ export class MiningGuildRebalance extends CorporationCard {
     const board = cardOwner.game.board;
     const grantSteel = space.bonus.some((bonus) => bonus === SpaceBonus.STEEL ||
       AresHandler.anyAdjacentSpaceGivesBonus(board, space, SpaceBonus.STEEL));
-    if (grantSteel) {
-      cardOwner.game.defer(new GainProduction(cardOwner, Resource.STEEL));
-
     const grantTitanium = space.bonus.some((bonus) => bonus === SpaceBonus.TITANIUM) ||      
       AresHandler.anyAdjacentSpaceGivesBonus(board, space, SpaceBonus.TITANIUM);
+      
+    if (grantSteel) {
+      cardOwner.game.defer(new GainProduction(cardOwner, Resource.STEEL));  
+    }  
     if (grantTitanium) {
       cardOwner.game.defer(new GainProduction(cardOwner, Resource.TITANIUM));
     }
-    }
+    
   }
 }
