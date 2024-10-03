@@ -16,13 +16,14 @@ export class HelionRebalance extends CorporationCard {
 
       behavior: {
         production: {heat: 4},
+        heatDiscount: 1,
       },
 
       metadata: {
         cardNumber: 'R18',  
         renderData: CardRenderer.builder((b) => {
           b.br;
-          b.production((pb) => pb.heat(5, {digit}).nbsp).megacredits(40);
+          b.production((pb) => pb.heat(4, {digit}).nbsp).megacredits(40);
           b.text('(You start with 4 heat production and 40 M€.)', Size.TINY, false, false);
           b.corpBox('effect', (ce) => {
             ce.vSpace(Size.LARGE);
