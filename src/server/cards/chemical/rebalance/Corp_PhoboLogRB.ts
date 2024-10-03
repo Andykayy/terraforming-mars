@@ -27,7 +27,7 @@ export class PhoboLogRebalance extends CorporationCard {
         description: 'You start with 10 titanium and 23 M€.',
         renderData: CardRenderer.builder((b) => {
           b.br.br;
-          b.megacredits(23).nbsp.titanium(10, {digit});
+          b.megacredits(30).nbsp.titanium(8, {digit}).nbsp.cards(2, {secondaryTag: Tag.SPACE});;
           b.corpBox('effect', (ce) => {
             ce.effect('Your titanium resources are each worth 1 M€ extra.', (eb) => {
               eb.titanium(1).startEffect.plus(Size.SMALL).megacredits(1);
