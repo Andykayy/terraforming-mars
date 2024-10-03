@@ -195,6 +195,7 @@ export class GameCards {
         CardName.POINT_LUNA,
         CardName.POLYPHEMOS,
         CardName.POSEIDON,
+        CardName.PRISTAR,
         // Add more CardNames here as needed
         // For example:
         // CardName.ANOTHER_CORPORATION,

@@ -270,6 +270,7 @@ const imageLogosWithNames: Map<CardName, string> = new Map([
   [CardName.POINT_LUNA_RB, 'card-luna-logo'],
   [CardName.POLYPHEMOS_RB, 'card-polyphemos-logo'],
   [CardName.POSEIDON_RB, 'card-poseidon-logo'],
+  [CardName.PRISTAR_RB, 'card-pristar-logo'],
 ]);
 
 export default Vue.extend({
