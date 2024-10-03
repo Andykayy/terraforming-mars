@@ -193,6 +193,7 @@ export class GameCards {
         CardName.MORNING_STAR_INC,
         CardName.PHOBOLOG,
         CardName.POINT_LUNA,
+        CardName.POLYPHEMOS,
         // Add more CardNames here as needed
         // For example:
         // CardName.ANOTHER_CORPORATION,
