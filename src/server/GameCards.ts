@@ -192,6 +192,7 @@ export class GameCards {
         CardName.MINING_GUILD,
         CardName.MORNING_STAR_INC,
         CardName.PHOBOLOG,
+        CardName.POINT_LUNA,
         // Add more CardNames here as needed
         // For example:
         // CardName.ANOTHER_CORPORATION,

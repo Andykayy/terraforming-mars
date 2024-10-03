@@ -1611,5 +1611,6 @@ export enum CardName {
     MINING_GUILD_RB = "Mining Guild(⚖)",
     MORNING_STAR_INC_RB = "Morning Star(⚖)",
     PHOBOLOG_RB = "Phoblog(⚖)",
+    POINT_LUNA_RB = "Point Luna(⚖)",
 
 }
