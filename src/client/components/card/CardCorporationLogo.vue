@@ -77,6 +77,9 @@
       <span style="color: #020202;background-color:#6bb5c7;padding-left:4px;padding-right:4px;font-size:26px;box-shadow: 6px 6px 10px grey;">X</span>
       INVENTRIX</span>
     </template>
+    <template v-else-if="title === CardName.MINING_GUILD_RB">
+      <span class="card-mining-guild-logo">MINING<br>GUILD</span>
+    </template>
 
 
     <template v-else-if="title === CardName.INCITE">

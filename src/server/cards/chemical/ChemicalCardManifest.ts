@@ -621,6 +621,7 @@ import { FactorumRebalanced } from './rebalance/Corp_FactorumRB';
 import { HelionRebalance } from './rebalance/Corp_HelionRB';
 import { InterplanetaryCinematicsRebalance } from './rebalance/Corp_InterplanetaryCinematicsRB';
 import { InventrixRebalance } from './rebalance/Corp_InventrixRB';
+import { MiningGuildRebalance } from './rebalance/Corp_MiningGuildRB';
 
 
 
@@ -641,6 +642,7 @@ export const CHEMICAL_CARD_MANIFEST = new ModuleManifest({
     [CardName.HELION_RB]: {Factory: HelionRebalance},
     [CardName.INTERPLANETARY_CINEMATICS_RB]: {Factory: InterplanetaryCinematicsRebalance},
     [CardName.INVENTRIX_RB]: {Factory: InventrixRebalance},
+    [CardName.MINING_GUILD_RB]: {Factory: MiningGuildRebalance},
     
   },
   preludeCards: {
