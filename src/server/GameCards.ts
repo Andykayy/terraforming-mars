@@ -187,6 +187,7 @@ export class GameCards {
         CardName.CHEUNG_SHING_MARS,
         CardName.FACTORUM,
         CardName.HELION,
+        CardName.INTERPLANETARY_CINEMATICS,
         // Add more CardNames here as needed
         // For example:
         // CardName.ANOTHER_CORPORATION,
