@@ -4,10 +4,14 @@ import {CardResource} from '../../../../common/CardResource';
 import {CardName} from '../../../../common/cards/CardName';
 import {CardRenderer} from '../../render/CardRenderer';
 import {Size} from '../../../../common/cards/render/Size';
+import {Turmoil} from '../../../turmoil/Turmoil';
 import {Resource} from '../../../../common/Resource';
 
 
 export class PristarRebalance extends CorporationCard {
+
+  private hasTemporaryInfluence: boolean = false;
+
   constructor() {
     super({
       name: CardName.PRISTAR_RB,
@@ -38,21 +42,28 @@ export class PristarRebalance extends CorporationCard {
     return undefined;
   }
 
-  hasInfluence = false;
-
   public onProductionPhase(player: IPlayer) {
-    if (this.hasInfluence = true){
-      player.game.turmoil?.takeInfluenceBonus(player);
-      this.hasInfluence = false;
-    }    
-    if (!(player.generationData.hasRaisedTR)) {
+    // Remove temporary influence from previous generation if it exists
+    if (this.hasTemporaryInfluence) {
+      Turmoil.ifTurmoil(player.game, (turmoil) => {
+        turmoil.addInfluenceBonus(player, -1);
+      });
+      this.hasTemporaryInfluence = false;
+    }
+
+    if (!player.generationData.hasRaisedTR) {
       player.stock.add(Resource.MEGACREDITS, 6, {log: true, from: this});
       player.addResourceTo(this, 1);
-      player.game.turmoil?.addInfluenceBonus(player);
-      this.hasInfluence = true;
+      
+      // Add temporary influence for this generation
+      Turmoil.ifTurmoil(player.game, (turmoil) => {
+        turmoil.addInfluenceBonus(player, 1);
+      });
+      this.hasTemporaryInfluence = true;
+
+      player.game.log('${0} gained 1 temporary influence from ${1}', (b) => b.player(player).card(this));
     }
+
     return undefined;
   }
-
-  
 }
