@@ -1614,5 +1614,6 @@ export enum CardName {
     POINT_LUNA_RB = "Point Luna(⚖)",
     POLYPHEMOS_RB = "Polyphemos(⚖)",
     POSEIDON_RB = "Poseidon(⚖)",
+    PRISTAR_RB = "Pristar(⚖)",
 
 }

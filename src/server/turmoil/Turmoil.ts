@@ -504,6 +504,7 @@ export class Turmoil {
     } else {
       this.playersInfluenceBonus.set(player.id, bonus);
     }
+    
   }
 
   /** Return the number of delegates for `delegate` in the reserve. */
