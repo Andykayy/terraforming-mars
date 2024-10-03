@@ -24,7 +24,7 @@ export class InterplanetaryCinematicsRebalance extends CorporationCard {
         description: 'You start with 12 steel and 40 M€.',
         renderData: CardRenderer.builder((b) => {
           b.br.br.br;
-          b.megacredits(30).nbsp.steel(20, {digit});
+          b.megacredits(40).nbsp.steel(12, {digit});
           b.corpBox('effect', (ce) => {
             ce.effect('Each time you play an event, you gain 3 M€.', (eb) => {
               eb.tag(Tag.EVENT).startEffect.megacredits(3);

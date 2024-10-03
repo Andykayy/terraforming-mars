@@ -31,8 +31,8 @@ export class InventrixRebalance extends CorporationCard {
             ce.effect('Your temperature, oxygen, ocean, and Venus requirements are +2 or -2 steps, your choice in each case.', (eb) => {
               eb.plate('Global requirements').startEffect.text('+/- 2');
             });
-            b.effect('Cards with req cost 1 M€ less.', (eb) => {
-              eb.cards(1, {secondaryTag: AltSecondaryTag.REQ}).startEffect.megacredits(-2); 
+            ce.effect('Cards with req cost 1 M€ less.', (eb) => {
+              eb.cards(1, {secondaryTag: AltSecondaryTag.REQ}).startEffect.megacredits(-1); 
             });
           });
         }),
