@@ -267,6 +267,7 @@ const imageLogosWithNames: Map<CardName, string> = new Map([
   [CardName.HELION_RB, 'card-helionRB-logo'],
   [CardName.MORNING_STAR_INC_RB, 'card-morning-star-logo'],
   [CardName.PHOBOLOG_RB, 'card-phobolog-logo'],
+  [CardName.POINT_LUNA_RB, 'card-luna-logo'],
 ]);
 
 export default Vue.extend({

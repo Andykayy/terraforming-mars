@@ -24,7 +24,7 @@ export class PhoboLogRebalance extends CorporationCard {
 
       metadata: {
         cardNumber: 'R09',
-        description: 'You start with 10 titanium and 23 M€.',
+        description: 'You start with 10 titanium and 23 M€. As your first action, draw 2 cards with a space tag.',
         renderData: CardRenderer.builder((b) => {
           b.br.br;
           b.megacredits(30).nbsp.titanium(8, {digit}).nbsp.cards(2, {secondaryTag: Tag.SPACE});;
