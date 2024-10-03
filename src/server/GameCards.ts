@@ -188,6 +188,7 @@ export class GameCards {
         CardName.FACTORUM,
         CardName.HELION,
         CardName.INTERPLANETARY_CINEMATICS,
+        CardName.INVENTRIX,
         // Add more CardNames here as needed
         // For example:
         // CardName.ANOTHER_CORPORATION,

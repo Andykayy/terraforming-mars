@@ -1607,5 +1607,6 @@ export enum CardName {
     FACTORUM_RB = "Factorum(⚖)",
     HELION_RB = "Helion(⚖)",
     INTERPLANETARY_CINEMATICS_RB = "Interplanetary Cinematics(⚖)",
+    INVENTRIX_RB = "Inventrix(⚖)",
 
 }
