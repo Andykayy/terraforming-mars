@@ -191,6 +191,7 @@ export class GameCards {
         CardName.INVENTRIX,
         CardName.MINING_GUILD,
         CardName.MORNING_STAR_INC,
+        CardName.PHOBOLOG,
         // Add more CardNames here as needed
         // For example:
         // CardName.ANOTHER_CORPORATION,
