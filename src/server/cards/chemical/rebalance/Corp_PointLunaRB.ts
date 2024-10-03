@@ -16,18 +16,19 @@ export class PointLunaRebalance extends CorporationCard {
     super({
       name: CardName.POINT_LUNA_RB,
       tags: [Tag.SPACE, Tag.EARTH],
-      startingMegaCredits: 48,
+      startingMegaCredits: 45,
 
       behavior: {
-        production: {titanium: 1},        
+        production: {titanium: 1},
+        drawCard: 1,   
       },
 
       metadata: {
         cardNumber: 'R10',
-        description: 'You start with 1 titanium production and 48 M€.',
+        description: 'You start with 1 titanium production and 45 M€. Draw a card',
         renderData: CardRenderer.builder((b) => {
           b.br;
-          b.production((pb) => pb.titanium(1)).nbsp.megacredits(38);
+          b.production((pb) => pb.titanium(1)).nbsp.megacredits(45).cards(1);
           b.corpBox('effect', (ce) => {
             ce.effect('When you play an Earth tag, including this, draw a card then discard a card.', (eb) => {
               eb.tag(Tag.EARTH).startEffect.plus().cards(1).minus().cards(1);
