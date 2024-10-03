@@ -625,6 +625,7 @@ import { MiningGuildRebalance } from './rebalance/Corp_MiningGuildRB';
 import { MorningStarIncRebalance } from './rebalance/Corp_MorningStarIncRB';
 import { PhoboLogRebalance } from './rebalance/Corp_PhoboLogRB';
 import { PointLunaRebalance } from './rebalance/Corp_PointLunaRB';
+import { PolyphemosRebalance } from './rebalance/Corp_PolyphemosRB';
 
 
 
@@ -649,6 +650,7 @@ export const CHEMICAL_CARD_MANIFEST = new ModuleManifest({
     [CardName.MORNING_STAR_INC_RB]: {Factory: MorningStarIncRebalance, compatibility: 'venus'},
     [CardName.PHOBOLOG_RB]: {Factory: PhoboLogRebalance},
     [CardName.POINT_LUNA_RB]: {Factory: PointLunaRebalance, compatibility: 'prelude'},
+    [CardName.POLYPHEMOS_RB]: {Factory: PolyphemosRebalance, compatibility: 'colonies'},
     
   },
   preludeCards: {
