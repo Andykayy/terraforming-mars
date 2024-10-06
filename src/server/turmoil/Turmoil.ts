@@ -507,18 +507,7 @@ export class Turmoil {
     
   }
 
-  public takeInfluenceBonus(player: IPlayer, bonus:number = -1) {
-    if (this.playersInfluenceBonus.has(player.id)) {
-      let current = this.playersInfluenceBonus.get(player.id);
-      if (current) {
-        current += bonus;
-        this.playersInfluenceBonus.set(player.id, current);
-      }
-    } else {
-      this.playersInfluenceBonus.set(player.id, bonus);
-    }
-    
-  }
+
 
   /** Return the number of delegates for `delegate` in the reserve. */
   public getAvailableDelegateCount(delegate: Delegate): number {

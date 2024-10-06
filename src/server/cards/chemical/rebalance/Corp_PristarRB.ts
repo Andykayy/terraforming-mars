@@ -43,27 +43,26 @@ export class PristarRebalance extends CorporationCard {
   }
 
   public onProductionPhase(player: IPlayer) {
-    // Remove temporary influence from previous generation if it exists
     if (this.hasTemporaryInfluence) {
       Turmoil.ifTurmoil(player.game, (turmoil) => {
         turmoil.addInfluenceBonus(player, -1);
       });
       this.hasTemporaryInfluence = false;
+      player.game.log('${0} lost 1 temporary influence from ${1}', (b) => b.player(player).card(this));
     }
 
     if (!player.generationData.hasRaisedTR) {
       player.stock.add(Resource.MEGACREDITS, 6, {log: true, from: this});
       player.addResourceTo(this, 1);
       
-      // Add temporary influence for this generation
       Turmoil.ifTurmoil(player.game, (turmoil) => {
         turmoil.addInfluenceBonus(player, 1);
       });
       this.hasTemporaryInfluence = true;
-
       player.game.log('${0} gained 1 temporary influence from ${1}', (b) => b.player(player).card(this));
     }
 
     return undefined;
   }
 }
+
