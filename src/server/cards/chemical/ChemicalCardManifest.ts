@@ -630,6 +630,7 @@ import { PoseidonRebalance } from './rebalance/Corp_PoseidonRB';
 import { PristarRebalance } from './rebalance/Corp_PristarRB';
 import { RecyclonRebalance } from './rebalance/Corp_ RecyclonRB';
 import { RobinsonIndustriesRebalance } from './rebalance/Corp_RobinsonIndustriesRB';
+import { SpliceRebalance } from './rebalance/Corp_SpliceRB';
 
 
 
@@ -659,6 +660,7 @@ export const CHEMICAL_CARD_MANIFEST = new ModuleManifest({
     [CardName.PRISTAR_RB]: {Factory: PristarRebalance, compatibility: 'turmoil'},
     [CardName.RECYCLON_RB]: {Factory: RecyclonRebalance, compatibility: 'promo'},
     [CardName.ROBINSON_INDUSTRIES_RB]: {Factory: RobinsonIndustriesRebalance, compatibility: 'prelude'},
+    [CardName.SPLICE_RB]: {Factory: SpliceRebalance, compatibility: 'promo'},
     
   },
   preludeCards: {

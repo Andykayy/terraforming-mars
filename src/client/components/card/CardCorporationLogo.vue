@@ -88,6 +88,12 @@
       <div style="border-bottom:3px solid #ccc;">•—•—•—•—•—•—•&nbsp;</div>
       <div style="letter-spacing:2px;">INDUSTRIES</div></div>
     </template>
+    <template v-else-if="title === CardName.SPLICE_RB">
+      <div class="card-splice-logo"><div>SPLI<span style="color:red">C</span>E</div>
+      <div style="height:3px;background:red;margin-top:-3px;"></div>
+      <div style="font-size:10px;line-height:18px;">TACTICAL GENOMICS</div>
+      </div>
+    </template>
 
 
     <template v-else-if="title === CardName.INCITE">

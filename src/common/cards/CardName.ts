@@ -1617,4 +1617,5 @@ export enum CardName {
     PRISTAR_RB = "Pristar(⚖)",
     RECYCLON_RB = "Recyclon(⚖)",
     ROBINSON_INDUSTRIES_RB = "Robinson Industries(⚖)",
+    SPLICE_RB = "Splice(⚖)",
 }

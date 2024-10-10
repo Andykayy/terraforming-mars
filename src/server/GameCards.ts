@@ -196,8 +196,9 @@ export class GameCards {
         CardName.POLYPHEMOS,
         CardName.POSEIDON,
         CardName.PRISTAR,
-        CardName.RECYCLON
+        CardName.RECYCLON,
         CardName.ROBINSON_INDUSTRIES,
+        CardName.SPLICE,
         // Add more CardNames here as needed
         // For example:
         // CardName.ANOTHER_CORPORATION,
