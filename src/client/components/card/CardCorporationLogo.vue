@@ -80,6 +80,14 @@
     <template v-else-if="title === CardName.MINING_GUILD_RB">
       <span class="card-mining-guild-logo">MINING<br>GUILD</span>
     </template>
+    <template v-else-if="title === CardName.RECYCLON_RB">
+      <div class="card-recyclon-logo">Recyclon</div>
+    </template>
+    <template v-else-if="title === CardName.ROBINSON_INDUSTRIES_RB">
+      <div class="card-robinson-logo"><div style="letter-spacing:4px;border-bottom:3px solid #ccc;margin-top:5px;">ROBINSON</div>
+      <div style="border-bottom:3px solid #ccc;">•—•—•—•—•—•—•&nbsp;</div>
+      <div style="letter-spacing:2px;">INDUSTRIES</div></div>
+    </template>
 
 
     <template v-else-if="title === CardName.INCITE">

@@ -1615,5 +1615,6 @@ export enum CardName {
     POLYPHEMOS_RB = "Polyphemos(⚖)",
     POSEIDON_RB = "Poseidon(⚖)",
     PRISTAR_RB = "Pristar(⚖)",
-
+    RECYCLON_RB = "Recyclon(⚖)",
+    ROBINSON_INDUSTRIES_RB = "Robinson Industries(⚖)",
 }
