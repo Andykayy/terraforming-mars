@@ -1,4 +1,4 @@
-import {ActiveCorporationCard} from '../../corporation/CorporationCard';
+import {CorporationCard} from '../../corporation/CorporationCard';
 import {IPlayer} from '../../../IPlayer';
 import {Tag} from '../../../../common/cards/Tag';
 import {CardResource} from '../../../../common/CardResource';
@@ -16,7 +16,7 @@ import {SelectOption} from '../../../inputs/SelectOption';
 import {AltSecondaryTag} from '../../../../common/cards/render/AltSecondaryTag';
 import {message} from '../../../logs/MessageBuilder';
 
-export class StormCraftIncorporatedRebalance extends ActiveCorporationCard {
+export class StormCraftIncorporatedRebalance extends CorporationCard {
   constructor() {
     super({
       name: CardName.STORMCRAFT_INCORPORATED_RB,
