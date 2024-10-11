@@ -94,6 +94,13 @@
       <div style="font-size:10px;line-height:18px;">TACTICAL GENOMICS</div>
       </div>
     </template>
+    <template v-else-if="title === CardName.STORMCRAFT_INCORPORATED_RB">
+      <div class="card-stormcraft-logo">
+      <div class="stormcraft1">STORM</div><div class="stormcraft2">CRAFT</div>
+      <div class="stormcraft3">INCOR</div><div class="stormcraft4">PORATED</div>
+      </div>
+    </template>
+
 
 
     <template v-else-if="title === CardName.INCITE">

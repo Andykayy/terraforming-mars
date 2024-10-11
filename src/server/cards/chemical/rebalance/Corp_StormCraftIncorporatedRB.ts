@@ -16,10 +16,10 @@ import {OrOptions} from '../../../inputs/OrOptions';
 import {SelectOption} from '../../../inputs/SelectOption';
 import {AltSecondaryTag} from '../../../../common/cards/render/AltSecondaryTag';
 
-export class StormCraftIncorporated extends ActiveCorporationCard {
+export class StormCraftIncorporatedRebalance extends ActiveCorporationCard {
   constructor() {
     super({
-      name: CardName.STORMCRAFT_INCORPORATED,
+      name: CardName.STORMCRAFT_INCORPORATED_RB,
       tags: [Tag.JOVIAN],
       startingMegaCredits: 50,
       resourceType: CardResource.FLOATER,
