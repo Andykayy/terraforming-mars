@@ -14,18 +14,14 @@ import {ICard} from '../../ICard';
 import {OrOptions} from '../../../inputs/OrOptions';
 import {SelectOption} from '../../../inputs/SelectOption';
 import {AltSecondaryTag} from '../../../../common/cards/render/AltSecondaryTag';
+import {message} from '../../../logs/MessageBuilder';
 
 export class StormCraftIncorporatedRebalance extends ActiveCorporationCard {
   constructor() {
     super({
       name: CardName.STORMCRAFT_INCORPORATED_RB,
       tags: [Tag.JOVIAN],
-      startingMegaCredits: 50,
-      resourceType: CardResource.FLOATER,
-
-      action: {
-        addResourcesToAnyCard: {type: CardResource.FLOATER, count: 1, autoSelect: true},
-      },
+      startingMegaCredits: 50,    
 
       metadata: {
         cardNumber: 'R29',
@@ -51,15 +47,19 @@ export class StormCraftIncorporatedRebalance extends ActiveCorporationCard {
     return undefined;
   }
 
-  public onResourceAdded(player: IPlayer, card: ICard) {
+  public onResourceAdded(player: IPlayer, card: ICard, count: number) {
   
-      const gainMC = new SelectOption('Gain 1 M€', 'Gain M€').andThen(() => {
-        player.stock.add(Resource.MEGACREDITS, 1, {log: true})
+      const gainMC = new SelectOption(
+        message('Gain ${0} M€', (b) => b.number(count)),
+        'Gain M€').andThen(() => {
+        player.stock.add(Resource.MEGACREDITS, count, {log: true})
         return undefined;
       });
 
-      const gainEnergy = new SelectOption('Gain 1 energy', 'Gain energy').andThen(() => {
-        player.stock.add(Resource.ENERGY, 1, {log: true})
+      const gainEnergy = new SelectOption(
+        message('Gain ${0} energy', (b) => b.number(count)),
+        'Gain M€').andThen(() => {
+        player.stock.add(Resource.ENERGY, count, {log: true})
         return undefined;
       });
 
