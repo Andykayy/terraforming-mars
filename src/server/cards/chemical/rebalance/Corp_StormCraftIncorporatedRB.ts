@@ -5,7 +5,6 @@ import {CardResource} from '../../../../common/CardResource';
 
 import {CardName} from '../../../../common/cards/CardName';
 import {CardRenderer} from '../../render/CardRenderer';
-import {Size} from '../../../../common/cards/render/Size';
 
 import {Resource} from '../../../../common/Resource';
 
