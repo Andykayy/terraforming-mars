@@ -49,5 +49,6 @@ export class ThorgateRebalance extends CorporationCard implements IActionCard {
   public action(player: IPlayer) {
     getBehaviorExecutor().execute(ThorgateRebalance.actionBehavior, player, this);
     return undefined;
+  }
 }
 
