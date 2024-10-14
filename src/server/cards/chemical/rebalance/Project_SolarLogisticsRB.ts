@@ -10,6 +10,7 @@ import {SelectOption} from '../../../inputs/SelectOption';
 import {OrOptions} from '../../../inputs/OrOptions';
 import {Priority} from '../../../deferredActions/Priority';
 
+
 export class SolarLogisticsRebalance extends Card implements IProjectCard {
   constructor() {
     super({
@@ -32,7 +33,8 @@ export class SolarLogisticsRebalance extends Card implements IProjectCard {
           b.effect('When you play an Earth tag, you pay 2 M€ less.',
             (eb) => eb.tag(Tag.EARTH).startEffect.megacredits(-2));
           b.br;
-          b.tag(Tag.SPACE).tag(Tag.EVENT).colon().resource(CardResource.ASTEROID).br;
+          b.effect('When any player plays a space event, draw a card.',
+            (eb) => eb.tag(Tag.SPACE).tag(Tag.EVENT).colon().resource(CardResource.ASTEROID).br);
           b.or().br;
           b.minus().resource(CardResource.ASTEROID).plus().cards(1).br;
           b.titanium(2).resource(CardResource.ASTEROID);
@@ -42,31 +44,32 @@ export class SolarLogisticsRebalance extends Card implements IProjectCard {
     });
   }
 
-  public onCardPlayed(player: IPlayer, card: IProjectCard) {
+  public onCardPlayedFromAnyPlayer(thisCardOwner: IPlayer, _playedCardOwner: IPlayer, card: IProjectCard) {
     if (card.type === CardType.EVENT && card.tags.includes(Tag.SPACE)) {
-      player.defer(() => {
-        // Can't remove a resource
+      thisCardOwner.defer(() => {
         if (this.resourceCount === 0) {
-          player.addResourceTo(this, 1);
+          thisCardOwner.addResourceTo(this, 1);
           return undefined;
         }
         const options = new OrOptions(
           new SelectOption('Remove an asteroid resource from this card to draw a card', 'Remove resource').andThen(() => {
-            player.removeResourceFrom(this);
-            player.drawCard();
+            thisCardOwner.removeResourceFrom(this);
+            thisCardOwner.drawCard();
             return undefined;
           }),
           new SelectOption('Add an asteroid to this card', 'Add resource').andThen(() => {
-            player.addResourceTo(this, 1);
+            thisCardOwner.addResourceTo(this, 1);
             return undefined;
           }),
         );
         options.title = 'Select an option for Solar Logistics';
         return options;
       },
-      Priority.SUPERPOWER); // Unshift that deferred action
+      Priority.DEFAULT); // Changed priority
     }
-    }
+    return undefined;
   }
+}
+
 
 

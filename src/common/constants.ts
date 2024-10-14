@@ -43,7 +43,7 @@ export const POLITICAL_AGENDAS_MAX_ACTION_USES = 3;
 
 // Promo
 
-export const GRAPHENE_VALUE = 4;
+export const GRAPHENE_VALUE = 3;
 
 // Map specific
 export const HELLAS_BONUS_OCEAN_COST = 6;

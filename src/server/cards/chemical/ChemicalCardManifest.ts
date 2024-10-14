@@ -639,6 +639,9 @@ import { UnitedNationsMarsInitiativeRebalance } from './rebalance/Corp_UnitedNat
 import { UtopiaInvestRebalance } from './rebalance/Corp_UtopiaInvestRB';
 import { VitorRebalance } from './rebalance/Corp_VitorRB';
 import { SolarLogisticsRebalance } from './rebalance/Project_SolarLogisticsRB';
+import { CarbonNanosystemsRebalance } from './rebalance/Project_CarbonNanosystemsRB';
+import { CyberiaSystemsRebalance } from './rebalance/Project_CyberiaSystemsRB';
+import { L1TradeTerminalRebalance } from './rebalance/Project_L1TradeTerminalRB';
 
 
 
@@ -773,11 +776,13 @@ export const CHEMICAL_CARD_MANIFEST = new ModuleManifest({
     [CardName.ASTEROID_HOLLOWING_RB]: {Factory: AsteroidHollowingRebalance, compatibility: 'promo'},
     [CardName.BLACK_POLAR_DUST_RB]: {Factory: BlackPolarDustRebalance},
     [CardName.BUILDING_INDUSTRIES_RB]: {Factory: BuildingIndustriesRebalance},
+    [CardName.CARBON_NANOSYSTEMS_RB]: {Factory: CarbonNanosystemsRebalance, compatibility: 'prelude2'},
     [CardName.CARTEL_RB]: {Factory: CartelRebalance},
     [CardName.CLOUD_SEEDING_RB]: {Factory: CloudSeedingRebalance},
     [CardName.COMMUNITY_SERVICES_RB]: {Factory: CommunityServicesRebalance,  compatibility: 'colonies'},
     [CardName.CORPORATE_STRONGHOLD_RB]: {Factory: CorporateStrongholdRebalance},
     [CardName.CUTTING_EDGE_TECHNOLOGY_RB]: {Factory: CuttingEdgeTechnologyRebalance, compatibility: 'promo'},
+    [CardName.CYBERIA_SYSTEMS_RB]: {Factory: CyberiaSystemsRebalance, compatibility: 'prelude2'},
     [CardName.EARTH_CATAPULT_RB]: {Factory: EarthCatapultRebalance},
     [CardName.EARTH_OFFICE_RB]: {Factory: EarthOfficeRebalance},
     [CardName.ENERGY_MARKET_RB]: {Factory: EnergyMarketRebalance, compatibility: 'promo'},    
@@ -791,6 +796,7 @@ export const CHEMICAL_CARD_MANIFEST = new ModuleManifest({
     [CardName.INDUSTRIAL_CENTER_RB]: {Factory: IndustrialCenterRebalance, compatibility: 'corpera'},
     [CardName.INSECTS_RB]: {Factory: InsectsRebalance},
     [CardName.JET_STREAM_MICROSCRAPPERS_RB]: {Factory: JetStreamMicroscrappersRebalance, compatibility: 'venus'},
+    [CardName.L1_TRADE_TERMINAL_RB]: {Factory: L1TradeTerminalRebalance, compatibility: 'prelude2'},
     [CardName.MARS_UNIVERSITY_RB]: {Factory: MarsUniversityRebalance, compatibility: 'corpera'},
     [CardName.MASS_CONVERTER_RB]: {Factory: MassConverterRebalance, compatibility: 'corpera'},
     [CardName.MEAT_INDUSTRY_RB]: {Factory: MeatIndustryRebalance, compatibility: 'promo'},
@@ -1308,11 +1314,13 @@ export const CHEMICAL_CARD_MANIFEST = new ModuleManifest({
     CardName.BACTOVIRAL_RESEARCH,
     CardName.BLACK_POLAR_DUST,
     CardName.BUILDING_INDUSTRIES,
+    CardName.CARBON_NANOSYSTEMS,
     CardName.CARTEL,
     CardName.CLOUD_SEEDING,
     CardName.COMMUNITY_SERVICES,
     CardName.CORPORATE_STRONGHOLD,
     CardName.CUTTING_EDGE_TECHNOLOGY,
+    CardName.CYBERIA_SYSTEMS,
     CardName.EARTH_CATAPULT,
     CardName.EARTH_OFFICE,
     CardName.ENERGY_MARKET,
@@ -1326,6 +1334,7 @@ export const CHEMICAL_CARD_MANIFEST = new ModuleManifest({
     CardName.INDUSTRIAL_CENTER_ARES,
     CardName.INSECTS,
     CardName.JET_STREAM_MICROSCRAPPERS,
+    CardName.L1_TRADE_TERMINAL,
     CardName.MARS_UNIVERSITY,
     CardName.MASS_CONVERTER,
     CardName.MEAT_INDUSTRY,
@@ -1338,6 +1347,7 @@ export const CHEMICAL_CARD_MANIFEST = new ModuleManifest({
     CardName.SKY_DOCKS,
     CardName.SNOW_ALGAE,
     CardName.SOIL_FACTORY,
+    CardName.SOLAR_LOGISTICS,
     CardName.SOLAR_POWER,
     CardName.SPINOFF_DEPARTMENT,
     CardName.STRATOPOLIS,
