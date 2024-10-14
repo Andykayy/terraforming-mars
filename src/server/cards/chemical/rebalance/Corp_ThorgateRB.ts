@@ -28,7 +28,7 @@ export class ThorgateRebalance extends CorporationCard implements IActionCard {
           b.production((pb) => pb.energy(1)).nbsp.megacredits(40);
           b.corpBox('effect', (ce) => {  
             ce.vSpace(Size.LARGE);       
-            b.action('Decrease energy production 1 step to gain 6 M€.', (eb) => {
+            ce.action('Decrease energy production 1 step to gain 6 M€.', (eb) => {
               eb.production((pb) => pb.energy(1)).startAction.megacredits(6);
             }); 
             ce.effect('When playing a power card, THE SP POWER PLANT, OR THE KELVINIST RULING POLICY ACTION, pay 3M€ less.', (eb) => {
