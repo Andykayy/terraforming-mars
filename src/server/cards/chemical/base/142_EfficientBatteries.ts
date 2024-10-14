@@ -20,7 +20,7 @@ export class EfficientBatteries extends Card implements IProjectCard {
       metadata: {
         cardNumber: 'xB142',
         renderData: CardRenderer.builder((b) => {
-          b.production((pb) => pb.energy(1).slash().tag(Tag.POWER));
+          b.production((pb) => pb.energy(1).slash().tag(Tag.POWER).tag(Tag.POWER));
         }),
         description: 'Increase your energy production 1 step for every 2 power tags you have, including this.',
       },
