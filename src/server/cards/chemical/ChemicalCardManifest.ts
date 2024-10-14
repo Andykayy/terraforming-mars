@@ -638,6 +638,7 @@ import { ThorgateRebalance } from './rebalance/Corp_ThorgateRB';
 import { UnitedNationsMarsInitiativeRebalance } from './rebalance/Corp_UnitedNationsMarsInitiativeRB';
 import { UtopiaInvestRebalance } from './rebalance/Corp_UtopiaInvestRB';
 import { VitorRebalance } from './rebalance/Corp_VitorRB';
+import { SolarLogisticsRebalance } from './rebalance/Project_SolarLogisticsRB';
 
 
 
@@ -802,6 +803,7 @@ export const CHEMICAL_CARD_MANIFEST = new ModuleManifest({
     [CardName.SKY_DOCKS_RB]: {Factory: SkyDocksRebalance, compatibility: 'colonies'},
     [CardName.SNOW_ALGAE_RB]: {Factory: SnowAlgaeRebalance, compatibility: 'promo'},
     [CardName.SOIL_FACTORY_RB]: {Factory: SoilFactoryRebalance},
+    [CardName.SOLAR_LOGISTICS_RB]: {Factory: SolarLogisticsRebalance, compatibility: 'prelude2'},
     [CardName.SOLAR_POWER_RB]: {Factory: SolarPowerRebalance},
     [CardName.SPINOFF_DEPARTMENT_RB]: {Factory: SpinoffDepartmentRebalance, compatibility: 'colonies'},
     [CardName.STRATOPOLIS_RB]: {Factory: StratopolisRebalance, compatibility: 'venus'},
