@@ -19,24 +19,24 @@ export class SolarLogisticsRebalance extends Card implements IProjectCard {
       cost: 20,
       tags: [Tag.EARTH, Tag.SPACE],
       resourceType: CardResource.ASTEROID,
-
       behavior: {
         stock: {titanium: 2},      
         addResources: 1,  
       },
       victoryPoints: 1,
       cardDiscount: {tag: Tag.EARTH, amount: 2},
-
       metadata: {
         cardNumber: '',
         renderData: CardRenderer.builder((b) => {
-          b.effect('When you play an Earth tag, you pay 2 M€ less.',
-            (eb) => eb.tag(Tag.EARTH).startEffect.megacredits(-2));
+          b.effect('When you play an Earth tag, you pay 2 M€ less.', (eb) => {
+            eb.tag(Tag.EARTH).startEffect.megacredits(-2);
+          });
           b.br;
-          b.effect('When any player plays a space event, draw a card.',
-            (eb) => eb.tag(Tag.SPACE).tag(Tag.EVENT).colon().resource(CardResource.ASTEROID).br);
-          b.or().br;
-          b.minus().resource(CardResource.ASTEROID).plus().cards(1).br;
+          b.effect('When any player plays a space event, add 1 asteroid here or remove 1 to draw a card.', (eb) => {
+            eb.tag(Tag.SPACE).tag(Tag.EVENT).startEffect;
+            eb.resource(CardResource.ASTEROID).or().minus().resource(CardResource.ASTEROID).plus().cards(1);
+          });
+          b.br;
           b.titanium(2).resource(CardResource.ASTEROID);
         }),
         description: 'Gain 2 titanium. Add one asteroid here.',
