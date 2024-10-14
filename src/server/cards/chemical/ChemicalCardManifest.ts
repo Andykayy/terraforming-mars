@@ -634,6 +634,7 @@ import { SpliceRebalance } from './rebalance/Corp_SpliceRB';
 import { StormCraftIncorporatedRebalance } from './rebalance/Corp_StormCraftIncorporatedRB';
 import { TerralabsResearchRebalance } from './rebalance/Corp_TerralabsResearchRB';
 import { TharsisRepublicRebalance } from './rebalance/Corp_TharsisRepublicRB';
+import { ThorgateRebalance } from './rebalance/Corp_ThorgateRB';
 
 
 
@@ -667,6 +668,7 @@ export const CHEMICAL_CARD_MANIFEST = new ModuleManifest({
     [CardName.STORMCRAFT_INCORPORATED_RB]: {Factory: StormCraftIncorporatedRebalance, compatibility: 'colonies'},
     [CardName.TERRALABS_RESEARCH_RB]: {Factory: TerralabsResearchRebalance, compatibility: 'turmoil'},
     [CardName.THARSIS_REPUBLIC_RB]: {Factory: TharsisRepublicRebalance},
+    [CardName.THORGATE_RB]: {Factory: ThorgateRebalance},
     
   },
   preludeCards: {

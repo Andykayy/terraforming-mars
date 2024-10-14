@@ -302,6 +302,7 @@ const imageLogosWithNames: Map<CardName, string> = new Map([
   [CardName.POLYPHEMOS_RB, 'card-polyphemos-logo'],
   [CardName.POSEIDON_RB, 'card-poseidon-logo'],
   [CardName.PRISTAR_RB, 'card-pristar-logo'],
+  [CardName.THORGATE_RB, 'card-thorgate-logo'],
 ]);
 
 export default Vue.extend({

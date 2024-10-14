@@ -47,14 +47,20 @@ class KelvinistsPolicy01 implements IPolicy {
     const cost = player === undefined ? 10 : this.cost(player);
     return `Pay ${cost} M€ to increase your energy and heat production 1 step (Turmoil Kelvinists)`;
   }
-
+  //refactor to make a discount and apply RB Thorgate Andy
   cost(player: IPlayer): number {
-    return player.cardIsInEffect(CardName.HIGH_TEMP_SUPERCONDUCTORS) ? 7: 10;
+    let discount = 0;
+    if (player.cardIsInEffect(CardName.HIGH_TEMP_SUPERCONDUCTORS)) {
+      discount += 3;
+    }
+    if (player.isCorporation(CardName.THORGATE_RB)) {
+      discount += 3;
+    }
+    return Math.max(10 - discount, 0); // Ensure the cost doesn't go below 0
   }
   canAct(player: IPlayer) {
     return player.canAfford(this.cost(player));
   }
-
   action(player: IPlayer) {
     const game = player.game;
     game.log('${0} used Turmoil ${1} action', (b) => b.player(player).partyName(PartyName.KELVINISTS));
@@ -64,7 +70,6 @@ class KelvinistsPolicy01 implements IPolicy {
         player.production.add(Resource.HEAT, 1);
         game.log('${0} increased heat and energy production 1 step', (b) => b.player(player));
       });
-
     return undefined;
   }
 }

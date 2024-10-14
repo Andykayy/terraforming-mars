@@ -1621,4 +1621,5 @@ export enum CardName {
     STORMCRAFT_INCORPORATED_RB = "Stormcraft Incorporated(⚖)",
     TERRALABS_RESEARCH_RB = "Terralabs Research(⚖)",
     THARSIS_REPUBLIC_RB = "Tharsis Republic(⚖)",
+    THORGATE_RB = "Thorgate(⚖)",
 }

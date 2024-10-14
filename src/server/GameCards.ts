@@ -202,6 +202,7 @@ export class GameCards {
         CardName.STORMCRAFT_INCORPORATED,
         CardName.TERRALABS_RESEARCH,
         CardName.THARSIS_REPUBLIC,
+        CardName.THORGATE,
         // Add more CardNames here as needed
         // For example:
         // CardName.ANOTHER_CORPORATION,
