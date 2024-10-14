@@ -346,7 +346,7 @@ export class Game implements IGame, Logger {
         player.dealtCorporationCards.push(...corporationDeck.drawN(game, gameOptions.startingCorporations));
         if (gameOptions.initialDraftVariant === false) {
           player.dealtProjectCards.push(...projectDeck.drawN(game, 10));
-          const standardAlloys = newProjectCard(CardName.AERIAL_MAPPERS)         
+          const standardAlloys = newProjectCard(CardName.HIGH_TEMP_SUPERCONDUCTORS)         
           if (standardAlloys) {
             player.dealtProjectCards.push(standardAlloys);            
           }
