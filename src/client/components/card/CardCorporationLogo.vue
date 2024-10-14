@@ -113,6 +113,18 @@
     <template v-else-if="title === CardName.UNITED_NATIONS_MARS_INITIATIVE_RB">
       <span class="card-unmi-logo">UNITED<br/>NATIONS<br/>MARS<br/>INITIATIVE</span>
     </template>
+    <template v-else-if="title === CardName.UTOPIA_INVEST_RB">
+      <div class="card-utopia-logo">
+      <div class="utopia-corp-name-1">UTOPIA</div>
+      <div class="utopia-corp-name-2">INVEST</div>
+      </div>
+    </template>
+    <template v-else-if="title === CardName.VITOR">
+      <div class="card-vitor-logo">
+      <span style="color:white;background:orangered;padding-left:3px;">VIT</span>
+      <span style="background:linear-gradient(to right, orangered,white);">O</span>
+      <span style="background:white;padding-right:3px;">R</span></div>
+    </template>
 
 
 

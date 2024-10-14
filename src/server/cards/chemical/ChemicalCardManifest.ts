@@ -636,6 +636,8 @@ import { TerralabsResearchRebalance } from './rebalance/Corp_TerralabsResearchRB
 import { TharsisRepublicRebalance } from './rebalance/Corp_TharsisRepublicRB';
 import { ThorgateRebalance } from './rebalance/Corp_ThorgateRB';
 import { UnitedNationsMarsInitiativeRebalance } from './rebalance/Corp_UnitedNationsMarsInitiativeRB';
+import { UtopiaInvestRebalance } from './rebalance/Corp_UtopiaInvestRB';
+import { VitorRebalance } from './rebalance/Corp_VitorRB';
 
 
 
@@ -671,6 +673,8 @@ export const CHEMICAL_CARD_MANIFEST = new ModuleManifest({
     [CardName.THARSIS_REPUBLIC_RB]: {Factory: TharsisRepublicRebalance},
     [CardName.THORGATE_RB]: {Factory: ThorgateRebalance},
     [CardName.UNITED_NATIONS_MARS_INITIATIVE_RB]: {Factory: UnitedNationsMarsInitiativeRebalance},
+    [CardName.UTOPIA_INVEST_RB]: {Factory: UtopiaInvestRebalance, compatibility: 'turmoil'},
+    [CardName.VITOR_RB]: {Factory: VitorRebalance, compatibility: 'prelude'},
     
   },
   preludeCards: {

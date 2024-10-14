@@ -1623,4 +1623,6 @@ export enum CardName {
     THARSIS_REPUBLIC_RB = "Tharsis Republic(⚖)",
     THORGATE_RB = "Thorgate(⚖)",
     UNITED_NATIONS_MARS_INITIATIVE_RB = "United Nations Mars Initiative(⚖)",
+    UTOPIA_INVEST_RB = "Utopia Invest(⚖)",
+    VITOR_RB = "Vitor(⚖)",
 }

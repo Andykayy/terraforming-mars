@@ -204,6 +204,8 @@ export class GameCards {
         CardName.THARSIS_REPUBLIC,
         CardName.THORGATE,
         CardName.UNITED_NATIONS_MARS_INITIATIVE,
+        CardName.UTOPIA_INVEST,
+        CardName.VITOR,
         // Add more CardNames here as needed
         // For example:
         // CardName.ANOTHER_CORPORATION,
