@@ -34,7 +34,7 @@ export class SolarLogisticsRebalance extends Card implements IProjectCard {
           b.br;
           b.tag(Tag.SPACE).tag(Tag.EVENT).colon().resource(CardResource.ASTEROID).br;
           b.or().br;
-          b.minus().resource(CardResource.ASTEROID).plus().cards(1);
+          b.minus().resource(CardResource.ASTEROID).plus().cards(1).br;
           b.titanium(2).resource(CardResource.ASTEROID);
         }),
         description: 'Gain 2 titanium. Add one asteroid here.',
