@@ -110,6 +110,9 @@
       <div class="card-tharsis-logo-text">Tharsis Republic</div>
       </div>
     </template>
+    <template v-else-if="title === CardName.UNITED_NATIONS_MARS_INITIATIVE_RB">
+      <span class="card-unmi-logo">UNITED<br/>NATIONS<br/>MARS<br/>INITIATIVE</span>
+    </template>
 
 
 

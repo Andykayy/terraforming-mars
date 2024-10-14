@@ -203,6 +203,7 @@ export class GameCards {
         CardName.TERRALABS_RESEARCH,
         CardName.THARSIS_REPUBLIC,
         CardName.THORGATE,
+        CardName.UNITED_NATIONS_MARS_INITIATIVE,
         // Add more CardNames here as needed
         // For example:
         // CardName.ANOTHER_CORPORATION,

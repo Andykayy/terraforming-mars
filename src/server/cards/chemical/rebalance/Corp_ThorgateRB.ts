@@ -12,7 +12,7 @@ export class ThorgateRebalance extends CorporationCard implements IActionCard {
   constructor() {
     super({
       name: CardName.THORGATE_RB,
-      tags: [Tag.POWER],
+      tags: [Tag.POWER, Tag.SCIENCE],
       startingMegaCredits: 40,
 
       behavior: {
