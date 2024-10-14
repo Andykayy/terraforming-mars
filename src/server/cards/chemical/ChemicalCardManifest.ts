@@ -632,6 +632,7 @@ import { RecyclonRebalance } from './rebalance/Corp_ RecyclonRB';
 import { RobinsonIndustriesRebalance } from './rebalance/Corp_RobinsonIndustriesRB';
 import { SpliceRebalance } from './rebalance/Corp_SpliceRB';
 import { StormCraftIncorporatedRebalance } from './rebalance/Corp_StormCraftIncorporatedRB';
+import { TerralabsResearchRebalance } from './rebalance/Corp_TerralabsResearchRB';
 
 
 
@@ -663,6 +664,7 @@ export const CHEMICAL_CARD_MANIFEST = new ModuleManifest({
     [CardName.ROBINSON_INDUSTRIES_RB]: {Factory: RobinsonIndustriesRebalance, compatibility: 'prelude'},
     [CardName.SPLICE_RB]: {Factory: SpliceRebalance, compatibility: 'promo'},
     [CardName.STORMCRAFT_INCORPORATED_RB]: {Factory: StormCraftIncorporatedRebalance, compatibility: 'colonies'},
+    [CardName.TERRALABS_RESEARCH_RB]: {Factory: TerralabsResearchRebalance, compatibility: 'turmoil'},
     
   },
   preludeCards: {

@@ -200,6 +200,7 @@ export class GameCards {
         CardName.ROBINSON_INDUSTRIES,
         CardName.SPLICE,
         CardName.STORMCRAFT_INCORPORATED,
+        CardName.TERRALABS_RESEARCH,
         // Add more CardNames here as needed
         // For example:
         // CardName.ANOTHER_CORPORATION,
