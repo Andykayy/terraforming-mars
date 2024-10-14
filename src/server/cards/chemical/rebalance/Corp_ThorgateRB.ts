@@ -6,6 +6,7 @@ import {IActionCard} from '../../ICard';
 import {IPlayer} from '../../../IPlayer';
 import {Behavior} from '../../../behavior/Behavior';
 import {getBehaviorExecutor} from '../../../behavior/BehaviorExecutor';
+import {Size} from '../../../../common/cards/render/Size';
 
 export class ThorgateRebalance extends CorporationCard implements IActionCard {
   constructor() {
@@ -25,13 +26,15 @@ export class ThorgateRebalance extends CorporationCard implements IActionCard {
         renderData: CardRenderer.builder((b) => {
           b.br;
           b.production((pb) => pb.energy(1)).nbsp.megacredits(40);
-          b.corpBox('effect', (ce) => {
+          b.corpBox('effect', (ce) => {  
+            ce.vSpace(Size.LARGE);       
             b.action('Decrease energy production 1 step to gain 6 M€.', (eb) => {
               eb.production((pb) => pb.energy(1)).startAction.megacredits(6);
-            });
+            }); 
             ce.effect('When playing a power card, THE SP POWER PLANT, OR THE KELVINIST RULING POLICY ACTION, pay 3M€ less.', (eb) => {
-              eb.tag(Tag.POWER).asterix().startEffect.megacredits(-3);
+              eb.tag(Tag.POWER).asterix().slash().text('Kelvinists').startEffect.megacredits(-3);
             });
+
           });
         }),
       },
