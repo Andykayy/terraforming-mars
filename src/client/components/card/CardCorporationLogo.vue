@@ -119,7 +119,7 @@
       <div class="utopia-corp-name-2">INVEST</div>
       </div>
     </template>
-    <template v-else-if="title === CardName.VITOR">
+    <template v-else-if="title === CardName.VITOR_RB">
       <div class="card-vitor-logo">
       <span style="color:white;background:orangered;padding-left:3px;">VIT</span>
       <span style="background:linear-gradient(to right, orangered,white);">O</span>
