@@ -545,11 +545,13 @@ import {AerobrakedAmmoniaAsteroidRebalance} from './rebalance/Project_Aerobraked
 import {AsteroidHollowingRebalance } from './rebalance/Project_AsteroidHollowingRB';
 import { BlackPolarDustRebalance } from './rebalance/Project_BlackPolarDustRB';
 import { BuildingIndustriesRebalance } from './rebalance/Project_BuildingIndustriesRB';
+import { CarbonNanosystemsRebalance } from './rebalance/Project_CarbonNanosystemsRB';
 import { CartelRebalance } from './rebalance/Project_CartelRB';
 import { CloudSeedingRebalance } from './rebalance/Project_CloudSeedingRB';
 import { CommunityServicesRebalance } from './rebalance/Project_CommunityServicesRB';
 import { CorporateStrongholdRebalance } from './rebalance/Project_CorporateStrongholdRB';
 import { CuttingEdgeTechnologyRebalance } from './rebalance/Project_CuttingEdgeTechnologyRB';
+import { CyberiaSystemsRebalance } from './rebalance/Project_CyberiaSystemsRB';
 import { EarthCatapultRebalance } from './rebalance/Project_EarthCatapultRB';
 import { EarthOfficeRebalance } from './rebalance/Project_EarthOfficeRB';
 import { EnergyMarketRebalance } from './rebalance/Project_EnergyMarketRB';
@@ -563,6 +565,7 @@ import { HeatTrappersRebalance } from './rebalance/Project_HeatTrappersRB';
 import { IndustrialCenterRebalance } from './rebalance/Project_IndustrialCenterAresRB';
 import { InsectsRebalance } from './rebalance/Project_InsectsRB';
 import { JetStreamMicroscrappersRebalance } from './rebalance/Project_JetStreamMicroscrappersRB';
+import { L1TradeTerminalRebalance } from './rebalance/Project_L1TradeTerminalRB';
 import { MarsUniversityRebalance } from './rebalance/Project_MarsUniversityRB';
 import { MassConverterRebalance } from './rebalance/Project_MassConverterRB';
 import { MeatIndustryRebalance } from './rebalance/Project_MeatIndustryRB';
@@ -575,6 +578,7 @@ import { RotatorImpactsRebalance } from './rebalance/Project_RotatorImpactsRB';
 import { SkyDocksRebalance } from './rebalance/Project_SkyDocksRB';
 import { SnowAlgaeRebalance } from './rebalance/Project_SnowAlgaeRB';
 import { SoilFactoryRebalance } from './rebalance/Project_SoilFactoryRB';
+import { SolarLogisticsRebalance } from './rebalance/Project_SolarLogisticsRB';
 import { SolarPowerRebalance } from './rebalance/Project_SolarPowerRB';
 import { SpinoffDepartmentRebalance } from './rebalance/Project_SpinoffDepartmentRB';
 import { StratopolisRebalance } from './rebalance/Project_StratopolisRB';
@@ -588,6 +592,10 @@ import { UndergroundDetonationsRebalance } from './rebalance/Project_Underground
 import { ViralEnhancersRebalance } from './rebalance/Project_ViralEnhancersRB';
 import { WarpDriveRebalance } from './rebalance/Project_WarpDriveRB';
 import { ZeppelinsRebalance } from './rebalance/Project_ZeppelinsRB';
+
+
+
+
 
 //andy preludes
 import { BiofuelsRebalance } from './rebalance/Prelude_BiofuelsRB';
@@ -609,6 +617,7 @@ import { PolarIndustriesRebalance } from './rebalance/Prelude_PolarIndustriesRB'
 import { SelfSufficientSettlementRebalance } from './rebalance/Prelude_SelfSufficientSettlementRB';
 import { SmeltingPlantRebalance } from './rebalance/Prelude_SmeltingPlantRB';
 import { SocietySupportRebalance } from './rebalance/Prelude_SocietySupportRB';
+import { SpaceCorridorsRebalance } from './rebalance/Prelude_SpaceCorridorsRB';
 
 //andy corps
 import { AphroditeRebalanced } from './rebalance/Corp_AphroditeRB';
@@ -638,10 +647,8 @@ import { ThorgateRebalance } from './rebalance/Corp_ThorgateRB';
 import { UnitedNationsMarsInitiativeRebalance } from './rebalance/Corp_UnitedNationsMarsInitiativeRB';
 import { UtopiaInvestRebalance } from './rebalance/Corp_UtopiaInvestRB';
 import { VitorRebalance } from './rebalance/Corp_VitorRB';
-import { SolarLogisticsRebalance } from './rebalance/Project_SolarLogisticsRB';
-import { CarbonNanosystemsRebalance } from './rebalance/Project_CarbonNanosystemsRB';
-import { CyberiaSystemsRebalance } from './rebalance/Project_CyberiaSystemsRB';
-import { L1TradeTerminalRebalance } from './rebalance/Project_L1TradeTerminalRB';
+
+
 
 
 
@@ -764,6 +771,7 @@ export const CHEMICAL_CARD_MANIFEST = new ModuleManifest({
     [CardName.SELF_SUFFICIENT_SETTLEMENT_RB]: {Factory: SelfSufficientSettlementRebalance, compatibility: 'prelude'},
     [CardName.SMELTING_PLANT_RB]: {Factory: SmeltingPlantRebalance, compatibility: 'prelude'},
     [CardName.SOCIETY_SUPPORT_RB]: {Factory: SocietySupportRebalance, compatibility: 'prelude'},
+    [CardName.SPACE_CORRIDORS_RB]: {Factory: SpaceCorridorsRebalance, compatibility: 'prelude2'},
   },
   projectCards: {
     //Andy added
