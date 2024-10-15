@@ -9,19 +9,19 @@ export class IntellectualistMovement extends PreludeCard implements IProjectCard
   constructor() {
     super({
       name: CardName.INTELLECTUALIST_MOVEMENT,
-      tags: [Tag.SCIENCE],
+      tags: [Tag.SCIENCE, Tag.SCIENCE],
 
       behavior: {
         turmoil: {sendDelegates: {count: 2, party: PartyName.SCIENTISTS}},
-        drawCard: 3,
+        drawCard: 5,
       },
 
       metadata: {
         cardNumber: 'xP59',
         renderData: CardRenderer.builder((b) => {
-          b.delegates(2).scientists().cards(3);
+          b.delegates(2).scientists().br.cards(5);
         }),
-        description: 'Place 2 delegates into Scientists and draw 3 cards.',
+        description: 'Place 2 delegates into Scientists and draw 5 cards.',
       },
     });
   }

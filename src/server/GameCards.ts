@@ -142,11 +142,14 @@ export class GameCards {
     if (this.gameOptions.chemicalExpansion) {
       preludes = preludes.filter((c) => c.name !== CardName.BIOFUELS);
       preludes = preludes.filter((c) => c.name !== CardName.BIOSPHERE_SUPPORT);
+      preludes = preludes.filter((c) => c.name !== CardName.BY_ELECTION);
       preludes = preludes.filter((c) => c.name !== CardName.DOME_FARMING);
       preludes = preludes.filter((c) => c.name !== CardName.EARLY_SETTLEMENT);
       preludes = preludes.filter((c) => c.name !== CardName.ECCENTRIC_SPONSOR);
+      preludes = preludes.filter((c) => c.name !== CardName.EXECUTIVE_ORDER);
       preludes = preludes.filter((c) => c.name !== CardName.GALILEAN_MINING);
       preludes = preludes.filter((c) => c.name !== CardName.HUGE_ASTEROID);
+      preludes = preludes.filter((c) => c.name !== CardName.HYDROGEN_BOMBARDMENT);
       preludes = preludes.filter((c) => c.name !== CardName.IO_RESEARCH_OUTPOST);
       preludes = preludes.filter((c) => c.name !== CardName.LOAN);
       preludes = preludes.filter((c) => c.name !== CardName.MARTIAN_INDUSTRIES);
