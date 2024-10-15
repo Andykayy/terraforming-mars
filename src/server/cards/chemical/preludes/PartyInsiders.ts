@@ -14,15 +14,15 @@ export class PartyInsiders extends PreludeCard implements IProjectCard {
       name: CardName.PARTY_INSIDERS,
 
       behavior: {
-        production: {megacredits: 2},
+        production: {megacredits: 3},
       },
 
       metadata: {
         cardNumber: 'xP56',
         renderData: CardRenderer.builder((b) => {
-          b.production((pb) => pb.megacredits(2)).nbsp.delegates(3, {digit}).asterix();
+          b.production((pb) => pb.megacredits(3)).nbsp.delegates(3, {digit}).asterix();
         }),
-        description: 'Increase your M€ production 2 steps and place 3 delegates in SEPARATE PARTIES.',
+        description: 'Increase your M€ production 3 steps and place 3 delegates in SEPARATE PARTIES.',
       },
     });
   }
