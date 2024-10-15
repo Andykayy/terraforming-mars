@@ -65,7 +65,7 @@ export class SolarLogisticsRebalance extends Card implements IProjectCard {
         options.title = 'Select an option for Solar Logistics';
         return options;
       },
-      Priority.DEFAULT); // Changed priority
+      Priority.BACK_OF_THE_LINE); // Changed priority
     }
     return undefined;
   }
