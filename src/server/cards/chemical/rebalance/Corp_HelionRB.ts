@@ -6,12 +6,10 @@ import {CardRenderer} from '../../render/CardRenderer';
 import {digit} from '../../Options';
 import {Size} from '../../../../common/cards/render/Size';
 
-
-export class HelionRebalance extends CorporationCard {
 export class HelionRebalance extends CorporationCard {
   constructor() {
     super({
-      name: CardName.HELION_RB_RB,
+      name: CardName.HELION_RB,
       tags: [Tag.SPACE],
       startingMegaCredits: 40,
 

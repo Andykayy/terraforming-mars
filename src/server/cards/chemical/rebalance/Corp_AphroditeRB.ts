@@ -32,14 +32,4 @@ export class AphroditeRebalanced extends CorporationCard {
       },
     });
   }
-<<<<<<< HEAD
-=======
-  public static rebalancedAphroditeBonus(venusRaiser: Player, stepsRaised: number = 1): number {
-    const rebalancedAphroditePlayer = venusRaiser.game.getPlayers().find((player) => player.isCorporation(CardName.APHRODITE_RB));
-    if (rebalancedAphroditePlayer === undefined) return 0;
-
-    return (rebalancedAphroditePlayer.id === venusRaiser.id) ? 5 * stepsRaised : 2 * stepsRaised;
-  }
-
->>>>>>> one-trade-per-turn
 }
