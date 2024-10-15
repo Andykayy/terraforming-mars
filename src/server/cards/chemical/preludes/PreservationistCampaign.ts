@@ -12,17 +12,17 @@ export class PreservationistCampaign extends PreludeCard implements IProjectCard
       behavior: {
         turmoil: {sendDelegates: {count: 2, party: PartyName.REDS}},
         tr: -1,
-        stock: {megacredits: 18},
+        stock: {megacredits: 22},
       },
-      startingMegacredits: 18,
+      startingMegacredits: 22,
 
       metadata: {
         cardNumber: 'xP61',
         renderData: CardRenderer.builder((b) => {
           b.delegates(2).reds().br;
-          b.minus().tr(1).nbsp.megacredits(18);
+          b.minus().tr(1).nbsp.megacredits(22);
         }),
-        description: 'Place 2 delegates into Reds. Lower your TR 1 step and gain 18 M€.',
+        description: 'Place 2 delegates into Reds. Lower your TR 1 step and gain 22 M€.',
       },
     });
   }
