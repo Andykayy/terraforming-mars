@@ -3,7 +3,7 @@ import {Party} from './Party';
 import {PartyName} from '../../../common/turmoil/PartyName';
 import {Resource} from '../../../common/Resource';
 import {Bonus} from '../Bonus';
-import {Policy, Policy, IPolicy} from '../Policy';
+import {Policy, IPolicy} from '../Policy';
 import {IPlayer} from '../../IPlayer';
 import {SelectPaymentDeferred} from '../../deferredActions/SelectPaymentDeferred';
 import {CardName} from '../../../common/cards/CardName';

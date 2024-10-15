@@ -3,7 +3,6 @@ import {CardName} from '../../../../common/cards/CardName';
 import {CardRenderer} from '../../render/CardRenderer';
 import {IPlayer} from '../../../IPlayer';
 import {MAX_TEMPERATURE} from '../../../../common/constants';
-import {MAX_TEMPERATURE} from '../../../../common/constants';
 import {Units} from '../../../../common/Units';
 import {message} from '../../../logs/MessageBuilder';
 import {SelectOption} from '../../../inputs/SelectOption';
