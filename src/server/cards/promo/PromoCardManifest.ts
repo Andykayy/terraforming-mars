@@ -36,6 +36,7 @@ import {Harvest} from './Harvest';
 import {HermeticOrderOfMars} from './HermeticOrderofMars';
 import {HiTechLab} from './HiTechLab';
 import {HomeostasisBureau} from './HomeostasisBureau';
+import {Hospitals} from './Hospitals';
 import {IcyImpactors} from './IcyImpactors';
 import {ImportedNutrients} from './ImportedNutrients';
 import {InterplanetaryTrade} from './InterplanetaryTrade';
