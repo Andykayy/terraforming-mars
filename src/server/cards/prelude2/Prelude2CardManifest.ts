@@ -16,7 +16,9 @@ import {FloatingTradeHub} from './FloatingTradeHub';
 import {FocusedOrganization} from './FocusedOrganization';
 import {FrontierTown} from './FrontierTown';
 import {GhgShipment} from './GhgShipment';
+import {HighCircles} from './HighCircles';
 import {IshtarExpedition} from './IshtarExpedition';
+import {JovianEnvoys} from './JovianEnvoys';
 import {L1TradeTerminal} from './L1TradeTerminal';
 import {NirgalEnterprises} from './NirgalEnterprises';
 import {NobelPrize} from './NobelPrize';
@@ -45,6 +47,7 @@ export const PRELUDE2_CARD_MANIFEST = new ModuleManifest({
     // [CardName.VENUS_TRADE_HUB]: {Factory: VenusTradeHub, compatibility: 'colonies'},
     [CardName.GHG_SHIPMENT]: {Factory: GhgShipment, compatibility: 'turmoil'},
     [CardName.ISHTAR_EXPEDITION]: {Factory: IshtarExpedition, compatibility: 'venus'},
+    [CardName.JOVIAN_ENVOYS]: {Factory: JovianEnvoys, compatibility: 'turmoil'},
     [CardName.RED_APPEASEMENT]: {Factory: RedAppeasement, compatibility: 'turmoil'},
     [CardName.SPONSORING_NATION]: {Factory: SponsoringNation, compatibility: 'turmoil'},
     [CardName.SUMMIT_LOGISTICS]: {Factory: SummitLogistics, compatibility: 'turmoil'},
@@ -56,6 +59,7 @@ export const PRELUDE2_CARD_MANIFEST = new ModuleManifest({
     [CardName.CORRIDORS_OF_POWER]: {Factory: CorridorsOfPower, compatibility: 'turmoil'},
     [CardName.EARLY_COLONIZATION]: {Factory: EarlyColonization, compatibility: 'colonies'},
     [CardName.FLOATING_TRADE_HUB]: {Factory: FloatingTradeHub, compatibility: 'venus'},
+    [CardName.HIGH_CIRCLES]: {Factory: HighCircles, compatibility: 'turmoil'},
     [CardName.NOBEL_PRIZE]: {Factory: NobelPrize},
     [CardName.COLONY_TRADE_HUB]: {Factory: ColonyTradeHub, compatibility: 'colonies'},
     [CardName.OLD_MINING_COLONY]: {Factory: OldMiningColony, compatibility: 'colonies'},
