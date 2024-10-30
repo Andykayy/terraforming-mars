@@ -448,7 +448,6 @@ import {ThermalPlant} from './preludes/26_ThermalPlant';
 import {AdvancedHeatingTech} from './preludes/27_AdvancedHeatingTech';
 import {TerritoryOccupation} from './preludes/28_TerritoryOccupation';
 import {RareMineralReserve} from './preludes/29_RareMineralReserve';
-import {CorporateEspionage} from './preludes/30_CorporateEspionage';
 import {VenusFirstChemical} from './preludes/31_VenusFirstChemical';
 import {AirScrappingOperations} from './preludes/32_AirScrappingOperations';
 import {TerrestrialPlanetMission} from './preludes/33_TerrestrialPlanetMission';
@@ -718,7 +717,7 @@ export const CHEMICAL_CARD_MANIFEST = new ModuleManifest({
     [CardName.ADVANCED_HEATING_TECH]: {Factory: AdvancedHeatingTech},
     [CardName.TERRITORY_OCCUPATION]: {Factory: TerritoryOccupation},
     [CardName.RARE_MINERAL_RESERVE]: {Factory: RareMineralReserve},
-    [CardName.CORPORATE_ESPIONAGE]: {Factory: CorporateEspionage},
+  
     [CardName.VENUS_FIRST_CHEMICAL]: {Factory: VenusFirstChemical, compatibility: 'venus'},
     [CardName.AIR_SCRAPPING_OPERATIONS]: {Factory: AirScrappingOperations, compatibility: 'venus'},   
     [CardName.TERRESTRIAL_PLANET_MISSION]: {Factory: TerrestrialPlanetMission, compatibility: 'venus'}, 
