@@ -433,6 +433,7 @@ export enum CardName {
   // Prelude 2
   // Prelude 2 Project Cards
   ATMOSPHERIC_ENHANCERS = 'Atmospheric Enhancers',
+  CERES_TECH_MARKET = 'Ceres Tech Market',
   CLOUD_TOURISM = 'Cloud Tourism',
   COLONIAL_ENVOYS = "Colonial Envoys",
   COLONIAL_REPRESENTATION = "Colonial Representation",
@@ -441,14 +442,14 @@ export enum CardName {
   ENVOYS_FROM_VENUS = 'Envoy from Venus',
   FLOATING_REFINERY = 'Floating Refinery',
   FRONTIER_TOWN = 'Frontier Town',
+  GHG_SHIPMENT = 'GHG Shipment',
   ISHTAR_EXPEDITION = 'Ishtar Expedition',
   JOVIAN_ENVOYS = 'Jovian Envoys',
   L1_TRADE_TERMINAL = 'L1 Trade Terminal',
   MICROGRAVITY_NUTRITION = 'Microgravity Nutrition',
   RED_APPEASEMENT = 'Red Appeasement',
+  SPECIAL_PERMIT = 'Special Permit',
   SUMMIT_LOGISTICS = 'Summit Logistics',
-  CERES_TECH_MARKET = 'Ceres Tech Market',
-  GHG_SHIPMENT = 'GHG Shipment',
   SPONSORING_NATION = 'Sponsoring Nation',
   VENUS_TRADE_HUB = 'Venus Trade Hub',
 
@@ -468,6 +469,7 @@ export enum CardName {
   PROJECT_EDEN = 'Project Eden',
   NOBEL_PRIZE = 'Nobel Prize',
   RISE_TO_POWER = 'Rise to Power',
+  SOIL_BACTERIA = 'Soil Bacteria',
   SPACE_CORRIDORS = 'Space Corridors',
 
   // Prelude 2 Corps

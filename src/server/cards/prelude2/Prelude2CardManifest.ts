@@ -33,7 +33,9 @@ import {ProjectEden} from './ProjectEden';
 import {RedAppeasement} from './RedAppeasement';
 import {RiseToPower} from './RiseToPower';
 import {SagittaFrontierServices} from './SagittaFrontierServices';
+import {SoilBacteria} from './SoilBacteria';
 import {SpaceCorridors} from './SpaceCorridors';
+import {SpecialPermit} from './SpecialPermit';
 import {Spire} from './Spire';
 import {SponsoringNation} from './SponsoringNation';
 import {SummitLogistics} from './SummitLogistics';
@@ -57,6 +59,7 @@ export const PRELUDE2_CARD_MANIFEST = new ModuleManifest({
     [CardName.JOVIAN_ENVOYS]: {Factory: JovianEnvoys, compatibility: 'turmoil'},
     [CardName.MICROGRAVITY_NUTRITION]: {Factory: MicrogravityNutrition, compatibility: 'colonies'},
     [CardName.RED_APPEASEMENT]: {Factory: RedAppeasement, compatibility: 'turmoil'},
+    [CardName.SPECIAL_PERMIT]: {Factory: SpecialPermit, compatibility: 'turmoil'},
     [CardName.SPONSORING_NATION]: {Factory: SponsoringNation, compatibility: 'turmoil'},
     [CardName.SUMMIT_LOGISTICS]: {Factory: SummitLogistics, compatibility: 'turmoil'},
   },
@@ -78,6 +81,7 @@ export const PRELUDE2_CARD_MANIFEST = new ModuleManifest({
     [CardName.PRESERVATION_PROGRAM]: {Factory: PreservationProgram},
     [CardName.PROJECT_EDEN]: {Factory: ProjectEden},
     [CardName.RISE_TO_POWER]: {Factory: RiseToPower, compatibility: 'turmoil'},
+    [CardName.SOIL_BACTERIA]: {Factory: SoilBacteria},
     [CardName.SPACE_CORRIDORS]: {Factory: SpaceCorridors},
     // [CardName.BOARD_OF_DIRECTORS]: {Factory: BoardOfDirectors},
     
