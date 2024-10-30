@@ -455,6 +455,7 @@ export enum CardName {
   // Prelude 2 Preludes
   APPLIED_SCIENCE = 'Applied Science',
   BOARD_OF_DIRECTORS = 'Board of Directors',
+  COLONY_TRADE_HUB = 'Colony Trade Hub',
   EARLY_COLONIZATION = "Early Colonization",
   FLOATING_TRADE_HUB = "Floating Trade Hub",
   FOCUSED_ORGANIZATION = 'Focused Organization',
@@ -464,8 +465,9 @@ export enum CardName {
   OLD_MINING_COLONY = 'Old Mining Colony',
   PLANETARY_ALLIANCE = 'Planetary Alliance',
   PRESERVATION_PROGRAM = 'Preservation Program',
+  PROJECT_EDEN = 'Project Eden',
   NOBEL_PRIZE = 'Nobel Prize',
-  COLONY_TRADE_HUB = 'Colony Trade Hub',
+  RISE_TO_POWER = 'Rise to Power',
   SPACE_CORRIDORS = 'Space Corridors',
 
   // Prelude 2 Corps

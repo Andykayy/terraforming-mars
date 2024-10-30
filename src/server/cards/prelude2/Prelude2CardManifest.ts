@@ -29,7 +29,9 @@ import {OldMiningColony} from './OldMiningColony';
 import {PalladinShipping} from './PalladinShipping';
 import {PlanetaryAlliance} from './PlanetaryAlliance';
 import {PreservationProgram} from './PreservationProgram';
+import {ProjectEden} from './ProjectEden';
 import {RedAppeasement} from './RedAppeasement';
+import {RiseToPower} from './RiseToPower';
 import {SagittaFrontierServices} from './SagittaFrontierServices';
 import {SpaceCorridors} from './SpaceCorridors';
 import {Spire} from './Spire';
@@ -74,6 +76,8 @@ export const PRELUDE2_CARD_MANIFEST = new ModuleManifest({
     [CardName.OLD_MINING_COLONY]: {Factory: OldMiningColony, compatibility: 'colonies'},
     [CardName.PLANETARY_ALLIANCE]: {Factory: PlanetaryAlliance, compatibility: 'venus'},    
     [CardName.PRESERVATION_PROGRAM]: {Factory: PreservationProgram},
+    [CardName.PROJECT_EDEN]: {Factory: ProjectEden},
+    [CardName.RISE_TO_POWER]: {Factory: RiseToPower, compatibility: 'turmoil'},
     [CardName.SPACE_CORRIDORS]: {Factory: SpaceCorridors},
     // [CardName.BOARD_OF_DIRECTORS]: {Factory: BoardOfDirectors},
     
