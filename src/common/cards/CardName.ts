@@ -453,6 +453,7 @@ export enum CardName {
   APPLIED_SCIENCE = 'Applied Science',
   BOARD_OF_DIRECTORS = 'Board of Directors',
   EARLY_COLONIZATION = "Early Colonization",
+  FLOATING_TRADE_HUB = "Floating Trade Hub",
   FOCUSED_ORGANIZATION = 'Focused Organization',
   OLD_MINING_COLONY = 'Old Mining Colony',
   NOBEL_PRIZE = 'Nobel Prize',

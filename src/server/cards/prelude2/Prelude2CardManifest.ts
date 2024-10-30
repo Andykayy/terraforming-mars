@@ -12,6 +12,7 @@ import {EarlyColonization} from './EarlyColonization';
 import {Ecotec} from './Ecotec';
 import {EnvoysFromVenus} from './EnvoysFromVenus';
 import {FloatingRefinery} from './FloatingRefinery';
+import {FloatingTradeHub} from './FloatingTradeHub';
 import {FocusedOrganization} from './FocusedOrganization';
 import {GhgShipment} from './GhgShipment';
 import {IshtarExpedition} from './IshtarExpedition';
@@ -49,15 +50,18 @@ export const PRELUDE2_CARD_MANIFEST = new ModuleManifest({
 
   preludeCards: {
     [CardName.APPLIED_SCIENCE]: {Factory: AppliedScience},
+    [CardName.ATMOSPHERIC_ENHANCERS]: {Factory: AtmosphericEnhancers, compatibility: 'venus'},
+    [CardName.CORRIDORS_OF_POWER]: {Factory: CorridorsOfPower, compatibility: 'turmoil'},
     [CardName.EARLY_COLONIZATION]: {Factory: EarlyColonization, compatibility: 'colonies'},
+    [CardName.FLOATING_TRADE_HUB]: {Factory: FloatingTradeHub, compatibility: 'venus'},
     [CardName.NOBEL_PRIZE]: {Factory: NobelPrize},
     [CardName.COLONY_TRADE_HUB]: {Factory: ColonyTradeHub, compatibility: 'colonies'},
     [CardName.OLD_MINING_COLONY]: {Factory: OldMiningColony, compatibility: 'colonies'},
     [CardName.FOCUSED_ORGANIZATION]: {Factory: FocusedOrganization},
     [CardName.SPACE_CORRIDORS]: {Factory: SpaceCorridors},
     // [CardName.BOARD_OF_DIRECTORS]: {Factory: BoardOfDirectors},
-    [CardName.CORRIDORS_OF_POWER]: {Factory: CorridorsOfPower, compatibility: 'turmoil'},
-    [CardName.ATMOSPHERIC_ENHANCERS]: {Factory: AtmosphericEnhancers, compatibility: 'venus'},
+    
+    
   },
 
   corporationCards: {
