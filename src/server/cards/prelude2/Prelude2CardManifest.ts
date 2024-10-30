@@ -43,6 +43,9 @@ import {SuitableInfrastructure} from './SuitableInfrastructure';
 import {SummitLogistics} from './SummitLogistics';
 import {TerraformingDeal} from './TerraformingDeal';
 import {UnexpectedApplication} from './UnexpectedApplication';
+import {VenusAllies} from './VenusAllies';
+import {VenusContract} from './VenusContract';
+import {VenusL1Shade} from './VenusL1Shade';
 
 export const PRELUDE2_CARD_MANIFEST = new ModuleManifest({
   module: 'prelude2',
@@ -68,6 +71,7 @@ export const PRELUDE2_CARD_MANIFEST = new ModuleManifest({
     [CardName.STRATOSPHERIC_EXPEDITION]: {Factory: StratosphericExpedition, compatibility: 'venus'},
     [CardName.SUMMIT_LOGISTICS]: {Factory: SummitLogistics, compatibility: 'turmoil'},
     [CardName.UNEXPECTED_APPLICATION]: {Factory: UnexpectedApplication, compatibility: 'venus'},
+    [CardName.VENUS_ALLIES]: {Factory: VenusAllies, compatibility: ['venus', 'colonies']},
   },
 
   preludeCards: {
@@ -91,6 +95,8 @@ export const PRELUDE2_CARD_MANIFEST = new ModuleManifest({
     [CardName.SPACE_CORRIDORS]: {Factory: SpaceCorridors},
     [CardName.SUITABLE_INFRASTRUCTURE]: {Factory: SuitableInfrastructure},
     [CardName.TERRAFORMING_DEAL]: {Factory: TerraformingDeal},
+    [CardName.VENUS_CONTRACT]: {Factory: VenusContract, compatibility: 'venus'},
+    [CardName.VENUS_L1_SHADE]: {Factory: VenusL1Shade, compatibility: 'venus'},
     // [CardName.BOARD_OF_DIRECTORS]: {Factory: BoardOfDirectors},
     
     

@@ -453,6 +453,7 @@ export enum CardName {
   SPONSORING_NATION = 'Sponsoring Nation',
   STRATOSPHERIC_EXPEDITION = 'Stratospheric Expedition',
   UNEXPECTED_APPLICATION = 'Unexpected Application',
+  VENUS_ALLIES = 'Venus Allies',
   VENUS_TRADE_HUB = 'Venus Trade Hub',
 
   // Prelude 2 Preludes
@@ -475,6 +476,8 @@ export enum CardName {
   SPACE_CORRIDORS = 'Space Corridors',
   SUITABLE_INFRASTRUCTURE = 'Suitable Infrastructure',
   TERRAFORMING_DEAL = 'Terraforming Deal',
+  VENUS_CONTRACT = 'Venus Contract',
+  VENUS_L1_SHADE = 'Venus L1 Shade',
 
   // Prelude 2 Corps
   NIRGAL_ENTERPRISES = 'Nirgal Enterprises',
