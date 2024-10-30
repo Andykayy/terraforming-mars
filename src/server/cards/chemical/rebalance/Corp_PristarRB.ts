@@ -51,7 +51,7 @@ export class PristarRebalance extends CorporationCard {
       this.hasTemporaryInfluence = false;
     }
 
-    if (!player.generationData.hasRaisedTR) {
+    if (!player.hasIncreasedTerraformRatingThisGeneration) {
       player.stock.add(Resource.MEGACREDITS, 6, {log: true, from: this});
       player.addResourceTo(this, 1);
       

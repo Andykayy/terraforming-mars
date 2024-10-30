@@ -32,7 +32,7 @@ export class Preservationism extends Card implements IProjectCard {
     });
   }
   public onProductionPhase(player: IPlayer): void {
-    if (!player.generationData.hasRaisedTR) {
+    if (!player.hasIncreasedTerraformRatingThisGeneration) {
       this.resourceCount += 1;
     }
   }

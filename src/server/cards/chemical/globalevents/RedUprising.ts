@@ -24,7 +24,7 @@ export class RedUprising extends GlobalEvent implements IGlobalEvent {
 
   public resolve(game: IGame, turmoil: Turmoil) {
     game.getPlayersInGenerationOrder().forEach((player) => {
-      if (player.generationData.hasRaisedTR) {
+      if (player.hasIncreasedTerraformRatingThisGeneration) {
         player.stock.deduct(Resource.MEGACREDITS, 10, {from: this.name, log: true});
       }
       player.production.add(Resource.MEGACREDITS, turmoil.getPlayerInfluence(player), {from: this.name, log: true});

@@ -33,7 +33,7 @@ export class SponsoredResearchFirm extends Card implements IProjectCard {
     });
   }
   public canAct(player: IPlayer): boolean {
-    return player.generationData.hasRaisedTR;
+    return player.hasIncreasedTerraformRatingThisGeneration;
   }
   public action(player: IPlayer) {
     player.drawCard(1);

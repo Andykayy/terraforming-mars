@@ -27,7 +27,7 @@ export class AbstinanceBonus extends GlobalEvent implements IGlobalEvent {
 
   public resolve(game: IGame, turmoil: Turmoil) {
     game.getPlayersInGenerationOrder().forEach((player) => {
-      if (!player.generationData.hasRaisedTR) {
+      if (!player.hasIncreasedTerraformRatingThisGeneration) {
         player.stock.add(Resource.MEGACREDITS, 5, {from: this.name, log: true});
       }
       const count = turmoil.getPlayerInfluence(player);
