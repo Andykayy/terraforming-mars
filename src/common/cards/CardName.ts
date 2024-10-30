@@ -451,6 +451,7 @@ export enum CardName {
   SPECIAL_PERMIT = 'Special Permit',
   SUMMIT_LOGISTICS = 'Summit Logistics',
   SPONSORING_NATION = 'Sponsoring Nation',
+  STRATOSPHERIC_EXPEDITION = 'Stratospheric Expedition',
   VENUS_TRADE_HUB = 'Venus Trade Hub',
 
   // Prelude 2 Preludes
@@ -471,6 +472,8 @@ export enum CardName {
   RISE_TO_POWER = 'Rise to Power',
   SOIL_BACTERIA = 'Soil Bacteria',
   SPACE_CORRIDORS = 'Space Corridors',
+  SUITABLE_INFRASTRUCTURE = 'Suitable Infrastructure',
+  TERRAFORMING_DEAL = 'Terraforming Deal',
 
   // Prelude 2 Corps
   NIRGAL_ENTERPRISES = 'Nirgal Enterprises',

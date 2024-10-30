@@ -38,7 +38,10 @@ import {SpaceCorridors} from './SpaceCorridors';
 import {SpecialPermit} from './SpecialPermit';
 import {Spire} from './Spire';
 import {SponsoringNation} from './SponsoringNation';
+import {StratosphericExpedition} from './StratosphericExpedition';
+import {SuitableInfrastructure} from './SuitableInfrastructure';
 import {SummitLogistics} from './SummitLogistics';
+import {TerraformingDeal} from './TerraformingDeal';
 
 export const PRELUDE2_CARD_MANIFEST = new ModuleManifest({
   module: 'prelude2',
@@ -61,6 +64,7 @@ export const PRELUDE2_CARD_MANIFEST = new ModuleManifest({
     [CardName.RED_APPEASEMENT]: {Factory: RedAppeasement, compatibility: 'turmoil'},
     [CardName.SPECIAL_PERMIT]: {Factory: SpecialPermit, compatibility: 'turmoil'},
     [CardName.SPONSORING_NATION]: {Factory: SponsoringNation, compatibility: 'turmoil'},
+    [CardName.STRATOSPHERIC_EXPEDITION]: {Factory: StratosphericExpedition, compatibility: 'venus'},
     [CardName.SUMMIT_LOGISTICS]: {Factory: SummitLogistics, compatibility: 'turmoil'},
   },
 
@@ -83,6 +87,8 @@ export const PRELUDE2_CARD_MANIFEST = new ModuleManifest({
     [CardName.RISE_TO_POWER]: {Factory: RiseToPower, compatibility: 'turmoil'},
     [CardName.SOIL_BACTERIA]: {Factory: SoilBacteria},
     [CardName.SPACE_CORRIDORS]: {Factory: SpaceCorridors},
+    [CardName.SUITABLE_INFRASTRUCTURE]: {Factory: SuitableInfrastructure},
+    [CardName.TERRAFORMING_DEAL]: {Factory: TerraformingDeal},
     // [CardName.BOARD_OF_DIRECTORS]: {Factory: BoardOfDirectors},
     
     
