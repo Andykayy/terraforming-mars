@@ -28,6 +28,7 @@ import {NobelPrize} from './NobelPrize';
 import {OldMiningColony} from './OldMiningColony';
 import {PalladinShipping} from './PalladinShipping';
 import {PlanetaryAlliance} from './PlanetaryAlliance';
+import {PreservationProgram} from './PreservationProgram';
 import {RedAppeasement} from './RedAppeasement';
 import {SagittaFrontierServices} from './SagittaFrontierServices';
 import {SpaceCorridors} from './SpaceCorridors';
@@ -72,6 +73,7 @@ export const PRELUDE2_CARD_MANIFEST = new ModuleManifest({
     [CardName.NOBEL_PRIZE]: {Factory: NobelPrize}, 
     [CardName.OLD_MINING_COLONY]: {Factory: OldMiningColony, compatibility: 'colonies'},
     [CardName.PLANETARY_ALLIANCE]: {Factory: PlanetaryAlliance, compatibility: 'venus'},    
+    [CardName.PRESERVATION_PROGRAM]: {Factory: PreservationProgram},
     [CardName.SPACE_CORRIDORS]: {Factory: SpaceCorridors},
     // [CardName.BOARD_OF_DIRECTORS]: {Factory: BoardOfDirectors},
     

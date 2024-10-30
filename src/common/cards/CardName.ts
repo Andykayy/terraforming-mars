@@ -463,6 +463,7 @@ export enum CardName {
   MAIN_BELT_ASTEROIDS = 'Main Belt Asteroids',
   OLD_MINING_COLONY = 'Old Mining Colony',
   PLANETARY_ALLIANCE = 'Planetary Alliance',
+  PRESERVATION_PROGRAM = 'Preservation Program',
   NOBEL_PRIZE = 'Nobel Prize',
   COLONY_TRADE_HUB = 'Colony Trade Hub',
   SPACE_CORRIDORS = 'Space Corridors',
