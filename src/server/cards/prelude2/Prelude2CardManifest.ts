@@ -8,6 +8,7 @@ import {ColonialEnvoys } from './ColonialEnvoys';
 import {ColonialRepresentation} from './ColonialRepresentation';
 import {ColonyTradeHub} from './ColonyTradeHub';
 import {CorridorsOfPower} from './CorridorsOfPower';
+import {EarlyColonization} from './EarlyColonization';
 import {Ecotec} from './Ecotec';
 import {FocusedOrganization} from './FocusedOrganization';
 import {GhgShipment} from './GhgShipment';
@@ -33,6 +34,7 @@ export const PRELUDE2_CARD_MANIFEST = new ModuleManifest({
     [CardName.CLOUD_TOURISM]: {Factory: CloudTourism, compatibility: 'venus'},
     [CardName.COLONIAL_ENVOYS]: {Factory: ColonialEnvoys, compatibility: ['colonies', 'turmoil']},
     [CardName.COLONIAL_REPRESENTATION]: {Factory: ColonialRepresentation, compatibility: ['colonies', 'turmoil']},    
+    
     [CardName.L1_TRADE_TERMINAL]: {Factory: L1TradeTerminal, compatibility: 'colonies'},
         // [CardName.FLOATING_REFINERY]: {Factory: FloatingRefinery, compatibility: 'colonies'},
     // [CardName.VENUS_TRADE_HUB]: {Factory: VenusTradeHub, compatibility: 'colonies'},
@@ -45,6 +47,7 @@ export const PRELUDE2_CARD_MANIFEST = new ModuleManifest({
 
   preludeCards: {
     [CardName.APPLIED_SCIENCE]: {Factory: AppliedScience},
+    [CardName.EARLY_COLONIZATION]: {Factory: EarlyColonization, compatibility: 'colonies'},
     [CardName.NOBEL_PRIZE]: {Factory: NobelPrize},
     [CardName.COLONY_TRADE_HUB]: {Factory: ColonyTradeHub, compatibility: 'colonies'},
     [CardName.OLD_MINING_COLONY]: {Factory: OldMiningColony, compatibility: 'colonies'},
