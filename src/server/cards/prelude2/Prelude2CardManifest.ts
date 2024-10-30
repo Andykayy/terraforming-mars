@@ -2,7 +2,7 @@ import {CardName} from '../../../common/cards/CardName';
 import {ModuleManifest} from '../ModuleManifest';
 import {AppliedScience} from './AppliedScience';
 import {AtmosphericEnhancers} from './AtmosphericEnhancers';
-import 
+import {BoardOfDirectors} from './BoardOfDirectors';
 import {CeresTechMarket} from './CeresTechMarket';
 import {CloudTourism} from './CloudTourism';
 import {ColonialEnvoys } from './ColonialEnvoys';
