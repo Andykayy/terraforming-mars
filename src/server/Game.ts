@@ -76,7 +76,6 @@ import {GenerationData} from './player/GenerationData';
 import {SendDelegateToArea} from './deferredActions/SendDelegateToArea';
 import {BuildColony} from './deferredActions/BuildColony';
 import {newInitialDraft, newPreludeDraft, newStandardDraft} from './Draft';
-import {toName} from '../common/utils/utils';
 import {OrOptions} from './inputs/OrOptions';
 import {SelectOption} from './inputs/SelectOption';
 import {SelectSpace} from './inputs/SelectSpace';
