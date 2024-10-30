@@ -454,6 +454,8 @@ export enum CardName {
   STRATOSPHERIC_EXPEDITION = 'Stratospheric Expedition',
   UNEXPECTED_APPLICATION = 'Unexpected Application',
   VENUS_ALLIES = 'Venus Allies',
+  VENUS_ORBITAL_SURVEY = 'Venus Orbital Survey',
+  VENUS_SHUTTLES = 'Venus Shuttles',
   VENUS_TRADE_HUB = 'Venus Trade Hub',
 
   // Prelude 2 Preludes

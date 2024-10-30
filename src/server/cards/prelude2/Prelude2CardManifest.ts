@@ -46,6 +46,8 @@ import {UnexpectedApplication} from './UnexpectedApplication';
 import {VenusAllies} from './VenusAllies';
 import {VenusContract} from './VenusContract';
 import {VenusL1Shade} from './VenusL1Shade';
+import {VenusOrbitalSurvey} from './VenusOrbitalSurvey';
+import {VenusShuttles} from './VenusShuttles';
 
 export const PRELUDE2_CARD_MANIFEST = new ModuleManifest({
   module: 'prelude2',
@@ -72,6 +74,8 @@ export const PRELUDE2_CARD_MANIFEST = new ModuleManifest({
     [CardName.SUMMIT_LOGISTICS]: {Factory: SummitLogistics, compatibility: 'turmoil'},
     [CardName.UNEXPECTED_APPLICATION]: {Factory: UnexpectedApplication, compatibility: 'venus'},
     [CardName.VENUS_ALLIES]: {Factory: VenusAllies, compatibility: ['venus', 'colonies']},
+    [CardName.VENUS_ORBITAL_SURVEY]: {Factory: VenusOrbitalSurvey, compatibility: 'venus'},
+    [CardName.VENUS_SHUTTLES]: {Factory: VenusShuttles, compatibility: 'venus'},
   },
 
   preludeCards: {
