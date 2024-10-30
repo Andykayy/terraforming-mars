@@ -458,6 +458,7 @@ export enum CardName {
   FLOATING_TRADE_HUB = "Floating Trade Hub",
   FOCUSED_ORGANIZATION = 'Focused Organization',
   HIGH_CIRCLES = 'High Circles',
+  INDUSTRIAL_COMPLEX = 'Industrial Complex',
   OLD_MINING_COLONY = 'Old Mining Colony',
   NOBEL_PRIZE = 'Nobel Prize',
   COLONY_TRADE_HUB = 'Colony Trade Hub',

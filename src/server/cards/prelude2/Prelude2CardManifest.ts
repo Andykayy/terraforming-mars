@@ -62,7 +62,7 @@ export const PRELUDE2_CARD_MANIFEST = new ModuleManifest({
     [CardName.FLOATING_TRADE_HUB]: {Factory: FloatingTradeHub, compatibility: 'venus'},
     [CardName.HIGH_CIRCLES]: {Factory: HighCircles, compatibility: 'turmoil'},
     [CardName.INDUSTRIAL_COMPLEX]: {Factory: IndustrialComplex},
-    [CardName.MAIN_BELT_ASTEROIDS]: {Factory: MainBeltAsteroids},
+   // [CardName.MAIN_BELT_ASTEROIDS]: {Factory: MainBeltAsteroids},
     [CardName.NOBEL_PRIZE]: {Factory: NobelPrize},
     [CardName.COLONY_TRADE_HUB]: {Factory: ColonyTradeHub, compatibility: 'colonies'},
     [CardName.OLD_MINING_COLONY]: {Factory: OldMiningColony, compatibility: 'colonies'},
