@@ -435,6 +435,7 @@ export enum CardName {
   ATMOSPHERIC_ENHANCERS = 'Atmospheric Enhancers',
   CLOUD_TOURISM = 'Cloud Tourism',
   COLONIAL_ENVOYS = "Colonial Envoys",
+  COLONIAL_REPRESENTATION = "Colonial Representation",
   CORRIDORS_OF_POWER = 'Corridors of Power',
   DIRECTED_HEAT_USAGE = 'Directed Heat Usage',
   FLOATING_REFINERY = 'Floating Refinery',

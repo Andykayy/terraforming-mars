@@ -4,7 +4,8 @@ import {AppliedScience} from './AppliedScience';
 import {AtmosphericEnhancers} from './AtmosphericEnhancers';
 import {CeresTechMarket} from './CeresTechMarket';
 import {CloudTourism} from './CloudTourism';
-import { ColonialEnvoys } from './ColonialEnvoys';
+import {ColonialEnvoys } from './ColonialEnvoys';
+import {ColonialRepresentation} from './ColonialRepresentation';
 import {ColonyTradeHub} from './ColonyTradeHub';
 import {CorridorsOfPower} from './CorridorsOfPower';
 import {Ecotec} from './Ecotec';
@@ -26,17 +27,20 @@ import {SummitLogistics} from './SummitLogistics';
 export const PRELUDE2_CARD_MANIFEST = new ModuleManifest({
   module: 'prelude2',
   projectCards: {
-    [CardName.ISHTAR_EXPEDITION]: {Factory: IshtarExpedition, compatibility: 'venus'},
-    [CardName.SUMMIT_LOGISTICS]: {Factory: SummitLogistics, compatibility: 'turmoil'},
+
+  
     [CardName.CERES_TECH_MARKET]: {Factory: CeresTechMarket, compatibility: 'colonies'},
-    [CardName.COLONIAL_ENVOYS]: {Factory: ColonialEnvoys, compatibility: ['colonies', 'turmoil']},
-    [CardName.RED_APPEASEMENT]: {Factory: RedAppeasement, compatibility: 'turmoil'},
-    [CardName.L1_TRADE_TERMINAL]: {Factory: L1TradeTerminal, compatibility: 'colonies'},
     [CardName.CLOUD_TOURISM]: {Factory: CloudTourism, compatibility: 'venus'},
-    // [CardName.FLOATING_REFINERY]: {Factory: FloatingRefinery, compatibility: 'colonies'},
+    [CardName.COLONIAL_ENVOYS]: {Factory: ColonialEnvoys, compatibility: ['colonies', 'turmoil']},
+    [CardName.COLONIAL_REPRESENTATION]: {Factory: ColonialRepresentation, compatibility: ['colonies', 'turmoil']},    
+    [CardName.L1_TRADE_TERMINAL]: {Factory: L1TradeTerminal, compatibility: 'colonies'},
+        // [CardName.FLOATING_REFINERY]: {Factory: FloatingRefinery, compatibility: 'colonies'},
     // [CardName.VENUS_TRADE_HUB]: {Factory: VenusTradeHub, compatibility: 'colonies'},
     [CardName.GHG_SHIPMENT]: {Factory: GhgShipment, compatibility: 'turmoil'},
+    [CardName.ISHTAR_EXPEDITION]: {Factory: IshtarExpedition, compatibility: 'venus'},
+    [CardName.RED_APPEASEMENT]: {Factory: RedAppeasement, compatibility: 'turmoil'},
     [CardName.SPONSORING_NATION]: {Factory: SponsoringNation, compatibility: 'turmoil'},
+    [CardName.SUMMIT_LOGISTICS]: {Factory: SummitLogistics, compatibility: 'turmoil'},
   },
 
   preludeCards: {
