@@ -48,6 +48,8 @@ import {VenusContract} from './VenusContract';
 import {VenusL1Shade} from './VenusL1Shade';
 import {VenusOrbitalSurvey} from './VenusOrbitalSurvey';
 import {VenusShuttles} from './VenusShuttles';
+import {VenusTradeHub} from './VenusTradeHub';
+import {WGProject} from './WGProject';
 
 export const PRELUDE2_CARD_MANIFEST = new ModuleManifest({
   module: 'prelude2',
@@ -62,7 +64,6 @@ export const PRELUDE2_CARD_MANIFEST = new ModuleManifest({
     [CardName.L1_TRADE_TERMINAL]: {Factory: L1TradeTerminal, compatibility: 'colonies'},
     [CardName.FLOATING_REFINERY]: {Factory: FloatingRefinery, compatibility: 'colonies'},
     [CardName.FRONTIER_TOWN]: {Factory: FrontierTown, compatibility: 'turmoil'},
-    // [CardName.VENUS_TRADE_HUB]: {Factory: VenusTradeHub, compatibility: 'colonies'},
     [CardName.GHG_SHIPMENT]: {Factory: GhgShipment, compatibility: 'turmoil'},
     [CardName.ISHTAR_EXPEDITION]: {Factory: IshtarExpedition, compatibility: 'venus'},
     [CardName.JOVIAN_ENVOYS]: {Factory: JovianEnvoys, compatibility: 'turmoil'},
@@ -76,6 +77,8 @@ export const PRELUDE2_CARD_MANIFEST = new ModuleManifest({
     [CardName.VENUS_ALLIES]: {Factory: VenusAllies, compatibility: ['venus', 'colonies']},
     [CardName.VENUS_ORBITAL_SURVEY]: {Factory: VenusOrbitalSurvey, compatibility: 'venus'},
     [CardName.VENUS_SHUTTLES]: {Factory: VenusShuttles, compatibility: 'venus'},
+    [CardName.VENUS_TRADE_HUB]: {Factory: VenusTradeHub, compatibility: ['colonies', 'venus']},
+    [CardName.WG_PROJECT]: {Factory: WGProject, compatibility: 'turmoil'},
   },
 
   preludeCards: {

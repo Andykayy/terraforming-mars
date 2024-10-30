@@ -457,6 +457,7 @@ export enum CardName {
   VENUS_ORBITAL_SURVEY = 'Venus Orbital Survey',
   VENUS_SHUTTLES = 'Venus Shuttles',
   VENUS_TRADE_HUB = 'Venus Trade Hub',
+  WG_PROJECT = 'WG Project',
 
   // Prelude 2 Preludes
   APPLIED_SCIENCE = 'Applied Science',
