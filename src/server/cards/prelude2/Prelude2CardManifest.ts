@@ -3,7 +3,6 @@ import {ModuleManifest} from '../ModuleManifest';
 import {AppliedScience} from './AppliedScience';
 import {AtmosphericEnhancers} from './AtmosphericEnhancers';
 import {BoardOfDirectors} from './BoardOfDirectors';
-import {BoardOfDirectors} from './BoardOfDirectors';
 import {CeresTechMarket} from './CeresTechMarket';
 import {CloudTourism} from './CloudTourism';
 import {ColonialEnvoys } from './ColonialEnvoys';
@@ -89,6 +88,7 @@ export const PRELUDE2_CARD_MANIFEST = new ModuleManifest({
   preludeCards: {
     [CardName.APPLIED_SCIENCE]: {Factory: AppliedScience},
     [CardName.ATMOSPHERIC_ENHANCERS]: {Factory: AtmosphericEnhancers, compatibility: 'venus'},
+    [CardName.BOARD_OF_DIRECTORS]: {Factory: BoardOfDirectors},
     [CardName.COLONY_TRADE_HUB]: {Factory: ColonyTradeHub, compatibility: 'colonies'},
     [CardName.CORRIDORS_OF_POWER]: {Factory: CorridorsOfPower, compatibility: 'turmoil'},
     [CardName.EARLY_COLONIZATION]: {Factory: EarlyColonization, compatibility: 'colonies'},
@@ -110,7 +110,7 @@ export const PRELUDE2_CARD_MANIFEST = new ModuleManifest({
     [CardName.VENUS_CONTRACT]: {Factory: VenusContract, compatibility: 'venus'},
     [CardName.VENUS_L1_SHADE]: {Factory: VenusL1Shade, compatibility: 'venus'},
     [CardName.WORLD_GOVERNMENT_ADVISOR]: {Factory: WorldGovernmentAdvisor},
-    [CardName.BOARD_OF_DIRECTORS]: {Factory: BoardOfDirectors},
+    
     
     
   },
