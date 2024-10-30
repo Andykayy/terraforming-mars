@@ -4,6 +4,7 @@ import {AppliedScience} from './AppliedScience';
 import {AtmosphericEnhancers} from './AtmosphericEnhancers';
 import {CeresTechMarket} from './CeresTechMarket';
 import {CloudTourism} from './CloudTourism';
+import { ColonialEnvoys } from './ColonialEnvoys';
 import {ColonyTradeHub} from './ColonyTradeHub';
 import {CorridorsOfPower} from './CorridorsOfPower';
 import {Ecotec} from './Ecotec';
@@ -28,6 +29,7 @@ export const PRELUDE2_CARD_MANIFEST = new ModuleManifest({
     [CardName.ISHTAR_EXPEDITION]: {Factory: IshtarExpedition, compatibility: 'venus'},
     [CardName.SUMMIT_LOGISTICS]: {Factory: SummitLogistics, compatibility: 'turmoil'},
     [CardName.CERES_TECH_MARKET]: {Factory: CeresTechMarket, compatibility: 'colonies'},
+    [CardName.COLONIAL_ENVOYS]: {Factory: ColonialEnvoys, compatibility: ['colonies', 'turmoil']},
     [CardName.RED_APPEASEMENT]: {Factory: RedAppeasement, compatibility: 'turmoil'},
     [CardName.L1_TRADE_TERMINAL]: {Factory: L1TradeTerminal, compatibility: 'colonies'},
     [CardName.CLOUD_TOURISM]: {Factory: CloudTourism, compatibility: 'venus'},

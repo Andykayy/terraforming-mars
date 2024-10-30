@@ -432,7 +432,12 @@ export enum CardName {
 
   // Prelude 2
   // Prelude 2 Project Cards
+  ATMOSPHERIC_ENHANCERS = 'Atmospheric Enhancers',
+  CLOUD_TOURISM = 'Cloud Tourism',
+  COLONIAL_ENVOYS = "Colonial Envoys",
+  CORRIDORS_OF_POWER = 'Corridors of Power',
   DIRECTED_HEAT_USAGE = 'Directed Heat Usage',
+  FLOATING_REFINERY = 'Floating Refinery',
   ISHTAR_EXPEDITION = 'Ishtar Expedition',
   L1_TRADE_TERMINAL = 'L1 Trade Terminal',
   RED_APPEASEMENT = 'Red Appeasement',
@@ -440,9 +445,11 @@ export enum CardName {
   CERES_TECH_MARKET = 'Ceres Tech Market',
   GHG_SHIPMENT = 'GHG Shipment',
   SPONSORING_NATION = 'Sponsoring Nation',
+  VENUS_TRADE_HUB = 'Venus Trade Hub',
 
   // Prelude 2 Preludes
   APPLIED_SCIENCE = 'Applied Science',
+  BOARD_OF_DIRECTORS = 'Board of Directors',
   FOCUSED_ORGANIZATION = 'Focused Organization',
   OLD_MINING_COLONY = 'Old Mining Colony',
   NOBEL_PRIZE = 'Nobel Prize',
@@ -455,14 +462,7 @@ export enum CardName {
   ECOTEC = 'EcoTec',
   SAGITTA_FRONTIER_SERVICES = 'Sagitta Frontier Services',
   SPIRE = 'Spire',
-
-  // Other cards known to be in the latest KS and should move appropriately
-  CLOUD_TOURISM = 'Cloud Tourism',
-  FLOATING_REFINERY = 'Floating Refinery',
-  VENUS_TRADE_HUB = 'Venus Trade Hub',
-  BOARD_OF_DIRECTORS = 'Board of Directors',
-  CORRIDORS_OF_POWER = 'Corridors of Power',
-  ATMOSPHERIC_ENHANCERS = 'Atmospheric Enhancers',
+  
 
   // Promo cards
   DUSK_LASER_MINING = 'Dusk Laser Mining',
