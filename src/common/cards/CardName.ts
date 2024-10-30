@@ -438,6 +438,7 @@ export enum CardName {
   COLONIAL_REPRESENTATION = "Colonial Representation",
   CORRIDORS_OF_POWER = 'Corridors of Power',
   DIRECTED_HEAT_USAGE = 'Directed Heat Usage',
+  ENVOYS_FROM_VENUS = "Envoy from Venus",
   FLOATING_REFINERY = 'Floating Refinery',
   ISHTAR_EXPEDITION = 'Ishtar Expedition',
   L1_TRADE_TERMINAL = 'L1 Trade Terminal',
