@@ -481,6 +481,7 @@ export enum CardName {
   TERRAFORMING_DEAL = 'Terraforming Deal',
   VENUS_CONTRACT = 'Venus Contract',
   VENUS_L1_SHADE = 'Venus L1 Shade',
+  WORLD_GOVERNMENT_ADVISOR = 'World Government Advisor',
 
   // Prelude 2 Corps
   NIRGAL_ENTERPRISES = 'Nirgal Enterprises',

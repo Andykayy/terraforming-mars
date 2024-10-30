@@ -50,6 +50,7 @@ import {VenusOrbitalSurvey} from './VenusOrbitalSurvey';
 import {VenusShuttles} from './VenusShuttles';
 import {VenusTradeHub} from './VenusTradeHub';
 import {WGProject} from './WGProject';
+import {WorldGovernmentAdvisor} from './WorldGovernmentAdvisor';
 
 export const PRELUDE2_CARD_MANIFEST = new ModuleManifest({
   module: 'prelude2',
@@ -104,6 +105,7 @@ export const PRELUDE2_CARD_MANIFEST = new ModuleManifest({
     [CardName.TERRAFORMING_DEAL]: {Factory: TerraformingDeal},
     [CardName.VENUS_CONTRACT]: {Factory: VenusContract, compatibility: 'venus'},
     [CardName.VENUS_L1_SHADE]: {Factory: VenusL1Shade, compatibility: 'venus'},
+    [CardName.WORLD_GOVERNMENT_ADVISOR]: {Factory: WorldGovernmentAdvisor},
     // [CardName.BOARD_OF_DIRECTORS]: {Factory: BoardOfDirectors},
     
     
