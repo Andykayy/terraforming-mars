@@ -27,6 +27,7 @@ import {NirgalEnterprises} from './NirgalEnterprises';
 import {NobelPrize} from './NobelPrize';
 import {OldMiningColony} from './OldMiningColony';
 import {PalladinShipping} from './PalladinShipping';
+import {PlanetaryAlliance} from './PlanetaryAlliance';
 import {RedAppeasement} from './RedAppeasement';
 import {SagittaFrontierServices} from './SagittaFrontierServices';
 import {SpaceCorridors} from './SpaceCorridors';
@@ -60,16 +61,17 @@ export const PRELUDE2_CARD_MANIFEST = new ModuleManifest({
   preludeCards: {
     [CardName.APPLIED_SCIENCE]: {Factory: AppliedScience},
     [CardName.ATMOSPHERIC_ENHANCERS]: {Factory: AtmosphericEnhancers, compatibility: 'venus'},
+    [CardName.COLONY_TRADE_HUB]: {Factory: ColonyTradeHub, compatibility: 'colonies'},
     [CardName.CORRIDORS_OF_POWER]: {Factory: CorridorsOfPower, compatibility: 'turmoil'},
     [CardName.EARLY_COLONIZATION]: {Factory: EarlyColonization, compatibility: 'colonies'},
     [CardName.FLOATING_TRADE_HUB]: {Factory: FloatingTradeHub, compatibility: 'venus'},
+    [CardName.FOCUSED_ORGANIZATION]: {Factory: FocusedOrganization},
     [CardName.HIGH_CIRCLES]: {Factory: HighCircles, compatibility: 'turmoil'},
     [CardName.INDUSTRIAL_COMPLEX]: {Factory: IndustrialComplex},
     [CardName.MAIN_BELT_ASTEROIDS]: {Factory: MainBeltAsteroids},
-    [CardName.NOBEL_PRIZE]: {Factory: NobelPrize},
-    [CardName.COLONY_TRADE_HUB]: {Factory: ColonyTradeHub, compatibility: 'colonies'},
+    [CardName.NOBEL_PRIZE]: {Factory: NobelPrize}, 
     [CardName.OLD_MINING_COLONY]: {Factory: OldMiningColony, compatibility: 'colonies'},
-    [CardName.FOCUSED_ORGANIZATION]: {Factory: FocusedOrganization},
+    [CardName.PLANETARY_ALLIANCE]: {Factory: PlanetaryAlliance, compatibility: 'venus'},    
     [CardName.SPACE_CORRIDORS]: {Factory: SpaceCorridors},
     // [CardName.BOARD_OF_DIRECTORS]: {Factory: BoardOfDirectors},
     
