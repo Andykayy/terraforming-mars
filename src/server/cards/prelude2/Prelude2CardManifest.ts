@@ -14,6 +14,7 @@ import {EnvoysFromVenus} from './EnvoysFromVenus';
 import {FloatingRefinery} from './FloatingRefinery';
 import {FloatingTradeHub} from './FloatingTradeHub';
 import {FocusedOrganization} from './FocusedOrganization';
+import {FrontierTown} from './FrontierTown';
 import {GhgShipment} from './GhgShipment';
 import {IshtarExpedition} from './IshtarExpedition';
 import {L1TradeTerminal} from './L1TradeTerminal';
@@ -40,6 +41,7 @@ export const PRELUDE2_CARD_MANIFEST = new ModuleManifest({
     [CardName.ENVOYS_FROM_VENUS]: {Factory: EnvoysFromVenus, compatibility: ['turmoil', 'venus']},
     [CardName.L1_TRADE_TERMINAL]: {Factory: L1TradeTerminal, compatibility: 'colonies'},
     [CardName.FLOATING_REFINERY]: {Factory: FloatingRefinery, compatibility: 'colonies'},
+    [CardName.FRONTIER_TOWN]: {Factory: FrontierTown, compatibility: 'turmoil'},
     // [CardName.VENUS_TRADE_HUB]: {Factory: VenusTradeHub, compatibility: 'colonies'},
     [CardName.GHG_SHIPMENT]: {Factory: GhgShipment, compatibility: 'turmoil'},
     [CardName.ISHTAR_EXPEDITION]: {Factory: IshtarExpedition, compatibility: 'venus'},
