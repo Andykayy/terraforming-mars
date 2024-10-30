@@ -2,6 +2,7 @@ import {CardName} from '../../../common/cards/CardName';
 import {ModuleManifest} from '../ModuleManifest';
 import {AppliedScience} from './AppliedScience';
 import {AtmosphericEnhancers} from './AtmosphericEnhancers';
+import 
 import {CeresTechMarket} from './CeresTechMarket';
 import {CloudTourism} from './CloudTourism';
 import {ColonialEnvoys } from './ColonialEnvoys';
@@ -34,6 +35,7 @@ import {RedAppeasement} from './RedAppeasement';
 import {RiseToPower} from './RiseToPower';
 import {SagittaFrontierServices} from './SagittaFrontierServices';
 import {SoilBacteria} from './SoilBacteria';
+import {SoilStudies} from './SoilStudies';
 import {SpaceCorridors} from './SpaceCorridors';
 import {SpecialPermit} from './SpecialPermit';
 import {Spire} from './Spire';
@@ -57,7 +59,6 @@ export const PRELUDE2_CARD_MANIFEST = new ModuleManifest({
   module: 'prelude2',
   projectCards: {
 
-  
     [CardName.CERES_TECH_MARKET]: {Factory: CeresTechMarket, compatibility: 'colonies'},
     [CardName.CLOUD_TOURISM]: {Factory: CloudTourism, compatibility: 'venus'},
     [CardName.COLONIAL_ENVOYS]: {Factory: ColonialEnvoys, compatibility: ['colonies', 'turmoil']},
@@ -71,6 +72,7 @@ export const PRELUDE2_CARD_MANIFEST = new ModuleManifest({
     [CardName.JOVIAN_ENVOYS]: {Factory: JovianEnvoys, compatibility: 'turmoil'},
     [CardName.MICROGRAVITY_NUTRITION]: {Factory: MicrogravityNutrition, compatibility: 'colonies'},
     [CardName.RED_APPEASEMENT]: {Factory: RedAppeasement, compatibility: 'turmoil'},
+    [CardName.SOIL_STUDIES]: {Factory: SoilStudies, compatibility: ['venus', 'colonies']},
     [CardName.SPECIAL_PERMIT]: {Factory: SpecialPermit, compatibility: 'turmoil'},
     [CardName.SPONSORING_NATION]: {Factory: SponsoringNation, compatibility: 'turmoil'},
     [CardName.STRATOSPHERIC_EXPEDITION]: {Factory: StratosphericExpedition, compatibility: 'venus'},
@@ -107,7 +109,7 @@ export const PRELUDE2_CARD_MANIFEST = new ModuleManifest({
     [CardName.VENUS_CONTRACT]: {Factory: VenusContract, compatibility: 'venus'},
     [CardName.VENUS_L1_SHADE]: {Factory: VenusL1Shade, compatibility: 'venus'},
     [CardName.WORLD_GOVERNMENT_ADVISOR]: {Factory: WorldGovernmentAdvisor},
-    // [CardName.BOARD_OF_DIRECTORS]: {Factory: BoardOfDirectors},
+    [CardName.BOARD_OF_DIRECTORS]: {Factory: BoardOfDirectors},
     
     
   },

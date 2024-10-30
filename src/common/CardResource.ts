@@ -27,4 +27,7 @@ export enum CardResource {
     SUPPLY_CHAIN = 'Supply Chain',
     BUILDING_RESOURCE = 'Building Resource',
     DIPLOMACY = 'Diplomacy',
+
+     // Prelude 2
+  DIRECTOR = 'Director',
 }

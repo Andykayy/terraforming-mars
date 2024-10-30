@@ -448,6 +448,7 @@ export enum CardName {
   L1_TRADE_TERMINAL = 'L1 Trade Terminal',
   MICROGRAVITY_NUTRITION = 'Microgravity Nutrition',
   RED_APPEASEMENT = 'Red Appeasement',
+  SOIL_STUDIES = 'Soil Studies',
   SPECIAL_PERMIT = 'Special Permit',
   SUMMIT_LOGISTICS = 'Summit Logistics',
   SPONSORING_NATION = 'Sponsoring Nation',
