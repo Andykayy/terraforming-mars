@@ -42,6 +42,7 @@ import {StratosphericExpedition} from './StratosphericExpedition';
 import {SuitableInfrastructure} from './SuitableInfrastructure';
 import {SummitLogistics} from './SummitLogistics';
 import {TerraformingDeal} from './TerraformingDeal';
+import {UnexpectedApplication} from './UnexpectedApplication';
 
 export const PRELUDE2_CARD_MANIFEST = new ModuleManifest({
   module: 'prelude2',
@@ -66,6 +67,7 @@ export const PRELUDE2_CARD_MANIFEST = new ModuleManifest({
     [CardName.SPONSORING_NATION]: {Factory: SponsoringNation, compatibility: 'turmoil'},
     [CardName.STRATOSPHERIC_EXPEDITION]: {Factory: StratosphericExpedition, compatibility: 'venus'},
     [CardName.SUMMIT_LOGISTICS]: {Factory: SummitLogistics, compatibility: 'turmoil'},
+    [CardName.UNEXPECTED_APPLICATION]: {Factory: UnexpectedApplication, compatibility: 'venus'},
   },
 
   preludeCards: {

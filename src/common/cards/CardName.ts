@@ -452,6 +452,7 @@ export enum CardName {
   SUMMIT_LOGISTICS = 'Summit Logistics',
   SPONSORING_NATION = 'Sponsoring Nation',
   STRATOSPHERIC_EXPEDITION = 'Stratospheric Expedition',
+  UNEXPECTED_APPLICATION = 'Unexpected Application',
   VENUS_TRADE_HUB = 'Venus Trade Hub',
 
   // Prelude 2 Preludes
