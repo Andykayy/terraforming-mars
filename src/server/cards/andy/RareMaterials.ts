@@ -6,21 +6,22 @@ import {CardName} from '../../../common/cards/CardName';
 import {CardRenderer} from '../render/CardRenderer';
 import {CardResource} from '../../../common/CardResource';
 
+
+//not sure how strong this one is. Will require some balancing
 export class RareMaterialExtraction extends ActionCard implements IProjectCard {
   constructor() {
     super({
       type: CardType.ACTIVE,
       name: CardName.RARE_MATERIAL_EXTRACTION_ANDY,
       tags: [Tag.SPACE, Tag.MARS],
-      cost: 12,
+      cost: 10,
       resourceType: CardResource.ASTEROID,
 
       action: {
         or: {
           autoSelect: true,
           behaviors: [{
-            title: 'Spend 1 energy to gain add 1 asteroid to this card.',
-            spend: {energy: 1},
+            title: 'Add 1 asteroid to this card.',            
             addResources: 1,
           },
           {
@@ -39,7 +40,7 @@ export class RareMaterialExtraction extends ActionCard implements IProjectCard {
       metadata: {
         cardNumber: 'xB32',
         renderData: CardRenderer.builder((b) => {
-          b.action('Spend 1 energy to add 1 asteroid to this card.', (eb) => {
+          b.action('Add 1 asteroid to this card.', (eb) => {
             eb.energy(1).startAction.resource(CardResource.ASTEROID);
           }).br;
           b.or().br;

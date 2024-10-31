@@ -1019,6 +1019,7 @@ export enum CardName {
     //andy own cards
     GHG_SHIPMENT_ANDY = 'GHG Shipment Andy',
     RARE_MATERIAL_EXTRACTION_ANDY = 'Rare Material Extraction',
+    ONGOING_STUDY_ANDY = 'Ongoing Study'
 
     //andy RB
     BACTOVIRAL_RESEARCH_RB = "Bactoviral Research(⚖)",
