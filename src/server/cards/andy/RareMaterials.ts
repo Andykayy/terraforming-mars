@@ -13,6 +13,7 @@ export class RareMaterialExtraction extends ActionCard implements IProjectCard {
       name: CardName.RARE_MATERIAL_EXTRACTION_ANDY,
       tags: [Tag.SPACE, Tag.MARS],
       cost: 12,
+      resourceType: CardResource.ASTEROID,
 
       action: {
         or: {
@@ -38,7 +39,7 @@ export class RareMaterialExtraction extends ActionCard implements IProjectCard {
       metadata: {
         cardNumber: 'xB32',
         renderData: CardRenderer.builder((b) => {
-          b.action('Spend 1 energy to gain add 1 asteroid to this card.', (eb) => {
+          b.action('Spend 1 energy to add 1 asteroid to this card.', (eb) => {
             eb.energy(1).startAction.resource(CardResource.ASTEROID);
           }).br;
           b.or().br;
