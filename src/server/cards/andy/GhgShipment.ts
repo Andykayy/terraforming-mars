@@ -6,10 +6,10 @@ import {Card} from '../Card';
 import {PartyName} from '../../../common/turmoil/PartyName';
 import {CardResource} from '../../../common/CardResource';
 
-export class GhgShipment extends Card {
+export class GhgShipmentAndy extends Card {
   constructor() {
     super({
-      name: CardName.GHG_SHIPMENT,
+      name: CardName.GHG_SHIPMENT_ANDY,
       type: CardType.EVENT,
       tags: [Tag.SPACE],
       cost: 3,

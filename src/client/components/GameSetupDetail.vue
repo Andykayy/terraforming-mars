@@ -16,7 +16,7 @@
               <div v-if="gameOptions.ceoExtension" class="create-game-expansion-icon expansion-icon-ceo"></div>
               <div v-if="gameOptions.underworldExpansion" class="create-game-expansion-icon expansion-icon-underworld"></div>
               <div v-if="gameOptions.chemicalExpansion" class="create-game-expansion-icon expansion-icon-chemical"></div>
-              <div v-if="gameOptions.andyExpansion" class="create-game-expansion-icon expansion-icon-chemical"></div>
+              <div v-if="gameOptions.andyExpansion" class="create-game-expansion-icon expansion-icon-andy"></div>
             </li>
 
             <li><div class="setup-item" v-i18n>Board:</div>

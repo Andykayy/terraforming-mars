@@ -169,9 +169,9 @@
                                 <span v-i18n>Chemical's Cards 🆕(β)</span>
                             </label>
 
-                            <input type="checkbox" name="andy" id="andy-checkbox" v-model="chemicalExpansion">
+                            <input type="checkbox" name="andy" id="andy-checkbox" v-model="andyExpansion">
                             <label for="andy-checkbox" class="expansion-button">
-                                <span v-i18n>Andy's Cards 🆕(β)</span>
+                                <span v-i18n>Andy's Cards 🆕(A)</span>
                             </label>
                         </div>
 
