@@ -1017,7 +1017,7 @@ export enum CardName {
     PUBLIC_SPACELINE_CHEMICAL = 'Public Spacelines',
 
     //andy own cards
-    GHG_SHIPMENT_ANDY = 'GHG Shipment',
+    GHG_SHIPMENT_ANDY = 'GHG Shipment Andy',
 
     //andy RB
     BACTOVIRAL_RESEARCH_RB = "Bactoviral Research(⚖)",
