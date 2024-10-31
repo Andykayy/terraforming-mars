@@ -7,7 +7,7 @@ import {CardRenderer} from '../render/CardRenderer';
 import {Tag} from '../../../common/cards/Tag';
 import {CardResource} from '../../../common/CardResource';
 import {Phase} from '../../../common/Phase';
-import { AddResourcesToCard } from '@/server/deferredActions/AddResourcesToCard';
+import {AddResourcesToCard } from '../../deferredActions/AddResourcesToCard';
 
 export class OngoingStudy extends Card implements IProjectCard {
   constructor() {
