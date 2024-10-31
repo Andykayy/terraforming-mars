@@ -1235,7 +1235,7 @@ export const CHEMICAL_CARD_MANIFEST = new ModuleManifest({
     [CardName.MARTIAN_RESEARCH_NETWORK]: {Factory: MartianResearchNetwork, compatibility: 'turmoil'},
     [CardName.ENERGY_LAB]: {Factory: EnergyLab, compatibility: 'turmoil'},
     // [CardName.STIMULUS_PROGRAMS]: {Factory: StimulusPrograms, compatibility: 'turmoil'},
-    [CardName.COMMITTEE_COALITION]: {Factory: CommitteeCoalition, compatibility: 'turmoil'},
+    [CardName.COMMITTEE_COALITION]: {Factory: CommitteeCoalition, compatibility: ['turmoil', 'pathfinders']},
     [CardName.LEGAL_FIRM]: {Factory: LegalFirm, compatibility: 'turmoil'},
     [CardName.KICKBACKS]: {Factory: Kickbacks, compatibility: 'turmoil'},
     [CardName.REMOTE_AREA_SUPPLIERS]: {Factory: RemoteAreaSuppliers, compatibility: 'turmoil'},

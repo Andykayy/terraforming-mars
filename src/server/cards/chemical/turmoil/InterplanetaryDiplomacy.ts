@@ -12,8 +12,8 @@ export class InterplanetaryDiplomacy extends Card implements IProjectCard {
     super({
       type: CardType.ACTIVE,
       name: CardName.INTERPLANETARY_DIPLOMACY,
-      tags: [Tag.EARTH],
-      cost: 6,
+      tags: [Tag.EARTH, Tag.MARS],
+      cost: 8,
 
       resourceType: CardResource.DIPLOMACY,
       victoryPoints: {resourcesHere: {}, per: 3},
@@ -23,10 +23,11 @@ export class InterplanetaryDiplomacy extends Card implements IProjectCard {
         cardNumber: 'x394',
         description: 'Requires 25 TR.',
         renderData: CardRenderer.builder((b) => {
-          b.effect('When you play a Venus, Earth, or Jovian tag, including this, add a diplomacy resource to this card.', (be) => {
+          b.effect('When you play a Venus, Earth, Jovian or Mars tag, including this, add a diplomacy resource to this card.', (be) => {
             be.tag(Tag.VENUS).slash();
             be.tag(Tag.EARTH).slash();
-            be.tag(Tag.JOVIAN);
+            be.tag(Tag.JOVIAN).slash();
+            be.tag(Tag.MARS)
             be.startEffect.resource(CardResource.DIPLOMACY);
           }).br;
           b.vpText('1 VP per 3 diplomacy resources on this card.');
@@ -35,7 +36,7 @@ export class InterplanetaryDiplomacy extends Card implements IProjectCard {
     });
   }
   public onCardPlayed(player: IPlayer, card: IProjectCard): void {
-    const qty = player.tags.cardTagCount(card, [Tag.VENUS, Tag.EARTH, Tag.JOVIAN]);
+    const qty = player.tags.cardTagCount(card, [Tag.VENUS, Tag.EARTH, Tag.JOVIAN, Tag.MARS]);
     player.addResourceTo(this, {qty, log: true});
   }
 }
