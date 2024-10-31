@@ -43,7 +43,7 @@ export class RareMaterialExtraction extends ActionCard implements IProjectCard {
           }).br;
           b.or().br;
           b.action('Remove 1 asteroid from here to add a resource to any card THAT ALREADY HAS A RESOURCE.', (eb) => {
-            eb.resource(CardResource.ASTEROID, 1).startAction..wild(1).asterix();
+            eb.resource(CardResource.ASTEROID, 1).startAction.wild(1).asterix();
           }).br;
         }),
       },
