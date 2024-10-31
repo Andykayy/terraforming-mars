@@ -1,11 +1,12 @@
 import {CardName} from '../../../common/cards/CardName';
 import {ModuleManifest} from '../ModuleManifest';
-import {GhgShipmentAndy } from './GhgShipment';
+import { RareMaterialExtraction } from './RareMaterials';
+
 
 export const ANDY_CARD_MANIFEST = new ModuleManifest({
   module: 'andy',
   projectCards: {
-       [CardName.GHG_SHIPMENT_ANDY]: {Factory: GhgShipmentAndy, compatibility: 'turmoil'},
+       [CardName.RARE_MATERIAL_EXTRACTION_ANDY]: {Factory: RareMaterialExtraction, compatibility: 'turmoil'},
   },
 
   preludeCards: {
