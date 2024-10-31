@@ -381,6 +381,7 @@ export class Server {
       includedCards: options.includedCards,
       ceoExtension: options.ceoExtension,
       chemicalExpansion: options.chemicalExpansion,
+      andyExpansion: options.andyExpansion,
       coloniesExtension: options.coloniesExtension,
       communityCardsOption: options.communityCardsOption,
       corporateEra: options.corporateEra,

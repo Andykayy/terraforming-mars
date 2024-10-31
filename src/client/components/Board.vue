@@ -420,6 +420,9 @@ export default Vue.extend({
     chemicalExpansion: {
       type: Boolean,
     },
+    andyExpansion: {
+      type: Boolean,
+    },
   },
   components: {
     BoardSpace,

@@ -24,6 +24,7 @@ import {PRELUDE2_CARD_MANIFEST} from './cards/prelude2/Prelude2CardManifest';
 import {STAR_WARS_CARD_MANIFEST} from './cards/starwars/StarwarsCardManifest';
 import {UNDERWORLD_CARD_MANIFEST} from './cards/underworld/UnderworldCardManifest';
 import {CHEMICAL_CARD_MANIFEST} from './cards/chemical/ChemicalCardManifest';
+import { ANDY_CARD_MANIFEST } from './cards/andy/AndyCardManifest';
 
 
 /**
@@ -63,6 +64,7 @@ export class GameCards {
       [gameOptions.starWarsExpansion, STAR_WARS_CARD_MANIFEST],
       [gameOptions.underworldExpansion, UNDERWORLD_CARD_MANIFEST],
       [gameOptions.chemicalExpansion, CHEMICAL_CARD_MANIFEST],
+      [gameOptions.andyExpansion, ANDY_CARD_MANIFEST],
     ];
     this.moduleManifests = manifests
       .filter(([option, _manifest]) => option === true)

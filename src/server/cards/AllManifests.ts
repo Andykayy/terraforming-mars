@@ -17,6 +17,7 @@ import {PRELUDE2_CARD_MANIFEST} from './prelude2/Prelude2CardManifest';
 import {STAR_WARS_CARD_MANIFEST} from './starwars/StarwarsCardManifest';
 import {UNDERWORLD_CARD_MANIFEST} from './underworld/UnderworldCardManifest';
 import {CHEMICAL_CARD_MANIFEST} from './chemical/ChemicalCardManifest';
+import { ANDY_CARD_MANIFEST } from './andy/AndyCardManifest';
 
 export const ALL_MODULE_MANIFESTS: Array<ModuleManifest> = [
   BASE_CARD_MANIFEST,
@@ -35,4 +36,5 @@ export const ALL_MODULE_MANIFESTS: Array<ModuleManifest> = [
   STAR_WARS_CARD_MANIFEST,
   UNDERWORLD_CARD_MANIFEST,
   CHEMICAL_CARD_MANIFEST,
+  ANDY_CARD_MANIFEST,
 ];

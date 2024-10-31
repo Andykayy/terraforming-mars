@@ -201,6 +201,7 @@ const moduleAbbreviations: Record<GameModule, string> = {
   starwars: 'w',
   underworld: 'u',
   chemical: 'x',
+  andy: 'a',
 };
 
 const ALL_MODULES = GAME_MODULES.map((m) => moduleAbbreviations[m]).join('');
@@ -253,6 +254,7 @@ export default (Vue as WithRefs<Refs>).extend({
         starwars: true,
         chemical: true,
         underworld: true,
+        andy: true,
       },
       types: {
         event: true,

@@ -70,6 +70,7 @@ export class GlobalEventDealer {
       starwars: gameOptions.starWarsExpansion,
       underworld: gameOptions.underworldExpansion,
       chemical: gameOptions.chemicalExpansion,
+      andy: gameOptions.andyExpansion,
     };
 
     for (const manifest of ALL_MODULE_MANIFESTS) {

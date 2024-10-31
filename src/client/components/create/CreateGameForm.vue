@@ -168,6 +168,11 @@
                             <label for="chemical-checkbox" class="expansion-button">
                                 <span v-i18n>Chemical's Cards 🆕(β)</span>
                             </label>
+
+                            <input type="checkbox" name="andy" id="andy-checkbox" v-model="chemicalExpansion">
+                            <label for="andy-checkbox" class="expansion-button">
+                                <span v-i18n>Andy's Cards 🆕(β)</span>
+                            </label>
                         </div>
 
                         <div class="create-game-page-column">
@@ -657,6 +662,7 @@ export default (Vue as WithRefs<Refs>).extend({
       preludeToggled: false,
       uploading: false,
       chemicalExpansion: false,
+      andyExpansion: false,
     };
   },
   components: {
@@ -1070,6 +1076,7 @@ export default (Vue as WithRefs<Refs>).extend({
       const customCeos = this.customCeos;
       const startingCeos = this.startingCeos;
       const chemicalExpansion = this.chemicalExpansion;
+      const andyExpansion = this.andyExpansion;
       let clonedGamedId: undefined | GameId = undefined;
 
       // Check custom colony count
@@ -1244,6 +1251,7 @@ export default (Vue as WithRefs<Refs>).extend({
         starWarsExpansion: this.starWarsExpansion,
         underworldExpansion: this.underworldExpansion,
         chemicalExpansion,
+        andyExpansion,
       };
       return JSON.stringify(dataToSend, undefined, 4);
     },

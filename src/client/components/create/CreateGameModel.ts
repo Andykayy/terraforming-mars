@@ -70,4 +70,5 @@ export type CreateGameModel = {
   undoOption: boolean;
   venusNext: boolean;
   chemicalExpansion: boolean,
+  andyExpansion: boolean,
 }

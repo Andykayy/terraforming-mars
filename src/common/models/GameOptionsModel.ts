@@ -11,6 +11,7 @@ export type GameOptionsModel = {
   includedCards: Array<CardName>;
   ceoExtension: boolean,
   chemicalExpansion: boolean,
+  andyExpansion: boolean,
   coloniesExtension: boolean,
   communityCardsOption: boolean,
   corporateEra: boolean,

@@ -88,4 +88,5 @@ export interface NewGameConfig {
   starWarsExpansion: boolean;
   chemicalExpansion: boolean,
   underworldExpansion: boolean,
+  andyExpansion: boolean,
 }
