@@ -22,7 +22,7 @@ export class OngoingStudy extends Card implements IProjectCard {
       metadata: {
         cardNumber: 'Pf28',
         renderData: CardRenderer.builder((b) => {
-          b.effect('Each step your TR is raised, add 1 data to ANY CARD.', (eb) => {
+          b.effect('Each step your TR is raised, add 1 data to ANY CARD.', (b) => {
             b.tr(1).startEffect.resource(CardResource.DATA).asterix();
           });                  
         }),    
