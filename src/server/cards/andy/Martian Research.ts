@@ -4,6 +4,7 @@ import {Tag} from '../../../common/cards/Tag';
 import {Card} from '../Card';
 import {CardName} from '../../../common/cards/CardName';
 import {CardResource} from '../../../common/CardResource';
+import {CardRenderer} from '../render/CardRenderer';
 
 export class MartianResearch extends Card implements IProjectCard {
   constructor() {
@@ -20,6 +21,7 @@ export class MartianResearch extends Card implements IProjectCard {
       metadata: {
         cardNumber: 'P40',
         description: 'After being played, when you perform an action, the wild tag counts as any tag of your choice. Add 2 data to any card.',
+        renderData: CardRenderer.builder((b) => b.resource(CardResource.DATA, 2).asterix()),              
       },
     });
   }
