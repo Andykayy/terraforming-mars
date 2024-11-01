@@ -1025,6 +1025,7 @@ export enum CardName {
     OLYMPUS_FUNDING_ANDY = 'Olympus Funding',
     ARANEIFORMS_ANDY = 'Araneiforms',
     KASEI_FORGES_ANDY = 'Kasei Forges',
+    MARTIAN_ARCHAEOLOGY_ANDY = 'Martian Archaeology',
 
     //andy RB
     BACTOVIRAL_RESEARCH_RB = "Bactoviral Research(⚖)",

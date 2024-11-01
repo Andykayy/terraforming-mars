@@ -7,6 +7,7 @@ import { DataShipment } from './DataShipment';
 import { OlympusFunding } from './OlympusFunding';
 import { Araneiforms } from './Araneiforms';
 import { KaseiForges } from './KaseiForges';
+import { MartianArchaeology } from './MartianArchaeology';
 
 
 export const ANDY_CARD_MANIFEST = new ModuleManifest({
@@ -19,6 +20,7 @@ export const ANDY_CARD_MANIFEST = new ModuleManifest({
        [CardName.OLYMPUS_FUNDING_ANDY]: {Factory: OlympusFunding, compatibility: 'pathfinders'},
        [CardName.ARANEIFORMS_ANDY]: {Factory: Araneiforms, compatibility: 'pathfinders'},
        [CardName.KASEI_FORGES_ANDY]: {Factory: KaseiForges, compatibility: 'pathfinders'},
+       [CardName.MARTIAN_ARCHAEOLOGY_ANDY]: {Factory: MartianArchaeology, compatibility: 'pathfinders'},
   },
 
   preludeCards: {

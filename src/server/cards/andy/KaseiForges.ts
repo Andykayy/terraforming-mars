@@ -24,7 +24,7 @@ export class KaseiForges extends Card implements IProjectCard {
         renderData: CardRenderer.builder((b) => {
           b.production((pb) => pb.titanium(1).steel(1));
         }),
-        description: 'Increase your titanium and steel production 1 step.',
+        description: 'Requires one heat production. Increase your titanium and steel production 1 step.',
       },
     });
   }
