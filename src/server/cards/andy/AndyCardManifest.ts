@@ -8,7 +8,7 @@ import { OlympusFunding } from './OlympusFunding';
 import { Araneiforms } from './Araneiforms';
 import { KaseiForges } from './KaseiForges';
 import { MartianArchaeology } from './MartianArchaeology';
-import { Astrobiology } from './Astrobiology';
+import { SearchForRelics } from './SearchForRelics';
 
 
 export const ANDY_CARD_MANIFEST = new ModuleManifest({
@@ -22,7 +22,7 @@ export const ANDY_CARD_MANIFEST = new ModuleManifest({
        [CardName.ARANEIFORMS_ANDY]: {Factory: Araneiforms, compatibility: 'pathfinders'},
        [CardName.KASEI_FORGES_ANDY]: {Factory: KaseiForges, compatibility: 'pathfinders'},
        [CardName.MARTIAN_ARCHAEOLOGY_ANDY]: {Factory: MartianArchaeology, compatibility: 'pathfinders'},
-       [CardName.ASTROBIOLOGY_ANDY]: {Factory: Astrobiology, compatibility: 'pathfinders'},
+       [CardName.SEARCH_FOR_RELICS_ANDY]: {Factory: SearchForRelics, compatibility: 'pathfinders'},
   },
 
   preludeCards: {

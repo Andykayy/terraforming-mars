@@ -11,11 +11,11 @@ import {CardRenderer} from '../render/CardRenderer';
 import {max} from '../Options';
 import {TITLES} from '../../inputs/titles';
 
-export class Astrobiology extends Card implements IActionCard, IProjectCard {
+export class SearchForRelics extends Card implements IActionCard, IProjectCard {
   constructor() {
     super({
       type: CardType.ACTIVE,
-      name: CardName.ASTROBIOLOGY_ANDY,
+      name: CardName.SEARCH_FOR_RELICS_ANDY,
       tags: [Tag.SCIENCE, Tag.MARS],
       cost: 4,
 
@@ -27,8 +27,8 @@ export class Astrobiology extends Card implements IActionCard, IProjectCard {
         cardNumber: '005',
         description: 'Temperature must be -18°C or colder.',
         renderData: CardRenderer.builder((b) => {
-          b.action('Spend 1 M€ to reveal the top card of the draw deck. If that card has an animal tag, add a science resource here.', (eb) => {
-            eb.megacredits(1).startAction.tag(Tag.MICROBE).asterix().nbsp.colon().nbsp.resource(CardResource.SCIENCE);
+          b.action('Spend 1 M€ to reveal the top card of the draw deck. If that card has a Mars tag, add a science resource here.', (eb) => {
+            eb.megacredits(1).startAction.tag(Tag.MARS).asterix().nbsp.colon().nbsp.resource(CardResource.SCIENCE);
           }).br;
           b.vpText('2 VPs per science resource here.');
         }),        
@@ -52,7 +52,7 @@ export class Astrobiology extends Card implements IActionCard, IProjectCard {
         player.game.log('${0} revealed and discarded ${1}', (b) => b.player(player).card(card, {tags: true}));
         if (card.tags.includes(Tag.ANIMAL)) {
           player.addResourceTo(this, 1);
-          player.game.log('${0} found life!', (b) => b.player(player));
+          player.game.log('${0} found a relic!', (b) => b.player(player));
         }
 
         player.game.projectDeck.discard(card);
