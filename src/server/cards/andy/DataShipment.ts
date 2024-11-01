@@ -25,7 +25,7 @@ export class DataShipment extends Card implements IProjectCard {
 
       metadata: {
         cardNumber: 'x314',
-        renderData: CardRenderer.builder((b) => b.trade().br.startEffect.resource(CardResource.DATA, 3).asterix()),    
+        renderData: CardRenderer.builder((b) => b.trade().br.resource(CardResource.DATA, 3).asterix()),    
         description: 'Trade for free. Add 3 data to any card.',
       },
     });
