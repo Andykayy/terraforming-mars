@@ -9,6 +9,7 @@ import { Araneiforms } from './Araneiforms';
 import { KaseiForges } from './KaseiForges';
 import { MartianArchaeology } from './MartianArchaeology';
 import { SearchForRelics } from './SearchForRelics';
+import { UnknownSignal } from './UnknownSignal';
 
 
 export const ANDY_CARD_MANIFEST = new ModuleManifest({
@@ -23,6 +24,7 @@ export const ANDY_CARD_MANIFEST = new ModuleManifest({
        [CardName.KASEI_FORGES_ANDY]: {Factory: KaseiForges, compatibility: 'pathfinders'},
        [CardName.MARTIAN_ARCHAEOLOGY_ANDY]: {Factory: MartianArchaeology, compatibility: 'pathfinders'},
        [CardName.SEARCH_FOR_RELICS_ANDY]: {Factory: SearchForRelics, compatibility: 'pathfinders'},
+       [CardName.UNKNOWN_SIGNAL_ANDY]: {Factory: UnknownSignal, compatibility: 'pathfinders'},
   },
 
   preludeCards: {
