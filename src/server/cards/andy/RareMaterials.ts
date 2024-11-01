@@ -41,7 +41,7 @@ export class RareMaterialExtraction extends ActionCard implements IProjectCard {
         cardNumber: 'xB32',
         renderData: CardRenderer.builder((b) => {
           b.action('Add 1 asteroid to this card.', (eb) => {
-            eb.startAction.resource(CardResource.ASTEROID);
+            eb.empty().startAction.resource(CardResource.ASTEROID);
           }).br;
           b.or().br;
           b.action('Remove 1 asteroid from here to add a resource to any card THAT ALREADY HAS A RESOURCE.', (eb) => {
