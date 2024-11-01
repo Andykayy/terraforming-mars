@@ -8,7 +8,6 @@ import {CardResource} from '../../../common/CardResource';
 import {CardName} from '../../../common/cards/CardName';
 import {SelectPaymentDeferred} from '../../deferredActions/SelectPaymentDeferred';
 import {CardRenderer} from '../render/CardRenderer';
-import {CardRenderDynamicVictoryPoints} from '../render/CardRenderDynamicVictoryPoints';
 import {max} from '../Options';
 import {TITLES} from '../../inputs/titles';
 
@@ -32,8 +31,7 @@ export class Astrobiology extends Card implements IActionCard, IProjectCard {
             eb.megacredits(1).startAction.tag(Tag.MICROBE).asterix().nbsp.colon().nbsp.resource(CardResource.SCIENCE);
           }).br;
           b.vpText('2 VPs per science resource here.');
-        }),
-        victoryPoints: CardRenderDynamicVictoryPoints.searchForLife(),
+        }),        
       },
     });
   }
