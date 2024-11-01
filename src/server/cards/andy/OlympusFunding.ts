@@ -10,7 +10,7 @@ export class OlympusFunding extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.OLYMPUS_FUNDING_ANDY,
-      tags: [Tag.EARTH],
+      tags: [Tag.MARS],
       cost: 8,
       requirements: {tag: Tag.MARS, count: 1},
       victoryPoints: 1,
