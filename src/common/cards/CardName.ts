@@ -1026,6 +1026,7 @@ export enum CardName {
     ARANEIFORMS_ANDY = 'Araneiforms',
     KASEI_FORGES_ANDY = 'Kasei Forges',
     MARTIAN_ARCHAEOLOGY_ANDY = 'Martian Archaeology',
+    ASTROBIOLOGY_ANDY = 'Astrobiology',
 
     //andy RB
     BACTOVIRAL_RESEARCH_RB = "Bactoviral Research(⚖)",
