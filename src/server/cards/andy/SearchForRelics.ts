@@ -17,15 +17,15 @@ export class SearchForRelics extends Card implements IActionCard, IProjectCard {
       type: CardType.ACTIVE,
       name: CardName.SEARCH_FOR_RELICS_ANDY,
       tags: [Tag.SCIENCE, Tag.MARS],
-      cost: 4,
+      cost: 3,
 
       resourceType: CardResource.SCIENCE,
       victoryPoints: {resourcesHere: {}, each: 2},
 
-      requirements: {temperature: -18, max},
+      requirements: {temperature: -12, max},
       metadata: {
         cardNumber: '005',
-        description: 'Temperature must be -18°C or colder.',
+        description: 'Temperature must be -12°C or colder.',
         renderData: CardRenderer.builder((b) => {
           b.action('Spend 1 M€ to reveal the top card of the draw deck. If that card has a Mars tag, add a science resource here.', (eb) => {
             eb.megacredits(1).startAction.tag(Tag.MARS).asterix().nbsp.colon().nbsp.resource(CardResource.SCIENCE);
@@ -50,7 +50,7 @@ export class SearchForRelics extends Card implements IActionCard, IProjectCard {
           return;
         }
         player.game.log('${0} revealed and discarded ${1}', (b) => b.player(player).card(card, {tags: true}));
-        if (card.tags.includes(Tag.ANIMAL)) {
+        if (card.tags.includes(Tag.MARS)) {
           player.addResourceTo(this, 1);
           player.game.log('${0} found a relic!', (b) => b.player(player));
         }
