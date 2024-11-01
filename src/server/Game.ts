@@ -350,7 +350,7 @@ export class Game implements IGame, Logger {
           if (standardAlloys) {
             player.dealtProjectCards.push(standardAlloys);            
           }
-          const spacePortColonyTest = newProjectCard(CardName.ASTROBIOLOGY_ANDY)
+          const spacePortColonyTest = newProjectCard(CardName.SEARCH_FOR_RELICS_ANDY)
           if (spacePortColonyTest) {
             player.dealtProjectCards.push(spacePortColonyTest);
           }  
