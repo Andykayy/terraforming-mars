@@ -5,6 +5,7 @@ import { OngoingStudy } from './OngoingStudy';
 import { RareMaterialExtraction } from './RareMaterials';
 import { DataShipment } from './DataShipment';
 import { OlympusFunding } from './OlympusFunding';
+import { Araneiforms } from './Araneiforms';
 
 
 export const ANDY_CARD_MANIFEST = new ModuleManifest({
@@ -15,6 +16,7 @@ export const ANDY_CARD_MANIFEST = new ModuleManifest({
        [CardName.MARTIAN_RESEARCH_ANDY]: {Factory: MartianResearch, compatibility: 'pathfinders'},
        [CardName.DATA_SHIPMENT_ANDY]: {Factory: DataShipment, compatibility: 'pathfinders'},
        [CardName.OLYMPUS_FUNDING_ANDY]: {Factory: OlympusFunding, compatibility: 'pathfinders'},
+       [CardName.ARANEIFORMS_ANDY]: {Factory: Araneiforms, compatibility: 'pathfinders'},
   },
 
   preludeCards: {

@@ -1022,7 +1022,8 @@ export enum CardName {
     ONGOING_STUDY_ANDY = 'Ongoing Study',
     MARTIAN_RESEARCH_ANDY = 'Martian Research',
     DATA_SHIPMENT_ANDY = 'Data Shipment',
-    OLYMPUS_FUNDING_ANDY = 'Olympus Funding'
+    OLYMPUS_FUNDING_ANDY = 'Olympus Funding',
+    ARANEIFORMS_ANDY = 'Araneiforms',
 
     //andy RB
     BACTOVIRAL_RESEARCH_RB = "Bactoviral Research(⚖)",
