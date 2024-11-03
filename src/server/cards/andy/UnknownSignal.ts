@@ -25,8 +25,7 @@ export class UnknownSignal extends ActionCard implements IProjectCard {
         renderData: CardRenderer.builder((b) => {
           b.action('Add 2 data to ANY card.', (ab) => {
             ab.empty().startAction.resource(CardResource.DATA, 2).asterix();
-          }).br;
-          b.resource(CardResource.DATA, 2).asterix();
+          }).br;          
         }),
         description: 'Requires 3 science tags.',
       },
