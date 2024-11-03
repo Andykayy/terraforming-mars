@@ -23,7 +23,7 @@ export class TrackingCookies extends Card implements IProjectCard {
         cardNumber: 'X30',
         renderData: CardRenderer.builder((b) => {
           b.effect('When you add any amount of data to ANY CARD, add an additional data.', (eb) => {
-            eb.resource(CardResource.DATA).asterix().resource(CardResource.DATA);
+            eb.resource(CardResource.DATA).asterix().startEffect.resource(CardResource.DATA);
           }).br;          
         }),        
       },
