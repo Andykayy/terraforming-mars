@@ -1030,6 +1030,7 @@ export enum CardName {
     UNKNOWN_SIGNAL_ANDY = 'Unknown Signal',
     THERMAL_BATTERIES_ANDY = 'Thermal Batteries',
     TRACKING_COOKIES_ANDY = 'Tracking Cookies',
+    GROW_LAMPS_ANDY = 'Grow Lamps',
 
     //andy RB
     BACTOVIRAL_RESEARCH_RB = "Bactoviral Research(⚖)",

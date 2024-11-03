@@ -17,8 +17,7 @@ export class TrackingCookies extends Card implements IProjectCard {
       type: CardType.ACTIVE,
       name: CardName.TRACKING_COOKIES_ANDY,
       tags: [Tag.MARS],
-      cost: 9,
-      victoryPoints: 1,
+      cost: 9,     
 
      
 
