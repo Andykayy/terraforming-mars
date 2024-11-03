@@ -10,6 +10,8 @@ import {CardResource} from '../../../common/CardResource';
 import {SimpleDeferredAction} from '../../deferredActions/DeferredAction';
 
 export class TrackingCookies extends Card implements IProjectCard {
+  private addingResource = false;
+  
   constructor() {
     super({
       type: CardType.ACTIVE,
@@ -34,16 +36,17 @@ export class TrackingCookies extends Card implements IProjectCard {
   
   public onResourceAdded(player: IPlayer, card: ICard, count: number): void {
     if (card.resourceType === CardResource.DATA && 
-      count > 0 && 
-      player.lastCardPlayed !== this.name) {
-    player.game.defer(new SimpleDeferredAction(
-      player,
-      () => {
-        player.addResourceTo(card, {qty: 1, log: true});
-        return undefined;
-      }
-    ));
-  }
-
+        count > 0 && 
+        !this.addingResource) {
+      this.addingResource = true;
+      player.game.defer(new SimpleDeferredAction(
+        player,
+        () => {
+          player.addResourceTo(card, {qty: 1, log: true});
+          this.addingResource = false;
+          return undefined;
+        }
+      ));
+    }
   }
 }
