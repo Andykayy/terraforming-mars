@@ -346,11 +346,11 @@ export class Game implements IGame, Logger {
         player.dealtCorporationCards.push(...corporationDeck.drawN(game, gameOptions.startingCorporations));
         if (gameOptions.initialDraftVariant === false) {
           player.dealtProjectCards.push(...projectDeck.drawN(game, 10));
-          const standardAlloys = newProjectCard(CardName.COMMUNICATION_CENTER)         
+          const standardAlloys = newProjectCard(CardName.GROW_LAMPS_ANDY)         
           if (standardAlloys) {
             player.dealtProjectCards.push(standardAlloys);            
           }
-          const spacePortColonyTest = newProjectCard(CardName.TRACKING_COOKIES_ANDY)
+          const spacePortColonyTest = newProjectCard(CardName.MOHOLE_AREA)
           if (spacePortColonyTest) {
             player.dealtProjectCards.push(spacePortColonyTest);
           }  
