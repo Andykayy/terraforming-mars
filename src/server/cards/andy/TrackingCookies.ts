@@ -23,7 +23,7 @@ export class TrackingCookies extends Card implements IProjectCard {
         cardNumber: 'X30',
         renderData: CardRenderer.builder((b) => {
           b.effect('When you add any amount of data to ANY CARD, add an additional data.', (eb) => {
-            eb.resource(CardResource.DATA).asterix().startEffect.resource(CardResource.DATA);
+            eb.text('x').resource(CardResource.DATA).asterix().startEffect.resource(CardResource.DATA);
           }).br;          
         }),        
       },
@@ -32,7 +32,7 @@ export class TrackingCookies extends Card implements IProjectCard {
 
   public onResourceAdded(player: IPlayer, card: ICard) {
     if (card.resourceType === CardResource.DATA) {
-      player.addResourceTo(card, {qty: 1, log: true});      
+      player.addResourceTo(this, {qty: 1, log: true});      
     }
   }
 }
