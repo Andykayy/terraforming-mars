@@ -17,7 +17,7 @@ export class IoPartnership extends Card implements IProjectCard {
       type: CardType.ACTIVE,
       name: CardName.IO_PARTNERSHIP_ANDY,
       tags: [Tag.MARS, Tag.JOVIAN],
-      cost: 9,     
+      cost: 10,     
       victoryPoints: 1,
       requirements: {venus: 10},
      

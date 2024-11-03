@@ -24,7 +24,7 @@ export class PolicyCoup extends Card implements IProjectCard {
         renderData: CardRenderer.builder((b) => {
           b.text('PLAY').globalEvent().asterix();
           b.br.br.br;
-          b.delegates(2).megacredits(10).br.br;
+          b.delegates(2).br.br;
         }),  
         description: 'Draw 4 global events. Play 1 as the COMING GLOBAL EVENT and discard the rest. Place 2 delegates in any party.',
       },

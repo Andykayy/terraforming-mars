@@ -24,7 +24,7 @@ export class NeutralTraders extends Card implements IProjectCard {
       metadata: {
         cardNumber: 'P87',
         renderData: CardRenderer.builder((b) => {
-          b.venus(2).megacredits(4).slash().colonies();
+          b.production((pb) => pb.megacredits(2)).megacredits(2).slash().colonies();
         }),
         description: 'Raise your M€ production 4 steps. Gain 2 M€ per colony you have.',
       },
