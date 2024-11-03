@@ -19,7 +19,7 @@ export class ThermalBatteries extends Card implements IProjectCard, IActionCard 
       type: CardType.ACTIVE,
       name: CardName.THERMAL_BATTERIES_ANDY,
       cost: 6,
-      tags: [Tag.POWER],
+      tags: [Tag.MARS],
       resourceType: CardResource.DATA,
 
       metadata: {
@@ -28,7 +28,7 @@ export class ThermalBatteries extends Card implements IProjectCard, IActionCard 
           b.action('Spend X heat to add X data to this card.', (eb) => {
             eb.text('x').heat(1).startAction.text('x').resource(CardResource.DATA).or();
           }).br;
-          b.action('Remove all data from this card to gain 3M€ per data removed.', (eb) => {
+          b.action('Remove X data from this card to gain 3M€ per data removed.', (eb) => {
             eb.text('x').resource(CardResource.DATA).startAction.text('x').megacredits(3);
           });
         }),
@@ -44,7 +44,7 @@ export class ThermalBatteries extends Card implements IProjectCard, IActionCard 
   private getHeatOption(player: IPlayer) {
     const max = Math.min(player.stock.heat);
     return new SelectAmount(
-      message('Spend up to ${1} heat to add ${1} data to this card.', (b) => b.number(max)),
+      message('Spend X heat to add X data to this card.', (b) => b.number(max)),
       'Spend heat', 1, max, false)
       .andThen((amount) => {
         player.stock.deduct(Resource.HEAT, amount);
@@ -57,11 +57,10 @@ export class ThermalBatteries extends Card implements IProjectCard, IActionCard 
   private spendDataOption(player: IPlayer){
     const max = Math.min(this.resourceCount);
     return new SelectAmount(
-      message('Spend up to ${1} data from this card to gain 3M€ per data removed.', (b) => b.number(max)),
+      message('Spend X data from this card to gain 3M€ per data removed.', (b) => b.number(max)),
       'Spend data', 1, max, false)
       .andThen((amount) => {
-        this.resourceCount -= amount;
-        player.addResourceTo(this, {qty: amount, log: true});
+        this.resourceCount -= amount;        
         player.stock.add(Resource.MEGACREDITS, 3 * amount, {log: true});
         return undefined;
       });
