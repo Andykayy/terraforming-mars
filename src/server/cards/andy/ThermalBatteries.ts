@@ -13,13 +13,14 @@ import {OrOptions} from '../../inputs/OrOptions';
 import {SelectAmount} from '../../inputs/SelectAmount';
 import {message} from '../../logs/MessageBuilder';
 
+//not certain of price yet
 export class ThermalBatteries extends Card implements IProjectCard, IActionCard {
   constructor() {
     super({
       type: CardType.ACTIVE,
       name: CardName.THERMAL_BATTERIES_ANDY,
-      cost: 6,
-      tags: [Tag.MARS],
+      cost: 12,
+      tags: [Tag.MARS, Tag.BUILDING],
       resourceType: CardResource.DATA,
 
       metadata: {

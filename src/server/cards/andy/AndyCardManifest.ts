@@ -11,6 +11,7 @@ import { MartianArchaeology } from './MartianArchaeology';
 import { SearchForRelics } from './SearchForRelics';
 import { UnknownSignal } from './UnknownSignal';
 import { ThermalBatteries } from './ThermalBatteries';
+import { TrackingCookies } from './TrackingCookies';
 
 
 export const ANDY_CARD_MANIFEST = new ModuleManifest({
@@ -27,6 +28,7 @@ export const ANDY_CARD_MANIFEST = new ModuleManifest({
        [CardName.SEARCH_FOR_RELICS_ANDY]: {Factory: SearchForRelics, compatibility: 'pathfinders'},
        [CardName.UNKNOWN_SIGNAL_ANDY]: {Factory: UnknownSignal, compatibility: 'pathfinders'},
        [CardName.THERMAL_BATTERIES_ANDY]: {Factory: ThermalBatteries, compatibility: 'pathfinders'},
+       [CardName.TRACKING_COOKIES_ANDY]: {Factory: TrackingCookies, compatibility: 'pathfinders'},
   },
 
   preludeCards: {
