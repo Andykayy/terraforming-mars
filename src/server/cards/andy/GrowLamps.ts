@@ -24,7 +24,7 @@ export class GrowLamps extends Card implements IProjectCard {
       metadata: {
         cardNumber: '193',
         renderData: CardRenderer.builder((b) => {
-          b.greenery();
+          b.minus().heat(3).nbsp.greenery();
         }),
         description: 'Spend 3 heat. Place a greenery tile and raise oxygen 1 step.',
       },
@@ -37,7 +37,7 @@ export class GrowLamps extends Card implements IProjectCard {
   }
 
   public override bespokePlay(player: IPlayer) {
-    player.plants -= 2;
+    player.heat -= 3;
     return undefined;
   }
 }
