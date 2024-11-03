@@ -1028,6 +1028,7 @@ export enum CardName {
     MARTIAN_ARCHAEOLOGY_ANDY = 'Martian Archaeology',
     SEARCH_FOR_RELICS_ANDY = 'Search for Relics',
     UNKNOWN_SIGNAL_ANDY = 'Unknown Signal',
+    THERMAL_BATTERIES_ANDY = 'Thermal Batteries',
 
     //andy RB
     BACTOVIRAL_RESEARCH_RB = "Bactoviral Research(⚖)",
