@@ -1031,6 +1031,7 @@ export enum CardName {
     THERMAL_BATTERIES_ANDY = 'Thermal Batteries',
     TRACKING_COOKIES_ANDY = 'Tracking Cookies',
     GROW_LAMPS_ANDY = 'Grow Lamps',
+    NEUTRAL_TRADERS_ANDY = 'Neutral Traders',
 
     //andy RB
     BACTOVIRAL_RESEARCH_RB = "Bactoviral Research(⚖)",
