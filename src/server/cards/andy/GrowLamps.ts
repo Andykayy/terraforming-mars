@@ -20,7 +20,7 @@ export class GrowLamps extends Card implements IProjectCard {
         greenery: {},
       },
 
-      requirements: {tag: Tag.SCIENCE, count: 2},
+      
       metadata: {
         cardNumber: '193',
         renderData: CardRenderer.builder((b) => {
