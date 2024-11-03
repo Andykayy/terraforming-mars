@@ -12,7 +12,7 @@ export class TrackingCookies extends Card implements IProjectCard {
   constructor() {
     super({
       type: CardType.ACTIVE,
-      name: CardName.TOPSOIL_CONTRACT,
+      name: CardName.TRACKING_COOKIES_ANDY,
       tags: [Tag.MARS],
       cost: 9,
       victoryPoints: 1,
