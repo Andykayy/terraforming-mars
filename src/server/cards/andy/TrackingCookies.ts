@@ -30,9 +30,9 @@ export class TrackingCookies extends Card implements IProjectCard {
     });
   }
 
-  public onResourceAdded(player: IPlayer, card: ICard) {
-    if (card.resourceType === CardResource.DATA) {
-      player.addResourceTo(this, {qty: 1, log: true});      
+  public onResourceAdded(player: IPlayer, card: ICard, count: number) {
+    if (card.resourceType === CardResource.DATA && count < 0) {
+      player.addResourceTo(card, {qty: 1, log: true}), count = 1;      
     }
   }
 }
