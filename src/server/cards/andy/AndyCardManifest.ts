@@ -13,7 +13,9 @@ import { UnknownSignal } from './UnknownSignal';
 import { ThermalBatteries } from './ThermalBatteries';
 import { TrackingCookies } from './TrackingCookies';
 import { GrowLamps } from './GrowLamps';
-import { NeutralTraders } from './VenusAllies';
+import { NeutralTraders } from './NeutralTraders';
+import { IoPartnership } from './IoPartnership';
+import { PolicyCoup } from './PolicyCoup';
 
 
 export const ANDY_CARD_MANIFEST = new ModuleManifest({
@@ -33,6 +35,8 @@ export const ANDY_CARD_MANIFEST = new ModuleManifest({
        [CardName.TRACKING_COOKIES_ANDY]: {Factory: TrackingCookies, compatibility: 'pathfinders'},
        [CardName.GROW_LAMPS_ANDY]: {Factory: GrowLamps, compatibility: 'pathfinders'},
        [CardName.NEUTRAL_TRADERS_ANDY]: {Factory: NeutralTraders, compatibility: 'pathfinders'},
+       [CardName.IO_PARTNERSHIP_ANDY]: {Factory: IoPartnership, compatibility: 'pathfinders'},
+       [CardName.POLICY_COUP_ANDY]: {Factory: PolicyCoup, compatibility: 'pathfinders'},
   },
 
   preludeCards: {

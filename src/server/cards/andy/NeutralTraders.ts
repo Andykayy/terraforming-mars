@@ -9,8 +9,7 @@ export class NeutralTraders extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.NEUTRAL_TRADERS_ANDY,      
-      cost: 30,
-      victoryPoints: 14,
+      cost: 14,      
 
       behavior: {
         production: {megacredits: 4},
