@@ -45,7 +45,7 @@ export class PolicyCoup extends Card implements IProjectCard {
     return new SelectGlobalEvent(globalEvents)
       .andThen((event) => {
         player.game.log('${0} selected Global Event ${1} for the current global event', (b) => b.player(player).globalEvent(event));
-        turmoil.currentGlobalEvent = event;
+        turmoil.comingGlobalEvent = event;
         turmoil.sendDelegateToParty('NEUTRAL', event.currentDelegate, player.game);
         player.game.log('Neutral delegate added to ${0}', (b) => b.partyName(event.currentDelegate));
 
