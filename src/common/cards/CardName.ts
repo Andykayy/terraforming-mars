@@ -1035,6 +1035,7 @@ export enum CardName {
     IO_PARTNERSHIP_ANDY = 'Io Partnership',
     POLICY_COUP_ANDY = 'Policy Coup',
     SMART_CITY_ANDY = 'Smart City',
+    MINING_COOP_ANDY = 'Mining Co-op',
 
     //andy RB
     BACTOVIRAL_RESEARCH_RB = "Bactoviral Research(⚖)",
@@ -1358,7 +1359,7 @@ export enum CardName {
     LOW_LEVEL_SCRAPPERS = 'Low-Level Scrappers',
     CARBON_SOLIDIFICATION = 'Carbon Solidification',
     LOCAL_MAGNETIC_SHIELDING = 'Local Magnetic Shielding',
-    AERIAL_MASS_DRIVERS = 'Aerial Mass Drviers',
+    AERIAL_MASS_DRIVERS = 'Aerial Mass Drivers',
     SKY_COMMUNICATIONS = 'Sky Communications',
     FLOATING_BIODOMES = 'Floating Biodomes',
     ENDEMIC_VENUSIAN_ARCHAEA = 'Endemic Venusian Archaea',
