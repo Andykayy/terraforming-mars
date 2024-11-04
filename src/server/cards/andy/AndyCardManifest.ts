@@ -16,6 +16,7 @@ import { GrowLamps } from './GrowLamps';
 import { NeutralTraders } from './NeutralTraders';
 import { IoPartnership } from './IoPartnership';
 import { PolicyCoup } from './PolicyCoup';
+import { SmartCity } from './SmartCity';
 
 
 export const ANDY_CARD_MANIFEST = new ModuleManifest({
@@ -37,6 +38,7 @@ export const ANDY_CARD_MANIFEST = new ModuleManifest({
        [CardName.NEUTRAL_TRADERS_ANDY]: {Factory: NeutralTraders, compatibility: 'pathfinders'},
        [CardName.IO_PARTNERSHIP_ANDY]: {Factory: IoPartnership, compatibility: 'pathfinders'},
        [CardName.POLICY_COUP_ANDY]: {Factory: PolicyCoup, compatibility: 'pathfinders'},
+       [CardName.SMART_CITY_ANDY]: {Factory: SmartCity, compatibility: 'pathfinders'},
   },
 
   preludeCards: {
