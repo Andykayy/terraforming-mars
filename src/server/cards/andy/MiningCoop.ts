@@ -25,6 +25,7 @@ export class MiningCoop extends Card implements IProjectCard {
           b.effect('When you play a Jovian or Mars tag, pay 2 M€ less.', (eb) => {
             eb.tag(Tag.JOVIAN).slash().tag(Tag.MARS).startEffect.megacredits(-2);
           });
+          b.br.br;
           b.production((pb) => pb.titanium(1));
         }),
         description: 'Gain one titanium production.',
